@@ -14,11 +14,11 @@ install git-crypt
 apt install git-crypt
 ```
 
-setup home
+setup home (https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3)
 ```
 git clone --bare git@githb.com:WhoIsSethDaniel/dotfiles ~/.dotfiles
 check config --local status.showUntrackedFiles no
-git-crypt unlock
+git-crypt unlock <path to key>
 ```
 
 ## Install Deb Repos

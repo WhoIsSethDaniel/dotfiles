@@ -1,0 +1,104 @@
+Do you keep up with Perl?
+
+
+When did you last use Perl for developmnet?
+
+
+What is the last version of Perl you used?
+
+
+Do you know what the most recent version of Perl is?
+
+
+Are you familiar with Modern Perl?
+
+
+What is Moose?
+
+
+Do you know what Plack is?
+
+
+Have you used Catalyst, Dancer, or Mojolicious?
+
+
+Are you familiar with traditional OOP?
+
+...Create a class (on the board) with one subroutine?
+
+...Can you show (on the board) how to create a class that inherits from your earlier class?  
+
+...Overrides earlier subroutine but calls previous routine?
+
+
+Can you describe the difference between a package and a class?
+
+
+Do you know the difference between my, our, and local?
+
+
+Do you know what BEGIN,UNIT,UNITCHECK,INIT and END are? 
+
+...Properties of each?
+
+
+Can you describe the difference between use and require?
+
+
+What happens when I use a module?
+
+
+Do you know what the import method is for?
+
+...when it is called?
+
+
+...Has a method named 'dothis'?
+
+
+Are you familiar with XS and how to use it?
+
+...besides XS can you think of other ways to link Perl to 3rd party libraries?
+
+
+
+
+Can you explain the difference between:
+
+  $self->dothis($arg)
+  dothis($self,$arg)
+
+
+How about the difference between:
+
+  $item{dog}
+  $item->{ dog }
+  $item->dog
+
+
+Do you know what the CORE namespace is for?
+
+...Do you know how to override the CORE namespace?
+
+
+Where do you find Perl code?  
+
+
+How do would you install your own Perl?
+
+
+How do you install Perl modules?
+
+
+What two pragmas should almost always be turned on for perl scripts?
+
+
+Do you write tests for your Perl code?
+
+
+What testing modules do you use?
+
+
+How do you run your tests?
+
+

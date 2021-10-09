@@ -1,0 +1,25 @@
+#!/bin/bash
+
+# https://github.com/Vimjas/vint
+# https://github.com/Koihik/LuaFormatter
+# https://github.com/mpeterv/luacheck
+
+# install stylua
+download=stylua-0.9.3-linux.zip
+wd=$(mktemp -d install-ls.XXXXXX)
+cd "$wd" || exit
+wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.9.3/${download}
+unzip ./*.zip
+mv -f stylua ~/bin
+chmod 755 ~/bin/stylua
+rm -f ${download}
+cd ..
+rmdir "${wd}"
+exit
+
+# other stuff
+sudo apt install npm shellcheck python-pip luarocks
+luarocks install --local luacheck
+pip install vim-vint
+update-go shfmt
+for s in bash vim go efm ; do vim +"LspInstall $s" ; done

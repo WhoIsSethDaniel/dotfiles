@@ -1,0 +1,29 @@
+#!/bin/bash
+
+rmtmpdir () {
+    [[ -n $tmpdir ]] && rm -rf $tmpdir
+}
+
+GO_VERSION=1.16.2
+tmpdir=$(mktemp -q -d --tmpdir install-go.XXXXXXX)
+trap rmtmpdir EXIT
+pushd $tmpdir
+curl -LSso go.tar.gz https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz
+mkdir $HOME/.go
+tar -C $HOME/.go -xzvf go.tar.gz
+popd
+
+mv $HOME/.go/go $HOME/.go/${GO_VERSION}
+ln -sf $HOME/.go/${GO_VERSION} $HOME/.go/current
+
+export PATH=$HOME/.go/current/bin:$PATH
+
+mkdir -p $HOME/src
+pushd $HOME/src
+git clone https://github.com/WhoIsSethDaniel/snago
+cd snago
+make
+mv snago ~/bin
+popd
+
+update-go

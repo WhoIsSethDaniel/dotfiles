@@ -1,0 +1,50 @@
+#!/bin/bash
+
+set -e
+
+declare -A install
+install=(
+    [gofumpt]="mvdan.cc/gofumpt@latest"
+    [gopls]="golang.org/x/tools/gopls@latest"
+    [shfmt]="mvdan.cc/sh/v3/cmd/shfmt@latest"
+    [gocmt]="github.com/cuonglm/gocmt@latest"
+    )
+
+declare -A version
+version=(
+    [gofumpt]="-version"
+    [gopls]="version"
+    [shfmt]="-version"
+)
+
+_do_action () {
+    if [[ $action == "install" ]]
+    then
+        echo "install: $2"
+        go install "${install[$2]}"
+    else
+        echo -n "$2: "
+        if [[ -n "${version[$2]}" ]]
+        then
+            eval "$2 ""${version[$2]}"
+        else
+            echo "unknown"
+        fi
+    fi
+}
+
+action="install"
+[[ "$1" == "-v" ]] && action="version" && shift
+
+if [[ -n "$*" ]]
+then
+    do="$*"
+else
+    do="${!install[@]}"
+fi
+
+for item in $do
+do
+    [[ -z "${install[$item]}" ]] && echo "cannot find target: $item" && continue
+    _do_action "$action" "$item"
+done

@@ -1,0 +1,139 @@
+[global_config]
+  borderless = True
+  extra_styling = False
+  scroll_tabbar = True
+  homogeneous_tabbar = False
+  inactive_color_offset = 0.4025974025974026
+[keybindings]
+  new_tab = <Primary><Alt>t
+  close_term = <Primary><Alt>w
+  copy = None
+  paste = <Primary><Alt>v
+  search = None
+  page_up = None
+  page_down = None
+  close_window = <Primary><Alt>c
+  toggle_zoom = None
+  next_tab = <Primary><Alt>k
+  prev_tab = <Primary><Alt>j
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+  switch_to_tab_6 = <Alt>6
+  switch_to_tab_7 = <Alt>7
+  switch_to_tab_8 = <Alt>8
+  switch_to_tab_9 = <Alt>9
+  switch_to_tab_10 = None
+  edit_window_title = None
+  layout_launcher = None
+  help = None
+[profiles]
+  [[default]]
+    icon_bell = False
+    cursor_color = "#aaaaaa"
+    font = DejaVuSansMono Nerd Font 18
+    foreground_color = "#ffffff"
+    show_titlebar = False
+    scrollbar_position = hidden
+    scrollback_infinite = True
+    use_system_font = False
+[layouts]
+  [[default]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 2560, 1415
+      title = /bin/bash
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12
+      last_active_term = 17b43baa-2cc5-4e29-9fba-7020bf58e22e, a7f8154d-e354-4c7d-9dab-3bd1f931f5bb, 9f8709be-5d23-43ab-8126-d492e7dc3d9c, 564282fc-820a-4008-93ec-01186fc127de, 811ca50d-2739-4cc9-b209-1782cdd75054
+      active_page = 4
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = 17b43baa-2cc5-4e29-9fba-7020bf58e22e
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = a7f8154d-e354-4c7d-9dab-3bd1f931f5bb
+    [[[terminal4]]]
+      type = Terminal
+      parent = child1
+      order = 2
+      profile = default
+      uuid = 9f8709be-5d23-43ab-8126-d492e7dc3d9c
+    [[[terminal5]]]
+      type = Terminal
+      parent = child1
+      order = 3
+      profile = default
+      uuid = 564282fc-820a-4008-93ec-01186fc127de
+    [[[terminal6]]]
+      type = Terminal
+      parent = child1
+      order = 4
+      profile = default
+      uuid = 811ca50d-2739-4cc9-b209-1782cdd75054
+  [[5Term]]
+    [[[child0]]]
+      type = Window
+      parent = ""
+      order = 0
+      position = 0:0
+      maximised = True
+      fullscreen = False
+      size = 2560, 1415
+      title = /bin/bash
+      last_active_window = True
+    [[[child1]]]
+      type = Notebook
+      parent = child0
+      order = 0
+      labels = None, None, None, None, None
+      last_active_term = 17b43baa-2cc5-4e29-9fba-7020bf58e22e, a7f8154d-e354-4c7d-9dab-3bd1f931f5bb, 9f8709be-5d23-43ab-8126-d492e7dc3d9c, 564282fc-820a-4008-93ec-01186fc127de, 811ca50d-2739-4cc9-b209-1782cdd75054
+      active_page = 4
+    [[[terminal2]]]
+      type = Terminal
+      parent = child1
+      order = 0
+      profile = default
+      uuid = 17b43baa-2cc5-4e29-9fba-7020bf58e22e
+    [[[terminal3]]]
+      type = Terminal
+      parent = child1
+      order = 1
+      profile = default
+      uuid = a7f8154d-e354-4c7d-9dab-3bd1f931f5bb
+    [[[terminal4]]]
+      type = Terminal
+      parent = child1
+      order = 2
+      profile = default
+      uuid = 9f8709be-5d23-43ab-8126-d492e7dc3d9c
+    [[[terminal5]]]
+      type = Terminal
+      parent = child1
+      order = 3
+      profile = default
+      uuid = 564282fc-820a-4008-93ec-01186fc127de
+    [[[terminal6]]]
+      type = Terminal
+      parent = child1
+      order = 4
+      profile = default
+      uuid = 811ca50d-2739-4cc9-b209-1782cdd75054
+[plugins]

@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# chrome (https://www.ubuntuupdates.org/ppa/google_chrome)
+echo "chrome"
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+echo
+
+# ms teams
+echo "msteams"
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" | sudo tee /etc/apt/sources.list.d/teams.list
+echo
+
+# vim (https://launchpad.net/~jonathonf/+archive/ubuntu/vim https://launchpad.net/~jonathonf/+archive/ubuntu/vim-daily)
+# echo "vim"
+# sudo add-apt-repository ppa:jonathonf/vim-daily
+# sudo add-apt-repository ppa:jonathonf/vim
+# sudo apt install vim-common vim-gtk vim-gui-common vim-runtime
+# sudo apt remove vim-tiny
+# echo
+
+# neovim (https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable)
+echo "neovim"
+sudo add-apt-repository ppa:neovim-ppa/unstable
+echo
+
+# install
+sudo apt update
+sudo apt install google-chrome-stable neovim

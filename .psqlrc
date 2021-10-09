@@ -1,0 +1,8 @@
+\timing on
+\set AUTOCOMMIT on
+\set ON_ERROR_ROLLBACK interactive
+\set HISTCONTROL ignoredups
+\set HISTSIZE 5000
+\set PROMPT1 %m@%n:%/%#%040
+\set PROMPT2 %m@%n:%/%#%040
+\x auto

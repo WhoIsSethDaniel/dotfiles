@@ -2,30 +2,24 @@
 
 Commands for initializing a new home directory
 
-## chezmoi Bootstrap
+## home Bootstrap
 
 install keychain (https://www.funtoo.org/Keychain)
 ```
 aptitude install keychain
 ```
 
-then chezmoi (https://github.com/twpayne/chezmoi)
-
+install git-crypt
 ```
-go install github.com/twpayne/chezmoi@latest
-chezmoi upgrade -f
-chezmoi init https://github.com/WhoIsSethDaniel/dotfiles --apply
-
-<config file?>
-$HOME/.config/chezmoi/chezmoi.toml
-encryption = "gpg"
-[gpg]
-    recipient = "seth@sethdaniel.org"
+apt install git-crypt
 ```
-https://github.com/twpayne/chezmoi
-https://github.com/twpayne/chezmoi/blob/master/docs/QUICKSTART.md
-https://github.com/twpayne/chezmoi/blob/master/docs/HOWTO.md
-https://github.com/twpayne/chezmoi/blob/master/docs/REFERENCE.md#chattr-attributes-targets
+
+setup home
+```
+git clone --bare git@githb.com:WhoIsSethDaniel/dotfiles ~/.dotfiles
+check config --local status.showUntrackedFiles no
+git-crypt unlock
+```
 
 ## Install Deb Repos
 

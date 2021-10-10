@@ -1,6 +1,6 @@
 local lsp = require 'lsp'
 
-vim.cmd[[ cabbrev GoDocAll GoDoc -all ]]
+vim.cmd [[ cabbrev GoDocAll GoDoc -all ]]
 
 require('goldsmith').config {
   system = {
@@ -60,5 +60,8 @@ require('goldsmith').config {
   },
   highlight = {
     current_symbol = false,
+  },
+  terminal = {
+    width = 120,
   },
 }

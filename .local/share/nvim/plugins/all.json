@@ -15,14 +15,6 @@
     "colorscheme": false,
     "enabled": true
   },
-  "chezmoi.nvim": {
-    "name": "chezmoi.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/chezmoi.nvim",
-    "clean_name": "chezmoi-nvim",
-    "config_file": "chezmoi-nvim.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
   "cmp-buffer": {
     "name": "cmp-buffer",
     "url": "https://github.com/hrsh7th/cmp-buffer",

@@ -23,7 +23,13 @@ require('goldsmith').config {
     ['super-close-any'] = { '<leader>cw' },
   },
   gobuild = {
+    focus = true,
+    width = 100,
     -- use_makefile = false,
+  },
+  gorun = {
+    focus = true,
+    width = 100,
   },
   testing = {
     pos = 'bottom',
@@ -60,8 +66,5 @@ require('goldsmith').config {
   },
   highlight = {
     current_symbol = false,
-  },
-  terminal = {
-    width = 120,
   },
 }

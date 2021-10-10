@@ -8,7 +8,7 @@ return {
       ['local'] = '',
       memoryMode = 'Normal',
       gofumpt = true,
-      usePlaceholders = true,
+      usePlaceholders = false,
       semanticTokens = true,
       staticcheck = true,
       hoverKind = 'Structured',

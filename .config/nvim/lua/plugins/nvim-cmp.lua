@@ -13,8 +13,14 @@ cmp.setup {
         path = '[Pth]',
         calc = '[Clc]',
         emoji = '[Emj]',
+        vsnip = '[Vsnip]',
       })[entry.source.name]
       return vim_item
+    end,
+  },
+  snippet = {
+    expand = function(args)
+      vim.fn['vsnip#anonymous'](args.body)
     end,
   },
   mapping = {
@@ -31,5 +37,6 @@ cmp.setup {
     { name = 'calc' },
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
+    { name = 'vsnip' },
   },
 }

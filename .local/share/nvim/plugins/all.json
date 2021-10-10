@@ -71,6 +71,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "cmp-vsnip": {
+    "name": "cmp-vsnip",
+    "url": "https://github.com/hrsh7th/cmp-vsnip",
+    "clean_name": "cmp-vsnip",
+    "config_file": "cmp-vsnip.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "focus.nvim": {
     "name": "focus.nvim",
     "url": "https://github.com/beauwilliams/focus.nvim",
@@ -295,6 +303,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "session-lens": {
+    "name": "session-lens",
+    "url": "https://github.com/rmagatti/session-lens",
+    "clean_name": "session-lens",
+    "config_file": "session-lens.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "telescope-fzy-native.nvim": {
     "name": "telescope-fzy-native.nvim",
     "url": "https://github.com/nvim-telescope/telescope-fzy-native.nvim",
@@ -399,19 +415,19 @@
     "colorscheme": false,
     "enabled": true
   },
-  "vim-test": {
-    "name": "vim-test",
-    "url": "https://github.com/vim-test/vim-test",
-    "clean_name": "vim-test",
-    "config_file": "vim-test.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
   "vim-unimpaired": {
     "name": "vim-unimpaired",
     "url": "https://github.com/tpope/vim-unimpaired",
     "clean_name": "vim-unimpaired",
     "config_file": "vim-unimpaired.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
+  "vim-vsnip": {
+    "name": "vim-vsnip",
+    "url": "https://github.com/hrsh7th/vim-vsnip",
+    "clean_name": "vim-vsnip",
+    "config_file": "vim-vsnip.lua",
     "colorscheme": false,
     "enabled": true
   },

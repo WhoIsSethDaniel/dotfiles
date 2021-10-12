@@ -181,7 +181,7 @@
     "clean_name": "nvim-lightbulb",
     "config_file": "nvim-lightbulb.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": false
   },
   "nvim-lsp-installer": {
     "name": "nvim-lsp-installer",

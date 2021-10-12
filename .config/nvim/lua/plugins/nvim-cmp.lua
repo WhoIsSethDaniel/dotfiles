@@ -2,6 +2,10 @@ require('cmp_nvim_lsp').setup()
 
 local cmp = require 'cmp'
 cmp.setup {
+  -- preselect = require'cmp.types'.cmp.PreselectMode.None,
+  completion = {
+    completeopt = 'menu,menuone,noinsert,noselect',
+  },
   formatting = {
     format = function(entry, vim_item)
       vim_item.kind = string.format('%s %s', require('lspkind').presets.default[vim_item.kind], vim_item.kind)

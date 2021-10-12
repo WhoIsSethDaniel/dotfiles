@@ -163,12 +163,14 @@ vim.opt.background = "dark"
 
 -- configuration for completion
 vim.opt.complete = { ".", "w", "b", "u" }
+vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
+
+-- messages
 -- I: turn off vim 'intro' message
 -- S: turn on search stats; gets wiped out?
 -- c: turn off menu messages
 -- s: turn off "search hit BOTTOM, continuing at TOP" message during search
-vim.opt.shortmess = "IScs"
-vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
+vim.opt.shortmess:append("IScs")
 
 -- turn on embedded highlighting for lua
 vim.g.vimsyn_embed = 'l'

@@ -51,9 +51,6 @@ require('goldsmith').config {
     golines = true,
     ['golangci-lint'] = true,
     revive = true,
-    -- golines = false,
-    -- ['golangci-lint'] = false,
-    -- revive = false,
     config = function()
       return lsp.get_config 'null-ls'
     end,

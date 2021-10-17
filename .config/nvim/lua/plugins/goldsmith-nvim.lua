@@ -25,7 +25,7 @@ require('goldsmith').config {
   gobuild = {
     focus = true,
     width = 100,
-    -- use_makefile = false,
+    use_makefile = false,
   },
   gorun = {
     focus = true,

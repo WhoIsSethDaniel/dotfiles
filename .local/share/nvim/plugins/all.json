@@ -1,4 +1,12 @@
 {
+  "Comment.nvim": {
+    "name": "Comment.nvim",
+    "url": "https://github.com/numToStr/Comment.nvim",
+    "clean_name": "Comment-nvim",
+    "config_file": "Comment-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "FixCursorHold.nvim": {
     "name": "FixCursorHold.nvim",
     "url": "https://github.com/antoinemadec/FixCursorHold.nvim",
@@ -181,7 +189,7 @@
     "clean_name": "nvim-lightbulb",
     "config_file": "nvim-lightbulb.lua",
     "colorscheme": false,
-    "enabled": false
+    "enabled": true
   },
   "nvim-lsp-installer": {
     "name": "nvim-lsp-installer",
@@ -308,14 +316,6 @@
     "url": "git@github.com:WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
     "clean_name": "toggle-lsp-diagnostics-nvim",
     "config_file": "toggle-lsp-diagnostics-nvim.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
-  "vim-commentary": {
-    "name": "vim-commentary",
-    "url": "https://github.com/tpope/vim-commentary",
-    "clean_name": "vim-commentary",
-    "config_file": "vim-commentary.lua",
     "colorscheme": false,
     "enabled": true
   },

@@ -22,18 +22,18 @@ require('goldsmith').config {
     ['build'] = { '<leader>gb' },
     ['super-close-any'] = { '<leader>cw' },
   },
-  gobuild = {
-    focus = true,
-    width = 100,
-    use_makefile = false,
-  },
-  gorun = {
-    focus = true,
-    width = 100,
-  },
   testing = {
-    pos = 'bottom',
     focus = false,
+    pos = 'bottom',
+  },
+  goinstall = {
+    focus = false,
+  },
+  goget = {
+    focus = false,
+  },
+  window = {
+    width = 100,
   },
   gopls = {
     config = function()

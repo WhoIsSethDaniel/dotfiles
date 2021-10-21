@@ -23,14 +23,20 @@ require('goldsmith').config {
     ['super-close-any'] = { '<leader>cw' },
   },
   testing = {
-    focus = false,
-    pos = 'bottom',
+    window = {
+      focus = false,
+      pos = 'bottom',
+    },
   },
   goinstall = {
-    focus = false,
+    window = {
+      focus = false,
+    },
   },
   goget = {
-    focus = false,
+    window = {
+      focus = false,
+    },
   },
   window = {
     width = 100,

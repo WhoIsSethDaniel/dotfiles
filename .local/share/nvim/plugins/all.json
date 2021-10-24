@@ -153,7 +153,7 @@
   },
   "lualine.nvim": {
     "name": "lualine.nvim",
-    "url": "https://github.com/shadmansaleh/lualine.nvim",
+    "url": "https://github.com/nvim-lualine/lualine.nvim",
     "clean_name": "lualine-nvim",
     "config_file": "lualine-nvim.lua",
     "colorscheme": false,

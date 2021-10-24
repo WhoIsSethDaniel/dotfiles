@@ -55,17 +55,11 @@ require('goldsmith').config {
     gofmt = false,
     gofumpt = false,
     golines = true,
-    ['golangci-lint'] = true,
-    revive = true,
+    ['golangci-lint'] = { config_file = '.golangci.yml' },
+    revive = { config_file = 'revive.toml' },
     config = function()
       return lsp.get_config 'null-ls'
     end,
-  },
-  ['golangci-lint'] = {
-    config_file = '.golangci.yml',
-  },
-  revive = {
-    config_file = 'revive.toml',
   },
   highlight = {
     current_symbol = false,

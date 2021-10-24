@@ -1,6 +1,8 @@
 local lsp_status = require 'lsp-status'
 lsp_status.register_progress()
 
+vim.diagnostic.config { severity_sort = true }
+
 local M = {}
 
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }

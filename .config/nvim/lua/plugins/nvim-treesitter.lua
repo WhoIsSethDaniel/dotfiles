@@ -19,16 +19,17 @@ local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 parser_config.perl = {
   install_info = {
     url = 'https://github.com/ganezdragon/tree-sitter-perl',
-    files = { 'src/parser.c' },
+    files = { 'src/parser.c', 'src/scanner.cc' },
+    generate_requires_npm = true,
   },
+  maintainers = { '@ganezdragon' },
   filetype = 'perl',
 }
 
-local parser_configs = require("nvim-treesitter.parsers").get_parser_configs()
-parser_configs.http = {
+parser_config.http = {
   install_info = {
-    url = "https://github.com/NTBBloodbath/tree-sitter-http",
-    files = { "src/parser.c" },
-    branch = "main",
+    url = 'https://github.com/NTBBloodbath/tree-sitter-http',
+    files = { 'src/parser.c' },
+    branch = 'main',
   },
 }

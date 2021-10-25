@@ -183,6 +183,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "nvim-gps": {
+    "name": "nvim-gps",
+    "url": "https://github.com/SmiteshP/nvim-gps",
+    "clean_name": "nvim-gps",
+    "config_file": "nvim-gps.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "nvim-lightbulb": {
     "name": "nvim-lightbulb",
     "url": "https://github.com/kosayoda/nvim-lightbulb",

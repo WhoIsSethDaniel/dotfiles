@@ -2,7 +2,7 @@ local function location()
   return [[%04l:%04c:%04L]]
 end
 
-local theme = require'lualine.themes.github'
+local theme = require 'lualine.themes.github'
 theme.inactive.a.fg = '#23d18b' -- green
 theme.inactive.b.fg = '#23d18b' -- green
 theme.inactive.c.fg = '#23d18b' -- green
@@ -15,8 +15,7 @@ require('lualine').setup {
     lualine_c = {
       'diff',
       { 'filename', file_status = true, path = 1 },
-      { "require'chezmoi'.status()" },
-      -- { 'diagnostics', sources = { 'nvim_lsp' }, color_error = '#FF0000', color_warn = '#00AAFF' },
+      { "require'nvim-gps'.get_location()", cond = require'nvim-gps'.is_available },
       { "require'lsp-status'.status()" },
       { "require'goldsmith'.status()" },
     },

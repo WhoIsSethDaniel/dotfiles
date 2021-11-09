@@ -111,6 +111,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "impatient.nvim": {
+    "name": "impatient.nvim",
+    "url": "https://github.com/lewis6991/impatient.nvim",
+    "clean_name": "impatient-nvim",
+    "config_file": "impatient-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "lir.nvim": {
     "name": "lir.nvim",
     "url": "https://github.com/tamago324/lir.nvim",

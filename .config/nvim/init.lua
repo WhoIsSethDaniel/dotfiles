@@ -1,3 +1,6 @@
+vim.cmd[[ packadd! impatient.nvim ]]
+require("impatient")
+
 -- an interesting discussion about options
 -- https://www.reddit.com/r/vim/comments/gczg99/what_are_some_essential_but_not_obvious_set_opts/
 --

@@ -15,11 +15,9 @@ chmod 755 ~/bin/stylua
 rm -f ${download}
 cd ..
 rmdir "${wd}"
-exit
 
 # other stuff
 sudo apt install npm shellcheck python-pip luarocks
 luarocks install --local luacheck
 pip install vim-vint
 update-go shfmt
-for s in bash vim go efm ; do vim +"LspInstall $s" ; done

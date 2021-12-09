@@ -25,6 +25,12 @@ echo "neovim"
 sudo add-apt-repository ppa:neovim-ppa/unstable
 echo
 
+# bluetooth updates
+echo "bluetooth codecs"
+sudo add-apt-repository ppa:berglh/pulseaudio-a2dp
+
 # install
 sudo apt update
-sudo apt install google-chrome-stable neovim
+sudo apt install google-chrome-stable
+sudo apt install neovim
+sudo apt install pulseaudio-modules-bt libldac

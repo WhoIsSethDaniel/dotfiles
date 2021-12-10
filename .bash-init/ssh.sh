@@ -45,7 +45,7 @@ fi
 if [ -n "$EXTRA_SSH_KEYS" -o -n "$SSH_KEYS" ] ; then
   check_for_program keychain
   if [ -n "$keychain" ] ; then
-    timeout 5s $keychain --quiet $EXTRA_SSH_KEYS $SSH_KEYS
+    $keychain --quiet $EXTRA_SSH_KEYS $SSH_KEYS
     source $HOME/.keychain/$HOSTNAME-sh
   fi
 fi

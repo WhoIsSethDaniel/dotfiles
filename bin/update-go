@@ -7,7 +7,6 @@ install=(
     [gofumpt]="mvdan.cc/gofumpt@latest"
     [gopls]="golang.org/x/tools/gopls@latest"
     [shfmt]="mvdan.cc/sh/v3/cmd/shfmt@latest"
-    [gocmt]="github.com/cuonglm/gocmt@latest"
     )
 
 declare -A version

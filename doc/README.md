@@ -87,10 +87,3 @@ install some pam modules
 sudo aptitude install libpam-ssh libpam-ssh-agent-auth
 # configure them
 ```
-
-## Done
-
-```
-homeshick -v -f link
-source $HOME/.bashrc
-```

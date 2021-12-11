@@ -33,7 +33,7 @@ First install the vim and neovim repositories and packages (see above)
 
 install xclip, some tools, and python3-neovim
 ```
-aptitude install xclip python3-neovim ripgrep fd-find
+aptitude install xclip python3-neovim ripgrep fd-find gcc g++
 ```
 
 install some fonts
@@ -44,7 +44,7 @@ current font: dejavu sans mono nerd font mono book
 
 ### Install all plugins
 ```
-vim-rebuild
+vim-check -b
 ```
 
 ### Run checkhealth and look for missing things
@@ -65,7 +65,8 @@ git clone git@github.com:tokuhirom/plenv.git $HOME/.plenv
 git clone git@github.com:tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
 git clone git@github.com:WhoIsSethDaniel/plenv-module-inspector.git ~/.plenv/plugins/module-inspector
 plenv install 5.34.0
-plenv version 5.34.0
+plenv global 5.34.0
+plenv install-cpanm
 cpanm PLS
 ```
 https://github.com/tokuhirom/plenv <br>
@@ -74,6 +75,7 @@ https://github.com/tokuhirom/Perl-Build
 ## Go
 
 ```
+apt install curl make
 install-go
 # maybe
 vim +GoInstallBinaries +q  

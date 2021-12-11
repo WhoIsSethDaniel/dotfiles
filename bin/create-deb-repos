@@ -29,8 +29,13 @@ echo
 echo "bluetooth codecs"
 sudo add-apt-repository ppa:berglh/pulseaudio-a2dp
 
+# git
+echo "git"
+sudo add-apt-repository ppa:git-core/ppa
+
 # install
 sudo apt update
 sudo apt install google-chrome-stable
 sudo apt install neovim
 sudo apt install pulseaudio-modules-bt libldac
+sudo apt install git git-man

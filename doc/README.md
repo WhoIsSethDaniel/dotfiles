@@ -17,7 +17,7 @@ apt install git-crypt
 setup home (https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3)
 ```
 git clone --bare https://github.com/WhoIsSethDaniel/dotfiles ~/.dotfiles
-git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
 . .bashrc
 check config --local status.showUntrackedFiles no
 mkdir ~/.config/dotfiles

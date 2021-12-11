@@ -25,6 +25,8 @@ git-crypt unlock <path to key>
 
 ```
 create-deb-repos
+# if sys76 host
+create-sys76-deb-repo
 ```
 
 ## (Neo)Vim

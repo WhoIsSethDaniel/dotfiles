@@ -45,6 +45,7 @@ current font: dejavu sans mono nerd font mono book
 ### Install all plugins
 ```
 vim-check -b
+vim-build-sources
 ```
 
 ### Run checkhealth and look for missing things

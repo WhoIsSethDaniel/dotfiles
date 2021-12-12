@@ -23,6 +23,7 @@ echo
 # neovim (https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable)
 echo "neovim"
 sudo add-apt-repository ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:neovim-ppa/stable
 echo
 
 # bluetooth updates

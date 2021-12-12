@@ -5,10 +5,10 @@
 # https://github.com/mpeterv/luacheck
 
 # install stylua
-download=stylua-0.9.3-linux.zip
+download=stylua-0.11.2-linux.zip
 wd=$(mktemp -d install-ls.XXXXXX)
 cd "$wd" || exit
-wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.9.3/${download}
+wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.11.2/${download}
 unzip ./*.zip
 mv -f stylua ~/bin
 chmod 755 ~/bin/stylua
@@ -17,7 +17,7 @@ cd ..
 rmdir "${wd}"
 
 # other stuff
-sudo apt install npm shellcheck python-pip-whl luarocks
+sudo apt install npm shellcheck python3-pip luarocks
 luarocks install --local luacheck
 pip install vim-vint
 update-go shfmt

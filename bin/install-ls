@@ -17,7 +17,7 @@ cd ..
 rmdir "${wd}"
 
 # other stuff
-sudo apt install npm shellcheck python-pip luarocks
+sudo apt install npm shellcheck python-pip-whl luarocks
 luarocks install --local luacheck
 pip install vim-vint
 update-go shfmt

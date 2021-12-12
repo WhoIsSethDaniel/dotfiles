@@ -16,7 +16,7 @@ apt install git-crypt
 
 setup home (https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3)
 ```
-git clone --bare https://github.com/WhoIsSethDaniel/dotfiles ~/.dotfiles
+git --git-dir=$HOME/.dotfiles --work-tree=$HOME clone --bare https://github.com/WhoIsSethDaniel/dotfiles ~/.dotfiles
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
 . .bashrc
 check config --local status.showUntrackedFiles no
@@ -73,6 +73,7 @@ install-ls
 git clone git@github.com:tokuhirom/plenv.git $HOME/.plenv
 git clone git@github.com:tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
 git clone git@github.com:WhoIsSethDaniel/plenv-module-inspector.git ~/.plenv/plugins/module-inspector
+. .bashrc
 plenv install 5.34.0
 plenv global 5.34.0
 plenv install-cpanm

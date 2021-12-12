@@ -26,4 +26,11 @@ make
 mv snago ~/bin
 popd
 
+mkdir -p $HOME/src
+pushd $HOME/src
+git clone https://github.com/WhoIsSethDaniel/vim-tools
+cd vim-tools 
+make install
+popd
+
 update-go

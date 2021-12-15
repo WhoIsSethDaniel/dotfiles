@@ -87,6 +87,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "dressing.nvim": {
+    "name": "dressing.nvim",
+    "url": "https://github.com/stevearc/dressing.nvim",
+    "clean_name": "dressing-nvim",
+    "config_file": "dressing-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "focus.nvim": {
     "name": "focus.nvim",
     "url": "https://github.com/beauwilliams/focus.nvim",

@@ -96,6 +96,23 @@ https://golang.org/dl/
 
 install some pam modules 
 ```
-sudo aptitude install libpam-ssh libpam-ssh-agent-auth
+sudo apt install libpam-ssh libpam-ssh-agent-auth
 # configure them
+```
+
+## jekyll
+
+install
+```
+sudo apt install jekyll ruby-dev
+git clone git@github.com:WhoIsSethDaniel/site
+# may require sudo
+cd site
+git submodule init
+git submodule update
+```
+
+run
+```
+bundle exec jekyll build
 ```

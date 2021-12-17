@@ -42,17 +42,7 @@ cmp.setup {
     { name = 'nvim_lua' },
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
+    { name = 'cmdline' },
+    -- { name = 'buffer' },
   },
 }
-
-require'cmp'.setup.cmdline(':', {
-  sources = {
-    { name = 'cmdline' }
-  }
-})
-
--- cmp.setup.cmdline('/', {
---     sources = {
---       { name = 'buffer' }
---     }
---   })

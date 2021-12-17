@@ -6,7 +6,7 @@ Commands for initializing a new home directory
 
 install keychain (https://www.funtoo.org/Keychain)
 ```
-aptitude install keychain
+apt install keychain
 ```
 
 install git-crypt
@@ -41,7 +41,7 @@ First install the vim and neovim repositories and packages (see above)
 
 install xclip, some tools, and python3-neovim
 ```
-aptitude install xclip python3-neovim ripgrep fd-find gcc g++
+apt install xclip python3-neovim ripgrep fd-find gcc g++ ncurses-term
 ```
 
 install some fonts

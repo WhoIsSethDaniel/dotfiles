@@ -20,7 +20,7 @@ if [ $OS == "FreeBSD" ] ; then
 else 
   set_alias ls 'ls -C -F -T 0'
 fi
-set_alias man 'LC_ALL=C man'
+# set_alias man 'LC_ALL=C man'
 
 # history
 # https://unix.stackexchange.com/questions/18212/bash-history-ignoredups-and-erasedups-setting-conflict-with-common-history

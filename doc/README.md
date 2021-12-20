@@ -107,6 +107,7 @@ install
 sudo apt install jekyll ruby-dev
 git clone git@github.com:WhoIsSethDaniel/site
 # may require sudo
+bundle
 cd site
 git submodule init
 git submodule update

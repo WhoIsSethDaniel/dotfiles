@@ -61,12 +61,8 @@ if [ -n "$manpath" -a -z "$MANPATH" ] ; then
 fi
 
 # prompt
-if [ -z "$ROOT_NAME" ] ; then
-  set_alias tpp truncated_path_prompt
-  set_var PS1 '\h:\$(tpp)> '
-else 
-  set_var PS1 '\h:'$ROOT_NAME':\w> '
-fi
+set_alias tpp truncated_path_prompt
+set_var PS1 '\h:\$(tpp)> '
 # set_var LS_COLORS 'di=01;32:ex=01;33'
 
 [ ! -d "$HOME/tmp" ] && mkdir $HOME/tmp

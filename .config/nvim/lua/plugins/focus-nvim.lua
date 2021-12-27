@@ -5,4 +5,5 @@ require('focus').setup {
   signcolumn = false,
   winhighlight = false,
   excluded_buftypes = { 'prompt' },
+  excluded_filetypes = { 'DressingInput' },
 }

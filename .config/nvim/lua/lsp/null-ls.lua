@@ -21,6 +21,7 @@ return {
         '-',
       },
     },
+    diag.editorconfig_checker,
     diag.vint,
     diag.shellcheck,
   },

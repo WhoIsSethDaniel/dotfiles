@@ -21,7 +21,7 @@ return {
         '-',
       },
     },
-    diag.editorconfig_checker,
+    diag.editorconfig_checker.with { filetypes = { 'go', 'gomod' } },
     diag.vint,
     diag.shellcheck,
   },

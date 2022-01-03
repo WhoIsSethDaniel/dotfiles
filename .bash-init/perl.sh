@@ -1,4 +1,3 @@
-unset_var PERL5LIB
 set_export_var PERL_CPANM_OPT "--notest"
 
 # check for plenv, do the needful if it exists

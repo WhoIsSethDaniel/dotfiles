@@ -127,6 +127,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "kanagawa.nvim": {
+    "name": "kanagawa.nvim",
+    "url": "https://github.com/rebelot/kanagawa.nvim/",
+    "clean_name": "kanagawa-nvim",
+    "config_file": "kanagawa-nvim.lua",
+    "colorscheme": true,
+    "enabled": true
+  },
   "lir.nvim": {
     "name": "lir.nvim",
     "url": "https://github.com/tamago324/lir.nvim",

@@ -2,10 +2,11 @@ local function location()
   return [[%04l:%04c:%04L]]
 end
 
-local theme = require 'lualine.themes.github'
-theme.inactive.a.fg = '#23d18b' -- green
-theme.inactive.b.fg = '#23d18b' -- green
-theme.inactive.c.fg = '#23d18b' -- green
+local theme = require 'lualine.themes.kanagawa'
+-- local theme = require 'lualine.themes.github'
+-- theme.inactive.a.fg = '#23d18b' -- green
+-- theme.inactive.b.fg = '#23d18b' -- green
+-- theme.inactive.c.fg = '#23d18b' -- green
 
 require('lualine').setup {
   options = { theme = theme, section_separators = '', component_separators = '', icons_enabled = true },

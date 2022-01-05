@@ -34,3 +34,5 @@
 /.dotfiles/
 /.go/
 /tmp/
+/.gnome/
+/.gnupg/

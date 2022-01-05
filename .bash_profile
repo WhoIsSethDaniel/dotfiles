@@ -1,1 +1,3 @@
-# this file intentionally left blank
+if [ -n "$SSH_CLIENT" ] ; then
+    . .bashrc
+fi

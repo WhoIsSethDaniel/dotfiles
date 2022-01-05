@@ -1,3 +1,3 @@
 if [ -n "$SSH_CLIENT" ] ; then
-    . .bashrc
+    . $HOME/.bashrc
 fi

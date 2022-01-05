@@ -1,10 +1,19 @@
 *.swp
 .pls_cache/
+/.wget-hsts
+/.sudo_as_admin_successful
+/.lesshst
+/.psql_history
+/.ssh/known_hosts
 /.bash-local
+/.viminfo
 /.bash_history
+/.keychain/
 /.local/share/nvim/lsp_servers/
 /.local/share/nvim/undo/
 /.local/share/nvim/sessions/
+/.local/share/nvim/swap/
+/.local/share/nvim/project_nvim/
 /.local/share/nvim/shada/main.shada
 /.local/share/nvim/telescope_history
 /.local/share/fonts/
@@ -16,6 +25,7 @@
 /lib/
 /src/
 /.config/nvim/pack/git-plugins/opt/
+/.config/dotfiles/
 /.bundle/cache/
 /.cache/
 /.config/gcloud/

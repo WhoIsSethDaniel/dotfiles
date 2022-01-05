@@ -1,5 +1,6 @@
 *.swp
 .pls_cache/
+
 /.wget-hsts
 /.sudo_as_admin_successful
 /.lesshst
@@ -8,6 +9,7 @@
 /.bash-local
 /.viminfo
 /.bash_history
+
 /.keychain/
 /.local/share/nvim/lsp_servers/
 /.local/share/nvim/undo/
@@ -22,8 +24,6 @@
 /.npm/
 /.vagrant.d/
 /.plenv/
-/lib/
-/src/
 /.config/nvim/pack/git-plugins/opt/
 /.config/dotfiles/
 /.bundle/cache/
@@ -33,6 +33,9 @@
 /.cpanm/
 /.dotfiles/
 /.go/
-/tmp/
 /.gnome/
 /.gnupg/
+
+/lib/
+/src/
+/tmp/

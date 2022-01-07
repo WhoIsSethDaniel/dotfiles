@@ -9,6 +9,9 @@
 /.bash-local
 /.viminfo
 /.bash_history
+/.ssh/agent-*
+/.config/monitors.xml*
+/.config/mimeapps.list
 
 /.local/*
 !/.local/share
@@ -33,11 +36,24 @@
 /.config/gcloud/
 /.config/google-chrome/
 /.config/nvim/pack/git-plugins/opt/
+/.config/autostart/
+/.config/dconf/
+/.config/evolution/
+/.config/gnome-*/
+/.config/google/
+/.config/gtk-*/
+/.config/ibus/
+/.config/menus/
+/.config/pulse/
+
 /.cpanm/
 /.dotfiles/
 /.go/
 /.gnome/
 /.gnupg/
+/.pki/
+/.openvpn/
+/.ssh/login-keys.d/
 
 /lib/
 /src/

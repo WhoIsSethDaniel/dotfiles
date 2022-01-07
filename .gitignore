@@ -9,6 +9,7 @@
 /.bash-local
 /.viminfo
 /.bash_history
+/.Xauthority
 /.ssh/agent-*
 /.config/monitors.xml*
 /.config/mimeapps.list
@@ -22,6 +23,7 @@
 /.local/share/nvim/sessions/*.vim
 /.local/share/nvim/project_nvim/project_history
 /.local/share/nvim/shada/main.shada
+/.local/share/nvim/swap/*.sw*
 /.local/share/nvim/telescope_history
 /.local/share/nvim/.netrwhist
 
@@ -45,6 +47,7 @@
 /.config/ibus/
 /.config/menus/
 /.config/pulse/
+/.config/configstore/
 
 /.cpanm/
 /.dotfiles/

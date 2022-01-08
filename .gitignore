@@ -1,18 +1,18 @@
 *.swp
 .pls_cache/
 
-/.wget-hsts
-/.sudo_as_admin_successful
+/.bash_history
+/.bash-local
+/.config/mimeapps.list
+/.config/monitors.xml*
 /.lesshst
 /.psql_history
-/.ssh/known_hosts
-/.bash-local
-/.viminfo
-/.bash_history
-/.Xauthority
 /.ssh/agent-*
-/.config/monitors.xml*
-/.config/mimeapps.list
+/.ssh/known_hosts
+/.sudo_as_admin_successful
+/.viminfo
+/.Xauthority
+/.wget-hsts
 
 /.local/*
 !/.local/share
@@ -27,35 +27,38 @@
 /.local/share/nvim/telescope_history
 /.local/share/nvim/.netrwhist
 
+/.bundle/cache/
+/.cache/
 /.keychain/
 /.luarocks/
 /.npm/
-/.vagrant.d/
 /.plenv/
-/.bundle/cache/
-/.cache/
-/.config/dotfiles/
-/.config/gcloud/
-/.config/google-chrome/
-/.config/nvim/pack/git-plugins/opt/
+/.vagrant.d/
+
 /.config/autostart/
+/.config/configstore/
 /.config/dconf/
+/.config/dotfiles/
 /.config/evolution/
+/.config/gcloud/
 /.config/gnome-*/
 /.config/google/
+/.config/google-chrome/
 /.config/gtk-*/
 /.config/ibus/
 /.config/menus/
+/.config/nvim/pack/git-plugins/opt/
+/.config/pcloud/
 /.config/pulse/
-/.config/configstore/
+/.config/sound-juicer/
 
 /.cpanm/
 /.dotfiles/
 /.go/
 /.gnome/
 /.gnupg/
-/.pki/
 /.openvpn/
+/.pki/
 /.ssh/login-keys.d/
 
 /lib/

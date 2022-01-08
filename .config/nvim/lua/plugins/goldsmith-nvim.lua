@@ -21,6 +21,7 @@ require('goldsmith').config {
     ['run'] = { '<leader>gr' },
     ['build'] = { '<leader>gb' },
     ['super-close-any'] = { '<leader>cw' },
+    ['contextual-help'] = { '<leader>h' },
   },
   testing = {
     window = {

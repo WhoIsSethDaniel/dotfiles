@@ -303,14 +303,6 @@
     "colorscheme": false,
     "enabled": true
   },
-  "pear-tree": {
-    "name": "pear-tree",
-    "url": "https://github.com/tmsvg/pear-tree",
-    "clean_name": "pear-tree",
-    "config_file": "pear-tree.lua",
-    "colorscheme": false,
-    "enabled": false
-  },
   "plenary.nvim": {
     "name": "plenary.nvim",
     "url": "https://github.com/nvim-lua/plenary.nvim",

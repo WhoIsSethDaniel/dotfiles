@@ -359,6 +359,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "toggleterm.nvim": {
+    "name": "toggleterm.nvim",
+    "url": "https://github.com/akinsho/toggleterm.nvim",
+    "clean_name": "toggleterm-nvim",
+    "config_file": "toggleterm-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "vim-conjoin": {
     "name": "vim-conjoin",
     "url": "https://github.com/flwyd/vim-conjoin",

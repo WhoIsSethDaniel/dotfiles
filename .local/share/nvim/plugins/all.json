@@ -199,6 +199,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "nvim-autopairs": {
+    "name": "nvim-autopairs",
+    "url": "https://github.com/windwp/nvim-autopairs",
+    "clean_name": "nvim-autopairs",
+    "config_file": "nvim-autopairs.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "nvim-bqf": {
     "name": "nvim-bqf",
     "url": "https://github.com/kevinhwang91/nvim-bqf",
@@ -301,7 +309,7 @@
     "clean_name": "pear-tree",
     "config_file": "pear-tree.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": false
   },
   "plenary.nvim": {
     "name": "plenary.nvim",

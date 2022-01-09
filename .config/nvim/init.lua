@@ -1,3 +1,4 @@
+-- cache modules
 vim.cmd[[ packadd! impatient.nvim ]]
 require("impatient")
 
@@ -174,6 +175,12 @@ vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
 -- c: turn off menu messages
 -- s: turn off "search hit BOTTOM, continuing at TOP" message during search
 vim.opt.shortmess:append("IScs")
+
+-- use filetype.lua instead of filetype.vim
+if vim.fn.has('nvim-0.7') == 1 then
+    vim.g.do_filetype_lua = 1
+    vim.g.did_load_filetypes = 0
+end
 
 -- turn on embedded highlighting for lua
 vim.g.vimsyn_embed = 'l'

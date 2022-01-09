@@ -32,6 +32,7 @@
 /.keychain/
 /.luarocks/
 /.npm/
+/.pcloud/
 /.plenv/
 /.vagrant.d/
 
@@ -46,11 +47,13 @@
 /.config/google-chrome/
 /.config/gtk-*/
 /.config/ibus/
+/.config/kazam/
 /.config/menus/
 /.config/nvim/pack/git-plugins/opt/
 /.config/pcloud/
 /.config/pulse/
 /.config/sound-juicer/
+/.config/totem/
 
 /.cpanm/
 /.dotfiles/

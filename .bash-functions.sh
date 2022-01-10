@@ -1,3 +1,5 @@
+#!/bin/bash
+
 #.bash-functions
 
 function check_for_program () {

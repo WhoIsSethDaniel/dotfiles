@@ -3,7 +3,7 @@
 source $HOME/.bash-functions.sh
 
 # source local overrides
-LOCAL_SH="$HOME/.bash-local"
+LOCAL_SH="$HOME/.bash-local.sh"
 if [ -e "$LOCAL_SH" ] ; then
   source $LOCAL_SH
 fi

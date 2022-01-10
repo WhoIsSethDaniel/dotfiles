@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # deal with ssh keys
 SSH_KEY_DIR=$HOME/.ssh/login-keys.d
 for TYPE in dsa rsa ed25519 ; do

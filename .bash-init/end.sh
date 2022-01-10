@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # source any available bash completion recipes
 if [ -r /etc/bash_completion ] ; then
   . /etc/bash_completion

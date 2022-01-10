@@ -1,3 +1,5 @@
+#!/bin/bash
+
 GO_BASE_DIR="${HOME}/.go"
 GO_ROOT_DIR="${GO_BASE_DIR}/current"
 

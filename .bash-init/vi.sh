@@ -1,3 +1,5 @@
+#!/bin/bash
+
 set_prog_alias vi nvim vim vi
 set_prog_alias vim nvim vim vi
 set_export_prog_var VISUAL nvim vim vi

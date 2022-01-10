@@ -1,3 +1,5 @@
+#!/bin/bash
+
 source $HOME/.bash-functions.sh
 
 # source local overrides

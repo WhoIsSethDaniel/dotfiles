@@ -155,6 +155,7 @@ vim.opt.sessionoptions:append("resize,winpos,terminal")
 -- terminal
 -- scroll buffer; 100000 is the max
 vim.opt.scrollback = 100000
+vim.opt.scrolloff = 25
 
 -- use rg for grep
 vim.opt.grepprg = "rg --vimgrep --no-heading --smart-case"

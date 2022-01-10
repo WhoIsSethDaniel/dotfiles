@@ -1,0 +1,20 @@
+[user]
+    name = Seth Daniel
+    email = seth@sethdaniel.org
+[color]
+    ui = off
+[commit]
+    verbose = true
+[core]
+    excludesfile = ~/.gitignore
+    editor = nvim
+; see git help rerere for more info
+[rerere]
+    enabled = true
+    autoUpdate = true
+[rebase]
+    autoSquash = true
+[submodule]
+    recurse = true
+[includeIf "gitdir:~/src/work/"]
+    path = ~/.config/dotfiles/main/git/config

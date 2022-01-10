@@ -18,5 +18,3 @@
     recurse = true
 [includeIf "gitdir:~/src/work/"]
     path = ~/.config/dotfiles/main/git/config
-[include]
-    path = ~/doesnotexit

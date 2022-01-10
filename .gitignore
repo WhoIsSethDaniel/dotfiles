@@ -2,7 +2,7 @@
 .pls_cache/
 
 /.bash_history
-/.bash-local
+/.bash-local.sh
 /.config/mimeapps.list
 /.config/monitors.xml*
 /.lesshst

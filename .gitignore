@@ -3,6 +3,7 @@
 
 /.bash_history
 /.bash-local.sh
+/.config/gnome-initial-setup-done
 /.config/mimeapps.list
 /.config/monitors.xml*
 /.lesshst
@@ -27,15 +28,6 @@
 /.local/share/nvim/telescope_history
 /.local/share/nvim/.netrwhist
 
-/.bundle/cache/
-/.cache/
-/.keychain/
-/.luarocks/
-/.npm/
-/.pcloud/
-/.plenv/
-/.vagrant.d/
-
 /.config/autostart/
 /.config/configstore/
 /.config/dconf/
@@ -55,14 +47,28 @@
 /.config/sound-juicer/
 /.config/totem/
 
+/.bundle/cache/
+/.cache/
 /.cpanm/
 /.dotfiles/
 /.go/
 /.gnome/
 /.gnupg/
+/.keychain/
+/.luarocks/
+/.maxmind_vagrant/
+/.npm/
 /.openvpn/
+/.pcloud/
 /.pki/
+/.plenv/
 /.ssh/login-keys.d/
+/.vagrant.d/
+
+/bin/ec
+/bin/snago
+/bin/stylua
+/bin/vint
 
 /lib/
 /src/

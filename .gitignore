@@ -51,9 +51,9 @@
 /.cache/
 /.cpanm/
 /.dotfiles/
-/.go/
 /.gnome/
 /.gnupg/
+/.go/
 /.keychain/
 /.luarocks/
 /.maxmind_vagrant/

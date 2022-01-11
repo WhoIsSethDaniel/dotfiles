@@ -53,6 +53,7 @@ fi
 
 # search paths
 set_post_path_var PATH $HOME/bin
+set_pre_path_var PATH /snap/bin
 set_export_pre_path_var LD_LIBRARY_PATH /usr/lib
 
 # man pages

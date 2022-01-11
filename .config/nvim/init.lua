@@ -178,11 +178,11 @@ vim.opt.completeopt = { "menu", "menuone", "noselect", "noinsert" }
 vim.opt.shortmess:append("IScs")
 
 -- use filetype.lua instead of filetype.vim
-if vim.fn.has('nvim-0.7') == 1 then
-    vim.g.do_filetype_lua = 1
-    vim.g.did_load_filetypes = 0
-end
-
+-- if vim.fn.has('nvim-0.7') == 1 then
+--     vim.g.do_filetype_lua = 1
+--     vim.g.did_load_filetypes = 0
+-- end
+--
 -- turn on embedded highlighting for lua
 vim.g.vimsyn_embed = 'l'
 

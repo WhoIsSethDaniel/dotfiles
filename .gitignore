@@ -9,6 +9,7 @@
 /.lesshst
 /.psql_history
 /.ssh/agent-*
+/.ssh/authorized_keys
 /.ssh/known_hosts
 /.sudo_as_admin_successful
 /.viminfo

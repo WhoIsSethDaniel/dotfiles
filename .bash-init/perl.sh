@@ -28,3 +28,12 @@ if [ -d "$HOME/.plenv/bin" ] ; then
     esac
   }
 fi
+
+if [ -d "$HOME/lib/perl5" ] ; then
+  set_var PERL_CPANM_OPT $PERL_CPANM_OPT" --local-lib=$HOME/lib/perl5"
+  set_pre_path_var PATH $HOME/lib/perl5/bin
+  set_pre_path_var PERL5LIB $HOME/lib/perl5/lib/perl5
+fi
+
+clean_path PERL5LIB
+

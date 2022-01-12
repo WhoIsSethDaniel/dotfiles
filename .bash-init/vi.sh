@@ -9,9 +9,6 @@ set_alias vim-ls vim-list
 
 set_export_var MANPAGER "$EDITOR +Man!"
 
-set_export_var XDG_DATA_HOME "$HOME/.local/share"
-set_export_var XDG_CONFIG_HOME "$HOME/.config"
-
 # sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60 >/dev/null 2>/dev/null
 # sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60 >/dev/null 2>/dev/null
 # sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60 /dev/null 2>/dev/null

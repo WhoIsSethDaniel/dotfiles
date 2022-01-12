@@ -56,6 +56,10 @@ set_post_path_var PATH $HOME/bin
 set_pre_path_var PATH /snap/bin
 set_export_pre_path_var LD_LIBRARY_PATH /usr/lib
 
+# XDG
+set_export_var XDG_DATA_HOME "$HOME/.local/share"
+set_export_var XDG_CONFIG_HOME "$HOME/.config"
+
 # man pages
 check_for_program manpath
 if [ -n "$manpath" -a -z "$MANPATH" ] ; then

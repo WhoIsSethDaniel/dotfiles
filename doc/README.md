@@ -20,7 +20,7 @@ git --git-dir=$HOME/.dotfiles --work-tree=$HOME clone --bare https://github.com/
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
 . .bashrc
 check config status.showUntrackedFiles no
-check config core.excludesfile ~/.config/dotfiles/main/git/ignore
+check config core.excludesfile ~/.config/dotfiles/global/git/ignore
 mkdir ~/.config/dotfiles
 cd ~/.config/dotfiles
 git clone git@github.com:WhoIsSethDaniel/dotfiles-home main

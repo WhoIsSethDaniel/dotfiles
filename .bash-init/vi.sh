@@ -8,6 +8,9 @@ set_export_prog_var EDITOR nvim vim vi
 set_alias vim-ls vim-list
 
 set_export_var MANPAGER "$EDITOR +Man!"
+# for running vint
+set_export_post_path_var PYTHONPATH "$HOME/lib/python3.9/site-packages"
+clean_path PYTHONPATH
 
 # sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60 >/dev/null 2>/dev/null
 # sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60 >/dev/null 2>/dev/null

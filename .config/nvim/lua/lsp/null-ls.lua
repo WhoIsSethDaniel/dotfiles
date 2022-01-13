@@ -33,7 +33,7 @@ return {
         '-',
       },
     },
-    diag.editorconfig_checker.with { filetypes = { 'go', 'gomod' } },
+    diag.editorconfig_checker.with { filetypes = { 'go', 'gomod', 'lua' } },
     diag.vint,
     diag.shellcheck,
   },

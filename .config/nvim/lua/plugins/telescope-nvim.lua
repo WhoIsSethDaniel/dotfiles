@@ -1,10 +1,10 @@
 vim.api.nvim_set_keymap(
   'n',
   '<leader>ff',
-  '<cmd>lua require(\'telescope.builtin\').find_files({ hidden = true, no_ignore = true, search_dirs = { "~" } })<cr>',
+  '<cmd>lua require(\'telescope.builtin\').find_files({ hidden = true, search_dirs = { "~" } })<cr>',
   { noremap = true }
 )
-vim.api.nvim_set_keymap('n', '<leader>fc', "<cmd>lua require('telescope.builtin').find_files({ no_ignore = true })<cr>", { noremap = true })
+vim.api.nvim_set_keymap('n', '<leader>fc', "<cmd>lua require('telescope.builtin').find_files()<cr>", { noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
 vim.api.nvim_set_keymap(
   'n',

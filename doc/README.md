@@ -19,7 +19,8 @@ setup home (https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-i
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME clone --bare https://github.com/WhoIsSethDaniel/dotfiles ~/.dotfiles
 git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
 . .bashrc
-check config --local status.showUntrackedFiles no
+check config status.showUntrackedFiles no
+check config core.excludesfile ~/.config/dotfiles/main/git/ignore
 mkdir ~/.config/dotfiles
 cd ~/.config/dotfiles
 git clone git@github.com:WhoIsSethDaniel/dotfiles-home main

@@ -11,6 +11,7 @@ null.register {
     command = 'perlimports',
     to_stdin = true,
     args = { '--read-stdin', '--cache', '--filename', '$FILENAME' },
+    timeout = 10000,  -- this can take a long time
   },
 }
 

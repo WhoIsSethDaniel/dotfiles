@@ -13,3 +13,5 @@ local function setup_servers()
 end
 
 setup_servers()
+
+-- require('null-ls').setup(require('lsp').get_config('null-ls'))

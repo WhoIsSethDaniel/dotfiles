@@ -200,7 +200,8 @@ if vim.fn.has 'nvim-0.7' == 1 then
 end
 
 -- turn on embedded highlighting for lua
-vim.g.vimsyn_embed = 'l'
+--   perhaps not relevant with treesitter
+-- vim.g.vimsyn_embed = 'l'
 
 -- Disable a bunch of unused, builtin plugins
 vim.g.loaded_netrw = 1

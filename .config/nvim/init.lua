@@ -157,10 +157,11 @@ vim.opt.sessionoptions:append 'resize,winpos,terminal'
 vim.opt.scrollback = 100000
 -- vim.opt.scrolloff = 25
 
+-- commented out: use telescope instead
 -- use rg for grep
-vim.opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
-vim.opt.grepformat = { '%f:%l:%c:%m', '%f:%l:%m' }
-vim.api.nvim_command 'command -nargs=* Grep silent! grep! <args> | cwindow | redraw!'
+-- vim.opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
+-- vim.opt.grepformat = { '%f:%l:%c:%m', '%f:%l:%m' }
+-- vim.api.nvim_command 'command -nargs=* Grep silent! grep! <args> | cwindow | redraw!'
 
 -- color scheme -- set actual scheme in colorscheme.vim
 vim.opt.termguicolors = true
@@ -222,7 +223,7 @@ vim.g.loaded_matchit = 1
 
 -- \ is the default
 vim.g.mapleader = ' '
--- var.g.maplocalleader = '\'
+-- vim.g.maplocalleader = '\'
 
 -- key mappings
 -- vim.api.nvim_set_keymap("n", "<leader>wt", ":new<cr><C-W>L:terminal<cr>", { silent = true, noremap = true })

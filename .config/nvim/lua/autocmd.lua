@@ -48,14 +48,3 @@ augroup END
 ]],
   false
 )
-
--- normalize windows when a new one opens / closes
--- vim.api.nvim_exec(
---   [[
--- augroup on_window_event
---     autocmd!
---     autocmd WinNew,WinEnter,WinClosed * wincmd =
--- augroup END
--- ]],
---   false
--- )

@@ -10,7 +10,7 @@ local opts = {
     '~/.config/nvim',
     '~/.config/nvim/lua',
     '~/src/site',
-    vim.fn.filter(vim.fn.glob('~/src/lgwt/**', false, true), 'isdirectory(v:val)'),
+    vim.fn.filter(vim.fn.glob('~/.config/dotfiles/**', false, true), 'isdirectory(v:val)'),
     vim.fn.filter(vim.fn.glob('~/.config/nvim/lua/**', false, true), 'isdirectory(v:val)'),
     vim.fn.filter(vim.fn.glob('~/src/site/**', false, true), 'isdirectory(v:val)'),
   },

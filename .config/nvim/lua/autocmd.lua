@@ -2,12 +2,12 @@
 vim.api.nvim_exec(
   [[
 augroup doc_settings_and_win
-    autocmd!
-    autocmd FileType help,man wincmd L
-    autocmd FileType lir,help,man setlocal nonumber norelativenumber signcolumn=no
-    autocmd FileType lir,help,man setlocal bufhidden=wipe
+  autocmd!
+  autocmd FileType help,man wincmd L
+  autocmd FileType lir,help,man setlocal nonumber norelativenumber signcolumn=no
+  autocmd FileType lir,help,man setlocal bufhidden=wipe
 augroup END
-]],
+  ]],
   false
 )
 
@@ -15,15 +15,15 @@ augroup END
 vim.api.nvim_exec(
   [[
 augroup terminal_settings
-    autocmd!
-    " do not show line numbers; start in insert mode
-    autocmd TermOpen * lua require'functions'.terminal_open_setup()
-    autocmd BufEnter term://* startinsert
-    " do not show "process exited 0" when exiting
-    autocmd BufLeave term://* stopinsert
-    autocmd TermClose term://*bash call nvim_input('<CR>')
+  autocmd!
+  " do not show line numbers; start in insert mode
+  autocmd TermOpen * lua require'functions'.terminal_open_setup()
+  autocmd BufEnter term://* startinsert
+  " do not show "process exited 0" when exiting
+  autocmd BufLeave term://* stopinsert
+  autocmd TermClose term://*bash call nvim_input('<CR>')
 augroup END
-]],
+  ]],
   false
 )
 
@@ -31,10 +31,10 @@ augroup END
 vim.api.nvim_exec(
   [[
 augroup create_missing_dirs
-    autocmd!
-    autocmd BufWritePre * lua require'functions'.create_missing_dirs()
+  autocmd!
+  autocmd BufWritePre * lua require'functions'.create_missing_dirs()
 augroup END
-]],
+  ]],
   false
 )
 
@@ -42,9 +42,20 @@ augroup END
 vim.api.nvim_exec(
   [[
 augroup vim_on_start
-    autocmd!
-    autocmd VimEnter * lua require'functions'.rebuild_help()
+  autocmd!
+  autocmd VimEnter * lua require'functions'.rebuild_help()
 augroup END
-]],
+  ]],
+  false
+)
+
+-- highlighted yank
+vim.api.nvim_exec(
+  [[
+augroup highlight_yank
+  autocmd!
+  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500, on_visual=true})
+augroup END
+  ]],
   false
 )

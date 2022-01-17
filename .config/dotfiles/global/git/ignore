@@ -1,6 +1,9 @@
 /.bash_history
 /.bash-local.sh
+/.check-scan-files-permitted.toml
+/.check-scan-files-state.json
 /.config/gnome-initial-setup-done
+/.config/hub
 /.config/mimeapps.list
 /.config/monitors.xml*
 /.lesshst
@@ -9,6 +12,7 @@
 /.ssh/authorized_keys
 /.ssh/known_hosts
 /.sudo_as_admin_successful
+/.vault-token
 /.viminfo
 /.Xauthority
 /.wget-hsts
@@ -69,4 +73,5 @@
 /bin/vint
 
 /lib/
+/snap/
 /src/

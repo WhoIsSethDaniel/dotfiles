@@ -351,6 +351,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "terminus": {
+    "name": "terminus",
+    "url": "https://github.com/wincent/terminus",
+    "clean_name": "terminus",
+    "config_file": "terminus.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "toggle-lsp-diagnostics.nvim": {
     "name": "toggle-lsp-diagnostics.nvim",
     "url": "git@github.com:WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",

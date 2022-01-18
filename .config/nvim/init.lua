@@ -230,6 +230,9 @@ vim.g.mapleader = ' '
 -- vim.api.nvim_set_keymap("n", "<leader>wt", ":new<cr><C-W>L:terminal<cr>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>wo', '<C-W>v:enew<cr>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>ev', ':edit $MYVIMRC<cr>', { silent = true, noremap = true })
+-- correctly paste from the * or + register (possibly others too) when using c_<C-R>
+-- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315
+vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r>' : '<c-r><c-o>' ]], false)
 
 -- autocommands
 require 'autocmd'

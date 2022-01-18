@@ -180,10 +180,6 @@ vim.opt.shortmess:append 'IScs'
 
 -- use filetype.lua instead of filetype.vim
 if vim.fn.has 'nvim-0.7' == 1 then
-  -- the following 2 lines have been moved to ./filetype.lua
-  -- and may be removed at some point in the
-  -- future when all nvim's are at least 0.7.0;
-  -- see: https://github.com/neovim/neovim/issues/14090#issuecomment-1014888611
   vim.g.do_filetype_lua = 1
   vim.g.did_load_filetypes = 0
 

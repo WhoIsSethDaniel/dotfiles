@@ -103,14 +103,6 @@
     "colorscheme": false,
     "enabled": true
   },
-  "github-nvim-theme": {
-    "name": "github-nvim-theme",
-    "url": "https://github.com/projekt0n/github-nvim-theme",
-    "clean_name": "github-nvim-theme",
-    "config_file": "github-nvim-theme.lua",
-    "colorscheme": true,
-    "enabled": true
-  },
   "goldsmith.nvim": {
     "name": "goldsmith.nvim",
     "url": "git@github.com:WhoIsSethDaniel/goldsmith.nvim",

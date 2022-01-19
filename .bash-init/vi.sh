@@ -27,7 +27,7 @@ function vim-cd() {
     elif [[ $1 == "local" || $1 == "loc" ]]; then
         cd "$locdir"
     elif [[ $1 == "plugins" ]]; then
-        cd "$locdir/plugins"
+        cd "$pldir"
     elif [[ $1 == "cache" ]]; then
         cd "$cachedir"
     elif [[ -d "$pldir/$1" ]]; then

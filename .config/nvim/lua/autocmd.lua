@@ -44,6 +44,7 @@ vim.api.nvim_exec(
 augroup vim_on_start
   autocmd!
   autocmd VimEnter * lua require'functions'.rebuild_help()
+  autocmd VimEnter * TSUpdate
 augroup END
   ]],
   false

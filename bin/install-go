@@ -4,7 +4,7 @@ rmtmpdir () {
     [[ -n $tmpdir ]] && rm -rf $tmpdir
 }
 
-GO_VERSION=1.17.5
+GO_VERSION=1.17.6
 tmpdir=$(mktemp -q -d --tmpdir install-go.XXXXXXX)
 trap rmtmpdir EXIT
 pushd $tmpdir

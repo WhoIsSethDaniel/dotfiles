@@ -3,9 +3,9 @@
 set -e
 
 declare -A install
+#   [gofumpt]="mvdan.cc/gofumpt@latest"
+#   [gopls]="golang.org/x/tools/gopls@latest"
 install=(
-    [gofumpt]="mvdan.cc/gofumpt@latest"
-    [gopls]="golang.org/x/tools/gopls@latest"
     [shfmt]="mvdan.cc/sh/v3/cmd/shfmt@latest"
     )
 

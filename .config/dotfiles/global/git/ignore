@@ -34,6 +34,7 @@
 /.config/configstore/
 /.config/dconf/
 /.config/dotfiles/main/
+/.config/dotfiles/home/
 /.config/evolution/
 /.config/gcloud/
 /.config/gnome-*/
@@ -52,7 +53,6 @@
 /.bundle/cache/
 /.cache/
 /.cpanm/
-/.dotfiles/
 /.gnome/
 /.gnupg/
 /.go/

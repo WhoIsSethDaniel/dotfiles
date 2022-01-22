@@ -35,5 +35,6 @@ if [ -d "$HOME/lib/perl5" ] ; then
   set_pre_path_var PERL5LIB "$HOME/lib/perl5/lib/perl5"
 fi
 
+export_var PERL5LIB
 clean_path PERL5LIB
 

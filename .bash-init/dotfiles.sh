@@ -12,6 +12,9 @@ function gh-cd () {
   cd "$HOME/.config/dotfiles"
 }
 
+check config status.showUntrackedFiles no
+check config core.excludesfile ~/.config/dotfiles/global/git/ignore
+
 for DIR in "$HOME/.config/dotfiles/"*/bin; do
   set_post_path_var PATH "$DIR"
 done

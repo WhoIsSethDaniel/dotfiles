@@ -16,13 +16,11 @@ apt install git-crypt
 
 setup home (https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3)
 ```
-git --git-dir=$HOME/.dotfiles --work-tree=$HOME clone --bare https://github.com/WhoIsSethDaniel/dotfiles ~/.dotfiles
-git --git-dir=$HOME/.dotfiles --work-tree=$HOME checkout -f
+mkdir -p $HOME/.config/dotfiles
+cd $HOME/.config/dotfiles
+git --git-dir=$HOME/.config/dotfiles/home --work-tree=$HOME clone --bare https://github.com/WhoIsSethDaniel/dotfiles $HOME/.config/dotfiles/home
+git --git-dir=$HOME/.config/dotfiles/home --work-tree=$HOME checkout -f
 . .bashrc
-check config status.showUntrackedFiles no
-check config core.excludesfile ~/.config/dotfiles/global/git/ignore
-mkdir ~/.config/dotfiles
-cd ~/.config/dotfiles
 git clone git@github.com:WhoIsSethDaniel/dotfiles-home main
 cd ~
 git-crypt unlock <path to key>

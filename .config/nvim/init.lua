@@ -195,6 +195,7 @@ if vim.fn.has 'nvim-0.7' == 1 then
           return 'perl'
         end
       end,
+      t = 'perl',
     },
   }
 end

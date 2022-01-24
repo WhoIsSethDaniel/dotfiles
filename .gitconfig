@@ -16,5 +16,9 @@
     autoSquash = true
 [submodule]
     recurse = true
+[merge]
+    conflictStyle = zdiff3
+[diff]
+    algorithm = histogram
 [includeIf "gitdir:~/src/work/"]
     path = ~/.config/dotfiles/main/git/config

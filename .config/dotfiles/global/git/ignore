@@ -35,6 +35,7 @@
 /.config/dconf/
 /.config/dotfiles/main/
 /.config/dotfiles/home/
+/.config/dotfiles/perl-module-inspector/
 /.config/evolution/
 /.config/gcloud/
 /.config/gnome-*/

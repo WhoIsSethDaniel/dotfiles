@@ -6,6 +6,7 @@ declare -A install
 #   [gofumpt]="mvdan.cc/gofumpt@latest"
 #   [gopls]="golang.org/x/tools/gopls@latest"
 install=(
+    [editorconfig-checker]="github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest"
     [shfmt]="mvdan.cc/sh/v3/cmd/shfmt@latest"
     )
 
@@ -14,6 +15,7 @@ version=(
     [gofumpt]="-version"
     [gopls]="version"
     [shfmt]="-version"
+    [editorconfig-checker]="-version"
 )
 
 _do_action () {

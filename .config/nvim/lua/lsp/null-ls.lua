@@ -11,7 +11,7 @@ null.register {
     command = 'perlimports',
     to_stdin = true,
     args = { '--read-stdin', '--cache', '--filename', '$FILENAME' },
-    timeout = 10000,  -- this can take a long time
+    timeout = 10000, -- this can take a long time
   },
 }
 
@@ -34,7 +34,7 @@ return {
         '-',
       },
     },
-    diag.editorconfig_checker.with { filetypes = { 'go', 'gomod', 'lua' } },
+    diag.editorconfig_checker.with { command = 'editorconfig-checker', filetypes = { 'go', 'gomod', 'lua' } },
     diag.vint,
     diag.shellcheck,
   },

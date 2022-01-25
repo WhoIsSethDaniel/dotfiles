@@ -197,6 +197,19 @@ if vim.fn.has 'nvim-0.7' == 1 then
       end,
       t = 'perl',
     },
+    pattern = {
+      -- catch-all -- primarily for files with no extension
+      ['.*'] = {
+        function(path, bufnr)
+          if vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:match 'perl' then
+            return 'perl'
+          elseif vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:match 'bash' then
+            return 'bash'
+          end
+        end,
+        { priority = -1 },
+      },
+    },
   }
 end
 

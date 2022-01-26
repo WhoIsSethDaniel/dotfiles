@@ -6,6 +6,7 @@
 /.config/hub
 /.config/mimeapps.list
 /.config/monitors.xml*
+/.config/nvim/lua/all.lua
 /.lesshst
 /.psql_history
 /.ssh/agent-*

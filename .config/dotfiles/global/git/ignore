@@ -46,6 +46,7 @@
 /.config/ibus/
 /.config/kazam/
 /.config/menus/
+/.config/mm/
 /.config/nvim/pack/git-plugins/opt/
 /.config/pcloud/
 /.config/pulse/

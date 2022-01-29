@@ -123,7 +123,7 @@ vim.opt.backupdir = vim.env.XDG_DATA_HOME .. '/nvim/backup'
 vim.opt.ttimeout = true
 vim.opt.ttimeoutlen = 50
 
--- set by sensible
+-- below is the default
 -- vim.opt.backspace = { "indent", "eol", "start" }
 
 -- show the command being typed

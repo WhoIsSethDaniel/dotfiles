@@ -8,6 +8,7 @@ declare -A install
 install=(
     [editorconfig-checker]="github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest"
     [shfmt]="mvdan.cc/sh/v3/cmd/shfmt@latest"
+    [misspell]="github.com/client9/misspell/cmd/misspell@latest"
     )
 
 declare -A version
@@ -15,6 +16,7 @@ version=(
     [gofumpt]="-version"
     [gopls]="version"
     [shfmt]="-version"
+    [misspell]="-v"
     [editorconfig-checker]="-version"
 )
 

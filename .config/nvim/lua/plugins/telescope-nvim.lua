@@ -4,7 +4,12 @@ vim.api.nvim_set_keymap(
   '<cmd>lua require(\'telescope.builtin\').find_files({ hidden = true, search_dirs = { "~" } })<cr>',
   { noremap = true }
 )
-vim.api.nvim_set_keymap('n', '<leader>fc', "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>", { noremap = true })
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>fc',
+  "<cmd>lua require('telescope.builtin').find_files({ hidden = true })<cr>",
+  { noremap = true }
+)
 vim.api.nvim_set_keymap('n', '<leader>fg', "<cmd>lua require('telescope.builtin').live_grep()<cr>", { noremap = true })
 vim.api.nvim_set_keymap(
   'n',
@@ -35,7 +40,7 @@ require('telescope').setup {
     file_sorter = require('telescope.sorters').get_fuzzy_file,
     file_ignore_patterns = {},
     generic_sorter = require('telescope.sorters').get_generic_fuzzy_sorter,
-    path_display = { "truncate" },
+    path_display = { 'truncate' },
     winblend = 0,
     layout_config = {
       horizontal = { mirror = false },

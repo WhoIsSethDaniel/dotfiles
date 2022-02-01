@@ -204,7 +204,7 @@ if vim.fn.has 'nvim-0.7' == 1 then
           if vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:match 'perl' then
             return 'perl'
           elseif vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:match 'bash' then
-            return 'bash'
+            return 'sh'
           end
         end,
         { priority = -1 },

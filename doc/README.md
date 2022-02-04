@@ -51,7 +51,7 @@ current font: dejavu sans mono nerd font mono book
 
 ### Install all plugins
 ```
-vim-check -b
+vim-check
 vim-build-sources
 ```
 

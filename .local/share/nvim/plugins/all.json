@@ -63,6 +63,22 @@
     "colorscheme": false,
     "enabled": true
   },
+  "cmp-nvim-lsp-document-symbol": {
+    "name": "cmp-nvim-lsp-document-symbol",
+    "url": "https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol",
+    "clean_name": "cmp-nvim-lsp-document-symbol",
+    "config_file": "cmp-nvim-lsp-document-symbol.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
+  "cmp-nvim-lsp-signature-help": {
+    "name": "cmp-nvim-lsp-signature-help",
+    "url": "https://github.com/hrsh7th/cmp-nvim-lsp-signature-help",
+    "clean_name": "cmp-nvim-lsp-signature-help",
+    "config_file": "cmp-nvim-lsp-signature-help.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "cmp-nvim-lua": {
     "name": "cmp-nvim-lua",
     "url": "https://github.com/hrsh7th/cmp-nvim-lua",
@@ -156,14 +172,6 @@
     "url": "https://github.com/nvim-lua/lsp-status.nvim",
     "clean_name": "lsp-status-nvim",
     "config_file": "lsp-status-nvim.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
-  "lsp_signature.nvim": {
-    "name": "lsp_signature.nvim",
-    "url": "https://github.com/ray-x/lsp_signature.nvim",
-    "clean_name": "lsp_signature-nvim",
-    "config_file": "lsp_signature-nvim.lua",
     "colorscheme": false,
     "enabled": true
   },

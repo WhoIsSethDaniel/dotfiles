@@ -1,5 +1,3 @@
-require('cmp_nvim_lsp').setup()
-
 local cmp = require 'cmp'
 cmp.setup {
   -- preselect = require'cmp.types'.cmp.PreselectMode.None,

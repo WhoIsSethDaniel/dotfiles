@@ -9,12 +9,12 @@ cmp.setup {
       vim_item.kind = string.format('%s %s', require('lspkind').presets.default[vim_item.kind], vim_item.kind)
       vim_item.menu = ({
         nvim_lsp = '[LSP]',
-        luasnip = '[Snp]',
+        luasnip = '[Lsnip]',
         buffer = '[Buf]',
         nvim_lua = '[Lua]',
-        path = '[Pth]',
-        calc = '[Clc]',
-        emoji = '[Emj]',
+        path = '[Path]',
+        calc = '[Calc]',
+        emoji = '[Emoji]',
         vsnip = '[Vsnip]',
       })[entry.source.name]
       return vim_item
@@ -41,5 +41,9 @@ cmp.setup {
     { name = 'nvim_lsp', priority = 9 },
     { name = 'nvim_lsp_signature_help', priority = 10 },
     { name = 'vsnip', priority = 8 },
+  },
+  experimental = {
+    ghost_text = true,
+    native_menu = true,
   },
 }

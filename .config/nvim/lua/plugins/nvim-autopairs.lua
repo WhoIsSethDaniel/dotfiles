@@ -1,4 +1,5 @@
-require('nvim-autopairs').setup {
+local pairs = require('nvim-autopairs')
+pairs.setup {
   map_bs = true,
   map_c_h = false,
   map_c_w = false,
@@ -29,3 +30,7 @@ require('nvim-autopairs').setup {
   --   highlight_grey = 'Comment',
   -- },
 }
+
+-- info on endwise: https://github.com/windwp/nvim-autopairs/wiki/Endwise
+-- perhaps also see https://github.com/RRethy/nvim-treesitter-endwise
+pairs.add_rules(require('nvim-autopairs.rules.endwise-lua'))

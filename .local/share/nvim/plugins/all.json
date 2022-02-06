@@ -119,6 +119,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "gitsigns.nvim": {
+    "name": "gitsigns.nvim",
+    "url": "https://github.com/lewis6991/gitsigns.nvim",
+    "clean_name": "gitsigns-nvim",
+    "config_file": "gitsigns-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "goldsmith.nvim": {
     "name": "goldsmith.nvim",
     "url": "git@github.com:WhoIsSethDaniel/goldsmith.nvim",

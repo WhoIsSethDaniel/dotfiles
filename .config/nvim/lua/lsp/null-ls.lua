@@ -2,6 +2,7 @@ local null = require 'null-ls'
 local help = require 'null-ls.helpers'
 local fmt = null.builtins.formatting
 local diag = null.builtins.diagnostics
+local act = null.builtins.code_actions
 
 null.register {
   name = 'perlimports',
@@ -38,5 +39,6 @@ return {
     diag.editorconfig_checker.with { command = 'editorconfig-checker', filetypes = { 'go', 'gomod', 'lua' } },
     diag.vint,
     diag.shellcheck,
+    act.gitsigns,
   },
 }

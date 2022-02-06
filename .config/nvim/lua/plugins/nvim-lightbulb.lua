@@ -1,9 +1,10 @@
 vim.g.cursorhold_updatetime = 100
 vim.api.nvim_command [[ autocmd CursorHold,CursorHoldI * lua require'nvim-lightbulb'.update_lightbulb{
+   ignore = { 'null-ls' },
    sign = {
         enabled = true,
         -- Priority of the gutter sign
-        priority = 100,
+        priority = 10,
     },
     float = {
         enabled = false,
@@ -29,6 +30,8 @@ vim.api.nvim_command [[ autocmd CursorHold,CursorHoldI * lua require'nvim-lightb
         enabled = false,
         -- Text to show at virtual text
         text = "💡",
+        -- highlight mode to use for virtual text (replace, combine, blend), see :help nvim_buf_set_extmark() for reference
+        hl_mode = "replace",
     },
     status_text = {
         enabled = false,

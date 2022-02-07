@@ -44,6 +44,6 @@ cmp.setup {
   },
   experimental = {
     ghost_text = true,
-    native_menu = true,
+    native_menu = false,  -- if true the 'cmdline' completion will not work
   },
 }

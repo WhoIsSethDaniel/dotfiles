@@ -10,5 +10,7 @@ cmp.setup.cmdline('/', {
 cmp.setup.cmdline(':', {
   sources = {
     { name = 'cmdline', keyword_length = 2 },
+    { name = 'nvim_lua' },
+    { name = 'path' },
   },
 })

@@ -1,4 +1,4 @@
-local pairs = require('nvim-autopairs')
+local pairs = require 'nvim-autopairs'
 pairs.setup {
   map_bs = true,
   map_c_h = false,
@@ -31,6 +31,11 @@ pairs.setup {
   -- },
 }
 
+-- cmp -- not certain what this is doing
+local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
+local cmp = require 'cmp'
+cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done {})
+
 -- info on endwise: https://github.com/windwp/nvim-autopairs/wiki/Endwise
 -- perhaps also see https://github.com/RRethy/nvim-treesitter-endwise
-pairs.add_rules(require('nvim-autopairs.rules.endwise-lua'))
+pairs.add_rules(require 'nvim-autopairs.rules.endwise-lua')

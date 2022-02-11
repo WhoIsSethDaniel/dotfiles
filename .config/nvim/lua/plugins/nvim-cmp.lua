@@ -6,17 +6,24 @@ cmp.setup {
   },
   formatting = {
     format = function(entry, vim_item)
-      vim_item.kind = string.format('%s %s', require('lspkind').presets.default[vim_item.kind], vim_item.kind)
-      vim_item.menu = ({
-        nvim_lsp = '[LSP]',
-        luasnip = '[Lsnip]',
-        buffer = '[Buf]',
-        nvim_lua = '[Lua]',
-        path = '[Path]',
-        calc = '[Calc]',
-        emoji = '[Emoji]',
-        vsnip = '[Vsnip]',
-      })[entry.source.name]
+      vim_item = require('lspkind').cmp_format()(entry, vim_item)
+      local alias = {
+        buffer = 'buffer',
+        path = 'path',
+        calc = 'calc',
+        emoji = 'emoji',
+        nvim_lsp = 'LSP',
+        luasnip = 'luasnip',
+        vsnip = 'vsnip',
+        nvim_lua = 'lua',
+        nvim_lsp_signature_help = 'LSP Signature',
+      }
+
+      if entry.source.name == 'nvim_lsp' then
+        vim_item.menu = entry.source.source.client.name
+      else
+        vim_item.menu = alias[entry.source.name] or entry.source.name
+      end
       return vim_item
     end,
   },

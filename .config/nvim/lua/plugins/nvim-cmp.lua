@@ -42,8 +42,10 @@ cmp.setup {
     { name = 'nvim_lsp_signature_help', priority = 10 },
     { name = 'vsnip', priority = 8 },
   },
+  view = {
+    -- entries = 'native',
+  },
   experimental = {
     ghost_text = true,
-    native_menu = false,  -- if true the 'cmdline' completion will not work
   },
 }

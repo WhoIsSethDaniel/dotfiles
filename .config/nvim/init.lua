@@ -173,10 +173,10 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 
 -- messages
 -- I: turn off vim 'intro' message
--- S: turn on search stats; gets wiped out?
+-- S: turn off search stats
 -- c: turn off menu messages
 -- s: turn off "search hit BOTTOM, continuing at TOP" message during search
-vim.opt.shortmess:append 'IScs'
+vim.opt.shortmess:append 'Ics'
 
 -- use filetype.lua instead of filetype.vim
 if vim.fn.has 'nvim-0.7' == 1 then

@@ -178,6 +178,10 @@ vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 -- s: turn off "search hit BOTTOM, continuing at TOP" message during search
 vim.opt.shortmess:append 'Ics'
 
+-- use the patience algorithm when diffing; perhaps also try 'histogram';
+-- default algorithm is myers
+vim.opt.diffopt = 'internal,filler,closeoff,algorithm:patience'
+
 -- use filetype.lua instead of filetype.vim
 if vim.fn.has 'nvim-0.7' == 1 then
   vim.g.do_filetype_lua = 1

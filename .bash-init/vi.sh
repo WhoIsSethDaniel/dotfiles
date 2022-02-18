@@ -1,9 +1,9 @@
 #!/bin/bash
 
-set_prog_alias vi nvim vim vi
-set_prog_alias vim nvim vim vi
-set_export_prog_var VISUAL nvim vim vi
-set_export_prog_var EDITOR nvim vim vi
+set_prog_alias vi nvr nvim vim vi
+set_prog_alias vim nvr nvim vim vi
+set_export_prog_var VISUAL nvr nvim vim vi
+set_export_prog_var EDITOR nvr nvim vim vi
 
 set_alias vim-ls vim-list
 

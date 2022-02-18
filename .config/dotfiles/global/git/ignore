@@ -74,6 +74,7 @@
 /bin/snago
 /bin/stylua
 /bin/vint
+/bin/nvr
 
 /lib/
 /snap/

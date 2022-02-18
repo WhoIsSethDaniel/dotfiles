@@ -21,3 +21,4 @@ sudo apt install npm shellcheck python3-pip luarocks
 luarocks install --local luacheck
 pip install vim-vint
 update-go shfmt editorconfig-checker
+pip3 install neovim-remote

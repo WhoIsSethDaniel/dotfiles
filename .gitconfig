@@ -7,7 +7,7 @@
     verbose = true
 [core]
     excludesfile = ~/.gitignore
-    editor = nvim
+    editor = nvr -s
 ; see git help rerere for more info
 [rerere]
     enabled = true

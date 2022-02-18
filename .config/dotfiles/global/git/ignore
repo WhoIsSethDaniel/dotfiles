@@ -75,6 +75,7 @@
 /bin/stylua
 /bin/vint
 /bin/nvr
+/bin/chardetect
 
 /lib/
 /snap/

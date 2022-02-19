@@ -55,7 +55,18 @@ vim.api.nvim_exec(
   [[
 augroup highlight_yank
   autocmd!
-  au TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500, on_visual=true})
+  autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500, on_visual=true})
+augroup END
+  ]],
+  false
+)
+
+-- mark git buffers as wipe/delete on close
+vim.api.nvim_exec(
+  [[
+augroup neovim_remote
+  autocmd!
+  autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
 augroup END
   ]],
   false

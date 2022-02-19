@@ -7,7 +7,7 @@
     verbose = true
 [core]
     excludesfile = ~/.gitignore
-    editor = nvr -s
+    editor = nvr --remote-silent
 ; see git help rerere for more info
 [rerere]
     enabled = true

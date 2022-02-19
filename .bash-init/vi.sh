@@ -1,9 +1,8 @@
 #!/bin/bash
 
+editor_list="nvim vim vi"
 if [[ -S "$NVIM_LISTEN_ADDRESS" ]] ; then
-    editor_list="nvr nvim vim vi"
-else
-    editor_list="nvim vim vi"
+    editor_list="nvr "$editor_list
 fi
 
 set_prog_alias vi "$editor_list"

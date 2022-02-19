@@ -14,5 +14,6 @@ local opts = {
     vim.fn.filter(vim.fn.glob('~/.config/nvim/lua/**', false, true), 'isdirectory(v:val)'),
     vim.fn.filter(vim.fn.glob('~/src/site/**', false, true), 'isdirectory(v:val)'),
   },
+  pre_save_cmds = { '%argdelete' },
 }
 require('auto-session').setup(opts)

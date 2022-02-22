@@ -22,7 +22,7 @@ if [ -d "$HOME/.plenv/bin" ] ; then
 
     case "$command" in
     rehash|shell)
-      eval "`plenv "sh-$command" "$@"`";;
+      eval "$(plenv "sh-$command" "$@")";;
     *)
       command plenv "$command" "$@";;
     esac

@@ -1,1 +1,8 @@
-require('pqf').setup()
+require('pqf').setup {
+  signs = {
+    error = ' ',
+    warning = ' ',
+    hint = ' ',
+    info = ' ',
+  },
+}

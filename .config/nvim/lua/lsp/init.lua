@@ -12,10 +12,6 @@ for type, icon in pairs(signs) do
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
 end
 
--- useful when debugging LSP
--- vim.lsp.set_log_level('TRACE')
--- require'vim.lsp.log'.set_format_func(vim.inspect)
-
 local function on_attach(client, bufnr)
   -- typical value of client.resolved_capabilities for gopls ~0.7.0
   -- {

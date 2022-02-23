@@ -19,7 +19,7 @@ null.register {
 return {
   sources = {
     fmt.stylua,
-    diag.misspell,
+    diag.misspell.with { disabled_filetypes = { 'man' } },
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
     diag.luacheck.with {
       args = {
@@ -39,6 +39,6 @@ return {
     diag.editorconfig_checker.with { command = 'editorconfig-checker', filetypes = { 'go', 'gomod', 'lua' } },
     diag.vint,
     diag.shellcheck,
-    act.gitsigns,
+    act.gitsigns.with { disabled_filetypes = { 'man' } },
   },
 }

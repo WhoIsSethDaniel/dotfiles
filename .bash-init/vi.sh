@@ -7,8 +7,8 @@ fi
 
 set_prog_alias vi "$editor_list"
 set_prog_alias vim "$editor_list"
-set_export_prog_var VISUAL nvr "$editor_list"
-set_export_prog_var EDITOR nvr "$editor_list"
+set_export_prog_var VISUAL "$editor_list"
+set_export_prog_var EDITOR "$editor_list"
 
 set_alias vim-ls vim-list
 

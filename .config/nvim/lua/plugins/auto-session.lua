@@ -6,6 +6,7 @@ local opts = {
   auto_session_enabled = true,
   auto_session_suppress_dirs = vim.fn.flatten {
     '~',
+    '~/.bash-init',
     '~/tmp',
     '~/.config/nvim',
     '~/.config/nvim/lua',

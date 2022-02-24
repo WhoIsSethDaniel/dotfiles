@@ -1,7 +1,7 @@
 #!/bin/bash
 
 editor_list="nvim vim vi"
-if [[ -S "$NVIM_LISTEN_ADDRESS" ]] ; then
+if [[ -S $NVIM_LISTEN_ADDRESS ]]; then
     editor_list="nvr "$editor_list
 fi
 
@@ -13,15 +13,12 @@ set_export_prog_var EDITOR "$editor_list"
 set_alias vim-ls vim-list
 
 set_export_var MANPAGER "$EDITOR +Man!"
+
 # for running vint
 set_export_post_path_var PYTHONPATH "$HOME/lib/python3.8/site-packages"
 set_export_post_path_var PYTHONPATH "$HOME/lib/python3.9/site-packages"
 set_export_post_path_var PYTHONPATH "$HOME/lib/python3.10/site-packages"
 clean_path PYTHONPATH
-
-# sudo update-alternatives --install /usr/bin/vi vi /usr/bin/nvim 60 >/dev/null 2>/dev/null
-# sudo update-alternatives --install /usr/bin/vim vim /usr/bin/nvim 60 >/dev/null 2>/dev/null
-# sudo update-alternatives --install /usr/bin/editor editor /usr/bin/nvim 60 /dev/null 2>/dev/null
 
 function vim-cd() {
     [[ -z $1 ]] && echo "usage: vim-cd <plugin> | config | conf | cf | local | loc | cache | plugins" && return

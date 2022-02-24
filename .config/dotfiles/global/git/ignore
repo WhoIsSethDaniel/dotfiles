@@ -1,5 +1,6 @@
 /.bash_history
 /.bash-local.sh
+/.bash-last.sh
 /.check-scan-files-permitted.toml
 /.check-scan-files-state.json
 /.config/gnome-initial-setup-done

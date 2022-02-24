@@ -187,6 +187,15 @@ if vim.fn.has 'nvim-0.7' == 1 then
   vim.g.do_filetype_lua = 1
   vim.g.did_load_filetypes = 0
 
+  vim.cmd [[
+  if exists('did_load_filetypes')
+    augroup filetypedetect
+    au BufRead,BufNewFile * if !did_filetype() && expand('<amatch>') !~ g:ft_ignore_pat | runtime! scripts.vim | endif
+    au StdinReadPost * if !did_filetype() | runtime! scripts.vim | endif
+    augroup END
+  endif
+  ]]
+
   -- add perl module filetype (pm)
   vim.filetype.add {
     extension = {
@@ -200,19 +209,6 @@ if vim.fn.has 'nvim-0.7' == 1 then
         end
       end,
       t = 'perl',
-    },
-    pattern = {
-      -- catch-all -- primarily for files with no extension
-      ['.*'] = {
-        function(path, bufnr)
-          if vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:match 'perl' then
-            return 'perl'
-          elseif vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:match 'bash' then
-            return 'sh'
-          end
-        end,
-        { priority = -1 },
-      },
     },
   }
 end

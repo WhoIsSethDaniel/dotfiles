@@ -351,6 +351,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "telescope-rg.nvim": {
+    "name": "telescope-rg.nvim",
+    "url": "https://github.com/nvim-telescope/telescope-rg.nvim",
+    "clean_name": "telescope-rg-nvim",
+    "config_file": "telescope-rg-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "telescope.nvim": {
     "name": "telescope.nvim",
     "url": "https://github.com/nvim-telescope/telescope.nvim",

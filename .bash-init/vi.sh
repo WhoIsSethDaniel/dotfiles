@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set_pre_path_var PATH $HOME/lib/nvim/bin
+
 editor_list="nvim vim vi"
 if [[ -S $NVIM_LISTEN_ADDRESS ]]; then
     editor_list="nvr "$editor_list

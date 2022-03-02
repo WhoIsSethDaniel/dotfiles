@@ -60,6 +60,7 @@
 /.gnome/
 /.gnupg/
 /.go/
+/.gsutil/
 /.keychain/
 /.luarocks/
 /.maxmind_vagrant/

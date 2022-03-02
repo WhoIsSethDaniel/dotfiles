@@ -10,10 +10,10 @@ local function setup_servers()
     end
   end
 
-  -- require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
+  require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
 
-  local config = require('lsp').get_config 'perlnavigator'
-  require('lspconfig').perlnavigator.setup(config)
+  -- local config = require('lsp').get_config 'perlnavigator'
+  -- require('lspconfig').perlnavigator.setup(config)
 end
 
 setup_servers()

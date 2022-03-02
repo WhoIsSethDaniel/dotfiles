@@ -1,6 +1,6 @@
 #!/bin/bash
 
-rmtmpdir () {
+rmtmpdir() {
     [[ -n $tmpdir ]] && rm -rf "$tmpdir"
 }
 
@@ -8,10 +8,10 @@ tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit
-curl -LSso nvim.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+curl -LSo nvim.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
 
 cd ~/lib || exit
 rm -rf nvim
 
-tar xzf "$tmpdir"/nvim.tar.gz
-mv  nvim-linux64 nvim
+tar xzvf "$tmpdir"/nvim.tar.gz
+mv nvim-linux64 nvim

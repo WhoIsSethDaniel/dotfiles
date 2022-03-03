@@ -1,6 +1,7 @@
 /.bash_history
 /.bash-local.sh
 /.bash-last.sh
+/.bootstrap-controller-tag
 /.check-scan-files-permitted.toml
 /.check-scan-files-state.json
 /.config/gnome-initial-setup-done
@@ -67,6 +68,7 @@
 /.maxmind_vagrant/
 /.npm/
 /.openvpn/
+/.parallel/
 /.pcloud/
 /.pki/
 /.plenv/

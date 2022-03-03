@@ -18,14 +18,20 @@ trap rmtmpdir EXIT
 cd "$tmpdir" || exit
 curl -LSo "$SUM_NAME" "$SUM"
 
-OLD_SUM=${STORE}${SUM_NAME}
+OLD_SUM=${STORE}"/"${SUM_NAME}
 if [[ -e "$OLD_SUM" ]] ; then
-    OLD=$(cat "$OLD_SUM")
-    NEW=$(cat "${tmpdir}/${SUM_NAME}")
+    OLD=$(cut -d\  -f1 "${OLD_SUM}")
+    NEW=$(cut -d\  -f1 "${tmpdir}/${SUM_NAME}")
+    echo "old: ${OLD}"
+    echo "new: ${NEW}"
     if [[ "$NEW" == "$OLD" ]] ; then
         echo "no update available"
         exit 0
+    else
+        echo "update available"
     fi
+else    
+    echo "no old sum found"
 fi
 
 curl -LSo nvim.tar.gz "$DL"

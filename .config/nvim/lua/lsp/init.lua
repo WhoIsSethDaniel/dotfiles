@@ -100,7 +100,7 @@ function M.get_config(server)
     config = {}
   end
   local cap = lsp_status.capabilities
-  require('cmp_nvim_lsp').update_capabilities(cap)
+  cap = require('cmp_nvim_lsp').update_capabilities(cap)
   config['capabilities'] = cap
   config['on_attach'] = on_attach
   return config

@@ -1,5 +1,11 @@
 #!/bin/bash
 
+set -e 
+
+DL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+SUM=$DL".sha256sum"
+STORE=$XDG_DATA_HOME"/nvim"
+
 rmtmpdir() {
     [[ -n $tmpdir ]] && rm -rf "$tmpdir"
 }
@@ -8,7 +14,20 @@ tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit
-curl -LSo nvim.tar.gz https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz
+curl -LSo nvim.sha256sum "$SUM"
+
+OLD_SUM=$STORE"/nvim.sha256sum"
+if [[ -e "$OLD_SUM" ]] ; then
+    OLD=$(cat "$OLD_SUM")
+    NEW=$(cat "${tmpdir}/nvim.sha256sum")
+    if [[ "$NEW" == "$OLD" ]] ; then
+        echo "no update available"
+        exit 0
+    fi
+fi
+
+cp --force "${tmpdir}/nvim.sha256sum" "$STORE"
+curl -LSo nvim.tar.gz "$DL"
 
 cd ~/lib || exit
 rm -rf nvim

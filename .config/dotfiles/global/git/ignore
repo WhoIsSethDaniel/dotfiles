@@ -23,6 +23,7 @@
 !/.local/share
 /.local/share/*
 !/.local/share/nvim
+/.local/share/nvim/nvim.sha256sum
 /.local/share/nvim/lsp_servers/
 /.local/share/nvim/undo/
 /.local/share/nvim/sessions/*.vim

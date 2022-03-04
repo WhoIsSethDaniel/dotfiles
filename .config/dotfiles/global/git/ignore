@@ -12,6 +12,7 @@
 /.lesshst
 /.psql_history
 /.ssh/agent-*
+/.ssh/google_compute*
 /.ssh/authorized_keys
 /.ssh/known_hosts
 /.sudo_as_admin_successful

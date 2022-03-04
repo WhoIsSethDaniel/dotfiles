@@ -43,29 +43,31 @@ vim.opt.showmatch = true
 -- recursive find; may want to change at some point (see above reddit link)
 vim.opt.path = { ',', '**' }
 
+-- use vim-sleuth instead
 -- use spaces instead of tabs
-vim.opt.expandtab = true
+-- vim.opt.expandtab = true
 
 -- how many spaces to move when <tab> is pressed
-vim.opt.tabstop = 4
+-- vim.opt.tabstop = 4
 
 -- spaces when << or >> are used
-vim.opt.shiftwidth = 4
+-- vim.opt.shiftwidth = 4
 
 -- use spaces when tab used at front of line
-vim.opt.smarttab = true
+-- vim.opt.smarttab = true
+--
+-- vim.opt.softtabstop = true
+
+-- autoformatting (gw/gq); consider 120
+vim.opt.textwidth = 120
+-- end vim-sleuth
+
 
 -- only add one space when joining
 vim.opt.joinspaces = false
 -- keep wrapped lines at same indent level
 vim.opt.breakindent = true
 vim.opt.breakindentopt = 'shift:2'
-
--- use sleuth instead
--- vim.opt.softtabstop = true
-
--- autoformatting (gw/gq); consider 120
-vim.opt.textwidth = 120
 
 -- do not automatically change directory (use rooter instead)
 vim.opt.autochdir = false

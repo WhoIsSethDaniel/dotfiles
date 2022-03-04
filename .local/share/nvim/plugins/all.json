@@ -447,6 +447,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "vim-sleuth": {
+    "name": "vim-sleuth",
+    "url": "https://github.com/tpope/vim-sleuth",
+    "clean_name": "vim-sleuth",
+    "config_file": "vim-sleuth.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "vim-speeddating": {
     "name": "vim-speeddating",
     "url": "https://github.com/tpope/vim-speeddating",
@@ -468,14 +476,6 @@
     "url": "https://github.com/hrsh7th/vim-vsnip",
     "clean_name": "vim-vsnip",
     "config_file": "vim-vsnip.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
-  "vim-yadi": {
-    "name": "vim-yadi",
-    "url": "https://github.com/timakro/vim-yadi",
-    "clean_name": "vim-yadi",
-    "config_file": "vim-yadi.lua",
     "colorscheme": false,
     "enabled": true
   },

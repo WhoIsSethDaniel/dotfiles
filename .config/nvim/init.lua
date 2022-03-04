@@ -43,7 +43,7 @@ vim.opt.showmatch = true
 -- recursive find; may want to change at some point (see above reddit link)
 vim.opt.path = { ',', '**' }
 
--- use vim-sleuth instead
+-- USE vim-sleuth instead of following few settings
 -- use spaces instead of tabs
 -- vim.opt.expandtab = true
 
@@ -58,10 +58,9 @@ vim.opt.path = { ',', '**' }
 --
 -- vim.opt.softtabstop = true
 
--- autoformatting (gw/gq); consider 120
+-- autoformatting (gw/gq)
 vim.opt.textwidth = 120
--- end vim-sleuth
-
+-- END vim-sleuth
 
 -- only add one space when joining
 vim.opt.joinspaces = false

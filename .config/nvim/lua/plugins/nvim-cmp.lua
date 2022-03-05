@@ -49,6 +49,7 @@ cmp.setup {
     { name = 'nvim_lsp_signature_help', priority = 10 },
     { name = 'vsnip', priority = 8 },
   },
+  preselect = cmp.PreselectMode.Item,
   view = {
     -- entries = 'native',
   },

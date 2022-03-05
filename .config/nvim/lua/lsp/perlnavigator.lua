@@ -1,21 +1,17 @@
-local configs = require 'lspconfig.configs'
-configs['perlnavigator'] = {
-  default_config = {
-    root_dir = function(fname)
-      return require('lspconfig').util.find_git_ancestor(fname)
-    end,
-    filetypes = { 'perl' },
-    settings = {},
-  },
-}
+local path = require 'nvim-lsp-installer.path'
 
 return {
-  cmd = { 'node', '/home/sdaniel_maxmind_com/src/PerlNavigator/server/out/server.js', '--stdio' },
   settings = {
     perlnavigator = {
-      perlPath = '/usr/local/bin/mm-perl',
-      perlcriticProfile = '/home/sdaniel_maxmind_com/src/work/mm_website/.perlcriticrc',
-      perltidyProfile = '/home/sdaniel_maxmind_com/src/work/mm_website/perltidyrc',
+      perlPath = 'perl',
     },
   },
+  on_new_config = function(new_config, new_root)
+    local m = string.match(new_root, '^(.*mm_website)')
+    if m then
+      new_config.settings.perlnavigator.perlPath = 'mm-perl'
+      new_config.settings.perlnavigator.perlcriticProfile = path.concat { m, '.perlcriticrc' }
+      new_config.settings.perlnavigator.perltidyProfile = path.concat { m, 'perltidyrc' }
+    end
+  end,
 }

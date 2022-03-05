@@ -1,3 +1,5 @@
+local path = require 'nvim-lsp-installer.path'
+
 return {
   cmd = { 'pls' },
   settings = {
@@ -7,8 +9,9 @@ return {
     },
   },
   on_new_config = function(new_config, new_root)
-    if string.match(new_root, 'mm_website') then
-      new_config.settings.perl.perltidyrc = 'perltidyrc'
+    local m = string.match(new_root, '^(.*mm_website)')
+    if m then
+      new_config.settings.perl.perltidyrc = path.concat { m, 'perltidyrc' }
     end
   end,
 }

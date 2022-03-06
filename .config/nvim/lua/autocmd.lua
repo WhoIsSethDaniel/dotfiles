@@ -1,73 +1,89 @@
 -- open certain things in a vertical split and set options for docs
-vim.api.nvim_exec(
-  [[
-augroup doc_settings_and_win
-  autocmd!
-  autocmd FileType help,man wincmd L
-  autocmd FileType lir,help,man setlocal nonumber norelativenumber signcolumn=no
-  autocmd FileType lir,help,man setlocal bufhidden=wipe
-augroup END
-  ]],
-  false
-)
-
--- make neovim terminal act more like vim terminal
-vim.api.nvim_exec(
-  [[
-augroup terminal_settings
-  autocmd!
-  " do not show line numbers; start in insert mode
-  autocmd TermOpen * lua require'functions'.terminal_open_setup()
-  autocmd BufEnter term://* startinsert
-  " do not show "process exited 0" when exiting
-  autocmd BufLeave term://* stopinsert
-  autocmd TermClose term://*bash call nvim_input('<CR>')
-augroup END
-  ]],
-  false
-)
-
--- create missing directories when opening new files
-vim.api.nvim_exec(
-  [[
-augroup create_missing_dirs
-  autocmd!
-  autocmd BufWritePre * lua require'functions'.create_missing_dirs()
-augroup END
-  ]],
-  false
-)
-
--- re-build help tag files on start
-vim.api.nvim_exec(
-  [[
-augroup vim_on_start
-  autocmd!
-  autocmd VimEnter * lua require'functions'.rebuild_help()
-  autocmd VimEnter * TSUpdate
-augroup END
-  ]],
-  false
-)
+local group = 'doc_settings_and_win'
+vim.api.nvim_create_augroup(group, { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  group = group,
+  pattern = { 'help', 'man' },
+  command = 'wincmd L',
+})
+vim.api.nvim_create_autocmd('FileType', {
+  group = group,
+  pattern = { 'lir', 'help', 'man' },
+  command = 'setlocal nonumber norelativenumber signcolumn=no',
+})
+vim.api.nvim_create_autocmd('FileType', {
+  group = group,
+  pattern = { 'lir', 'help', 'man' },
+  command = 'setlocal bufhidden=wipe',
+})
 
 -- highlighted yank
-vim.api.nvim_exec(
-  [[
-augroup highlight_yank
-  autocmd!
-  autocmd TextYankPost * silent! lua vim.highlight.on_yank({higroup="IncSearch", timeout=500, on_visual=true})
-augroup END
-  ]],
-  false
-)
+group = 'highlight_yank'
+vim.api.nvim_create_augroup(group, { clear = true })
+vim.api.nvim_create_autocmd('TextYankPost', {
+  group = group,
+  callback = function()
+    vim.highlight.on_yank { higroup = 'IncSearch', timeout = 500, on_visual = true }
+  end,
+})
+
+-- make neovim terminal act more like vim terminal
+group = 'terminal_settings'
+vim.api.nvim_create_augroup(group, { clear = true })
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = group,
+  callback = function()
+    require('functions').terminal_open_setup()
+  end,
+})
+vim.api.nvim_create_autocmd('BufEnter', {
+  group = group,
+  pattern = { 'term://*' },
+  command = 'startinsert',
+})
+vim.api.nvim_create_autocmd('BufLeave', {
+  group = group,
+  pattern = { 'term://*' },
+  command = 'stopinsert',
+})
+vim.api.nvim_create_autocmd('TermClose', {
+  group = group,
+  pattern = { 'term://*bash' },
+  callback = function()
+    vim.api.nvim_input '<CR>'
+  end,
+})
+
+-- create missing directories when opening new files
+group = 'create_missing_dirs'
+vim.api.nvim_create_augroup(group, { clear = true })
+vim.api.nvim_create_autocmd('BufWritePre', {
+  group = group,
+  callback = function()
+    require('functions').create_missing_dirs()
+  end,
+})
+
+-- re-build help tag files on start;
+-- update treesitter parsers
+group = 'vim_on_start'
+vim.api.nvim_create_augroup(group, { clear = true })
+vim.api.nvim_create_autocmd('VimEnter', {
+  group = group,
+  callback = function()
+    require('functions').rebuild_help()
+  end,
+})
+vim.api.nvim_create_autocmd('VimEnter', {
+  group = group,
+  command = 'TSUpdate',
+})
 
 -- mark git buffers as wipe/delete on close
-vim.api.nvim_exec(
-  [[
-augroup neovim_remote
-  autocmd!
-  autocmd FileType gitcommit,gitrebase,gitconfig set bufhidden=delete
-augroup END
-  ]],
-  false
-)
+group = 'neovim_remote'
+vim.api.nvim_create_augroup(group, { clear = true })
+vim.api.nvim_create_autocmd('FileType', {
+  group = group,
+  pattern = { 'gitcommit', 'gitrebase', 'gitconfig' },
+  command = 'setlocal bufhidden=delete',
+})

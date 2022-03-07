@@ -71,6 +71,7 @@
 /.openvpn/
 /.parallel/
 /.pcloud/
+/.pkg-cache/
 /.pki/
 /.plenv/
 /.ssh/login-keys.d/

@@ -9,12 +9,12 @@ vim.api.nvim_create_autocmd('FileType', {
 vim.api.nvim_create_autocmd('FileType', {
   group = group,
   pattern = { 'lir', 'help', 'man' },
-  command = 'setlocal nonumber norelativenumber signcolumn=no',
-})
-vim.api.nvim_create_autocmd('FileType', {
-  group = group,
-  pattern = { 'lir', 'help', 'man' },
-  command = 'setlocal bufhidden=wipe',
+  callback = function()
+    vim.opt_local.number = false
+    vim.opt_local.relativenumber = false
+    vim.opt_local.signcolumn = 'no'
+    vim.opt_local.bufhidden = 'wipe'
+  end,
 })
 
 -- highlighted yank
@@ -27,9 +27,8 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- most of this is taken care of by toggleterm
--- make neovim terminal act more like vim terminal
--- group = 'terminal_settings'
+-- toggleterm takes care of most things terminal related
+group = 'terminal_settings'
 vim.api.nvim_create_augroup(group, { clear = true })
 vim.api.nvim_create_autocmd('TermOpen', {
   group = group,
@@ -37,23 +36,6 @@ vim.api.nvim_create_autocmd('TermOpen', {
     require('functions').terminal_open_setup()
   end,
 })
--- vim.api.nvim_create_autocmd('BufEnter', {
---   group = group,
---   pattern = { 'term://*' },
---   command = 'startinsert',
--- })
--- vim.api.nvim_create_autocmd('BufLeave', {
---   group = group,
---   pattern = { 'term://*' },
---   command = 'stopinsert',
--- })
--- vim.api.nvim_create_autocmd('TermClose', {
---   group = group,
---   pattern = { 'term://*bash' },
---   callback = function()
---     vim.api.nvim_input '<CR>'
---   end,
--- })
 
 -- create missing directories when opening new files
 group = 'create_missing_dirs'

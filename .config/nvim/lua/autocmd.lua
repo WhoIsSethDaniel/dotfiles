@@ -27,16 +27,16 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
--- this is taken care of by toggleterm
+-- most of this is taken care of by toggleterm
 -- make neovim terminal act more like vim terminal
 -- group = 'terminal_settings'
--- vim.api.nvim_create_augroup(group, { clear = true })
--- vim.api.nvim_create_autocmd('TermOpen', {
---   group = group,
---   callback = function()
---     require('functions').terminal_open_setup()
---   end,
--- })
+vim.api.nvim_create_augroup(group, { clear = true })
+vim.api.nvim_create_autocmd('TermOpen', {
+  group = group,
+  callback = function()
+    require('functions').terminal_open_setup()
+  end,
+})
 -- vim.api.nvim_create_autocmd('BufEnter', {
 --   group = group,
 --   pattern = { 'term://*' },

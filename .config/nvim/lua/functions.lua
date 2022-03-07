@@ -3,10 +3,10 @@ local M = {}
 function M.terminal_open_setup()
   -- allow window movements
   vim.api.nvim_set_keymap('t', '<C-w>', '<C-\\><C-n><C-w>', { silent = true, noremap = true })
-  vim.opt_local.number = false
-  vim.opt_local.relativenumber = false
-  vim.opt_local.signcolumn = 'no'
-  vim.api.nvim_command 'startinsert'
+  -- vim.opt_local.number = false
+  -- vim.opt_local.relativenumber = false
+  -- vim.opt_local.signcolumn = 'no'
+  -- vim.api.nvim_command 'startinsert'
 end
 
 -- create any missing intermediate directories for files that do not exist

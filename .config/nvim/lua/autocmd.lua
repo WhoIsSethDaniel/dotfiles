@@ -55,11 +55,8 @@ vim.api.nvim_create_autocmd('VimEnter', {
   group = group,
   callback = function()
     require('functions').rebuild_help()
+    vim.cmd [[ TSUpdate ]]
   end,
-})
-vim.api.nvim_create_autocmd('VimEnter', {
-  group = group,
-  command = 'TSUpdate',
 })
 
 -- mark git buffers as wipe/delete on close
@@ -68,5 +65,7 @@ vim.api.nvim_create_augroup(group, { clear = true })
 vim.api.nvim_create_autocmd('FileType', {
   group = group,
   pattern = { 'gitcommit', 'gitrebase', 'gitconfig' },
-  command = 'setlocal bufhidden=delete',
+  callback = function()
+    vim.opt_local.bufhidden = 'delete'
+  end,
 })

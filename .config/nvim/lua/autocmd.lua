@@ -27,32 +27,33 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- this is taken care of by toggleterm
 -- make neovim terminal act more like vim terminal
-group = 'terminal_settings'
-vim.api.nvim_create_augroup(group, { clear = true })
-vim.api.nvim_create_autocmd('TermOpen', {
-  group = group,
-  callback = function()
-    require('functions').terminal_open_setup()
-  end,
-})
-vim.api.nvim_create_autocmd('BufEnter', {
-  group = group,
-  pattern = { 'term://*' },
-  command = 'startinsert',
-})
-vim.api.nvim_create_autocmd('BufLeave', {
-  group = group,
-  pattern = { 'term://*' },
-  command = 'stopinsert',
-})
-vim.api.nvim_create_autocmd('TermClose', {
-  group = group,
-  pattern = { 'term://*bash' },
-  callback = function()
-    vim.api.nvim_input '<CR>'
-  end,
-})
+-- group = 'terminal_settings'
+-- vim.api.nvim_create_augroup(group, { clear = true })
+-- vim.api.nvim_create_autocmd('TermOpen', {
+--   group = group,
+--   callback = function()
+--     require('functions').terminal_open_setup()
+--   end,
+-- })
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--   group = group,
+--   pattern = { 'term://*' },
+--   command = 'startinsert',
+-- })
+-- vim.api.nvim_create_autocmd('BufLeave', {
+--   group = group,
+--   pattern = { 'term://*' },
+--   command = 'stopinsert',
+-- })
+-- vim.api.nvim_create_autocmd('TermClose', {
+--   group = group,
+--   pattern = { 'term://*bash' },
+--   callback = function()
+--     vim.api.nvim_input '<CR>'
+--   end,
+-- })
 
 -- create missing directories when opening new files
 group = 'create_missing_dirs'

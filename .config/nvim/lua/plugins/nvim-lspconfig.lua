@@ -1,6 +1,7 @@
 local i = require 'nvim-lsp-installer'
 
-local disabled = { 'perlnavigator' }
+-- local disabled = { 'perlnavigator' }
+local disabled = {}
 local function setup_servers()
   local servers = i.get_installed_servers()
 
@@ -10,7 +11,7 @@ local function setup_servers()
       server:setup(config)
     end
   end
-  require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
+  -- require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
 end
 
 setup_servers()

@@ -1,10 +1,6 @@
-local lsp_status = require 'lsp-status'
-lsp_status.config { current_function = false }
-lsp_status.register_progress()
+local M = {}
 
 vim.diagnostic.config { severity_sort = true }
-
-local M = {}
 
 local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
 for type, icon in pairs(signs) do
@@ -55,7 +51,6 @@ local function on_attach(client, bufnr)
   end
   -- dump_caps()
 
-  lsp_status.on_attach(client)
   local ft = vim.opt.filetype:get()
   if ft == 'go' or ft == 'gomod' then
     return
@@ -99,7 +94,7 @@ function M.get_config(server)
   if not ok then
     config = {}
   end
-  local cap = lsp_status.capabilities
+  local cap = vim.lsp.protocol.make_client_capabilities()
   cap = require('cmp_nvim_lsp').update_capabilities(cap)
   config['capabilities'] = cap
   config['on_attach'] = on_attach

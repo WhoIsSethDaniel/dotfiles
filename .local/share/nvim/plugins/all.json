@@ -175,14 +175,6 @@
     "colorscheme": false,
     "enabled": true
   },
-  "lsp-status.nvim": {
-    "name": "lsp-status.nvim",
-    "url": "https://github.com/nvim-lua/lsp-status.nvim",
-    "clean_name": "lsp-status-nvim",
-    "config_file": "lsp-status-nvim.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
   "lspkind-nvim": {
     "name": "lspkind-nvim",
     "url": "https://github.com/onsails/lspkind-nvim",

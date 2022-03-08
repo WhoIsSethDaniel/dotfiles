@@ -39,6 +39,7 @@ return {
     diag.editorconfig_checker.with { command = 'editorconfig-checker', filetypes = { 'go', 'gomod', 'lua' } },
     diag.vint,
     diag.shellcheck,
-    act.gitsigns.with { disabled_filetypes = { 'man' } },
+    -- very noisy
+    -- act.gitsigns.with { disabled_filetypes = { 'man' } },
   },
 }

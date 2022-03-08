@@ -191,6 +191,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "lualine-lsp-progress": {
+    "name": "lualine-lsp-progress",
+    "url": "https://github.com/arkav/lualine-lsp-progress",
+    "clean_name": "lualine-lsp-progress",
+    "config_file": "lualine-lsp-progress.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "lualine.nvim": {
     "name": "lualine.nvim",
     "url": "https://github.com/nvim-lualine/lualine.nvim",

@@ -12,12 +12,10 @@ require('lualine').setup {
   options = { theme = theme, section_separators = '', component_separators = '', icons_enabled = true },
   sections = {
     lualine_a = { 'mode' },
-    lualine_b = { 'hostname', 'branch' },
+    lualine_b = { 'hostname', 'branch', 'diff', { 'diagnostics', update_in_insert = true, always_visible = true } },
     lualine_c = {
-      'diff',
       { 'filename', file_status = true, path = 1 },
       { "require'nvim-gps'.get_location()", cond = require('nvim-gps').is_available },
-      { 'diagnostics', update_in_insert = true, always_visible = true },
       { "require'goldsmith'.status()" },
     },
     lualine_x = { 'lsp_progress', 'encoding', 'fileformat', 'filetype' },

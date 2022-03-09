@@ -6,6 +6,7 @@ local function setup_servers()
   local servers = i.get_installed_servers()
 
   for _, server in pairs(servers) do
+    print(server.name)
     if not vim.tbl_contains(disabled, server.name) and not require('goldsmith').needed(server.name) then
       local config = require('lsp').get_config(server.name)
       server:setup(config)

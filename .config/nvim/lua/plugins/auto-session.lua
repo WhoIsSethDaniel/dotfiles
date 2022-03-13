@@ -4,6 +4,7 @@ local opts = {
   auto_session_root_dir = vim.fn.stdpath 'data' .. '/sessions/',
   -- Enables/disables auto save/restore
   auto_session_enabled = true,
+  auto_session_use_git_branch = false,
   auto_session_suppress_dirs = vim.fn.flatten {
     '~',
     '~/.bash-init',

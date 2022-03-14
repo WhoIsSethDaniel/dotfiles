@@ -92,7 +92,7 @@ local autocmds = {
       FileType = {
         pattern = { 'gitcommit', 'gitrebase', 'gitconfig' },
         callback = function()
-          vim.opt_local.bufhidden = 'delete'
+          vim.opt_local.bufhidden = 'wipe'
         end,
       },
     },

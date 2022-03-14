@@ -1,5 +1,5 @@
 /.bash_history
-/.bash-local.sh
+/.bash-first.sh
 /.bash-last.sh
 /.bootstrap-controller-tag
 /.check-scan-files-permitted.toml
@@ -74,6 +74,7 @@
 /.pkg-cache/
 /.pki/
 /.plenv/
+/.secureConnect/
 /.ssh/login-keys.d/
 /.vagrant.d/
 

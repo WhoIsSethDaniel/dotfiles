@@ -175,6 +175,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "lsp-format.nvim": {
+    "name": "lsp-format.nvim",
+    "url": "https://github.com/lukas-reineke/lsp-format.nvim",
+    "clean_name": "lsp-format-nvim",
+    "config_file": "lsp-format-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "lspkind-nvim": {
     "name": "lspkind-nvim",
     "url": "https://github.com/onsails/lspkind-nvim",

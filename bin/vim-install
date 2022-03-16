@@ -1,8 +1,9 @@
 #!/bin/bash
 
-set -e 
+set -e
 
 DL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
+# DL="https://github.com/neovim/neovim/releases/download/v0.6.1/nvim-linux64.tar.gz"
 SUM_EXT="sha256sum"
 SUM_NAME="nvim."$SUM_EXT
 SUM=$DL"."$SUM_EXT
@@ -19,18 +20,18 @@ cd "$tmpdir" || exit
 curl -LSo "$SUM_NAME" "$SUM"
 
 OLD_SUM=${STORE}"/"${SUM_NAME}
-if [[ -e "$OLD_SUM" ]] ; then
+if [[ -e $OLD_SUM ]]; then
     OLD=$(cut -d\  -f1 "${OLD_SUM}")
     NEW=$(cut -d\  -f1 "${tmpdir}/${SUM_NAME}")
     echo "old: ${OLD}"
     echo "new: ${NEW}"
-    if [[ "$NEW" == "$OLD" ]] ; then
+    if [[ $NEW == "$OLD" ]]; then
         echo "no update available"
         exit 0
     else
         echo "update available"
     fi
-else    
+else
     echo "no old sum found"
 fi
 

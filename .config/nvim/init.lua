@@ -184,24 +184,26 @@ vim.opt.shortmess:append 'Ics'
 vim.opt.diffopt:append { 'algorithm:patience' }
 
 -- use filetype.lua instead of filetype.vim
-vim.g.do_filetype_lua = 1
-vim.g.did_load_filetypes = 0
+if vim.fn.has 'nvim-0.7' == 1 then
+  vim.g.do_filetype_lua = 1
+  vim.g.did_load_filetypes = 0
 
--- add perl module filetype (pm)
-vim.filetype.add {
-  extension = {
-    pm = function(path, bufnr)
-      if vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:find 'XPM2' then
-        return 'xpm2'
-      elseif vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:find 'XPM' then
-        return 'xpm'
-      else
-        return 'perl'
-      end
-    end,
-    t = 'perl',
-  },
-}
+  -- add perl module filetype (pm)
+  vim.filetype.add {
+    extension = {
+      pm = function(path, bufnr)
+        if vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:find 'XPM2' then
+          return 'xpm2'
+        elseif vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:find 'XPM' then
+          return 'xpm'
+        else
+          return 'perl'
+        end
+      end,
+      t = 'perl',
+    },
+  }
+end
 
 -- turn on embedded highlighting for lua
 --   perhaps not relevant with treesitter

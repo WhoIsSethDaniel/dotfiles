@@ -327,14 +327,6 @@
     "colorscheme": false,
     "enabled": true
   },
-  "popup.nvim": {
-    "name": "popup.nvim",
-    "url": "https://github.com/nvim-lua/popup.nvim",
-    "clean_name": "popup-nvim",
-    "config_file": "popup-nvim.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
   "project.nvim": {
     "name": "project.nvim",
     "url": "https://github.com/ahmedkhalf/project.nvim",

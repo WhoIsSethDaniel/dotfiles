@@ -9,7 +9,14 @@ local theme = require 'lualine.themes.kanagawa'
 -- theme.inactive.c.fg = '#23d18b' -- green
 
 require('lualine').setup {
-  options = { theme = theme, section_separators = '', component_separators = '', icons_enabled = true },
+  options = {
+    theme = theme,
+    section_separators = '',
+    component_separators = '',
+    icons_enabled = true,
+    always_divide_middle = true,
+    globalstatus = false,
+  },
   sections = {
     lualine_a = { 'mode' },
     lualine_b = {

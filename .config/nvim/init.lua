@@ -183,6 +183,17 @@ vim.opt.shortmess:append 'Ics'
 -- default algorithm is myers
 vim.opt.diffopt:append { 'algorithm:patience' }
 
+-- thicker borders when using global status bar
+vim.opt.fillchars:append {
+  horiz = '━',
+  horizup = '┻',
+  horizdown = '┳',
+  vert = '┃',
+  vertleft = '┨',
+  vertright = '┣',
+  verthoriz = '╋',
+}
+
 -- use filetype.lua instead of filetype.vim
 if vim.fn.has 'nvim-0.7' == 1 then
   vim.g.do_filetype_lua = 1

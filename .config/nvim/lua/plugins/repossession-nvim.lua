@@ -25,6 +25,9 @@ require('repossession').setup {
       vim.tbl_filter(function(f)
         return vim.fn.isdirectory(f) > 0 and true or false
       end, vim.fn.glob('~/src/site/**', false, true)),
+      vim.tbl_filter(function(f)
+        return vim.fn.isdirectory(f) > 0 and true or false
+      end, vim.fn.glob('~/.local/share/nvim/**', false, true)),
     }
   ),
 }

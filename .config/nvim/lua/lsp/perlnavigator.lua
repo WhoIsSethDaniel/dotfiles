@@ -11,7 +11,7 @@ return {
     if m then
       new_config.settings.perlnavigator.perlPath = 'mm-perl'
       new_config.settings.perlnavigator.perlcriticProfile = path.concat { m, 'mm_website/.perlcriticrc' }
-      new_config.settings.perlnavigator.perltidyProfile = path.concat { m, 'mm_website/perltidyrc' }
+      new_config.settings.perlnavigator.perltidyProfile = path.concat { m, 'mm_website/.perltidyallrc' }
     end
   end,
 }

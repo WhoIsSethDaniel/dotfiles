@@ -8,6 +8,7 @@ require('repossession').setup {
     end,
     vim.tbl_flatten {
       '~',
+      '~/bin',
       '~/.bash-init',
       '~/tmp',
       '~/.config/nvim',

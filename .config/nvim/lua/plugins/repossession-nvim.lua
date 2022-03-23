@@ -1,6 +1,7 @@
 require('repossession').setup {
   auto = true,
   continuous_save = true,
+  ignore_ft = { 'gitcommit', 'gitrebase', 'gitconfig' },
   blacklist_dirs = vim.tbl_flatten {
     '~',
     '~/bin',

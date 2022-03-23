@@ -1,6 +1,5 @@
 require('repossession').setup {
-  auto_load = true,
-  auto_save = true,
+  auto = true,
   continuous_save = true,
   blacklist_dirs = vim.tbl_map(
     function(d)

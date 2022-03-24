@@ -1,9 +1,5 @@
 local cmp = require 'cmp'
 cmp.setup {
-  -- preselect = require'cmp.types'.cmp.PreselectMode.None,
-  completion = {
-    completeopt = 'menu,menuone,noinsert,noselect',
-  },
   formatting = {
     format = function(entry, vim_item)
       vim_item = require('lspkind').cmp_format()(entry, vim_item)
@@ -37,7 +33,7 @@ cmp.setup {
     ['<C-f>'] = cmp.mapping.scroll_docs(4),
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-e>'] = cmp.mapping.close(),
-    ['<CR>'] = cmp.mapping.confirm { select = true },
+    ['<CR>'] = cmp.mapping.confirm { select = false },
   },
   sources = {
     { name = 'buffer', priority = 7, keyword_length = 4 },
@@ -49,7 +45,8 @@ cmp.setup {
     { name = 'nvim_lsp_signature_help', priority = 10 },
     { name = 'vsnip', priority = 8 },
   },
-  preselect = cmp.PreselectMode.Item,
+  -- preselect = cmp.PreselectMode.Item,
+  preselect = cmp.PreselectMode.None,
   view = {
     -- entries = 'native',
   },

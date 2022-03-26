@@ -22,3 +22,10 @@ require('repossession').setup {
     end, vim.fn.glob('~/.config/dotfiles/**', false, true)),
   },
 }
+
+vim.api.nvim_set_keymap(
+  'n',
+  '<leader>ss',
+  "<cmd>lua require'repossession.telescope'.sessions()<cr>",
+  { noremap = true, silent = true }
+)

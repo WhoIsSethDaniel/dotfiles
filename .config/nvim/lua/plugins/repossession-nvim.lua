@@ -9,6 +9,7 @@ require('repossession').setup {
     '~/tmp',
     '~/.config/nvim',
     '~/.config/nvim/lua',
+    '~/src',
     '~/src/site',
     '~/.config/nvim/lua/**',
     '~/src/site/**',

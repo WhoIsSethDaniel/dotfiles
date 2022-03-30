@@ -14,6 +14,9 @@ require('nvim-treesitter.configs').setup {
   autopairs = {
     enable = true,
   },
+  matchup = {
+    enable = true,
+  },
 }
 
 local parser_config = require('nvim-treesitter.parsers').get_parser_configs()

@@ -19,11 +19,11 @@ require('nvim-treesitter.configs').setup {
 local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 parser_config.perl = {
   install_info = {
-    url = 'https://github.com/ganezdragon/tree-sitter-perl',
+    url = 'https://github.com/leonerd/tree-sitter-perl',
     files = { 'src/parser.c', 'src/scanner.cc' },
     generate_requires_npm = true,
   },
-  maintainers = { '@ganezdragon' },
+  maintainers = { '@leonerd' },
   filetype = 'perl',
 }
 

@@ -415,6 +415,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "vim-fugitive": {
+    "name": "vim-fugitive",
+    "url": "https://github.com/tpope/vim-fugitive",
+    "clean_name": "vim-fugitive",
+    "config_file": "vim-fugitive.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "vim-lastplace": {
     "name": "vim-lastplace",
     "url": "https://github.com/farmergreg/vim-lastplace",

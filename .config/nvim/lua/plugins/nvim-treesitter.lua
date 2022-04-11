@@ -1,7 +1,7 @@
 --  https://github.com/nvim-treesitter/nvim-treesitter
 require('nvim-treesitter.configs').setup {
   ensure_installed = 'all',
-  ignore_install = { 'cooklang' },
+  -- ignore_install = { 'cooklang' },
   highlight = {
     enable = true,
   },

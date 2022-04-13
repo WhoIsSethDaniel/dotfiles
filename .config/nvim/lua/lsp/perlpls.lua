@@ -12,6 +12,7 @@ return {
     local m = string.match(new_root, '^(.*/work)')
     if m then
       new_config.settings.perl.perltidyrc = path.concat { m, 'mm_website/.perltidyallrc' }
+      new_config.settings.perlcritic.perlcriticrc = path.concat { m, 'mm_website/.perlcriticrc' }
     end
   end,
 }

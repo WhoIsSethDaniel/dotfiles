@@ -48,7 +48,7 @@ require('goldsmith').config {
     end,
   },
   format = {
-    max_line_length = 120,
+    max_line_length = 100,
     comments = { enabled = true },
   },
   null = {

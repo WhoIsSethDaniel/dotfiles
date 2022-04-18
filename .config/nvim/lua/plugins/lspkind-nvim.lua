@@ -1,1 +1,1 @@
-require('lspkind').init { mode = 'symbol' }
+require('lspkind').setup { mode = 'symbol' }

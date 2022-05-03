@@ -239,6 +239,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "nvim-lastplace": {
+    "name": "nvim-lastplace",
+    "url": "https://github.com/ethanholz/nvim-lastplace",
+    "clean_name": "nvim-lastplace",
+    "config_file": "nvim-lastplace.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "nvim-lightbulb": {
     "name": "nvim-lightbulb",
     "url": "https://github.com/kosayoda/nvim-lightbulb",
@@ -420,14 +428,6 @@
     "url": "https://github.com/tpope/vim-fugitive",
     "clean_name": "vim-fugitive",
     "config_file": "vim-fugitive.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
-  "vim-lastplace": {
-    "name": "vim-lastplace",
-    "url": "https://github.com/farmergreg/vim-lastplace",
-    "clean_name": "vim-lastplace",
-    "config_file": "vim-lastplace.lua",
     "colorscheme": false,
     "enabled": true
   },

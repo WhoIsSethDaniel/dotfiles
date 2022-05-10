@@ -5,6 +5,7 @@
 /.check-scan-files-permitted.toml
 /.check-scan-files-state.json
 /.config/gnome-initial-setup-done
+/.config/.gsd-keyboard.settings-ported
 /.config/hub
 /.config/mimeapps.list
 /.config/monitors.xml*
@@ -55,6 +56,7 @@
 /.config/pcloud/
 /.config/pulse/
 /.config/sound-juicer/
+/.config/systemd/
 /.config/totem/
 
 /.bundle/cache/

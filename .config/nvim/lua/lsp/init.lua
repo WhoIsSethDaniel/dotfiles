@@ -66,7 +66,7 @@ local function on_attach(client, bufnr)
 
   -- mappings
   local opts = { noremap = true, silent = true }
-  local rc = client.server_capabilities
+  local rc = client.resolved_capabilities
 
   map_cond(rc.declaration, bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
   map_cond(rc.goto_definition, bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)

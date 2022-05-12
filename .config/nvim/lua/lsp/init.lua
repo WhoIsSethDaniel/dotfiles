@@ -93,6 +93,7 @@ end
 function M.get_config(server)
   local ok, config = pcall(require, string.format('lsp.%s', server))
   if not ok then
+    vim.api.nvim_err_writeln('failed to load server: ' .. server)
     config = {}
   end
   local cap = vim.lsp.protocol.make_client_capabilities()

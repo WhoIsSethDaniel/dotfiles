@@ -1,5 +1,3 @@
-local path = require 'nvim-lsp-installer.path'
-
 return {
   settings = {
     perlnavigator = {
@@ -10,8 +8,8 @@ return {
     local m = string.match(new_root, '^(.*/work)')
     if m then
       new_config.settings.perlnavigator.perlPath = 'mm-perl'
-      new_config.settings.perlnavigator.perlcriticProfile = path.concat { m, 'mm_website/.perlcriticrc' }
-      new_config.settings.perlnavigator.perltidyProfile = path.concat { m, 'mm_website/.perltidyallrc' }
+      new_config.settings.perlnavigator.perlcriticProfile = table.concat({ m, 'mm_website/.perlcriticrc' }, '/')
+      new_config.settings.perlnavigator.perltidyProfile = table.concat({ m, 'mm_website/.perltidyallrc' }, '/')
     end
   end,
 }

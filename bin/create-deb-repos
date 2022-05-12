@@ -2,13 +2,13 @@
 
 # chrome (https://www.ubuntuupdates.org/ppa/google_chrome)
 echo "chrome"
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google.asc
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 echo
 
 # ms teams
 # echo "msteams"
-# curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+# curl -sSL https://packages.microsoft.com/keys/microsoft.asc | sudo tee /etc/apt/trusted.gpg.d/microsoft.asc
 # echo "deb [arch=amd64] https://packages.microsoft.com/repos/ms-teams stable main" | sudo tee /etc/apt/sources.list.d/teams.list
 # echo
 

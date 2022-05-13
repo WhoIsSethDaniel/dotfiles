@@ -1,6 +1,6 @@
 local i = require 'nvim-lsp-installer'
 i.setup {
-  ensure_installed = { 'bashls', 'sumneko_lua', 'perlnavigator', 'vimls', 'gopls' },
+  ensure_installed = { 'bashls', 'sumneko_lua', 'perlnavigator', 'vimls', 'gopls@v0.8.3' },
   automatic_installation = true,
 }
 

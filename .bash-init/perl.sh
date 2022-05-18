@@ -35,6 +35,7 @@ if [ -d "$HOME/lib/perl5" ]; then
     set_post_var PERL_CPANM_OPT "--local-lib=$HOME/lib/perl5" " "
     set_pre_path_var PATH "$HOME/lib/perl5/bin"
     set_pre_path_var PERL5LIB "$HOME/lib/perl5/lib/perl5"
+    set_pre_path_var PERL5LIB "$HOME/lib/perl5/lib/perl5/x86_64-linux"
 fi
 
 export_var PERL5LIB

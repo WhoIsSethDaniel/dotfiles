@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # source any available bash completion recipes
-if [ -r /etc/bash_completion ] ; then
-  . /etc/bash_completion
+if [ -r /etc/bash_completion ]; then
+    . /etc/bash_completion
 fi
 
 set_export_post_path_var PATH ~/.npm-global/bin

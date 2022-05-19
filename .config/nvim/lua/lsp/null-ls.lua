@@ -18,7 +18,7 @@ null.register {
 
 return {
   sources = {
-    fmt.stylua,
+    -- fmt.stylua,
     diag.misspell.with { disabled_filetypes = { 'man' } },
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
     diag.luacheck.with {

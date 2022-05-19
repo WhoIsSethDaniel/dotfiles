@@ -20,6 +20,9 @@ return {
       },
       diagnostics = {
         globals = { 'vim' },
+        neededFileStatus = {
+          ['codestyle-check'] = 'Any',
+        },
       },
       -- hint = { enable = true },
       workspace = {

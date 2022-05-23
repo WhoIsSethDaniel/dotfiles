@@ -4,8 +4,8 @@ i.setup {
   automatic_installation = true,
 }
 
--- local disabled = {}
-local disabled = { 'perlnavigator' }
+local disabled = {}
+-- local disabled = { 'perlnavigator' }
 
 local function setup_servers()
   local servers = i.get_installed_servers()
@@ -16,7 +16,7 @@ local function setup_servers()
       require('lspconfig')[server.name].setup(config)
     end
   end
-  require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
+  -- require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
 end
 
 setup_servers()

@@ -14,15 +14,18 @@ return {
   end),
   settings = {
     Lua = {
+      format = {
+        enable = false,
+      },
       runtime = {
         version = 'LuaJIT',
         path = path,
       },
       diagnostics = {
         globals = { 'vim' },
-        neededFileStatus = {
-          ['codestyle-check'] = 'Any',
-        },
+        -- neededFileStatus = {
+        --   ['codestyle-check'] = 'Any',
+        -- },
       },
       -- hint = { enable = true },
       workspace = {

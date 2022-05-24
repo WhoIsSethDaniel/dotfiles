@@ -36,7 +36,6 @@
 /.local/share/nvim/telescope_history
 /.local/share/nvim/.netrwhist
 !/.local/bin
-/.local/bin/ec
 /.local/bin/editorconfig-checker
 /.local/bin/gofumpt
 /.local/bin/golangci-lint

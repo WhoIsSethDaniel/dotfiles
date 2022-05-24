@@ -37,7 +37,7 @@ fi
 
 curl -LSo nvim.tar.gz "$DL"
 
-cd ~/lib || exit
+cd ~/.local || exit
 rm -rf nvim
 
 tar xzvf "$tmpdir"/nvim.tar.gz

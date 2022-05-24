@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set_pre_path_var PATH $HOME/lib/nvim/bin
+set_pre_path_var PATH $HOME/.local/nvim/bin
 
 editor_list="nvim vim vi"
 if [[ -S $NVIM_LISTEN_ADDRESS ]]; then
@@ -24,12 +24,6 @@ fi
 set_alias vim-ls vim-list
 
 set_export_var MANPAGER "$EDITOR +Man!"
-
-# for running vint
-set_export_post_path_var PYTHONPATH "$HOME/lib/python3.8/site-packages"
-set_export_post_path_var PYTHONPATH "$HOME/lib/python3.9/site-packages"
-set_export_post_path_var PYTHONPATH "$HOME/lib/python3.10/site-packages"
-clean_path PYTHONPATH
 
 function vim-cd() {
     [[ -z $1 ]] && echo "usage: vim-cd <plugin> | config | conf | cf | local | loc | cache | plugins" && return

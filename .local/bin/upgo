@@ -6,31 +6,28 @@ set -e
 # https://dl.google.com/go/go1.12.linux-amd64.tar.gz
 
 GO_VERSION=$1
-if [[ -z "${GO_VERSION}" ]] ; then
-  echo "Download the given version of go"
-  echo "usage: $(basename $0) <version>"
-  exit 1
+if [[ -z ${GO_VERSION} ]]; then
+    echo "Download the given version of go"
+    echo "usage: $(basename $0) <version>"
+    exit 1
 fi
 
-GO_DL_URL=https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz
-
-GO_ROOT_DIR="${HOME}/.go"
+GO_ROOT_DIR="${HOME}/.local/go"
 GO_LINK="${GO_ROOT_DIR}/current"
 GO_ABS_DIR="${GO_ROOT_DIR}/${GO_VERSION}"
-GO_BIN_DIR="${GO_ABS_DIR}/bin"
 
-if [[ -L "${GO_LINK}" ]] ; then
-  GO_LINK_EXISTS=1
-elif [[ -d "${GO_LINK}" ]] ; then
-  echo "go dir (${GO_LINK}) is an actual directory. exit."
-  exit 1
-elif [[ -e "${GO_LINK}" ]] ; then
-  echo "go dir (${GO_LINK}) is not a directory or symlink. exit."
-  exit 1
+if [[ -L ${GO_LINK} ]]; then
+    GO_LINK_EXISTS=1
+elif [[ -d ${GO_LINK} ]]; then
+    echo "go dir (${GO_LINK}) is an actual directory. exit."
+    exit 1
+elif [[ -e ${GO_LINK} ]]; then
+    echo "go dir (${GO_LINK}) is not a directory or symlink. exit."
+    exit 1
 fi
-if [[ -d "${GO_ABS_DIR}" ]] ; then
-  echo "go versioned dir (${GO_ABS_DIR}) already exists. exit."
-  exit 1
+if [[ -d ${GO_ABS_DIR} ]]; then
+    echo "go versioned dir (${GO_ABS_DIR}) already exists. exit."
+    exit 1
 fi
 
 oldgoversion=$(basename $(realpath $GO_LINK))
@@ -38,13 +35,12 @@ newgoversion=${GO_VERSION}
 echo "old Go version: "${oldgoversion}
 echo "new Go version: "${newgoversion}
 
-if [[ "$oldgoversion" == "$newgoversion" ]]
-then
-  echo "$oldversion is already installed"
-  exit 0
+if [[ $oldgoversion == "$newgoversion" ]]; then
+    echo "$oldversion is already installed"
+    exit 0
 fi
 
-function clean_temp_dir () { rm -rf "${GO_TEMP_DIR}"; }
+function clean_temp_dir() { rm -rf "${GO_TEMP_DIR}"; }
 trap clean_temp_dir EXIT
 ROOT_TEMP_DIR=${TMPDIR:-/tmp}
 GO_TEMP_DIR=$(mktemp -d -p ${ROOT_TEMP_DIR} upgo.XXXXX)
@@ -54,6 +50,6 @@ snago -dir ${GO_ROOT_DIR} ${GO_VERSION} linux/amd64
 popd >/dev/null
 
 echo "make new link for ${GO_VERSION}"
-[[ -n "${GO_LINK_EXISTS}" ]] && rm -f "${GO_LINK}"
+[[ -n ${GO_LINK_EXISTS} ]] && rm -f "${GO_LINK}"
 mv --no-clobber "${GO_ROOT_DIR}/go" "${GO_ABS_DIR}"
 ln --force --symbolic "${GO_ABS_DIR}" "${GO_LINK}"

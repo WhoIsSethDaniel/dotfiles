@@ -19,6 +19,6 @@ rmdir "${wd}"
 # other stuff
 sudo apt install nodejs shellcheck python3-pip luarocks
 luarocks install --local luacheck
-pip install vim-vint
+pip3 install --user --upgrade vim-vint
 update-go shfmt editorconfig-checker
-pip3 install neovim-remote
+pip3 install --user --upgrade neovim-remote

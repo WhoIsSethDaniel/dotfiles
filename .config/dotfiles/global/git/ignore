@@ -47,6 +47,8 @@
 /.local/bin/luacheck
 /.local/bin/misspell
 /.local/bin/nvr
+/.local/bin/pls
+/.local/bin/pod2markdown
 /.local/bin/revive
 /.local/bin/shfmt
 /.local/bin/snago
@@ -61,7 +63,6 @@
 /.local/bin/vim-remove
 /.local/bin/vim-verify
 /.local/bin/vint
-
 
 /.config/autostart/
 /.config/configstore/

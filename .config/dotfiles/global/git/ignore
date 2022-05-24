@@ -80,10 +80,6 @@
 /.ssh/login-keys.d/
 /.vagrant.d/
 
-/bin/ec
-/bin/snago
-/bin/stylua
-
 /lib/
 /snap/
 /src/

@@ -10,7 +10,7 @@ wd=$(mktemp -d install-ls.XXXXXX)
 cd "$wd" || exit
 wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.12.0/${download}
 unzip ./*.zip
-mv -f stylua ~/bin
+mv -f stylua ~/.local/bin
 chmod 755 ~/bin/stylua
 rm -f ${download}
 cd ..
@@ -18,7 +18,7 @@ rmdir "${wd}"
 
 # other stuff
 sudo apt install nodejs shellcheck python3-pip luarocks
-luarocks install --local luacheck
+luarocks install --tree ~/.local luacheck
 pip3 install --user --upgrade vim-vint
 update-go shfmt editorconfig-checker
 pip3 install --user --upgrade neovim-remote

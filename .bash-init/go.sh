@@ -5,7 +5,7 @@ GO_ROOT_DIR="${GO_BASE_DIR}/current"
 
 # use modules!
 # https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more
-GO_LIB_DIR="${HOME}/.local/lib/go"
+GO_LIB_DIR="${HOME}/.local"
 if [[ ${GOPATH} == "${GO_LIB_DIR}" ]] || [[ -z ${GOPATH} ]]; then
     [[ -z ${GOPATH} ]] && set_export_pre_path_var GOPATH "${GO_LIB_DIR}"
     set_export_var GO111MODULE on

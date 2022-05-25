@@ -106,6 +106,7 @@
 /.plenv/
 /.secureConnect/
 /.ssh/login-keys.d/
+/.ssh/control/
 /.vagrant.d/
 
 /snap/

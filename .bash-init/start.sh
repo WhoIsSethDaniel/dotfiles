@@ -56,8 +56,9 @@ set_export_var XDG_CONFIG_HOME "$HOME/.config"
 check_for_program manpath
 if [ -n "$manpath" -a -z "$MANPATH" ]; then
     POSSIBLE_MANPATH=$($manpath 2>/dev/null)
-    set_export_var MANPATH $POSSIBLE_MANPATH
+    set_export_var MANPATH "$POSSIBLE_MANPATH"
 fi
+set_post_path_var MANPATH "$HOME/.local/share/man"
 
 # prompt
 set_alias tpp truncated_path_prompt

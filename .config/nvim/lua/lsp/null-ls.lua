@@ -38,7 +38,8 @@ return {
     },
     diag.editorconfig_checker.with { command = 'editorconfig-checker', filetypes = { 'go', 'gomod', 'lua' } },
     diag.vint,
-    diag.shellcheck,
+    -- shellcheck is used by bash-language-server
+    -- diag.shellcheck,
     -- very noisy
     -- act.gitsigns.with { disabled_filetypes = { 'man' } },
   },

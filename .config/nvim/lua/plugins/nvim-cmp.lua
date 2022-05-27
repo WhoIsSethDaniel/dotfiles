@@ -61,6 +61,7 @@ cmp.setup.cmdline('/', {
 })
 
 -- bug
+-- when working again, try https://github.com/dmitmel/cmp-cmdline-history
 -- cmp.setup.cmdline(':', {
 --   mapping = cmp.mapping.preset.cmdline(),
 --   sources = cmp.config.sources {

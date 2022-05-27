@@ -39,6 +39,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "cmp-cmdline-history": {
+    "name": "cmp-cmdline-history",
+    "url": "https://github.com/dmitmel/cmp-cmdline-history",
+    "clean_name": "cmp-cmdline-history",
+    "config_file": "cmp-cmdline-history.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "cmp-emoji": {
     "name": "cmp-emoji",
     "url": "https://github.com/hrsh7th/cmp-emoji",

@@ -31,7 +31,7 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ['<CR>'] = cmp.mapping.confirm { select = false },
   },
-  sources = {
+  sources = cmp.config.sources {
     { name = 'buffer', priority = 7, keyword_length = 4 },
     { name = 'emoji', priority = 3 },
     { name = 'path', priority = 5 },
@@ -50,3 +50,22 @@ cmp.setup {
     ghost_text = true,
   },
 }
+
+cmp.setup.cmdline('/', {
+  mapping = cmp.mapping.preset.cmdline(),
+  sources = cmp.config.sources({
+    { name = 'nvim_lsp_document_symbol' },
+  }, {
+    { name = 'buffer' },
+  }),
+})
+
+-- bug
+-- cmp.setup.cmdline(':', {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = cmp.config.sources {
+--     { name = 'cmdline', keyword_length = 2 },
+--     { name = 'nvim_lua' },
+--     { name = 'path' },
+--   },
+-- })

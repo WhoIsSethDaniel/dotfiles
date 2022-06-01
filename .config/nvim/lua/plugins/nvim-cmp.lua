@@ -55,19 +55,16 @@ cmp.setup.cmdline('/', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources {
     { name = 'nvim_lsp_document_symbol' },
-    { name = 'cmdline_history' },
     { name = 'buffer' },
   },
 })
 
 -- bug
--- when working again, try https://github.com/dmitmel/cmp-cmdline-history
-cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline(),
-  sources = cmp.config.sources {
-    { name = 'cmdline', keyword_length = 2 },
-    { name = 'cmdline_history', keyword_length = 4 },
-    { name = 'nvim_lua' },
-    { name = 'path' },
-  },
-})
+-- cmp.setup.cmdline(':', {
+--   mapping = cmp.mapping.preset.cmdline(),
+--   sources = cmp.config.sources {
+--     { name = 'cmdline', keyword_length = 2 },
+--     { name = 'nvim_lua' },
+--     { name = 'path' },
+--   },
+-- })

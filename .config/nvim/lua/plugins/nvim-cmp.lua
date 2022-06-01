@@ -66,7 +66,7 @@ cmp.setup.cmdline(':', {
   mapping = cmp.mapping.preset.cmdline(),
   sources = cmp.config.sources {
     { name = 'cmdline', keyword_length = 2 },
-    { name = 'cmdline_history' },
+    { name = 'cmdline_history', keyword_length = 4 },
     { name = 'nvim_lua' },
     { name = 'path' },
   },

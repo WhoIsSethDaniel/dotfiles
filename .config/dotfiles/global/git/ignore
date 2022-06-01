@@ -70,8 +70,10 @@
 /.config/dotfiles/main/
 /.config/dotfiles/home/
 /.config/dotfiles/perl-module-inspector/
+/.config/enchant
 /.config/evolution/
 /.config/gcloud/
+/.config/gedit/
 /.config/gnome-*/
 /.config/google/
 /.config/google-chrome*/

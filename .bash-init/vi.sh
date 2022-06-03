@@ -28,15 +28,18 @@ set_alias vim-ls vim-list
 set_export_var MANPAGER "$EDITOR +Man!"
 
 function vim-cd() {
-    [[ -z $1 ]] && echo "usage: vim-cd <plugin> | config | conf | cf | local | loc | cache | plugins" && return
+    [[ -z $1 ]] && echo "usage: vim-cd <plugin> | config | conf | cf | in | install | local | loc | cache | plugins" && return
     local pldir=$XDG_CONFIG_HOME/nvim/pack/git-plugins/opt
     local cfdir=$XDG_CONFIG_HOME/nvim/lua/plugins
     local locdir=$XDG_DATA_HOME/nvim
+    local indir=~/.local/nvim
     local cachedir=$HOME/.cache/nvim
     if [[ $1 == "config" || $1 == "cf" || $1 == "conf" ]]; then
         cd "$cfdir"
     elif [[ $1 == "local" || $1 == "loc" ]]; then
         cd "$locdir"
+    elif [[ $1 == "in" || $1 == "install" ]]; then
+        cd "$indir"
     elif [[ $1 == "plugins" ]]; then
         cd "$pldir"
     elif [[ $1 == "cache" ]]; then

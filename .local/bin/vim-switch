@@ -2,21 +2,21 @@
 
 set -e
 
-declare -A VIM_VERSIONS
-VIM_VERSIONS=([stable]=0.7.0 [nightly]=0.8.0)
+declare -A versions
+eval versions=\("${VIM_VERSIONS}"\)
 
 version_link=~/.local/nvim/current
 
 if [[ -z $1 ]]; then
     echo "current version: $(readlink ${version_link})"
     echo "available version(s):"
-    for v in "${!VIM_VERSIONS[@]}"; do
-        echo "${v}: ${VIM_VERSIONS[$v]}"
+    for v in "${!versions[@]}"; do
+        echo "${v}: ${versions[$v]}"
     done
     exit 1
 fi
 
-if [[ -z ${VIM_VERSIONS[*]} ]]; then
+if [[ -z ${versions[*]} ]]; then
     echo "cannot determine available nvim versions;"
     echo "is VIM_VERSIONS set?"
     exit 1
@@ -27,7 +27,7 @@ cd "$HOME/.local/nvim" || {
     exit 1
 }
 
-version=${VIM_VERSIONS[$1]}
+version=${versions[$1]}
 echo "$version"
 if [[ -z $version ]]; then
     echo "unknown version"

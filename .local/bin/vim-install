@@ -2,16 +2,16 @@
 
 set -e
 
-declare -A VIM_VERSIONS
-VIM_VERSIONS=([stable]=0.7.0 [nightly]=0.8.0)
+declare -A versions
+eval versions=\("${VIM_VERSIONS}"\)
 
 if [[ -z $1 ]]; then
     echo "must provide an argument"
-    echo "possible args: ${!VIM_VERSIONS[*]}"
+    echo "possible args: ${!versions[*]}"
     exit 1
 fi
 
-if [[ -z ${VIM_VERSIONS[*]} ]]; then
+if [[ -z ${versions[*]} ]]; then
     echo "cannot determine available nvim versions"
     echo "is VIM_VERSIONS set?"
     exit 1
@@ -24,7 +24,7 @@ SUM_EXT="sha256sum"
 SUM_NAME="${pkg}.${SUM_EXT}"
 SUM_LOCAL_NAME=$1"."$SUM_EXT
 STORE=$XDG_DATA_HOME"/nvim"
-VERSION=${VIM_VERSIONS[$1]}
+VERSION=${versions[$1]}
 
 if [[ -z ${VERSION} ]]; then
     echo "provided version is invalid"

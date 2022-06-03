@@ -5,9 +5,14 @@ set -e
 declare -A VIM_VERSIONS
 VIM_VERSIONS=([stable]=0.7.0 [nightly]=0.8.0)
 
+version_link=~/.local/nvim/current
+
 if [[ -z $1 ]]; then
-    echo "must provide an argument"
-    echo "possible args: ${!VIM_VERSIONS[*]}"
+    echo "current version: $(readlink ${version_link})"
+    echo "available version(s):"
+    for v in "${!VIM_VERSIONS[@]}"; do
+        echo "${v}: ${VIM_VERSIONS[$v]}"
+    done
     exit 1
 fi
 

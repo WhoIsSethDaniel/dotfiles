@@ -38,7 +38,7 @@ rmtmpdir() {
 tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
-cd "$tmpdir" || exit
+cd "$tmpdir" || exit 1
 curl -LSo "$SUM_LOCAL_NAME" "${url}${1}/${SUM_NAME}"
 
 OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
@@ -60,7 +60,7 @@ fi
 curl -LSo nvim.tar.gz "${url}${1}/${pkg}"
 
 mkdir --parents ~/.local/nvim
-cd ~/.local/nvim || exit
+cd ~/.local/nvim || exit 1
 if [[ -e ${VERSION} ]]; then
     rm -rf "${VERSION}.old"
     mv "$VERSION" "${VERSION}.old"

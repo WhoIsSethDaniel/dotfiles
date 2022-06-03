@@ -59,7 +59,7 @@ fi
 
 curl -LSo nvim.tar.gz "${url}${1}/${pkg}"
 
-mkdir ~/.local/nvim
+mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit
 if [[ -e ${VERSION} ]]; then
     rm -rf "${VERSION}.old"

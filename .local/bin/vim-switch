@@ -23,7 +23,7 @@ cd "$HOME/.local/nvim" || {
 }
 
 version=${VIM_VERSIONS[$1]}
-echo $version
+echo "$version"
 if [[ -z $version ]]; then
     echo "unknown version"
     exit 1

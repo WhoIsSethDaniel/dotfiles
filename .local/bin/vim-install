@@ -13,6 +13,7 @@ fi
 
 if [[ -z ${VIM_VERSIONS[*]} ]]; then
     echo "cannot determine available nvim versions"
+    echo "is VIM_VERSIONS set?"
     exit 1
 fi
 

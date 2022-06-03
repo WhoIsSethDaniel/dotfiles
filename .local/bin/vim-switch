@@ -1,0 +1,35 @@
+#!/bin/bash
+
+set -e
+
+declare -A VIM_VERSIONS
+VIM_VERSIONS=([stable]=0.7.0 [nightly]=0.8.0)
+
+if [[ -z $1 ]]; then
+    echo "must provide an argument"
+    echo "possible args: ${!VIM_VERSIONS[*]}"
+    exit 1
+fi
+
+if [[ -z ${VIM_VERSIONS[*]} ]]; then
+    echo "cannot determine available nvim versions;"
+    echo "is VIM_VERSIONS set?"
+    exit 1
+fi
+
+cd "$HOME/.local/nvim" || {
+    echo "cannot find $HOME/.local/nvim"
+    exit 1
+}
+
+version=${VIM_VERSIONS[$1]}
+echo $version
+if [[ -z $version ]]; then
+    echo "unknown version"
+    exit 1
+fi
+if [[ ! -e $version ]]; then
+    echo "given version does not exist on disk"
+fi
+rm -f current
+ln -sf "${version}" current

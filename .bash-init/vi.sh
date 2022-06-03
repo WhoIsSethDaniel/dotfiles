@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set_pre_path_var PATH "$HOME/.local/nvim/bin"
+set_pre_path_var PATH "$HOME/.local/nvim/current/bin"
 
 editor_list="nvim vim vi"
 if [[ -S $NVIM_LISTEN_ADDRESS ]]; then

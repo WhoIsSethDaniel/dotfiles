@@ -2,12 +2,33 @@
 
 set -e
 
-# DL="https://github.com/neovim/neovim/releases/download/nightly/nvim-linux64.tar.gz"
-DL="https://github.com/neovim/neovim/releases/download/v0.7.0/nvim-linux64.tar.gz"
+declare -A VIM_VERSIONS
+VIM_VERSIONS=([stable]=0.7.0 [nightly]=0.8.0)
+
+if [[ -z $1 ]]; then
+    echo "must provide an argument"
+    echo "possible args: ${!VIM_VERSIONS[*]}"
+    exit 1
+fi
+
+if [[ -z ${VIM_VERSIONS[*]} ]]; then
+    echo "cannot determine available nvim versions"
+    exit 1
+fi
+
+pkg=nvim-linux64.tar.gz
+url="https://github.com/neovim/neovim/releases/download/"
+
 SUM_EXT="sha256sum"
-SUM_NAME="nvim."$SUM_EXT
-SUM=$DL"."$SUM_EXT
+SUM_NAME="${pkg}.${SUM_EXT}"
+SUM_LOCAL_NAME=$1"."$SUM_EXT
 STORE=$XDG_DATA_HOME"/nvim"
+VERSION=${VIM_VERSIONS[$1]}
+
+if [[ -z ${VERSION} ]]; then
+    echo "provided version is invalid"
+    exit 1
+fi
 
 rmtmpdir() {
     [[ -n $tmpdir ]] && rm -rf "$tmpdir"
@@ -17,12 +38,12 @@ tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit
-curl -LSo "$SUM_NAME" "$SUM"
+curl -LSo "$SUM_LOCAL_NAME" "${url}${1}/${SUM_NAME}"
 
-OLD_SUM=${STORE}"/"${SUM_NAME}
+OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
 if [[ -e $OLD_SUM ]]; then
     OLD=$(cut -d\  -f1 "${OLD_SUM}")
-    NEW=$(cut -d\  -f1 "${tmpdir}/${SUM_NAME}")
+    NEW=$(cut -d\  -f1 "${tmpdir}/${SUM_LOCAL_NAME}")
     echo "old: ${OLD}"
     echo "new: ${NEW}"
     if [[ $NEW == "$OLD" ]]; then
@@ -35,13 +56,16 @@ else
     echo "no old sum found"
 fi
 
-curl -LSo nvim.tar.gz "$DL"
+curl -LSo nvim.tar.gz "${url}${1}/${pkg}"
 
-cd ~/.local || exit
-rm -rf nvim
+cd ~/.local/nvim || exit
+if [[ -e ${VERSION} ]]; then
+    rm -rf "${VERSION}.old"
+    mv "$VERSION" "${VERSION}.old"
+fi
 
 tar xzvf "$tmpdir"/nvim.tar.gz
-mv nvim-linux64 nvim
+mv nvim-linux64 "$VERSION"
 
 # only do this if everything else succeeds
-cp --force "${tmpdir}/${SUM_NAME}" "$STORE/."
+cp --force "${tmpdir}/${SUM_LOCAL_NAME}" "$STORE/${SUM_LOCAL_NAME}"

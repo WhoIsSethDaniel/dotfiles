@@ -3,6 +3,8 @@
 set_pre_path_var PATH "$HOME/.local/nvim/current/bin"
 
 set_export_var VIM_VERSIONS "stable 0.7.0 nightly 0.8.0"
+declare -A versions
+eval versions=\("${VIM_VERSIONS}"\)
 
 editor_list="nvim vim vi"
 if [[ -S $NVIM_LISTEN_ADDRESS ]]; then
@@ -72,5 +74,14 @@ _complete_vim_plugins() {
     popd >/dev/null
 }
 
+_complete_vim_install_targets() {
+    declare -A versions
+    eval versions=\("${VIM_VERSIONS}"\)
+    COMPREPLY=("${!versions[@]}")
+}
+
 # completion for (some) vim-* commands
 complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-remove vim-log
+complete -W "${!versions[*]}" vim-install vim-switch
+
+unset_var versions

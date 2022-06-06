@@ -66,7 +66,7 @@ if [[ -e ${VERSION} ]]; then
     mv "$VERSION" "${VERSION}.old"
 fi
 
-tar xzvf "$tmpdir"/nvim.tar.gz
+tar xzf "$tmpdir"/nvim.tar.gz
 mv nvim-linux64 "$VERSION"
 
 # only do this if everything else succeeds

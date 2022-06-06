@@ -359,11 +359,11 @@
     "colorscheme": false,
     "enabled": true
   },
-  "telescope-rg.nvim": {
-    "name": "telescope-rg.nvim",
-    "url": "https://github.com/nvim-telescope/telescope-rg.nvim",
-    "clean_name": "telescope-rg-nvim",
-    "config_file": "telescope-rg-nvim.lua",
+  "telescope-live-grep-args.nvim": {
+    "name": "telescope-live-grep-args.nvim",
+    "url": "https://github.com/nvim-telescope/telescope-live-grep-args.nvim",
+    "clean_name": "telescope-live-grep-args-nvim",
+    "config_file": "telescope-live-grep-args-nvim.lua",
     "colorscheme": false,
     "enabled": true
   },

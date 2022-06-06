@@ -77,11 +77,11 @@ require('telescope').setup {
   },
   extensions = {
     fzy_native = { override_generic_sorter = true, override_file_sorter = true },
-    live_grep_raw = {},
+    live_grep_args = {},
   },
 }
 
 require('telescope').load_extension 'fzy_native'
 require('telescope').load_extension 'goldsmith'
 require('telescope').load_extension 'repossession'
-require('telescope').load_extension 'live_grep_raw'
+require('telescope').load_extension 'live_grep_args'

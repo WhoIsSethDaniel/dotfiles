@@ -2,6 +2,8 @@
 
 set -e
 
+max_old_versions=5
+
 declare -A versions
 eval versions=\("${VIM_VERSIONS}"\)
 
@@ -62,8 +64,15 @@ curl -LSo nvim.tar.gz "${url}${1}/${pkg}"
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1
 if [[ -e ${VERSION} ]]; then
-    rm -rf "${VERSION}.old"
-    mv "$VERSION" "${VERSION}.old"
+    rm -rf "${VERSION}.old" # this line can eventually go away
+    for bak in $(seq $((max_old_versions - 1)) -1 1); do
+        oldest=$((bak + 1))
+        if [[ -e "${VERSION}-${bak}" ]]; then
+            rm -rf "${VERSION}-${oldest}"
+            mv "$VERSION-${bak}" "${VERSION}-${oldest}"
+        fi
+    done
+    mv "$VERSION" "${VERSION}-1"
 fi
 
 tar xzf "$tmpdir"/nvim.tar.gz

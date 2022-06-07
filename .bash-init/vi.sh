@@ -72,14 +72,10 @@ _complete_vim_plugins() {
     popd >/dev/null
 }
 
-_complete_vim_install_targets() {
-    declare -A versions
-    eval versions=\("${VIM_VERSIONS}"\)
-    COMPREPLY=("${!versions[@]}")
-}
-
 # completion for (some) vim-* commands
-complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-remove vim-log
+declare -A versions
+eval versions=\("${VIM_VERSIONS}"\)
 complete -W "${!versions[*]}" vim-install vim-switch
+complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-remove vim-log
 
 unset_var versions

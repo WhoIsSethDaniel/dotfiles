@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set_export_var PERL_CPANM_OPT "--notest"
+unset_var PERL5LIB
 
 # check for plenv, do the needful if it exists
 unset plenv PLENV_SHELL
@@ -29,9 +30,7 @@ if [ -d "$HOME/.plenv/bin" ]; then
                 ;;
         esac
     }
-fi
-
-if [ -d "$HOME/.local" ]; then
+elif [ -d "$HOME/.local" ]; then
     set_post_var PERL_CPANM_OPT "--local-lib=$HOME/.local" " "
     set_pre_path_var PERL5LIB "$HOME/.local/lib/perl5"
     set_pre_path_var PERL5LIB "$HOME/.local/lib/perl5/x86_64-linux"

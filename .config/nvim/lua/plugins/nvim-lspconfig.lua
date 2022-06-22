@@ -4,8 +4,8 @@ i.setup {
   automatic_installation = true,
 }
 
-local disabled = {}
--- local disabled = { 'perlnavigator' }
+-- local disabled = {}
+local disabled = { 'perlnavigator' }
 
 local function setup_servers()
   local servers = i.get_installed_servers()

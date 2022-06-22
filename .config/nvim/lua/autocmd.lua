@@ -67,6 +67,12 @@ local autocmds = {
         end,
       },
     },
+    {
+      BufEnter = {
+        pattern = { 'term://*' },
+        command = 'startinsert',
+      },
+    },
   },
   create_missing_dirs = {
     {

@@ -37,6 +37,7 @@
 /.local/share/nvim/.netrwhist
 !/.local/bin
 /.local/bin/editorconfig-checker
+/.local/bin/gh-pt.pl
 /.local/bin/gofumpt
 /.local/bin/golangci-lint
 /.local/bin/golines

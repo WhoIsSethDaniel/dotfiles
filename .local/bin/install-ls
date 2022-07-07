@@ -5,13 +5,13 @@
 # https://github.com/mpeterv/luacheck
 
 # install stylua
-download=stylua-0.12.0-linux.zip
+download=stylua-linux.zip
 wd=$(mktemp -d install-ls.XXXXXX)
 cd "$wd" || exit
-wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.12.0/${download}
+wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.14.0/${download}
 unzip ./*.zip
 mv -f stylua ~/.local/bin
-chmod 755 ~/bin/stylua
+chmod 755 ~/.local/bin/stylua
 rm -f ${download}
 cd ..
 rmdir "${wd}"

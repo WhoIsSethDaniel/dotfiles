@@ -194,28 +194,6 @@ vim.opt.fillchars:append {
   verthoriz = '╋',
 }
 
--- use filetype.lua instead of filetype.vim
--- if vim.fn.has 'nvim-0.7' == 1 then
---   vim.g.do_filetype_lua = 1
---   vim.g.did_load_filetypes = 0
---
---   -- add perl module filetype (pm)
---   vim.filetype.add {
---     extension = {
---       pm = function(path, bufnr)
---         if vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:find 'XPM2' then
---           return 'xpm2'
---         elseif vim.api.nvim_buf_get_lines(bufnr, 0, 1, false)[1]:find 'XPM' then
---           return 'xpm'
---         else
---           return 'perl'
---         end
---       end,
---       t = 'perl',
---     },
---   }
--- end
-
 -- turn on embedded highlighting for lua
 --   perhaps not relevant with treesitter
 -- vim.g.vimsyn_embed = 'l'

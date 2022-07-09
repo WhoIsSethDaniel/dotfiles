@@ -1,4 +1,4 @@
-require'qf_helper'.setup({
+require('qf_helper').setup {
   prefer_loclist = true,
   sort_lsp_diagnostics = true,
   quickfix = {
@@ -17,7 +17,7 @@ require'qf_helper'.setup({
     min_height = 4,
     track_location = 'cursor',
   },
-})
+}
 
 local opts = { noremap = true, silent = true }
 vim.api.nvim_set_keymap('n', ']q', '<cmd>QNext<cr>', opts)

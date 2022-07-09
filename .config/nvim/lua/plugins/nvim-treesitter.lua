@@ -38,5 +38,5 @@ parser_config.http = {
   },
 }
 
-local ts_utils = require("nvim-treesitter.ts_utils")
+local ts_utils = require 'nvim-treesitter.ts_utils'
 ts_utils.get_node_text = vim.treesitter.query.get_node_text

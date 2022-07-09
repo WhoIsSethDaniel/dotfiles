@@ -16,7 +16,7 @@ return {
     hover = false,
     documentSymbol = false,
     codeAction = false,
-    completion = false
+    completion = false,
   },
   settings = {
     rootMarkers = { '.git/' },

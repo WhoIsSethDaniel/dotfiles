@@ -253,7 +253,7 @@
     "clean_name": "nvim-lsp-installer",
     "config_file": "nvim-lsp-installer.lua",
     "colorscheme": false,
-    "enabled": false
+    "enabled": true
   },
   "nvim-lspconfig": {
     "name": "nvim-lspconfig",

@@ -28,6 +28,7 @@
 !/.local/share/nvim
 /.local/share/nvim/*.sha256sum
 /.local/share/nvim/lsp_servers/
+/.local/share/nvim/mason/
 /.local/share/nvim/undo/
 /.local/share/nvim/sessions/*.vim
 /.local/share/nvim/project_nvim/project_history
@@ -65,6 +66,7 @@
 /.local/bin/vim-verify
 /.local/bin/vint
 
+
 /.config/autostart/
 /.config/configstore/
 /.config/dconf/
@@ -92,6 +94,7 @@
 
 /.bundle/cache/
 /.cache/
+/.cargo/
 /.cpanm/
 /.gnome/
 /.gnupg/

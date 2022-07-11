@@ -1,18 +1,8 @@
 local ok, i = pcall(require, 'nvim-lsp-installer')
-if ok then
-  i.setup {
-    ensure_installed = { 'bashls', 'sumneko_lua', 'perlnavigator', 'vimls', 'gopls' },
-    automatic_installation = true,
-  }
-else
-  ok, i = pcall(require, 'mason')
-  if ok then
-    i.setup {}
-  else
-    vim.api.nvim_err_writeln 'nvim-lsp-installer / mason not found; quitting setup'
-  end
-  return {}
-end
+i.setup {
+  ensure_installed = { 'bashls', 'sumneko_lua', 'perlnavigator', 'vimls', 'gopls' },
+  automatic_installation = true,
+}
 
 local disabled = {}
 -- local disabled = { 'perlnavigator' }

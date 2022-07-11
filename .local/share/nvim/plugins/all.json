@@ -343,6 +343,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "stabilize.nvim": {
+    "name": "stabilize.nvim",
+    "url": "https://github.com/luukvbaal/stabilize.nvim",
+    "clean_name": "stabilize-nvim",
+    "config_file": "stabilize-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "telescope-fzy-native.nvim": {
     "name": "telescope-fzy-native.nvim",
     "url": "https://github.com/nvim-telescope/telescope-fzy-native.nvim",

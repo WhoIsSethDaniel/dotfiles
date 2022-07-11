@@ -11,7 +11,7 @@ null.register {
   generator = help.formatter_factory {
     command = 'perlimports',
     to_stdin = true,
-    args = { '--read-stdin', '--cache', '--filename', '$FILENAME' },
+    args = { '--read-stdin', '--filename', '$FILENAME' },
     timeout = 10000, -- this can take a long time
   },
 }

@@ -1,5 +1,15 @@
 -- cache modules
 vim.cmd [[ packadd! impatient.nvim ]]
+_G.__luacache_config = {
+  chunks = {
+    enable = true,
+    path = vim.fn.stdpath 'cache' .. '/luacache_chunks',
+  },
+  -- turn this off, otherwise disabling modules will not work
+  modpaths = {
+    enable = false,
+  },
+}
 require 'impatient'
 
 -- an interesting discussion about options

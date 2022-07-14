@@ -1,7 +1,5 @@
 local lsp = require 'lsp'
 
-vim.cmd [[ cabbrev GoDocAll GoDoc -all ]]
-
 require('goldsmith').config {
   system = {
     debug = true,

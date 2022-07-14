@@ -1,5 +1,9 @@
-local ok, i = pcall(require, 'nvim-lsp-installer')
-i.setup {
+require'mason'.setup{}
+local m = require'mason-lspconfig'
+local r = require'mason-registry'
+local sm = require "mason-lspconfig.mappings.server"
+
+m.setup {
   ensure_installed = { 'bashls', 'sumneko_lua', 'perlnavigator', 'vimls', 'gopls' },
   automatic_installation = true,
 }
@@ -8,12 +12,12 @@ local disabled = {}
 -- local disabled = { 'perlnavigator' }
 
 local function setup_servers()
-  local servers = i.get_installed_servers()
+  for _, name in pairs(r.get_installed_package_names()) do
+    local server = sm.package_to_lspconfig[name]
 
-  for _, server in pairs(servers) do
-    if not vim.tbl_contains(disabled, server.name) and not require('goldsmith').needed(server.name) then
-      local config = require('lsp').get_config(server.name)
-      require('lspconfig')[server.name].setup(config)
+    if not vim.tbl_contains(disabled, server) and not require('goldsmith').needed(server) then
+      local config = require('lsp').get_config(server)
+      require('lspconfig')[server].setup(config)
     end
   end
   -- require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')

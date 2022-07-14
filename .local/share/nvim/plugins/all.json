@@ -191,6 +191,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "mason.nvim": {
+    "name": "mason.nvim",
+    "url": "https://github.com/williamboman/mason.nvim",
+    "clean_name": "mason-nvim",
+    "config_file": "mason-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "null-ls.nvim": {
     "name": "null-ls.nvim",
     "url": "https://github.com/jose-elias-alvarez/null-ls.nvim",
@@ -244,14 +252,6 @@
     "url": "https://github.com/kosayoda/nvim-lightbulb",
     "clean_name": "nvim-lightbulb",
     "config_file": "nvim-lightbulb.lua",
-    "colorscheme": false,
-    "enabled": true
-  },
-  "nvim-lsp-installer": {
-    "name": "nvim-lsp-installer",
-    "url": "https://github.com/williamboman/nvim-lsp-installer",
-    "clean_name": "nvim-lsp-installer",
-    "config_file": "nvim-lsp-installer.lua",
     "colorscheme": false,
     "enabled": true
   },

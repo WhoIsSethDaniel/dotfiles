@@ -9,42 +9,6 @@ for type, icon in pairs(signs) do
 end
 
 local function on_attach(client, bufnr)
-  -- typical value of client.resolved_capabilities for gopls ~0.7.0
-  -- {
-  --   call_hierarchy = true,
-  --   code_action = {
-  --     codeActionKinds = { "quickfix", "refactor.extract", "refactor.rewrite", "source.fixAll", "source.organizeImports" }
-  --   },
-  --   code_lens = true,
-  --   code_lens_resolve = false,
-  --   completion = true,
-  --   declaration = false,
-  --   document_formatting = true,
-  --   document_highlight = true,
-  --   document_range_formatting = false,
-  --   document_symbol = true,
-  --   execute_command = true,
-  --   find_references = true,
-  --   goto_definition = true,
-  --   hover = true,
-  --   implementation = true,
-  --   rename = true,
-  --   signature_help = true,
-  --   signature_help_trigger_characters = { "(", "," },
-  --   text_document_did_change = 2,
-  --   text_document_open_close = true,
-  --   text_document_save = {},
-  --   text_document_save_include_text = false,
-  --   text_document_will_save = false,
-  --   text_document_will_save_wait_until = false,
-  --   type_definition = true,
-  --   workspace_folder_properties = {
-  --     changeNotifications = "workspace/didChangeWorkspaceFolders",
-  --     supported = true
-  --   },
-  --   workspace_symbol = true
-  -- }
-
   local function dump_caps()
     print(client.name .. ':')
     print(vim.inspect(client.server_capabilities))

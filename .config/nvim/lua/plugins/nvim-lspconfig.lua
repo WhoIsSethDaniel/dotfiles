@@ -1,7 +1,5 @@
-require'mason'.setup{}
-local m = require'mason-lspconfig'
-local r = require'mason-registry'
-local sm = require "mason-lspconfig.mappings.server"
+require('mason').setup {}
+local m = require 'mason-lspconfig'
 
 m.setup {
   ensure_installed = { 'bashls', 'sumneko_lua', 'perlnavigator', 'vimls', 'gopls' },
@@ -11,19 +9,16 @@ m.setup {
 local disabled = {}
 -- local disabled = { 'perlnavigator' }
 
-local function setup_servers()
-  for _, name in pairs(r.get_installed_package_names()) do
-    local server = sm.package_to_lspconfig[name]
-
+m.setup_handlers {
+  function(server)
     if not vim.tbl_contains(disabled, server) and not require('goldsmith').needed(server) then
       local config = require('lsp').get_config(server)
       require('lspconfig')[server].setup(config)
     end
-  end
-  -- require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
-end
+  end,
+}
 
-setup_servers()
+-- require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
 
 -- require'vim.lsp.log'.set_level(vim.log.levels.TRACE)
 require('vim.lsp.log').set_level(vim.log.levels.DEBUG)

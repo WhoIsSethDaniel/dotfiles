@@ -1,24 +1,3 @@
 #!/bin/bash
 
-# https://github.com/Vimjas/vint
-# https://github.com/Koihik/LuaFormatter
-# https://github.com/mpeterv/luacheck
-
-# install stylua
-download=stylua-linux.zip
-wd=$(mktemp -d install-ls.XXXXXX)
-cd "$wd" || exit
-wget https://github.com/JohnnyMorganz/StyLua/releases/download/v0.14.0/${download}
-unzip ./*.zip
-mv -f stylua ~/.local/bin
-chmod 755 ~/.local/bin/stylua
-rm -f ${download}
-cd ..
-rmdir "${wd}"
-
-# other stuff
-sudo apt install nodejs shellcheck python3-pip luarocks
-luarocks install --tree ~/.local luacheck
-pip3 install --user --upgrade vim-vint
-update-go shfmt editorconfig-checker
 pip3 install --user --upgrade neovim-remote

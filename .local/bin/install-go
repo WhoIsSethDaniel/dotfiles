@@ -1,22 +1,22 @@
 #!/bin/bash
 
-rmtmpdir () {
+rmtmpdir() {
     [[ -n $tmpdir ]] && rm -rf $tmpdir
 }
 
-GO_VERSION=1.17.6
+GO_VERSION=1.18.4
 tmpdir=$(mktemp -q -d --tmpdir install-go.XXXXXXX)
 trap rmtmpdir EXIT
 pushd $tmpdir
 curl -LSso go.tar.gz https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz
-mkdir $HOME/.go
-tar -C $HOME/.go -xzvf go.tar.gz
+mkdir $HOME/.local/go
+tar -C $HOME/.local/go -xzvf go.tar.gz
 popd
 
-mv $HOME/.go/go $HOME/.go/${GO_VERSION}
-ln -sf $HOME/.go/${GO_VERSION} $HOME/.go/current
+mv $HOME/.local/go/go $HOME/.local/go/${GO_VERSION}
+ln -sf $HOME/.local/go/${GO_VERSION} $HOME/.local/go/current
 
-export PATH=$HOME/.go/current/bin:$PATH
+export PATH=$HOME/.local/go/current/bin:$PATH
 
 mkdir -p $HOME/src
 pushd $HOME/src
@@ -29,8 +29,6 @@ popd
 mkdir -p $HOME/src
 pushd $HOME/src
 git clone https://github.com/WhoIsSethDaniel/vim-tools
-cd vim-tools 
+cd vim-tools
 make install
 popd
-
-update-go

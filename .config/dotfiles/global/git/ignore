@@ -37,25 +37,11 @@
 /.local/share/nvim/telescope_history
 /.local/share/nvim/.netrwhist
 !/.local/bin
-/.local/bin/editorconfig-checker
 /.local/bin/gh-pt.pl
-/.local/bin/gofumpt
-/.local/bin/golangci-lint
-/.local/bin/golines
-/.local/bin/gomodifytags
-/.local/bin/gotests
-/.local/bin/impl
-/.local/bin/json-to-struct
-/.local/bin/luacheck
-/.local/bin/misspell
 /.local/bin/nvr
 /.local/bin/pls
 /.local/bin/pod2markdown
-/.local/bin/revive
-/.local/bin/shfmt
 /.local/bin/snago
-/.local/bin/staticcheck
-/.local/bin/stylua
 /.local/bin/vim-add
 /.local/bin/vim-build-sources
 /.local/bin/vim-check
@@ -64,7 +50,6 @@
 /.local/bin/vim-list
 /.local/bin/vim-remove
 /.local/bin/vim-verify
-/.local/bin/vint
 
 
 /.config/autostart/

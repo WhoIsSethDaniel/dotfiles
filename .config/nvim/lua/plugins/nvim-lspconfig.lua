@@ -1,4 +1,6 @@
-require('mason').setup {}
+require('mason').setup {
+  log_level = vim.log.levels.DEBUG,
+}
 local m = require 'mason-lspconfig'
 
 m.setup {
@@ -9,26 +11,26 @@ m.setup {
 require('mason-tool-installer').setup {
   ensure_installed = {
     'bash-language-server',
-    'lua-language-server',
-    'perlnavigator',
-    'vim-language-server',
-    'gopls',
-    'stylua',
-    'shellcheck',
     'editorconfig-checker',
     'gofumpt',
     'golangci-lint',
     'golines',
     'gomodifytags',
+    'gopls',
     'gotests',
     'impl',
     'json-to-struct',
+    'lua-language-server',
     'luacheck',
     'misspell',
+    'perlnavigator',
+    'prettier',
     'revive',
     'shellcheck',
     'shfmt',
     'staticcheck',
+    'stylua',
+    'vim-language-server',
     'vint',
   },
   auto_update = true,

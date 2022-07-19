@@ -5,16 +5,19 @@ Commands for initializing a new home directory
 ## home Bootstrap
 
 install keychain (https://www.funtoo.org/Keychain)
+
 ```
 apt install keychain
 ```
 
 install git-crypt
+
 ```
 apt install git-crypt
 ```
 
 setup home (https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3)
+
 ```
 mkdir -p $HOME/.config/dotfiles
 cd $HOME/.config/dotfiles
@@ -39,24 +42,29 @@ create-sys76-deb-repo
 First install the vim and neovim repositories and packages (see above)
 
 install xclip, some tools, and python3-neovim
+
 ```
 apt install xclip python3-neovim ripgrep fd-find gcc g++ ncurses-term
 pip3 install --user --upgrade neovim-remote
 ```
 
 install some fonts
+
 ```
 install-fonts
 ```
+
 current font: dejavu sans mono nerd font mono book
 
 ### Install all plugins
+
 ```
 vim-check
 vim-build-sources
 ```
 
 ### Run checkhealth and look for missing things
+
 ```
 vim +checkhealth
 ```
@@ -73,6 +81,7 @@ plenv global 5.36.0
 plenv install-cpanm
 cpanm PLS
 ```
+
 https://github.com/tokuhirom/plenv <br>
 https://github.com/tokuhirom/Perl-Build
 
@@ -82,11 +91,13 @@ https://github.com/tokuhirom/Perl-Build
 apt install curl make
 install-go
 ```
+
 https://golang.org/dl/
 
 ## PAM
 
-install some pam modules 
+install some pam modules
+
 ```
 sudo apt install libpam-ssh libpam-ssh-agent-auth
 # configure them
@@ -95,6 +106,7 @@ sudo apt install libpam-ssh libpam-ssh-agent-auth
 ## jekyll
 
 install
+
 ```
 sudo apt install jekyll ruby-dev
 git clone git@github.com:WhoIsSethDaniel/site
@@ -106,6 +118,7 @@ git submodule update
 ```
 
 run
+
 ```
 bundle exec jekyll build
 ```

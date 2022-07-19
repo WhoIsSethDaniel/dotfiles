@@ -19,7 +19,14 @@ null.register {
 return {
   sources = {
     fmt.stylua,
-    fmt.prettier,
+    fmt.prettier.with {
+      extra_args = function(params)
+        local m = string.match(params.cwd, '^(.*/work)')
+        if m then
+          return { '--config', string.format('%s/mm_website/.prettierrc', m) }
+        end
+      end,
+    },
     diag.misspell.with { disabled_filetypes = { 'man' } },
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
     diag.luacheck.with {

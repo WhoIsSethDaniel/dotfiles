@@ -1,13 +1,19 @@
+-- require'vim.lsp.log'.set_level(vim.log.levels.TRACE)
+require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
+-- require('vim.lsp.log').set_level(vim.log.levels.INFO)
+require('vim.lsp.log').set_format_func(vim.inspect)
+
 require('mason').setup {
   log_level = vim.log.levels.DEBUG,
 }
 
-local m = require 'mason-lspconfig'
+local mlsp = require 'mason-lspconfig'
 
-local disabled = { 'perlpls' }
+local disabled = {}
 -- local disabled = { 'perlnavigator' }
 
-m.setup_handlers {
+mlsp.setup {}
+mlsp.setup_handlers {
   function(server)
     if not vim.tbl_contains(disabled, server) and not require('goldsmith').needed(server) then
       local config = require('lsp').get_config(server)
@@ -15,8 +21,7 @@ m.setup_handlers {
     end
   end,
 }
-
-m.setup {}
+-- require('lspconfig').perlpls.setup(require('lsp').get_config 'perlpls')
 
 require('mason-tool-installer').setup {
   ensure_installed = {
@@ -45,8 +50,3 @@ require('mason-tool-installer').setup {
   },
   auto_update = true,
 }
-
--- require'vim.lsp.log'.set_level(vim.log.levels.TRACE)
-require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
--- require('vim.lsp.log').set_level(vim.log.levels.INFO)
-require('vim.lsp.log').set_format_func(vim.inspect)

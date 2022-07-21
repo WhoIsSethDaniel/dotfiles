@@ -37,6 +37,7 @@ require('mason-tool-installer').setup {
     'json-to-struct',
     'lua-language-server',
     'luacheck',
+    'markdownlint',
     'misspell',
     'perlnavigator',
     'prettier',

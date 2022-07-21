@@ -27,6 +27,7 @@ return {
         end
       end,
     },
+    diag.markdownlint,
     diag.misspell.with { disabled_filetypes = { 'man' } },
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
     diag.luacheck.with {

@@ -1,13 +1,5 @@
 local M = {}
 
-vim.diagnostic.config { severity_sort = true }
-
-local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
-for type, icon in pairs(signs) do
-  local hl = 'DiagnosticSign' .. type
-  vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-end
-
 local function on_attach(client, bufnr)
   local function dump_caps()
     print(client.name .. ':')
@@ -64,5 +56,71 @@ function M.get_config(server)
   end
   return config
 end
+
+local function setup()
+  -- require'vim.lsp.log'.set_level(vim.log.levels.TRACE)
+  require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
+  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  require('vim.lsp.log').set_format_func(vim.inspect)
+
+  require('mason').setup {
+    log_level = vim.log.levels.DEBUG,
+  }
+
+  local mlsp = require 'mason-lspconfig'
+
+  local disabled = {}
+  -- local disabled = { 'perlnavigator' }
+
+  mlsp.setup {}
+  mlsp.setup_handlers {
+    function(server)
+      if not vim.tbl_contains(disabled, server) and not require('goldsmith').needed(server) then
+        require('lspconfig')[server].setup(M.get_config(server))
+      end
+    end,
+  }
+  -- require('lspconfig').perlpls.setup(M.get_config 'perlpls')
+
+  require('mason-tool-installer').setup {
+    ensure_installed = {
+      'bash-language-server',
+      'codespell',
+      'editorconfig-checker',
+      'gofumpt',
+      'golangci-lint',
+      'golines',
+      'gomodifytags',
+      'gopls',
+      'gotests',
+      'impl',
+      'json-to-struct',
+      'lua-language-server',
+      'luacheck',
+      'markdownlint',
+      'perlnavigator',
+      'prettier',
+      'revive',
+      'shellcheck',
+      'shfmt',
+      'staticcheck',
+      'stylua',
+      'vim-language-server',
+      'vint',
+    },
+    auto_update = true,
+    -- run_on_start = false,
+  }
+
+  vim.diagnostic.config { severity_sort = true }
+
+  local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
+  for type, icon in pairs(signs) do
+    local hl = 'DiagnosticSign' .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+  end
+end
+
+setup()
 
 return M

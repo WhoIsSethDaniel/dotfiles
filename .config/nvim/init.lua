@@ -247,3 +247,7 @@ require 'commands'
 
 -- source all plugins and their custom config
 require 'all'
+
+-- lsp setup
+require 'lsp'
+

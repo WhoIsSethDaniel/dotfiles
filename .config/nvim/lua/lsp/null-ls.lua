@@ -32,7 +32,7 @@ return {
         return { '--config', '~/.markdownlint.jsonc' }
       end,
     },
-    diag.misspell.with { disabled_filetypes = { 'man' } },
+    diag.codespell,
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
     diag.luacheck.with {
       args = {

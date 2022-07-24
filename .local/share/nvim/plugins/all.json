@@ -359,6 +359,14 @@
     "colorscheme": false,
     "enabled": true
   },
+  "rest.nvim": {
+    "name": "rest.nvim",
+    "url": "https://github.com/NTBBloodbath/rest.nvim",
+    "clean_name": "rest-nvim",
+    "config_file": "rest-nvim.lua",
+    "colorscheme": false,
+    "enabled": true
+  },
   "stabilize.nvim": {
     "name": "stabilize.nvim",
     "url": "https://github.com/luukvbaal/stabilize.nvim",

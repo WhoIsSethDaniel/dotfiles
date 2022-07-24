@@ -50,5 +50,5 @@ require('mason-tool-installer').setup {
     'vint',
   },
   auto_update = true,
-  -- run_on_start = true,
+  -- run_on_start = false,
 }

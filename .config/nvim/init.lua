@@ -250,4 +250,3 @@ require 'all'
 
 -- lsp setup
 require 'lsp'
-

@@ -71,7 +71,7 @@ function vim-log() {
 
 _complete_vim_plugins() {
     pushd "$HOME/.config/nvim/pack/git-plugins/opt" >/dev/null
-    COMPREPLY=("$(/bin/ls -1dx *"${2}"* 2>/dev/null)")
+    COMPREPLY=("$(/bin/ls -1dx -- *"${2}"* 2>/dev/null)")
     popd >/dev/null
 }
 

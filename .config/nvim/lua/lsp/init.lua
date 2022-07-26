@@ -102,6 +102,7 @@ local function setup()
       'prettier',
       'revive',
       'shellcheck',
+      'shellharden',
       'shfmt',
       'staticcheck',
       'stylua',

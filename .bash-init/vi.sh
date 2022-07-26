@@ -65,19 +65,19 @@ function vim-log() {
         fi
     done
     pushd "$pldir/$plugin" >/dev/null
-    git log ${args[*]}
+    git log "${args[@]}"
     popd >/dev/null
 }
 
 _complete_vim_plugins() {
     pushd "$HOME/.config/nvim/pack/git-plugins/opt" >/dev/null
-    COMPREPLY=($(/bin/ls -1dx *${2}* 2>/dev/null))
+    COMPREPLY=("$(/bin/ls -1dx *"${2}"* 2>/dev/null)")
     popd >/dev/null
 }
 
 # completion for (some) vim-* commands
 declare -A versions
-eval versions=\("${VIM_VERSIONS}"\)
+eval versions=\("$VIM_VERSIONS"\)
 complete -W "${!versions[*]}" vim-install vim-switch
 complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-remove vim-log
 

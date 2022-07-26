@@ -54,6 +54,7 @@ return {
       filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim' },
     },
     diag.vint,
+    fmt.shellharden,
     -- shellcheck is used by bash-language-server
     -- diag.shellcheck,
     -- very noisy

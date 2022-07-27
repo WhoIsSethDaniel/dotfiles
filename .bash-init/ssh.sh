@@ -9,7 +9,7 @@ for TYPE in dsa rsa ed25519; do
     fi
 done
 
-safeglob SSH_KEYS '$SSH_KEY_DIR/*_id_{dsa,rsa,ed25519}'
+safeglob SSH_KEYS "$SSH_KEY_DIR"/*_id_{dsa,rsa,ed25519}
 
 # check permissions on all keys
 if [ -f "$PERSONAL_SSH_KEY" -o -n "$SSH_KEYS" ]; then
@@ -47,7 +47,7 @@ fi
 if [ "$EXTRA_SSH_KEYS" != "" -o -n "$SSH_KEYS" ]; then
     check_for_program keychain
     if [ "$keychain" != "" ]; then
-        "$keychain" --quiet "$EXTRA_SSH_KEYS" "$SSH_KEYS"
+        "$keychain" --quiet "$EXTRA_SSH_KEYS" $SSH_KEYS
         source "$HOME/.keychain/$HOSTNAME"-sh
     fi
 fi

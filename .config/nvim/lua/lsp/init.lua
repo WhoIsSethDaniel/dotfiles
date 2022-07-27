@@ -72,10 +72,19 @@ local function setup()
   local disabled = {}
   -- local disabled = { 'perlnavigator' }
 
+  local has_goldsmith, g = pcall(require, 'goldsmith')
+  local function goldsmith_managed(server)
+    if has_goldsmith then
+      return g.needed(server)
+    else
+      return false
+    end
+  end
+
   mlsp.setup {}
   mlsp.setup_handlers {
     function(server)
-      if not vim.tbl_contains(disabled, server) and not require('goldsmith').needed(server) then
+      if not vim.tbl_contains(disabled, server) and not goldsmith_managed(server) then
         require('lspconfig')[server].setup(M.get_config(server))
       end
     end,

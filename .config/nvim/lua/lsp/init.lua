@@ -104,8 +104,8 @@ local function setup()
       'gotests',
       'impl',
       'json-to-struct',
-      'luacheck',
       'lua-language-server',
+      'luacheck',
       'markdownlint',
       'perlnavigator',
       'prettier',
@@ -121,6 +121,7 @@ local function setup()
     },
     auto_update = true,
     -- run_on_start = false,
+    delay_start = 5000,
   }
 
   vim.diagnostic.config { severity_sort = true }

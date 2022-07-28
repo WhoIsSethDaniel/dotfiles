@@ -17,6 +17,7 @@ null.register {
 }
 
 return {
+  log_level = 'debug',
   sources = {
     fmt.stylua,
     fmt.prettier.with {

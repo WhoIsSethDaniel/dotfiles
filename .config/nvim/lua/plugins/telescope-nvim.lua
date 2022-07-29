@@ -31,7 +31,7 @@ require('telescope').setup {
       '--smart-case',
     },
     find_files = {
-      find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+      find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     },
     prompt_prefix = '   ',
     selection_caret = '  ',

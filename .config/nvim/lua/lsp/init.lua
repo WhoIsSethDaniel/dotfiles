@@ -121,7 +121,7 @@ local function setup()
     },
     auto_update = true,
     -- run_on_start = false,
-    delay_start = 5000,
+    start_delay = 5000,
   }
 
   vim.diagnostic.config { severity_sort = true }

@@ -30,6 +30,9 @@ require('telescope').setup {
       '--column',
       '--smart-case',
     },
+    find_files = {
+      find_command = { 'rg', '--files', '--hidden', '-g', '!.git' },
+    },
     prompt_prefix = '   ',
     selection_caret = '  ',
     entry_prefix = '  ',

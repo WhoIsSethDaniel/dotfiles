@@ -1,5 +1,6 @@
 local null = require 'null-ls'
 local help = require 'null-ls.helpers'
+local u = require 'null-ls.utils'
 local fmt = null.builtins.formatting
 local diag = null.builtins.diagnostics
 local act = null.builtins.code_actions
@@ -15,6 +16,15 @@ null.register {
     timeout = 10000, -- this can take a long time
   },
 }
+
+-- root dirs
+local function match_root_dir(...)
+  local f = u.root_pattern(..., 'Makefile', '.git')
+  return function(params)
+    return f(params.root)
+  end
+end
+local lua_root = match_root_dir('selene.toml', 'stylua.toml')
 
 return {
   log_level = 'debug',
@@ -35,7 +45,7 @@ return {
     },
     diag.codespell,
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
-    diag.selene,
+    diag.selene.with { cwd = lua_root },
     -- diag.luacheck.with {
     --   args = {
     --     '--globals',

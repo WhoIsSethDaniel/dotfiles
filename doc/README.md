@@ -4,21 +4,15 @@ Commands for initializing a new home directory
 
 ## home Bootstrap
 
-install keychain (https://www.funtoo.org/Keychain)
+install needed packages
 
-```
-apt install keychain
-```
-
-install git-crypt
-
-```
-apt install git-crypt
+```bash
+apt install keychain git-crypt curl make xclip python3-neovim ripgrep fd-find gcc g++ ncurses-term gh jekyll ruby-dev
 ```
 
-setup home (https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3)
+setup home ("https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3")
 
-```
+```bash
 mkdir -p $HOME/.config/dotfiles
 cd $HOME/.config/dotfiles
 git --git-dir=$HOME/.config/dotfiles/home --work-tree=$HOME clone --bare https://github.com/WhoIsSethDaniel/dotfiles $HOME/.config/dotfiles/home
@@ -31,7 +25,7 @@ git-crypt unlock <path to key>
 
 ## Install Deb Repos
 
-```
+```bash
 create-deb-repos
 # if sys76 host
 create-sys76-deb-repo
@@ -43,14 +37,13 @@ First install the vim and neovim repositories and packages (see above)
 
 install xclip, some tools, and python3-neovim
 
-```
-apt install xclip python3-neovim ripgrep fd-find gcc g++ ncurses-term
+```bash
 pip3 install --user --upgrade neovim-remote
 ```
 
 install some fonts
 
-```
+```bash
 install-fonts
 ```
 
@@ -58,20 +51,20 @@ current font: dejavu sans mono nerd font mono book
 
 ### Install all plugins
 
-```
+```bash
 vim-check
 vim-build-sources
 ```
 
 ### Run checkhealth and look for missing things
 
-```
+```bash
 vim +checkhealth
 ```
 
 ## Perl / Plenv
 
-```
+```bash
 git clone git@github.com:tokuhirom/plenv.git $HOME/.plenv
 git clone git@github.com:tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
 git clone git@github.com:WhoIsSethDaniel/plenv-module-inspector.git ~/.plenv/plugins/module-inspector
@@ -82,33 +75,26 @@ plenv install-cpanm
 cpanm PLS
 ```
 
-https://github.com/tokuhirom/plenv <br>
-https://github.com/tokuhirom/Perl-Build
+"https://github.com/tokuhirom/plenv" <br>
+"https://github.com/tokuhirom/Perl-Build"
 
 ## Go
 
-```
-apt install curl make
+```bash
 install-go
 ```
 
-https://golang.org/dl/
+"https://golang.org/dl/"
 
 ## PAM
 
-install some pam modules
-
-```
-sudo apt install libpam-ssh libpam-ssh-agent-auth
-# configure them
-```
+configure the pam modules libpam-ssh/libpam-ssh-agent-path
 
 ## jekyll
 
 install
 
-```
-sudo apt install jekyll ruby-dev
+```bash
 git clone git@github.com:WhoIsSethDaniel/site
 # may require sudo
 bundle
@@ -119,6 +105,6 @@ git submodule update
 
 run
 
-```
+```bash
 bundle exec jekyll build
 ```

@@ -51,7 +51,7 @@ function M.get_config(server)
   cap = require('cmp_nvim_lsp').update_capabilities(cap)
   config['capabilities'] = cap
   config['on_attach'] = function(client, bufnr)
-    if not has_goldsmith then
+    if (not has_goldsmith and server == 'gopls') or server ~= 'gopls' then
       require('lsp-format').on_attach(client)
       on_attach(client, bufnr)
     end

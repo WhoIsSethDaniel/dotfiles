@@ -1,3 +1,5 @@
+local has_goldsmith, g = pcall(require, 'goldsmith')
+
 local M = {}
 
 local function on_attach(client, bufnr)
@@ -49,10 +51,11 @@ function M.get_config(server)
   cap = require('cmp_nvim_lsp').update_capabilities(cap)
   config['capabilities'] = cap
   config['on_attach'] = function(client, bufnr)
-    if server ~= 'gopls' then
+    if not has_goldsmith then
       require('lsp-format').on_attach(client)
       on_attach(client, bufnr)
     end
+    require('lsp-inlayhints').on_attach(bufnr, client, false)
   end
   return config
 end
@@ -72,7 +75,6 @@ local function setup()
   local disabled = {}
   -- local disabled = { 'perlnavigator' }
 
-  local has_goldsmith, g = pcall(require, 'goldsmith')
   local function goldsmith_managed(server)
     if has_goldsmith then
       return g.needed(server)
@@ -122,6 +124,40 @@ local function setup()
     auto_update = true,
     -- run_on_start = false,
     start_delay = 5000,
+  }
+
+  require('lsp-inlayhints').setup {
+    inlay_hints = {
+      parameter_hints = {
+        show = true,
+        prefix = '<< ',
+        separator = ', ',
+        remove_colon_start = false,
+        remove_colon_end = true,
+      },
+      type_hints = {
+        -- type and other hints
+        show = true,
+        prefix = '',
+        separator = ', ',
+        remove_colon_start = false,
+        remove_colon_end = false,
+      },
+      -- separator between types and parameter hints. Note that type hints are
+      -- shown before parameter
+      labels_separator = '  ',
+      -- whether to align to the length of the longest line in the file
+      max_len_align = false,
+      -- padding from the left if max_len_align is true
+      max_len_align_padding = 1,
+      -- whether to align to the extreme right or not
+      right_align = false,
+      -- padding from the right if right_align is true
+      right_align_padding = 7,
+      -- highlight group
+      highlight = 'Comment',
+    },
+    debug_mode = false,
   }
 
   vim.diagnostic.config { severity_sort = true }

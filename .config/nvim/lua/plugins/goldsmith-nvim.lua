@@ -5,14 +5,14 @@ require('goldsmith').config {
     debug = true,
     -- debug = false,
   },
-  inlay_hints = {
-    enabled = true,
-    show_parameter_hints = true,
-    show_variable_name = true,
-    parameter_hints_prefix = '<< ',
-    other_hints_prefix = '>> ',
-    only_current_line = false,
-  },
+  -- inlay_hints = {
+  --   enabled = true,
+  --   show_parameter_hints = true,
+  --   show_variable_name = true,
+  --   parameter_hints_prefix = '<< ',
+  --   other_hints_prefix = '>> ',
+  --   only_current_line = false,
+  -- },
   mappings = {
     format = { '<leader>cf' },
     ['toggle-debug-console'] = { '<leader>gd' },

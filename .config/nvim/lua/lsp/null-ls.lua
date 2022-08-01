@@ -5,18 +5,6 @@ local fmt = null.builtins.formatting
 local diag = null.builtins.diagnostics
 local act = null.builtins.code_actions
 
-null.register {
-  name = 'perlimports',
-  method = null.methods.FORMATTING,
-  filetypes = { 'perl' },
-  generator = help.formatter_factory {
-    command = 'perlimports',
-    to_stdin = true,
-    args = { '--read-stdin', '--filename', '$FILENAME' },
-    timeout = 10000, -- this can take a long time
-  },
-}
-
 -- root dirs
 local function match_root_dir(...)
   local f = u.root_pattern(..., 'Makefile', '.git')
@@ -38,6 +26,7 @@ return {
         end
       end,
     },
+    fmt.perlimports,
     fmt.prettier.with {
       extra_args = function(params)
         local m = string.match(params.cwd, '^(.*/work)')

@@ -49,7 +49,7 @@ function M.get_config(server)
   end
   local cap = vim.lsp.protocol.make_client_capabilities()
   cap = require('cmp_nvim_lsp').update_capabilities(cap)
-  config['capabilities'] = cap
+  config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
   config['on_attach'] = function(client, bufnr)
     if (not has_goldsmith and server == 'gopls') or server ~= 'gopls' then
       require('lsp-format').on_attach(client)
@@ -158,6 +158,10 @@ local function setup()
       highlight = 'Comment',
     },
     debug_mode = false,
+  }
+
+  require('lsp-format').setup {
+    perl = { exclude = { 'perlnavigator' } },
   }
 
   vim.diagnostic.config { severity_sort = true }

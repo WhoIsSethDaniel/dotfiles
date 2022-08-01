@@ -30,6 +30,14 @@ return {
   log_level = 'debug',
   sources = {
     fmt.stylua,
+    fmt.perltidy.with {
+      extra_args = function(params)
+        local m = string.match(params.cwd, '^(.*/work)')
+        if m then
+          return { string.format('-pro=%s/mm_website/.perltidyallrc', m) }
+        end
+      end,
+    },
     fmt.prettier.with {
       extra_args = function(params)
         local m = string.match(params.cwd, '^(.*/work)')

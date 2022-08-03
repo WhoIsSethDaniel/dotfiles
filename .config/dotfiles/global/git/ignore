@@ -21,6 +21,7 @@
 /.viminfo
 /.Xauthority
 /.wget-hsts
+/.gitconfig
 
 /.local/*
 !/.local/share

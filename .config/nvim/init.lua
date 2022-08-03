@@ -18,6 +18,9 @@ require 'impatient'
 -- when writing to registers A-Z append with a leading <CR>
 vim.opt.cpoptions:append '>'
 
+-- turn off mouse support
+vim.opt.mouse = ''
+
 -- unicode emojis are not always considered full width
 vim.opt.emoji = false
 

@@ -27,7 +27,7 @@ return {
         --   ['codestyle-check'] = 'Any',
         -- },
       },
-      -- hint = { enable = true },
+      hint = { enable = true },
       workspace = {
         library = vim.api.nvim_get_runtime_file('', true),
         checkThirdParty = false,

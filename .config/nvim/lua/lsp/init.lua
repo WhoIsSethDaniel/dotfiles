@@ -107,7 +107,6 @@ local function setup()
       'impl',
       'json-to-struct',
       'lua-language-server',
-      'luacheck',
       'markdownlint',
       'perlnavigator',
       'prettier',

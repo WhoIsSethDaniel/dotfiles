@@ -46,10 +46,13 @@
 /.local/bin/vim-add
 /.local/bin/vim-build-sources
 /.local/bin/vim-check
+/.local/bin/vim-config
 /.local/bin/vim-disable
 /.local/bin/vim-enable
+/.local/bin/vim-freeze
 /.local/bin/vim-list
 /.local/bin/vim-remove
+/.local/bin/vim-thaw
 /.local/bin/vim-verify
 
 

@@ -79,6 +79,6 @@ _complete_vim_plugins() {
 declare -A versions
 eval versions=\("$VIM_VERSIONS"\)
 complete -W "${!versions[*]}" vim-install vim-switch
-complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-remove vim-log
+complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-remove vim-log vim-config vim-freeze vim-thaw
 
 unset_var versions

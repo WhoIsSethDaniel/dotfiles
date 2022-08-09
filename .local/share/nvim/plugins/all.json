@@ -5,7 +5,8 @@
     "clean_name": "Comment-nvim",
     "config_file": "Comment-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "FixCursorHold.nvim": {
     "name": "FixCursorHold.nvim",
@@ -13,7 +14,8 @@
     "clean_name": "FixCursorHold-nvim",
     "config_file": "FixCursorHold-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-buffer": {
     "name": "cmp-buffer",
@@ -21,7 +23,8 @@
     "clean_name": "cmp-buffer",
     "config_file": "cmp-buffer.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-calc": {
     "name": "cmp-calc",
@@ -29,7 +32,8 @@
     "clean_name": "cmp-calc",
     "config_file": "cmp-calc.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-emoji": {
     "name": "cmp-emoji",
@@ -37,7 +41,8 @@
     "clean_name": "cmp-emoji",
     "config_file": "cmp-emoji.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-nvim-lsp": {
     "name": "cmp-nvim-lsp",
@@ -45,7 +50,8 @@
     "clean_name": "cmp-nvim-lsp",
     "config_file": "cmp-nvim-lsp.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-nvim-lsp-document-symbol": {
     "name": "cmp-nvim-lsp-document-symbol",
@@ -53,7 +59,8 @@
     "clean_name": "cmp-nvim-lsp-document-symbol",
     "config_file": "cmp-nvim-lsp-document-symbol.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-nvim-lsp-signature-help": {
     "name": "cmp-nvim-lsp-signature-help",
@@ -61,7 +68,8 @@
     "clean_name": "cmp-nvim-lsp-signature-help",
     "config_file": "cmp-nvim-lsp-signature-help.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-nvim-lua": {
     "name": "cmp-nvim-lua",
@@ -69,7 +77,8 @@
     "clean_name": "cmp-nvim-lua",
     "config_file": "cmp-nvim-lua.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-path": {
     "name": "cmp-path",
@@ -77,7 +86,8 @@
     "clean_name": "cmp-path",
     "config_file": "cmp-path.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "cmp-vsnip": {
     "name": "cmp-vsnip",
@@ -85,7 +95,8 @@
     "clean_name": "cmp-vsnip",
     "config_file": "cmp-vsnip.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "dressing.nvim": {
     "name": "dressing.nvim",
@@ -93,7 +104,8 @@
     "clean_name": "dressing-nvim",
     "config_file": "dressing-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "focus.nvim": {
     "name": "focus.nvim",
@@ -101,7 +113,8 @@
     "clean_name": "focus-nvim",
     "config_file": "focus-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "gitsigns.nvim": {
     "name": "gitsigns.nvim",
@@ -109,7 +122,8 @@
     "clean_name": "gitsigns-nvim",
     "config_file": "gitsigns-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "goldsmith.nvim": {
     "name": "goldsmith.nvim",
@@ -117,7 +131,8 @@
     "clean_name": "goldsmith-nvim",
     "config_file": "goldsmith-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "impatient.nvim": {
     "name": "impatient.nvim",
@@ -125,7 +140,8 @@
     "clean_name": "impatient-nvim",
     "config_file": "impatient-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "kanagawa.nvim": {
     "name": "kanagawa.nvim",
@@ -133,7 +149,8 @@
     "clean_name": "kanagawa-nvim",
     "config_file": "kanagawa-nvim.lua",
     "colorscheme": true,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "lir.nvim": {
     "name": "lir.nvim",
@@ -141,7 +158,8 @@
     "clean_name": "lir-nvim",
     "config_file": "lir-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "lists.vim": {
     "name": "lists.vim",
@@ -149,7 +167,8 @@
     "clean_name": "lists-vim",
     "config_file": "lists-vim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "loupe": {
     "name": "loupe",
@@ -157,7 +176,8 @@
     "clean_name": "loupe",
     "config_file": "loupe.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "lsp-format.nvim": {
     "name": "lsp-format.nvim",
@@ -165,7 +185,8 @@
     "clean_name": "lsp-format-nvim",
     "config_file": "lsp-format-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "lsp-inlayhints.nvim": {
     "name": "lsp-inlayhints.nvim",
@@ -173,7 +194,8 @@
     "clean_name": "lsp-inlayhints-nvim",
     "config_file": "lsp-inlayhints-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "lspkind-nvim": {
     "name": "lspkind-nvim",
@@ -181,7 +203,8 @@
     "clean_name": "lspkind-nvim",
     "config_file": "lspkind-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "lualine-lsp-progress": {
     "name": "lualine-lsp-progress",
@@ -189,7 +212,8 @@
     "clean_name": "lualine-lsp-progress",
     "config_file": "lualine-lsp-progress.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "lualine.nvim": {
     "name": "lualine.nvim",
@@ -197,7 +221,8 @@
     "clean_name": "lualine-nvim",
     "config_file": "lualine-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "mason-lspconfig.nvim": {
     "name": "mason-lspconfig.nvim",
@@ -205,7 +230,8 @@
     "clean_name": "mason-lspconfig-nvim",
     "config_file": "mason-lspconfig-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "mason-tool-installer.nvim": {
     "name": "mason-tool-installer.nvim",
@@ -213,7 +239,8 @@
     "clean_name": "mason-tool-installer-nvim",
     "config_file": "mason-tool-installer-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "mason.nvim": {
     "name": "mason.nvim",
@@ -221,7 +248,8 @@
     "clean_name": "mason-nvim",
     "config_file": "mason-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "null-ls.nvim": {
     "name": "null-ls.nvim",
@@ -229,7 +257,8 @@
     "clean_name": "null-ls-nvim",
     "config_file": "null-ls-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-autopairs": {
     "name": "nvim-autopairs",
@@ -237,7 +266,8 @@
     "clean_name": "nvim-autopairs",
     "config_file": "nvim-autopairs.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-bqf": {
     "name": "nvim-bqf",
@@ -245,7 +275,8 @@
     "clean_name": "nvim-bqf",
     "config_file": "nvim-bqf.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-cmp": {
     "name": "nvim-cmp",
@@ -253,7 +284,8 @@
     "clean_name": "nvim-cmp",
     "config_file": "nvim-cmp.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-gps": {
     "name": "nvim-gps",
@@ -261,7 +293,8 @@
     "clean_name": "nvim-gps",
     "config_file": "nvim-gps.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-lastplace": {
     "name": "nvim-lastplace",
@@ -269,7 +302,8 @@
     "clean_name": "nvim-lastplace",
     "config_file": "nvim-lastplace.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-lightbulb": {
     "name": "nvim-lightbulb",
@@ -277,7 +311,8 @@
     "clean_name": "nvim-lightbulb",
     "config_file": "nvim-lightbulb.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-lspconfig": {
     "name": "nvim-lspconfig",
@@ -285,7 +320,8 @@
     "clean_name": "nvim-lspconfig",
     "config_file": "nvim-lspconfig.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-pqf": {
     "name": "nvim-pqf",
@@ -293,7 +329,8 @@
     "clean_name": "nvim-pqf",
     "config_file": "nvim-pqf.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-treesitter": {
     "name": "nvim-treesitter",
@@ -301,7 +338,8 @@
     "clean_name": "nvim-treesitter",
     "config_file": "nvim-treesitter.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-treesitter-textobjects": {
     "name": "nvim-treesitter-textobjects",
@@ -309,7 +347,8 @@
     "clean_name": "nvim-treesitter-textobjects",
     "config_file": "nvim-treesitter-textobjects.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-ts-rainbow": {
     "name": "nvim-ts-rainbow",
@@ -317,7 +356,8 @@
     "clean_name": "nvim-ts-rainbow",
     "config_file": "nvim-ts-rainbow.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "nvim-web-devicons": {
     "name": "nvim-web-devicons",
@@ -325,7 +365,8 @@
     "clean_name": "nvim-web-devicons",
     "config_file": "nvim-web-devicons.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "open-browser.vim": {
     "name": "open-browser.vim",
@@ -333,7 +374,8 @@
     "clean_name": "open-browser-vim",
     "config_file": "open-browser-vim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "plenary.nvim": {
     "name": "plenary.nvim",
@@ -341,7 +383,8 @@
     "clean_name": "plenary-nvim",
     "config_file": "plenary-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "project.nvim": {
     "name": "project.nvim",
@@ -349,7 +392,8 @@
     "clean_name": "project-nvim",
     "config_file": "project-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "qf_helper.nvim": {
     "name": "qf_helper.nvim",
@@ -357,7 +401,8 @@
     "clean_name": "qf_helper-nvim",
     "config_file": "qf_helper-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "repossession.nvim": {
     "name": "repossession.nvim",
@@ -365,7 +410,8 @@
     "clean_name": "repossession-nvim",
     "config_file": "repossession-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "rest.nvim": {
     "name": "rest.nvim",
@@ -373,7 +419,8 @@
     "clean_name": "rest-nvim",
     "config_file": "rest-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "stabilize.nvim": {
     "name": "stabilize.nvim",
@@ -381,7 +428,8 @@
     "clean_name": "stabilize-nvim",
     "config_file": "stabilize-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "telescope-fzy-native.nvim": {
     "name": "telescope-fzy-native.nvim",
@@ -389,7 +437,8 @@
     "clean_name": "telescope-fzy-native-nvim",
     "config_file": "telescope-fzy-native-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "telescope-live-grep-args.nvim": {
     "name": "telescope-live-grep-args.nvim",
@@ -397,7 +446,8 @@
     "clean_name": "telescope-live-grep-args-nvim",
     "config_file": "telescope-live-grep-args-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "telescope.nvim": {
     "name": "telescope.nvim",
@@ -405,7 +455,8 @@
     "clean_name": "telescope-nvim",
     "config_file": "telescope-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "terminus": {
     "name": "terminus",
@@ -413,7 +464,8 @@
     "clean_name": "terminus",
     "config_file": "terminus.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "toggle-lsp-diagnostics.nvim": {
     "name": "toggle-lsp-diagnostics.nvim",
@@ -421,7 +473,8 @@
     "clean_name": "toggle-lsp-diagnostics-nvim",
     "config_file": "toggle-lsp-diagnostics-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "toggleterm.nvim": {
     "name": "toggleterm.nvim",
@@ -429,7 +482,8 @@
     "clean_name": "toggleterm-nvim",
     "config_file": "toggleterm-nvim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-conjoin": {
     "name": "vim-conjoin",
@@ -437,7 +491,8 @@
     "clean_name": "vim-conjoin",
     "config_file": "vim-conjoin.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-dispatch": {
     "name": "vim-dispatch",
@@ -445,7 +500,8 @@
     "clean_name": "vim-dispatch",
     "config_file": "vim-dispatch.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-eunuch": {
     "name": "vim-eunuch",
@@ -453,7 +509,8 @@
     "clean_name": "vim-eunuch",
     "config_file": "vim-eunuch.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-fugitive": {
     "name": "vim-fugitive",
@@ -461,7 +518,8 @@
     "clean_name": "vim-fugitive",
     "config_file": "vim-fugitive.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-matchup": {
     "name": "vim-matchup",
@@ -469,7 +527,8 @@
     "clean_name": "vim-matchup",
     "config_file": "vim-matchup.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-repeat": {
     "name": "vim-repeat",
@@ -477,7 +536,8 @@
     "clean_name": "vim-repeat",
     "config_file": "vim-repeat.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-sandwich": {
     "name": "vim-sandwich",
@@ -485,7 +545,8 @@
     "clean_name": "vim-sandwich",
     "config_file": "vim-sandwich.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-sleuth": {
     "name": "vim-sleuth",
@@ -493,7 +554,8 @@
     "clean_name": "vim-sleuth",
     "config_file": "vim-sleuth.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-speeddating": {
     "name": "vim-speeddating",
@@ -501,7 +563,8 @@
     "clean_name": "vim-speeddating",
     "config_file": "vim-speeddating.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-unimpaired": {
     "name": "vim-unimpaired",
@@ -509,7 +572,8 @@
     "clean_name": "vim-unimpaired",
     "config_file": "vim-unimpaired.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "vim-vsnip": {
     "name": "vim-vsnip",
@@ -517,7 +581,8 @@
     "clean_name": "vim-vsnip",
     "config_file": "vim-vsnip.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   },
   "wiki.vim": {
     "name": "wiki.vim",
@@ -525,6 +590,7 @@
     "clean_name": "wiki-vim",
     "config_file": "wiki-vim.lua",
     "colorscheme": false,
-    "enabled": true
+    "enabled": true,
+    "frozen": false
   }
 }

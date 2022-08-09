@@ -208,7 +208,7 @@
   },
   "lualine-lsp-progress": {
     "name": "lualine-lsp-progress",
-    "url": "https://github.com/arkav/lualine-lsp-progress",
+    "url": "git@github.com:WhoIsSethDaniel/lualine-lsp-progress",
     "clean_name": "lualine-lsp-progress",
     "config_file": "lualine-lsp-progress.lua",
     "colorscheme": false,

@@ -53,6 +53,7 @@ function M.get_config(server)
   config['on_attach'] = function(client, bufnr)
     if (not has_goldsmith and server == 'gopls') or server ~= 'gopls' then
       require('lsp-format').on_attach(client)
+      require('lsp_signature').on_attach({}, bufnr)
       on_attach(client, bufnr)
     end
     require('lsp-inlayhints').on_attach(bufnr, client, false)
@@ -124,6 +125,8 @@ local function setup()
     -- run_on_start = false,
     start_delay = 5000,
   }
+
+  require('lsp_signature').setup {}
 
   require('lsp-inlayhints').setup {
     inlay_hints = {

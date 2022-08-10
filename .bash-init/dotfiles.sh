@@ -9,7 +9,7 @@ function check() {
 }
 
 function gh-cd() {
-    cd "$HOME/.config/dotfiles"
+    cd "$HOME/.config/dotfiles" || return
 }
 
 # check config status.showUntrackedFiles no

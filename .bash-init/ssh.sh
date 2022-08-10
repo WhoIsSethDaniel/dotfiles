@@ -44,7 +44,7 @@ if [ -f "$PERSONAL_SSH_KEY" ]; then
 fi
 
 # use keychain for any other keys
-if [ "$EXTRA_SSH_KEYS" != "" -o -n "$SSH_KEYS" ]; then
+if [ "$EXTRA_SSH_KEYS" != "" ] || [ "$SSH_KEYS" != "" ]; then
     check_for_program keychain
     if [ "$keychain" != "" ]; then
         "$keychain" --quiet "$EXTRA_SSH_KEYS" $SSH_KEYS

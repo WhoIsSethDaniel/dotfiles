@@ -38,7 +38,6 @@ cmp.setup {
     { name = 'calc', priority = 4 },
     { name = 'nvim_lua', priority = 9 },
     { name = 'nvim_lsp', priority = 9 },
-    { name = 'nvim_lsp_signature_help', priority = 10 },
     { name = 'vsnip', priority = 8 },
   },
   -- preselect = cmp.PreselectMode.Item,

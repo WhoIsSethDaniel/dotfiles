@@ -36,19 +36,19 @@ function vim-cd() {
     local indir=~/.local/nvim
     local cachedir=$HOME/.cache/nvim
     if [[ $1 == "config" || $1 == "cf" || $1 == "conf" ]]; then
-        cd "$cfdir"
+        cd "$cfdir" || return
     elif [[ $1 == "local" || $1 == "loc" ]]; then
-        cd "$locdir"
+        cd "$locdir" || return
     elif [[ $1 == "in" || $1 == "install" ]]; then
-        cd "$indir"
+        cd "$indir" || return
     elif [[ $1 == "plugins" ]]; then
-        cd "$pldir"
+        cd "$pldir" || return
     elif [[ $1 == "state" ]]; then
-        cd "$statedir"
+        cd "$statedir" || return
     elif [[ $1 == "cache" ]]; then
-        cd "$cachedir"
+        cd "$cachedir" || return
     elif [[ -d "$pldir/$1" ]]; then
-        cd "$pldir/$1"
+        cd "$pldir/$1" || return
     else
         echo "cannot find directory for '$1'"
     fi
@@ -64,15 +64,15 @@ function vim-log() {
             args+=("$arg")
         fi
     done
-    pushd "$pldir/$plugin" >/dev/null
+    pushd "$pldir/$plugin" >/dev/null || return
     git log "${args[@]}"
-    popd >/dev/null
+    popd >/dev/null || return
 }
 
 _complete_vim_plugins() {
-    pushd "$HOME/.config/nvim/pack/git-plugins/opt" >/dev/null
+    pushd "$HOME/.config/nvim/pack/git-plugins/opt" >/dev/null || return
     COMPREPLY=($(/bin/ls -1dx -- *"${2}"* 2>/dev/null))
-    popd >/dev/null
+    popd >/dev/null || return
 }
 
 # completion for (some) vim-* commands

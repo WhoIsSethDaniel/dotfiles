@@ -1,6 +1,7 @@
 #!/bin/bash
 
 set_pre_path_var PATH "$HOME/.local/nvim/current/bin"
+set_pre_path_var PATH "$HOME/.local/share/nvim/mason/bin"
 
 set_export_var VIM_VERSIONS "[stable]=0.7.2 [nightly]=0.8.0"
 

@@ -35,12 +35,6 @@ create-sys76-deb-repo
 
 First install the vim and neovim repositories and packages (see above)
 
-install xclip, some tools, and python3-neovim
-
-```bash
-pip3 install --user --upgrade neovim-remote
-```
-
 install some fonts
 
 ```bash

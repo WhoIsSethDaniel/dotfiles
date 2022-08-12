@@ -39,7 +39,6 @@
 /.local/share/nvim/.netrwhist
 !/.local/bin
 /.local/bin/gh-pt.pl
-/.local/bin/nvr
 /.local/bin/pls
 /.local/bin/pod2markdown
 /.local/bin/snago

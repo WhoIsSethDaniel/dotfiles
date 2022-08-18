@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -e
+
+ubuntu="22.04"
+
+tempfile=$(mktemp)
+curl -o "$tempfile" "https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo"
+tic -x -o ~/.terminfo "$tempfile"
+rm "$tempfile"
+
+version=$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d '"' -f 4)
+tempdir=$(mktemp --directory)
+wget --directory-prefix="$tempdir" "https://github.com/wez/wezterm/releases/download/${version}/wezterm-${version}.Ubuntu${ubuntu}.deb"
+for f in "$tempdir"/*.deb; do
+    sudo apt install "$f"
+    rm -f "$f"
+    break
+done
+rmdir "$tempdir"

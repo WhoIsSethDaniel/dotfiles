@@ -31,6 +31,12 @@ create-deb-repos
 create-sys76-deb-repo
 ```
 
+## Install wezterm
+
+```bash
+install-wezterm
+```
+
 ## (Neo)Vim
 
 First install the vim and neovim repositories and packages (see above)

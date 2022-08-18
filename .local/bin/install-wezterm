@@ -3,18 +3,41 @@
 set -e
 
 ubuntu="22.04"
-
-tempfile=$(mktemp)
-curl -o "$tempfile" "https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo"
-tic -x -o ~/.terminfo "$tempfile"
-rm "$tempfile"
-
 version=$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d '"' -f 4)
+name="wezterm-${version}.Ubuntu${ubuntu}.deb"
+url="https://github.com/wez/wezterm/releases/download/${version}/${name}"
+sha_url="${url}.sha256"
+sha="${name}.sha256"
+old_sha=${HOME}/.config/wezterm/sha256.txt
+
 tempdir=$(mktemp --directory)
-wget --directory-prefix="$tempdir" "https://github.com/wez/wezterm/releases/download/${version}/wezterm-${version}.Ubuntu${ubuntu}.deb"
+
+wget --directory-prefix="$tempdir" "$sha_url"
+if [ -f "$old_sha" ]; then
+    old=$(cut -d\  -f1 "$old_sha")
+    new=$(cut -d\  -f1 "${tempdir}/${sha}")
+    echo "old: $old"
+    echo "new: $new"
+    if [[ $new == "$old" ]]; then
+        echo "no update available"
+        exit 0
+    else
+        echo "update available"
+    fi
+else
+    echo "no old sum found"
+fi
+
+wget --directory-prefix="$tempdir" "https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo"
+tic -x -o ~/.terminfo "$tempdir/wezterm.terminfo"
+rm -f "$tempdir/wezterm.terminfo"
+
+wget --directory-prefix="$tempdir" "$url"
 for f in "$tempdir"/*.deb; do
     sudo apt install "$f"
     rm -f "$f"
     break
 done
+
+mv "${tempdir}/${sha}" "$old_sha"
 rmdir "$tempdir"

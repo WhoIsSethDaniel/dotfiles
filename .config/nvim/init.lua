@@ -245,10 +245,10 @@ vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r
 -- autocommands
 require 'autocmd'
 
--- comands
+-- commands
 require 'commands'
 
--- source all plugins and their custom config
+-- source all plugins and their custom config (if any)
 require 'all'
 
 -- lsp setup

@@ -71,9 +71,7 @@ function vim-log() {
 }
 
 _complete_vim_plugins() {
-    pushd "$HOME/.config/nvim/pack/git-plugins/opt" >/dev/null || return
-    COMPREPLY=($(/bin/ls -1dx -- *"${2}"* 2>/dev/null))
-    popd >/dev/null || return
+    IFS=' ' read -r -a COMPREPLY <<<"$(vim-ls | grep "${2}" | tr "\n" " " 2>/dev/null)"
 }
 
 # completion for (some) vim-* commands

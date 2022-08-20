@@ -14,10 +14,10 @@ function install_font() {
     popd || return
 }
 
-version=2.1.0
-install_font DejaVuSansMono https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/DejaVuSansMono.zip
-install_font Hack https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/Hack.zip
-install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/Ubuntu.zip
-install_font CascadiaCode https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/CascadiaCode.zip
+version=$(curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep tag_name | cut -d '"' -f 4)
+install_font DejaVuSansMono https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/DejaVuSansMono.zip
+install_font Hack https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Hack.zip
+install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Ubuntu.zip
+install_font CascadiaCode https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/CascadiaCode.zip
 
 fc-cache -fv

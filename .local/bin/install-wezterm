@@ -10,7 +10,14 @@ sha_url="${url}.sha256"
 sha="${name}.sha256"
 old_sha=${HOME}/.config/wezterm/sha256.txt
 
+function remove_temp_dir() {
+    rm -f "$tempdir/wezterm.terminfo"
+    rm -f "${tempdir}/${sha}"
+    rmdir "$tempdir"
+}
+
 tempdir=$(mktemp --directory)
+trap remove_temp_dir EXIT
 
 wget --directory-prefix="$tempdir" "$sha_url"
 if [ -f "$old_sha" ]; then
@@ -40,4 +47,3 @@ for f in "$tempdir"/*.deb; do
 done
 
 mv "${tempdir}/${sha}" "$old_sha"
-rmdir "$tempdir"

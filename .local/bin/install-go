@@ -1,34 +1,34 @@
 #!/bin/bash
 
 rmtmpdir() {
-    [[ -n $tmpdir ]] && rm -rf $tmpdir
+    [[ -n $tmpdir ]] && rm -rf "$tmpdir"
 }
 
-GO_VERSION=1.18.4
+GO_VERSION=1.19
 tmpdir=$(mktemp -q -d --tmpdir install-go.XXXXXXX)
 trap rmtmpdir EXIT
-pushd $tmpdir
-curl -LSso go.tar.gz https://dl.google.com/go/go${GO_VERSION}.linux-amd64.tar.gz
-mkdir $HOME/.local/go
-tar -C $HOME/.local/go -xzvf go.tar.gz
-popd
+pushd "$tmpdir" || return
+curl -LSso go.tar.gz https://dl.google.com/go/go"$GO_VERSION".linux-amd64.tar.gz
+mkdir "$HOME"/.local/go
+tar -C "$HOME"/.local/go -xzvf go.tar.gz
+popd || return
 
-mv $HOME/.local/go/go $HOME/.local/go/${GO_VERSION}
-ln -sf $HOME/.local/go/${GO_VERSION} $HOME/.local/go/current
+mv "$HOME"/.local/go/go "$HOME/.local/go/$GO_VERSION"
+ln -sf "$HOME/.local/go/$GO_VERSION" "$HOME"/.local/go/current
 
 export PATH=$HOME/.local/go/current/bin:$PATH
 
-mkdir -p $HOME/src
-pushd $HOME/src
+mkdir -p "$HOME"/src
+pushd "$HOME"/src || return
 git clone https://github.com/WhoIsSethDaniel/snago
-cd snago
+cd snago || return
 make
-mv snago ~/bin
-popd
+go install .
+popd || return
 
-mkdir -p $HOME/src
-pushd $HOME/src
+mkdir -p "$HOME"/src
+pushd "$HOME"/src || return
 git clone https://github.com/WhoIsSethDaniel/vim-tools
-cd vim-tools
+cd vim-tools || return
 make install
-popd
+popd || return

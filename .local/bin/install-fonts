@@ -1,22 +1,23 @@
 #!/bin/bash
 
-function install_font () {
+function install_font() {
     local name=$1
     local url=$2
 
     local dir=$HOME/.local/share/fonts/${name}
     echo "installing ${name} to ${dir}"
-    mkdir -p ${dir}
-    pushd ${dir}
-    wget -O font.zip ${url}
+    mkdir -p "$dir"
+    pushd "$dir" || return
+    wget -O font.zip "$url"
     unzip -o font.zip
     rm -f font.zip
-    popd
+    popd || return
 }
 
-install_font DejaVuSansMono https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/DejaVuSansMono.zip
-install_font Hack https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Hack.zip
-install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/Ubuntu.zip
-install_font CascadiaCode https://github.com/ryanoasis/nerd-fonts/releases/download/v2.1.0/CascadiaCode.zip
+version=2.1.0
+install_font DejaVuSansMono https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/DejaVuSansMono.zip
+install_font Hack https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/Hack.zip
+install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/Ubuntu.zip
+install_font CascadiaCode https://github.com/ryanoasis/nerd-fonts/releases/download/v"$version"/CascadiaCode.zip
 
 fc-cache -fv

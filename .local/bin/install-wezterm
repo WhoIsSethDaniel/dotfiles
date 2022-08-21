@@ -3,7 +3,8 @@
 set -e
 
 ubuntu="$(lsb_release -r --short)"
-version=$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d '"' -f 4)
+stable_version=$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d '"' -f 4)
+version=${1:-${stable_version}}
 name="wezterm-${version}.Ubuntu${ubuntu}.deb"
 url="https://github.com/wez/wezterm/releases/download/${version}/$name"
 sha_url="${url}.sha256"
@@ -23,9 +24,9 @@ wget --directory-prefix="$tempdir" "$sha_url"
 if [ -f "$old_sha" ]; then
     old=$(cut -d\  -f1 "$old_sha")
     new=$(cut -d\  -f1 "${tempdir}/${sha}")
-    echo "old: ""$old"
-    echo "new: ""$new"
-    if [[ $new == ""$old ]]; then
+    echo "old: $old"
+    echo "new: $new"
+    if [[ $new == "$old" ]]; then
         echo "no update available"
         exit 0
     else
@@ -35,14 +36,14 @@ else
     echo "no old sum found"
 fi
 
-wget --directory-prefix="""$tempdir" "https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo"
-tic -x -o ~/.terminfo """$tempdir"/wezterm.terminfo
-rm -f """$tempdir"/wezterm.terminfo
+wget --directory-prefix="$tempdir" "https://raw.githubusercontent.com/wez/wezterm/master/termwiz/data/wezterm.terminfo"
+tic -x -o ~/.terminfo "$tempdir"/wezterm.terminfo
+rm -f "$tempdir"/wezterm.terminfo
 
-wget --directory-prefix="""$tempdir" """$url"
-for f in """$tempdir"/*.deb; do
-    sudo apt install """$f"
-    rm -f """$f"
+wget --directory-prefix="$tempdir" "$url"
+for f in "$tempdir"/*.deb; do
+    sudo apt install "$f"
+    rm -f "$f"
     break
 done
 

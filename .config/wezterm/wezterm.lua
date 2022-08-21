@@ -2,7 +2,11 @@ local wezterm = require 'wezterm'
 
 return {
   font_size = 18.0,
-  font = wezterm.font 'DejaVuSansMono Nerd Font',
+  font = wezterm.font_with_fallback {
+    'DejaVuSansMono Nerd Font',
+    'CaskadydiaCove Nerd Font Mono',
+    'Hack Nerd Font Mono',
+  },
   color_scheme = 'kanagawabones',
   default_prog = { '/bin/bash' },
   hide_tab_bar_if_only_one_tab = true,

@@ -27,6 +27,8 @@ return {
     -- tab
     { key = 't', mods = 'CTRL|ALT', action = wezterm.action.SpawnTab 'CurrentPaneDomain' },
     { key = 'w', mods = 'CTRL|ALT', action = wezterm.action.CloseCurrentTab { confirm = false } },
+    { key = 'j', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(-1) },
+    { key = 'k', mods = 'CTRL|ALT', action = wezterm.action.ActivateTabRelative(1) },
     { key = '1', mods = 'ALT', action = wezterm.action.ActivateTab(0) },
     { key = '2', mods = 'ALT', action = wezterm.action.ActivateTab(1) },
     { key = '3', mods = 'ALT', action = wezterm.action.ActivateTab(2) },

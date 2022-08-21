@@ -5,7 +5,7 @@
   homogeneous_tabbar = False
   inactive_color_offset = 0.4025974025974026
 [keybindings]
-  new_tab = <Primary><Alt>t
+  new_tab = ""
   close_term = <Primary><Alt>w
   copy = None
   paste = <Primary><Alt>v

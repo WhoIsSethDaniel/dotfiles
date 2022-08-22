@@ -12,7 +12,7 @@ OS=$(uname -s 2>/dev/null)
 if [ "$OS" == "FreeBSD" ]; then
     set_alias ls 'ls -C -F'
 else
-    set_alias ls 'ls -C -F -T 0'
+    set_alias ls 'ls --color -C -F -T 0'
 fi
 # set_alias man 'LC_ALL=C man'
 
@@ -63,7 +63,7 @@ set_post_path_var MANPATH "$HOME/.local/share/man"
 # prompt
 set_alias tpp truncated_path_prompt
 set_var PS1 '\h:\$(tpp)> '
-# set_var LS_COLORS 'di=01;32:ex=01;33'
+# set_export_var LS_COLORS 'di=01;32:ex=01;33'
 
 [ ! -d "$HOME/tmp" ] && mkdir "$HOME"/tmp
 set_export_path_var TMPDIR "$HOME"/tmp

@@ -1,13 +1,14 @@
 local wezterm = require 'wezterm'
 
 return {
+  warn_about_missing_glyphs = true,
   font_size = 18.0,
   font = wezterm.font_with_fallback {
     'DejaVuSansMono Nerd Font',
     'CaskadydiaCove Nerd Font Mono',
     'Hack Nerd Font Mono',
   },
-  color_scheme = 'kanagawabones',
+  -- color_scheme = 'kanagawabones',  -- for some reason really slows things down; particularly neovim
   default_prog = { '/bin/bash' },
   hide_tab_bar_if_only_one_tab = true,
   audible_bell = 'Disabled',
@@ -19,6 +20,25 @@ return {
     },
   },
   default_gui_startup_args = { 'connect', 'unix' },
+  force_reverse_video_cursor = true,
+  colors = {
+    foreground = '#dcd7ba',
+    background = '#000000',
+
+    cursor_bg = '#c8c093',
+    cursor_fg = '#c8c093',
+    cursor_border = '#c8c093',
+
+    selection_fg = '#c8c093',
+    selection_bg = '#2d4f67',
+
+    scrollbar_thumb = '#16161d',
+    split = '#16161d',
+
+    ansi = { '#090618', '#c34043', '#76946a', '#c0a36e', '#7e9cd8', '#957fb8', '#6a9589', '#c8c093' },
+    brights = { '#727169', '#e82424', '#98bb6c', '#e6c384', '#7fb4ca', '#938aa9', '#7aa89f', '#dcd7ba' },
+    indexed = { [16] = '#ffa066', [17] = '#ff5d62' },
+  },
   keys = {
     -- window
     { key = 'q', mods = 'CTRL|ALT', action = wezterm.action.QuitApplication },

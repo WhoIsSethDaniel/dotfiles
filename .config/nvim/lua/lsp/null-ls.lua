@@ -14,6 +14,21 @@ local function match_root_dir(...)
 end
 local lua_root = match_root_dir('selene.toml', 'stylua.toml')
 
+-- config files
+local function match_conf(...)
+  local patterns = ...
+  local f = u.root_pattern(...)
+  return function(root)
+    local d = f(root)
+    for _, pattern in ipairs(vim.tbl_flatten { patterns }) do
+      local c = string.format('%s/%s', d, pattern)
+      if u.path.exists(c) then
+        return c
+      end
+    end
+  end
+end
+
 return {
   log_level = 'debug',
   sources = {
@@ -26,7 +41,14 @@ return {
         end
       end,
     },
-    fmt.cbfmt,
+    fmt.cbfmt.with {
+      extra_args = function(params)
+        local c = match_conf '.cbfmt.toml'(params.root)
+        if c then
+          return { '--config', c }
+        end
+      end,
+    },
     fmt.perlimports,
     fmt.prettier.with {
       extra_args = function(params)

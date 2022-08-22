@@ -23,8 +23,10 @@ require('kanagawa').setup {
   transparent = false, -- do not set background color
   dimInactive = true, -- dim inactive window `:h hl-NormalNC`
   globalstatus = true,
+  terminalColors = true,
   colors = { bg = '#000000' },
   overrides = {},
+  theme = 'default',
 }
 
 vim.cmd [[ colorscheme kanagawa ]]

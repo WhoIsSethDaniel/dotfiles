@@ -26,6 +26,7 @@ return {
         end
       end,
     },
+    fmt.cbfmt,
     fmt.perlimports,
     fmt.prettier.with {
       extra_args = function(params)

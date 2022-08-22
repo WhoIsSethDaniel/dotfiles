@@ -97,6 +97,7 @@ local function setup()
   require('mason-tool-installer').setup {
     ensure_installed = {
       'bash-language-server',
+      'cbfmt',
       'codespell',
       'editorconfig-checker',
       'gofumpt',

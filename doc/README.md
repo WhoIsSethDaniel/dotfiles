@@ -26,9 +26,9 @@ git-crypt unlock <path to key>
 ## Install Deb Repos
 
 ```bash
-create-deb-repos
+install-deb-repos
 # if sys76 host
-create-sys76-deb-repo
+install-sys76-deb-repo
 ```
 
 ## Install wezterm

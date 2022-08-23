@@ -16,8 +16,6 @@ echo
 # echo "vim"
 # sudo add-apt-repository ppa:jonathonf/vim-daily
 # sudo add-apt-repository ppa:jonathonf/vim
-# sudo apt install vim-common vim-gtk vim-gui-common vim-runtime
-# sudo apt remove vim-tiny
 # echo
 
 # neovim (https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable)
@@ -40,6 +38,7 @@ sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream
 sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
 
 # alacritty
+echo "alacritty"
 sudo add-apt-repository ppa:aslatter/ppa
 
 # nodejs (https://github.com/nodesource/distributions)
@@ -61,3 +60,5 @@ sudo apt install pipewire wireplumber \
 sudo apt install nodejs
 sudo apt install git-lfs
 sudo apt install alacritty
+# sudo apt install vim-common vim-gtk vim-gui-common vim-runtime
+# sudo apt remove vim-tiny

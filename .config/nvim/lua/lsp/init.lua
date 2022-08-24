@@ -56,7 +56,7 @@ function M.get_config(server)
       -- require('lsp_signature').on_attach({}, bufnr)
       on_attach(client, bufnr)
     end
-    require('lsp-inlayhints').on_attach(bufnr, client, false)
+    require('lsp-inlayhints').on_attach(client, bufnr, false)
   end
   return config
 end

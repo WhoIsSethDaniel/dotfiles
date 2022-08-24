@@ -121,6 +121,8 @@ local function setup()
       'stylua',
       'vim-language-server',
       'vint',
+      'yamlfmt',
+      'yamllint',
     },
     auto_update = true,
     -- run_on_start = false,

@@ -32,40 +32,11 @@ end
 return {
   log_level = 'debug',
   sources = {
-    fmt.stylua,
-    fmt.perltidy.with {
-      extra_args = function(params)
-        local m = string.match(params.cwd, '^(.*/work)')
-        if m then
-          return { string.format('-pro=%s/mm_website/.perltidyallrc', m) }
-        end
-      end,
-    },
-    fmt.cbfmt.with {
-      extra_args = function(params)
-        local c = match_conf '.cbfmt.toml'(params.root)
-        if c then
-          return { '--config', c }
-        end
-      end,
-    },
-    fmt.perlimports,
-    fmt.prettier.with {
-      extra_args = function(params)
-        local m = string.match(params.cwd, '^(.*/work)')
-        if m then
-          return { '--config', string.format('%s/mm_website/.prettierrc', m) }
-        end
-      end,
-    },
-    diag.markdownlint.with {
-      extra_args = function(params)
-        return { '--config', '~/.markdownlint.jsonc' }
-      end,
-    },
     diag.codespell,
-    fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
-    diag.selene.with { cwd = lua_root },
+    diag.editorconfig_checker.with {
+      command = 'editorconfig-checker',
+      filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim' },
+    },
     -- diag.luacheck.with {
     --   args = {
     --     '--globals',
@@ -81,15 +52,44 @@ return {
     --     '-',
     --   },
     -- },
-    diag.editorconfig_checker.with {
-      command = 'editorconfig-checker',
-      filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim' },
+    diag.markdownlint.with {
+      extra_args = function(params)
+        return { '--config', '~/.markdownlint.jsonc' }
+      end,
     },
-    diag.vint,
-    fmt.shellharden,
+    diag.selene.with { cwd = lua_root },
     -- shellcheck is used by bash-language-server
     -- diag.shellcheck,
-    -- very noisy
-    -- act.gitsigns.with { disabled_filetypes = { 'man' } },
+    diag.vint,
+    fmt.cbfmt.with {
+      extra_args = function(params)
+        local c = match_conf '.cbfmt.toml'(params.root)
+        if c then
+          return { '--config', c }
+        end
+      end,
+    },
+    fmt.perlimports,
+    fmt.perltidy.with {
+      extra_args = function(params)
+        local m = string.match(params.cwd, '^(.*/work)')
+        if m then
+          return { string.format('-pro=%s/mm_website/.perltidyallrc', m) }
+        end
+      end,
+    },
+    fmt.prettier.with {
+      extra_args = function(params)
+        local m = string.match(params.cwd, '^(.*/work)')
+        if m then
+          return { '--config', string.format('%s/mm_website/.prettierrc', m) }
+        end
+      end,
+    },
+    fmt.shellharden,
+    fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
+    fmt.stylua,
+    fmt.yamlfmt,
+    fmt.yamllint,
   },
 }

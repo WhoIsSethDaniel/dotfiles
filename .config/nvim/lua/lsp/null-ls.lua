@@ -61,6 +61,7 @@ return {
     -- shellcheck is used by bash-language-server
     -- diag.shellcheck,
     diag.vint,
+    diag.yamllint,
     fmt.cbfmt.with {
       extra_args = function(params)
         local c = match_conf '.cbfmt.toml'(params.root)
@@ -90,6 +91,5 @@ return {
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
     fmt.stylua,
     fmt.yamlfmt,
-    fmt.yamllint,
   },
 }

@@ -27,7 +27,7 @@ require('lualine').setup {
     lualine_c = {
       'diff',
       { 'filename', file_status = true, path = 1 },
-      { "require'nvim-gps'.get_location()", cond = require('nvim-gps').is_available },
+      { "require'nvim-navic'.get_location()", cond = require('nvim-navic').is_available },
       { "require'goldsmith'.status()" },
     },
     lualine_x = { 'lsp_progress', 'encoding', 'fileformat', 'filetype' },

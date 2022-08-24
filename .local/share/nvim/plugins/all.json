@@ -296,15 +296,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-gps": {
-    "name": "nvim-gps",
-    "url": "https://github.com/SmiteshP/nvim-gps",
-    "clean_name": "nvim-gps",
-    "config_file": "nvim-gps.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-lastplace": {
     "name": "nvim-lastplace",
     "url": "https://github.com/ethanholz/nvim-lastplace",
@@ -328,6 +319,15 @@
     "url": "https://github.com/neovim/nvim-lspconfig",
     "clean_name": "nvim-lspconfig",
     "config_file": "nvim-lspconfig.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "nvim-navic": {
+    "name": "nvim-navic",
+    "url": "https://github.com/SmiteshP/nvim-navic",
+    "clean_name": "nvim-navic",
+    "config_file": "nvim-navic.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

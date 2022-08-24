@@ -11,6 +11,9 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       -- require('lsp_signature').on_attach({}, bufnr)
     end
     require('lsp-inlayhints').on_attach(client, bufnr, false)
+    if client.name ~= 'null-ls' then
+      require('nvim-navic').attach(client, bufnr)
+    end
 
     local function dump_caps()
       print(client.name .. ':')
@@ -173,6 +176,41 @@ local function setup()
 
   require('lsp-format').setup {
     perl = { exclude = { 'perlnavigator' } },
+  }
+
+  require('nvim-navic').setup {
+    icons = {
+      File = ' ',
+      Module = ' ',
+      Namespace = ' ',
+      Package = ' ',
+      Class = ' ',
+      Method = ' ',
+      Property = ' ',
+      Field = ' ',
+      Constructor = ' ',
+      Enum = '練',
+      Interface = '練',
+      Function = ' ',
+      Variable = ' ',
+      Constant = ' ',
+      String = ' ',
+      Number = ' ',
+      Boolean = '◩ ',
+      Array = ' ',
+      Object = ' ',
+      Key = ' ',
+      Null = 'ﳠ ',
+      EnumMember = ' ',
+      Struct = ' ',
+      Event = ' ',
+      Operator = ' ',
+      TypeParameter = ' ',
+    },
+    highlight = false,
+    separator = ' > ',
+    depth_limit = 0,
+    depth_limit_indicator = '..',
   }
 
   vim.diagnostic.config { severity_sort = true }

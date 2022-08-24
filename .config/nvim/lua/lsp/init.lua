@@ -2,44 +2,53 @@ local has_goldsmith, g = pcall(require, 'goldsmith')
 
 local M = {}
 
-local function on_attach(client, bufnr)
-  local function dump_caps()
-    print(client.name .. ':')
-    print(vim.inspect(client.server_capabilities))
-  end
+vim.api.nvim_create_autocmd({ 'LspAttach' }, {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    local bufnr = args.buf
+    if (not has_goldsmith and client.name == 'gopls') or client.name ~= 'gopls' then
+      require('lsp-format').on_attach(client)
+      -- require('lsp_signature').on_attach({}, bufnr)
+    end
+    require('lsp-inlayhints').on_attach(client, bufnr, false)
 
-  -- dump_caps()
+    local function dump_caps()
+      print(client.name .. ':')
+      print(vim.inspect(client.server_capabilities))
+    end
+    -- dump_caps()
 
-  local ft = vim.opt.filetype:get()
-  if ft == 'go' or ft == 'gomod' then
-    return
-  end
+    local ft = vim.opt.filetype:get()
+    if ft == 'go' or ft == 'gomod' then
+      return
+    end
 
-  local map = vim.api.nvim_buf_set_keymap
+    local map = vim.api.nvim_buf_set_keymap
 
-  -- mappings
-  local opts = { noremap = true, silent = true }
+    -- mappings
+    local opts = { noremap = true, silent = true }
 
-  map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-  map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-  map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-  map(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-  map(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-  map(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-  map(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-  map(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-  map(bufnr, 'n', '<leader>cf', "<cmd>lua require'lsp-format'.format()<CR>", opts)
+    map(bufnr, 'n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    map(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    map(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    map(bufnr, 'n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    map(bufnr, 'n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    map(bufnr, 'n', '<leader>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    map(bufnr, 'n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    map(bufnr, 'n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    map(bufnr, 'n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
+    map(bufnr, 'n', '<leader>cf', "<cmd>lua require'lsp-format'.format()<CR>", opts)
 
-  map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
-  map(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
-  map(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
+    map(bufnr, 'n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
+    map(bufnr, 'n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)
+    map(bufnr, 'n', '<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>', opts)
 
-  map(bufnr, 'n', '<leader>dl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  map(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  map(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-  map(bufnr, 'n', '<leader>dq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-end
+    map(bufnr, 'n', '<leader>dl', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+    map(bufnr, 'n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+    map(bufnr, 'n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    map(bufnr, 'n', '<leader>dq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
+  end,
+})
 
 function M.get_config(server)
   local ok, config = pcall(require, string.format('lsp.%s', server))
@@ -50,14 +59,6 @@ function M.get_config(server)
   local cap = vim.lsp.protocol.make_client_capabilities()
   cap = require('cmp_nvim_lsp').update_capabilities(cap)
   config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
-  config['on_attach'] = function(client, bufnr)
-    if (not has_goldsmith and server == 'gopls') or server ~= 'gopls' then
-      require('lsp-format').on_attach(client)
-      -- require('lsp_signature').on_attach({}, bufnr)
-      on_attach(client, bufnr)
-    end
-    require('lsp-inlayhints').on_attach(client, bufnr, false)
-  end
   return config
 end
 

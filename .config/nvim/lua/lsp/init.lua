@@ -18,8 +18,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     end
     -- dump_caps()
 
-    local ft = vim.opt.filetype:get()
-    if ft == 'go' or ft == 'gomod' then
+    if client.name == 'gopls' then
       return
     end
 
@@ -128,7 +127,13 @@ local function setup()
     start_delay = 5000,
   }
 
-  require('lsp_signature').setup {}
+  require('lsp_signature').setup {
+    bind = true,
+    wrap = true,
+    handler_opts = {
+      border = 'rounded',
+    },
+  }
 
   require('lsp-inlayhints').setup {
     inlay_hints = {

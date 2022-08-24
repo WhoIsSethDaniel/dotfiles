@@ -71,7 +71,7 @@ function vim-log() {
 }
 
 _complete_vim_plugins() {
-    IFS=' ' read -r -a COMPREPLY <<<"$(vim-ls | grep -i "${2}" | tr "\n" " " 2>/dev/null)"
+    IFS=' ' read -r -a COMPREPLY <<<"$(vim-ls | grep -iF "${2}" | tr "\n" " " 2>/dev/null)"
 }
 
 # completion for (some) vim-* commands

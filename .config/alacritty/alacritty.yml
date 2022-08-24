@@ -1,4 +1,5 @@
 ---
+live_config_reload: true
 window:
   startup_mode: Maximized
   dynamic_title: false
@@ -8,3 +9,5 @@ font:
   normal:
     family: "DejaVuSansMono Nerd Font"
   size: 18.0
+mouse:
+  hide_when_typing: true

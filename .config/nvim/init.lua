@@ -130,7 +130,9 @@ vim.opt.undolevels = 500
 vim.opt.history = 10000
 
 --  swap and backup files
-vim.opt.directory = vim.env.XDG_DATA_HOME .. '/nvim/swap'
+-- vim.opt.directory = vim.env.XDG_DATA_HOME .. '/nvim/swap'
+-- disable swap
+vim.opt.directory = ''
 vim.opt.backupdir = vim.env.XDG_DATA_HOME .. '/nvim/backup'
 
 -- typing

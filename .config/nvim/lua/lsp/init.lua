@@ -11,7 +11,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       -- require('lsp_signature').on_attach({}, bufnr)
     end
     require('lsp-inlayhints').on_attach(client, bufnr, false)
-    if client.name ~= 'null-ls' and client.name ~= 'bashls' then
+    if client.name ~= 'null-ls' and client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
       require('nvim-navic').attach(client, bufnr)
     end
 

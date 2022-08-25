@@ -61,6 +61,7 @@ return {
     diag.selene.with { cwd = lua_root },
     -- shellcheck is used by bash-language-server
     -- diag.shellcheck,
+    diag.sqlfluff.with { extra_args = { '--dialect', 'postgres' } },
     diag.vint,
     diag.yamllint,
     fmt.cbfmt.with {
@@ -90,6 +91,7 @@ return {
     },
     fmt.shellharden,
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
+    fmt.sqlfluff.with { extra_args = { '--dialect', 'postgres' } },
     fmt.stylua,
     fmt.yamlfmt,
   },

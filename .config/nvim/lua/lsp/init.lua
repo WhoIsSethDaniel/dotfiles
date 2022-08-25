@@ -120,6 +120,7 @@ local function setup()
       'shellcheck',
       'shellharden',
       'shfmt',
+      'sqlfluff',
       'staticcheck',
       'stylua',
       'vim-language-server',

@@ -54,7 +54,8 @@ return {
     -- },
     diag.markdownlint.with {
       extra_args = function(params)
-        return { '--config', '~/.markdownlint.jsonc' }
+        local c = match_conf '.markdownlint.jsonc'(params.root)
+        return { '--config', c }
       end,
     },
     diag.selene.with { cwd = lua_root },

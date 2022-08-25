@@ -23,4 +23,4 @@ ipc_socket: true
 debug:
   log_level: Warn
   persistent_logging: false
-  print_events: true
+  print_events: false

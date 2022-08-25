@@ -12,3 +12,15 @@ font:
   size: 18.0
 mouse:
   hide_when_typing: true
+colors:
+  primary:
+    background: "#000000"
+    foreground: "#c5c8c6"
+  transparent_background_colors: false
+bell:
+  duration: 0
+ipc_socket: true
+debug:
+  log_level: Warn
+  persistent_logging: false
+  print_events: true

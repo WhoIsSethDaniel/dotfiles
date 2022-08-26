@@ -17,6 +17,15 @@
     "enabled": true,
     "frozen": false
   },
+  "auto-session": {
+    "name": "auto-session",
+    "url": "https://github.com/rmagatti/auto-session",
+    "clean_name": "auto-session",
+    "config_file": "auto-session.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "cmp-buffer": {
     "name": "cmp-buffer",
     "url": "https://github.com/hrsh7th/cmp-buffer",
@@ -409,15 +418,6 @@
     "url": "https://github.com/stevearc/qf_helper.nvim",
     "clean_name": "qf_helper-nvim",
     "config_file": "qf_helper-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "repossession.nvim": {
-    "name": "repossession.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/repossession.nvim",
-    "clean_name": "repossession-nvim",
-    "config_file": "repossession-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

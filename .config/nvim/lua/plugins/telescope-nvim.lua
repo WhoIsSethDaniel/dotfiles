@@ -87,10 +87,17 @@ require('telescope').setup {
   },
 }
 
-ok, _ = pcall(require, 'goldsmith')
+local ok, _ = pcall(require, 'goldsmith')
 if ok then
   require('telescope').load_extension 'goldsmith'
 end
+local ok, _ = pcall(require, 'reposession')
+if ok then
+  require('telescope').load_extension 'reposession'
+end
+local ok, _ = pcall(require, 'possession')
+if ok then
+  require('telescope').load_extension 'possession'
+end
 require('telescope').load_extension 'fzy_native'
-require('telescope').load_extension 'repossession'
 require('telescope').load_extension 'live_grep_args'

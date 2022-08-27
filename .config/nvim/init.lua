@@ -166,7 +166,9 @@ vim.opt.switchbuf = 'usetab'
 vim.opt.shada = { "'250", '<50', 's250', 'h' }
 -- NO NO -- vim.opt.shada:append("%")  -- store all open buffers
 -- default is blank,buffers,curdir,folds,help,tabpages,winsize
-vim.opt.sessionoptions:append 'resize,winpos,terminal'
+-- vim.opt.sessionoptions:append 'terminal'
+-- vim.opt.sessionoptions:remove 'buffers'
+-- vim.opt.sessionoptions:remove 'winsize'
 
 -- terminal
 -- scroll buffer; 100000 is the max

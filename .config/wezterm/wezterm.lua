@@ -1,3 +1,5 @@
+-- https://wezfurlong.org/wezterm/config/lua/config/index.html
+-- https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
 local wezterm = require 'wezterm'
 
 return {

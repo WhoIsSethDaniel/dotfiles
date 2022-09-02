@@ -158,6 +158,7 @@ local function setup()
         remove_colon_start = false,
         remove_colon_end = false,
       },
+      only_current_line = false,
       -- separator between types and parameter hints. Note that type hints are
       -- shown before parameter
       labels_separator = '  ',
@@ -170,8 +171,10 @@ local function setup()
       -- padding from the right if right_align is true
       right_align_padding = 7,
       -- highlight group
-      highlight = 'Comment',
+      -- highlight = 'Comment',
+      highlight = 'LspInlayHint',
     },
+    enabled_at_startup = true,
     debug_mode = false,
   }
 

@@ -9,7 +9,8 @@ local act = null.builtins.code_actions
 local function match_root_dir(...)
   local f = u.root_pattern(..., 'Makefile', '.git')
   return function(params)
-    return f(params.root)
+    -- use .bufname instead of .root
+    return f(params.bufname)
   end
 end
 local lua_root = match_root_dir('selene.toml', 'stylua.toml')

@@ -296,15 +296,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-hlslens": {
-    "name": "nvim-hlslens",
-    "url": "https://github.com/kevinhwang91/nvim-hlslens",
-    "clean_name": "nvim-hlslens",
-    "config_file": "nvim-hlslens.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-lastplace": {
     "name": "nvim-lastplace",
     "url": "https://github.com/ethanholz/nvim-lastplace",

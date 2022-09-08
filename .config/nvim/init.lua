@@ -211,10 +211,6 @@ vim.opt.fillchars:append {
   verthoriz = '╋',
 }
 
--- turn on spellsitter support
-vim.opt.spell = true
-vim.opt.spelloptions = 'noplainbuffer'
-
 -- turn on embedded highlighting for lua
 --   perhaps not relevant with treesitter
 -- vim.g.vimsyn_embed = 'l'

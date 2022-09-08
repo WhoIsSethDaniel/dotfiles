@@ -33,7 +33,7 @@ end
 return {
   log_level = 'debug',
   sources = {
-    diag.codespell,
+    -- diag.codespell,
     diag.editorconfig_checker.with {
       command = 'editorconfig-checker',
       filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim' },

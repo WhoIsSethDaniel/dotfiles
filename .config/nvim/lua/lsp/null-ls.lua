@@ -64,7 +64,12 @@ return {
     -- diag.shellcheck,
     diag.sqlfluff.with { extra_args = { '--dialect', 'postgres' } },
     diag.vint,
-    diag.yamllint,
+    diag.yamllint.with {
+      extra_args = function(params)
+        local c = match_conf '.yamllintrc'(params.root)
+        return { '--config-file', c }
+      end,
+    },
     fmt.cbfmt.with {
       extra_args = function(params)
         local c = match_conf '.cbfmt.toml'(params.root)
@@ -94,6 +99,6 @@ return {
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
     fmt.sqlfluff.with { extra_args = { '--dialect', 'postgres' } },
     fmt.stylua,
-    fmt.yamlfmt,
+    -- fmt.yamlfmt,
   },
 }

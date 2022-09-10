@@ -59,6 +59,7 @@ return {
         return { '--config', c }
       end,
     },
+    -- diag.perlimports,
     diag.selene.with { cwd = lua_root },
     -- shellcheck is used by bash-language-server
     -- diag.shellcheck,

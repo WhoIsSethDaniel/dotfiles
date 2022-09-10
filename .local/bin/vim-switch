@@ -2,23 +2,20 @@
 
 set -e
 
-declare -A versions
-eval versions=\("${VIM_VERSIONS}"\)
+new_version=$1
+install_dir=~/.local/nvim
+version_link=${install_dir}/current
 
-version_link=~/.local/nvim/current
-
-if [[ -z $1 ]]; then
-    echo "current version: $(readlink ${version_link})"
+if [[ -z $new_version ]]; then
+    echo "current version: $(readlink "$version_link")"
     echo "available version(s):"
-    for v in "${!versions[@]}"; do
-        echo "${v}: ${versions[$v]}"
+    pushd "$install_dir" >/dev/null
+    for d in ./*; do
+        v=$(basename "$d")
+        [[ $v == 'current' ]] && continue
+        echo "$v"
     done
-    exit 1
-fi
-
-if [[ -z ${versions[*]} ]]; then
-    echo "cannot determine available nvim versions;"
-    echo "is VIM_VERSIONS set?"
+    popd >/dev/null
     exit 1
 fi
 
@@ -27,14 +24,14 @@ cd "$HOME/.local/nvim" || {
     exit 1
 }
 
-version=${versions[$1]}
-echo "$version"
-if [[ -z $version ]]; then
+echo "$new_version"
+if [[ -z $new_version ]]; then
     echo "unknown version"
     exit 1
 fi
-if [[ ! -e $version ]]; then
+if [[ ! -e $new_version ]]; then
     echo "given version does not exist on disk"
+    exit 1
 fi
 rm -f current
-ln -sf "${version}" current
+ln -sf "$new_version" current

@@ -28,13 +28,14 @@ set_alias vim-ls vim-list
 
 set_export_var MANPAGER "$EDITOR +Man!"
 
+vim_install_dir=$HOME/.local/nvim
 function vim-cd() {
     [[ -z $1 ]] && echo "usage: vim-cd <plugin> | config | conf | cf | in | install | local | loc | state | cache | plugins" && return
     local pldir=$XDG_CONFIG_HOME/nvim/pack/git-plugins/opt
     local cfdir=$XDG_CONFIG_HOME/nvim/lua/plugins
     local locdir=$XDG_DATA_HOME/nvim
     local statedir=$HOME/.local/state/nvim
-    local indir=~/.local/nvim
+    local indir=${vim_install_dir}
     local cachedir=$HOME/.cache/nvim
     if [[ $1 == "config" || $1 == "cf" || $1 == "conf" ]]; then
         cd "$cfdir" || return
@@ -74,10 +75,21 @@ _complete_vim_plugins() {
     IFS=' ' read -r -a COMPREPLY <<<"$(vim-ls | grep -iF "${2}" | tr "\n" " " 2>/dev/null)"
 }
 
+_complete_vim_installed_versions() {
+    pushd "$vim_install_dir" >/dev/null || return
+    for d in ./*; do
+        v=$(basename "$d")
+        [[ $v == 'current' ]] && continue
+        COMPREPLY+=("$v")
+    done
+    popd >/dev/null || return
+}
+
 # completion for (some) vim-* commands
 declare -A versions
 eval versions=\("$VIM_VERSIONS"\)
-complete -W "${!versions[*]}" vim-install vim-switch
+complete -W "${!versions[*]}" vim-install
+complete -F _complete_vim_installed_versions vim-switch
 complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-remove vim-log vim-config vim-freeze vim-thaw
 
 unset_var versions

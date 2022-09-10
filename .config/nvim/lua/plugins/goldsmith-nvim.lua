@@ -15,7 +15,6 @@ require('goldsmith').config {
   -- },
   mappings = {
     format = { '<leader>cf' },
-    ['toggle-debug-console'] = { '<leader>gd' },
     ['test-last'] = { '<leader>tl' },
     ['test-a-nearest'] = { '<leader>tn' },
     ['test-suite'] = { '<leader>ts' },

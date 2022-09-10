@@ -8,7 +8,7 @@ set -e
 GO_VERSION=$1
 if [[ -z ${GO_VERSION} ]]; then
     echo "Download the given version of go"
-    echo "usage: $(basename $0) <version>"
+    echo "usage: $(basename "$0") <version>"
     exit 1
 fi
 
@@ -30,26 +30,26 @@ if [[ -d ${GO_ABS_DIR} ]]; then
     exit 1
 fi
 
-oldgoversion=$(basename $(realpath $GO_LINK))
+oldgoversion=$(basename "$(realpath "$GO_LINK")")
 newgoversion=${GO_VERSION}
-echo "old Go version: "${oldgoversion}
-echo "new Go version: "${newgoversion}
+echo "old Go version: ""$oldgoversion"
+echo "new Go version: ""$newgoversion"
 
 if [[ $oldgoversion == "$newgoversion" ]]; then
-    echo "$oldversion is already installed"
+    echo "$oldgoversion is already installed"
     exit 0
 fi
 
-function clean_temp_dir() { rm -rf "${GO_TEMP_DIR}"; }
+function clean_temp_dir() { rm -rf "$GO_TEMP_DIR"; }
 trap clean_temp_dir EXIT
 ROOT_TEMP_DIR=${TMPDIR:-/tmp}
-GO_TEMP_DIR=$(mktemp -d -p ${ROOT_TEMP_DIR} upgo.XXXXX)
+GO_TEMP_DIR=$(mktemp -d -p "$ROOT_TEMP_DIR" upgo.XXXXX)
 echo "downloading go ${GO_VERSION} to ${GO_TEMP_DIR}"
-pushd ${GO_TEMP_DIR} >/dev/null
-snago -dir ${GO_ROOT_DIR} ${GO_VERSION} linux/amd64
+pushd "$GO_TEMP_DIR" >/dev/null
+snago -dir "$GO_ROOT_DIR" "$GO_VERSION" linux/amd64
 popd >/dev/null
 
 echo "make new link for ${GO_VERSION}"
-[[ -n ${GO_LINK_EXISTS} ]] && rm -f "${GO_LINK}"
-mv --no-clobber "${GO_ROOT_DIR}/go" "${GO_ABS_DIR}"
-ln --force --symbolic "${GO_ABS_DIR}" "${GO_LINK}"
+[[ -n ${GO_LINK_EXISTS} ]] && rm -f "$GO_LINK"
+mv --no-clobber "${GO_ROOT_DIR}/go" "$GO_ABS_DIR"
+ln --force --symbolic "$GO_ABS_DIR" "$GO_LINK"

@@ -134,15 +134,6 @@
     "enabled": true,
     "frozen": false
   },
-  "incline.nvim": {
-    "name": "incline.nvim",
-    "url": "https://github.com/b0o/incline.nvim",
-    "clean_name": "incline-nvim",
-    "config_file": "incline-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "kanagawa.nvim": {
     "name": "kanagawa.nvim",
     "url": "https://github.com/rebelot/kanagawa.nvim/",

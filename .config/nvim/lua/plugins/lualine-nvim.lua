@@ -32,10 +32,12 @@ require('lualine').setup {
     lualine_b = {
       'hostname',
       'branch',
-      'diagnostics',
-      update_in_insert = true,
-      always_visible = true,
-      cond = vim.lsp.buf.server_ready,
+      {
+        'diagnostics',
+        update_in_insert = true,
+        always_visible = true,
+        cond = vim.lsp.buf.server_ready,
+      },
     },
     lualine_c = {
       'diff',

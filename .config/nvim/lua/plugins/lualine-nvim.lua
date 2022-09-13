@@ -16,7 +16,7 @@ require('lualine').setup {
     section_separators = { left = '', right = '' },
     disabled_filetypes = {
       statusline = {},
-      winbar = { 'toggleterm' },
+      winbar = { 'toggleterm', 'help', 'man' },
     },
     ignore_focus = {},
     always_divide_middle = true,

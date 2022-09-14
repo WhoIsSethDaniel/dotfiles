@@ -4,6 +4,7 @@ local wezterm = require 'wezterm'
 
 return {
   term = 'wezterm',
+  check_for_updates = false,
   warn_about_missing_glyphs = true,
   font_size = 18.0,
   font = wezterm.font_with_fallback {

@@ -98,7 +98,7 @@ return {
     },
     fmt.shellharden,
     fmt.shfmt.with { args = { '-i=4', '-ci', '-s', '-bn' } },
-    fmt.sqlfluff.with { extra_args = { '--dialect', 'postgres' } },
+    -- fmt.sqlfluff.with { extra_args = { '--dialect', 'postgres' } },
     fmt.stylua,
     -- fmt.yamlfmt,
   },

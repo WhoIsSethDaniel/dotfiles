@@ -79,7 +79,6 @@ return {
         end
       end,
     },
-    fmt.perlimports,
     fmt.perltidy.with {
       extra_args = function(params)
         local m = string.match(params.cwd, '^(.*/work)')
@@ -88,6 +87,7 @@ return {
         end
       end,
     },
+    fmt.perlimports,
     fmt.prettier.with {
       extra_args = function(params)
         local m = string.match(params.cwd, '^(.*/work)')

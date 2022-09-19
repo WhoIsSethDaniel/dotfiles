@@ -13,8 +13,12 @@ vim.keymap.set('n', '<leader>fc', function()
   }
 end, {})
 
-vim.keymap.set('n', '<leader>fg', function()
+vim.keymap.set('n', '<leader>gg', function()
   require('telescope.builtin').live_grep()
+end, {})
+
+vim.keymap.set('n', '<leader>go', function()
+  require('telescope.builtin').live_grep { grep_open_files = true }
 end, {})
 
 vim.keymap.set('n', '<leader>fb', function()

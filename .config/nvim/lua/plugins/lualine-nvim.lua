@@ -59,10 +59,12 @@ require('lualine').setup {
   },
   tabline = {},
   winbar = {
+    lualine_x = { 'branch' },
     lualine_z = { 'filename' },
   },
   inactive_winbar = {
-    lualine_z = { 'filename' },
+    lualine_x = { 'branch' },
+    lualine_z = { { 'filename', path = 2 } },
   },
   extensions = { 'fugitive' },
 }

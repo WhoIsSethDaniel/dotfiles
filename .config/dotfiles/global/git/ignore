@@ -6,7 +6,6 @@
 /.check-scan-files-state.json
 /.config/gnome-initial-setup-done
 /.config/.gsd-keyboard.settings-ported
-/.config/hub
 /.config/mimeapps.list
 /.config/monitors.xml*
 /.config/nvim/lua/all.lua
@@ -74,6 +73,7 @@
 /.config/kazam/
 /.config/menus/
 /.config/mm/
+/.config/mssh/
 /.config/nvim/pack/git-plugins/opt/
 /.config/pcloud/
 /.config/pulse/

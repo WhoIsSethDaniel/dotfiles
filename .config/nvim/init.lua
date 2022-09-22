@@ -251,6 +251,10 @@ vim.filetype.add {
   extension = {
     gohtml = 'gohtml',
   },
+  pattern = {
+    ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },
+    ['.*/mm_website/ansible/.*_vars/.*'] = { 'yaml', { priority = -math.huge } },
+  },
 }
 
 -- autocommands

@@ -246,6 +246,13 @@ vim.api.nvim_set_keymap('n', '<leader>ev', ':edit $MYVIMRC<cr>', { silent = true
 -- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315
 vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r>' : '<c-r><c-o>' ]], false)
 
+-- filetypes
+vim.filetype.add {
+  extension = {
+    gohtml = 'gohtml',
+  },
+}
+
 -- autocommands
 require 'autocmd'
 

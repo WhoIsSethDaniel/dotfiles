@@ -89,6 +89,7 @@ return {
     },
     fmt.perlimports,
     fmt.prettier.with {
+      extra_filetypes = { 'toml', 'gohtml', 'gohtmltmpl' },
       extra_args = function(params)
         local m = string.match(params.cwd, '^(.*/work)')
         if m then

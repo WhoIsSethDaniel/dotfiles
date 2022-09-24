@@ -566,15 +566,6 @@
     "enabled": true,
     "frozen": false
   },
-  "vim-startuptime": {
-    "name": "vim-startuptime",
-    "url": "https://github.com/dstein64/vim-startuptime",
-    "clean_name": "vim-startuptime",
-    "config_file": "vim-startuptime.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "vim-unimpaired": {
     "name": "vim-unimpaired",
     "url": "https://github.com/tpope/vim-unimpaired",

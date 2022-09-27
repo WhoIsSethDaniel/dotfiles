@@ -68,7 +68,9 @@ return {
     diag.yamllint.with {
       extra_args = function(params)
         local c = match_conf '.yamllintrc'(params.root)
-        return { '--config-file', c }
+        if c then
+          return { '--config-file', c }
+        end
       end,
     },
     fmt.cbfmt.with {

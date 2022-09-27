@@ -65,6 +65,7 @@
 /.config/evolution/
 /.config/gcloud/
 /.config/gedit/
+/.config/gh/
 /.config/gnome-*/
 /.config/google/
 /.config/google-chrome*/

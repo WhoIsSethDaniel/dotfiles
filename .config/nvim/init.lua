@@ -239,7 +239,6 @@ vim.g.mapleader = ' '
 -- vim.g.maplocalleader = '\'
 
 -- key mappings
--- vim.api.nvim_set_keymap("n", "<leader>wt", ":new<cr><C-W>L:terminal<cr>", { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>wo', '<C-W>v:enew<cr>', { silent = true, noremap = true })
 vim.api.nvim_set_keymap('n', '<leader>ev', ':edit $MYVIMRC<cr>', { silent = true, noremap = true })
 -- correctly paste from the * or + register (possibly others too) when using c_<C-R>

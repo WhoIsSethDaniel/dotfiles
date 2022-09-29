@@ -17,6 +17,7 @@ return {
   hide_tab_bar_if_only_one_tab = true,
   audible_bell = 'Disabled',
   tab_max_width = 40,
+  scrollback_lines = 10000,
   unix_domains = {
     {
       name = 'unix',

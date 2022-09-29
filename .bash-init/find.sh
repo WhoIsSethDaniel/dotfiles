@@ -2,5 +2,5 @@
 
 set_prog_var FIND fdfind fd
 if [ "$FIND" != "" ]; then
-    set_alias fdfind "$FIND --color=always"
+    set_alias fdfind "$FIND"
 fi

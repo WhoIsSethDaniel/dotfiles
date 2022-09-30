@@ -209,6 +209,9 @@ vim.opt.fillchars:append {
   verthoriz = '╋',
 }
 
+-- command-line is not visible if not entering a command
+vim.opt.cmdheight = 0
+
 -- turn on embedded highlighting for lua
 --   perhaps not relevant with treesitter
 -- vim.g.vimsyn_embed = 'l'

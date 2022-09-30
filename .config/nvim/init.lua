@@ -50,8 +50,6 @@ vim.opt.autowrite = true
 -- show matching pairs of brackets (see 'matchpairs' option for
 -- setting new pairs / removing unwanted pairs)
 vim.opt.showmatch = true
--- turn off vim match paren (this is done by the matchup plugin, too)
--- let loaded_matchparen = 1
 
 -- recursive find; may want to change at some point (see above reddit link)
 vim.opt.path = { ',', '**' }

@@ -12,4 +12,4 @@ vim.g.matchup_text_obj_enabled = 1
 -- 1 : some matches in strings/comments
 -- 2 : no matches in strings/comments
 vim.g.matchup_delim_noskips = 0
-vim.g.matchup_matchparen_offscreen = { ['method'] = 'popup' }
+vim.g.matchup_matchparen_offscreen = { ['method'] = 'status_manual' }

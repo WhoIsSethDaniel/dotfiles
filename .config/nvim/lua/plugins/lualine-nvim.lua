@@ -58,9 +58,8 @@ require('lualine').setup {
   },
   tabline = {},
   winbar = {
-    -- lualine_a = { 'MatchupStatusOffscreen' },
-    lualine_x = { 'branch' },
-    lualine_z = { 'filename' },
+    -- lualine_a = { 'branch' },
+    -- lualine_b = { 'filename' },
   },
   inactive_winbar = {
     lualine_x = { 'branch' },

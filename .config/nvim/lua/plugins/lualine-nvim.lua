@@ -62,8 +62,8 @@ require('lualine').setup {
     -- lualine_b = { 'filename' },
   },
   inactive_winbar = {
-    lualine_x = { 'branch' },
-    lualine_z = { { 'filename', path = 2 } },
+    lualine_y = { 'branch' },
+    lualine_z = { { 'filename', path = 1 } },
   },
   extensions = { 'fugitive' },
 }

@@ -38,14 +38,5 @@ parser_config.http = {
   },
 }
 
--- unclear if this is required
--- parser_config.vimdoc = {
---   install_info = {
---     url = 'https://github.com/neovim/tree-sitter-vimdoc',
---     files = { 'src/parser.c' },
---     branch = 'master',
---   },
--- }
-
 local ts_utils = require 'nvim-treesitter.ts_utils'
 ts_utils.get_node_text = vim.treesitter.query.get_node_text

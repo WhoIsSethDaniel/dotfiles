@@ -110,6 +110,7 @@ local function setup()
       'gomodifytags',
       'gopls',
       'gotests',
+      'gotestsum',
       'impl',
       'json-to-struct',
       'lua-language-server',

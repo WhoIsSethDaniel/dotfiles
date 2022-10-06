@@ -25,10 +25,6 @@ cd "$HOME/.local/nvim" || {
 }
 
 echo "$new_version"
-if [[ -z $new_version ]]; then
-    echo "unknown version"
-    exit 1
-fi
 if [[ ! -e $new_version ]]; then
     echo "given version does not exist on disk"
     exit 1

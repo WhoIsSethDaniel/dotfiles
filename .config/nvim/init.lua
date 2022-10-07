@@ -87,6 +87,8 @@ vim.opt.equalalways = false
 -- where to place new windows by default
 vim.opt.splitbelow = false
 vim.opt.splitright = true
+-- cursor position when splitting
+vim.opt.splitkeep = 'screen'
 
 -- no error bells
 vim.opt.errorbells = false

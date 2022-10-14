@@ -242,6 +242,24 @@
     "enabled": true,
     "frozen": false
   },
+  "noice.nvim": {
+    "name": "noice.nvim",
+    "url": "https://github.com/folke/noice.nvim",
+    "clean_name": "noice-nvim",
+    "config_file": "noice-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "nui.nvim": {
+    "name": "nui.nvim",
+    "url": "https://github.com/MunifTanjim/nui.nvim",
+    "clean_name": "nui-nvim",
+    "config_file": "nui-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "null-ls.nvim": {
     "name": "null-ls.nvim",
     "url": "https://github.com/jose-elias-alvarez/null-ls.nvim",
@@ -310,6 +328,15 @@
     "url": "https://github.com/SmiteshP/nvim-navic",
     "clean_name": "nvim-navic",
     "config_file": "nvim-navic.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "nvim-notify": {
+    "name": "nvim-notify",
+    "url": "https://github.com/rcarriga/nvim-notify",
+    "clean_name": "nvim-notify",
+    "config_file": "nvim-notify.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

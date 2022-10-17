@@ -8,6 +8,15 @@
     "enabled": true,
     "frozen": false
   },
+  "bufjump.nvim": {
+    "name": "bufjump.nvim",
+    "url": "https://github.com/kwkarlwang/bufjump.nvim",
+    "clean_name": "bufjump-nvim",
+    "config_file": "bufjump-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "cmp-buffer": {
     "name": "cmp-buffer",
     "url": "https://github.com/hrsh7th/cmp-buffer",

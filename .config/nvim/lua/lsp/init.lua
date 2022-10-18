@@ -59,7 +59,7 @@ function M.get_config(server)
     config = {}
   end
   local cap = vim.lsp.protocol.make_client_capabilities()
-  cap = require('cmp_nvim_lsp').update_capabilities(cap)
+  cap = require('cmp_nvim_lsp').default_capabilities(cap)
   config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
   return config
 end

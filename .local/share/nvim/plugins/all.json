@@ -366,7 +366,7 @@
     "config_file": "nvim-treesitter.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": true
+    "frozen": false
   },
   "nvim-treesitter-textobjects": {
     "name": "nvim-treesitter-textobjects",

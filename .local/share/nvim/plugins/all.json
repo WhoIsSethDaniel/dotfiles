@@ -341,15 +341,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-notify": {
-    "name": "nvim-notify",
-    "url": "https://github.com/rcarriga/nvim-notify",
-    "clean_name": "nvim-notify",
-    "config_file": "nvim-notify.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-pqf": {
     "name": "nvim-pqf",
     "url": "https://gitlab.com/yorickpeterse/nvim-pqf",

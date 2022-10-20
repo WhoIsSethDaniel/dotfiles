@@ -36,6 +36,7 @@
 /.local/share/nvim/shada/main.shada
 /.local/share/nvim/swap/*.sw*
 /.local/share/nvim/telescope_history
+/.local/share/nvim/tree-sitter*/
 /.local/share/nvim/.netrwhist
 !/.local/bin
 /.local/bin/gh-pt.pl

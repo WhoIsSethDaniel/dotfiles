@@ -20,4 +20,7 @@ require('noice').setup {
       timeout = 4000,
     },
   },
+  lsp_progress = {
+    enabled = false,
+  },
 }

@@ -44,7 +44,7 @@ require('lualine').setup {
       { 'filename', file_status = true, path = 1 },
       { "require'nvim-navic'.get_location()", cond = require('nvim-navic').is_available },
     },
-    lualine_x = { { "require'goldsmith'.status()" }, 'lsp_progress', 'encoding', 'fileformat', 'filetype' },
+    lualine_x = { { "require'goldsmith'.status()" }, 'encoding', 'fileformat', 'filetype' },
     lualine_y = { 'progress' },
     lualine_z = { location },
   },

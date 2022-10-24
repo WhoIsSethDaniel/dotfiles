@@ -18,7 +18,7 @@ end
 
 -- find all third-party plugins and rebuild the help tags
 local rebuild_help = function()
-  print 'rebuild all third-party plugin help tags'
+  vim.notify 'rebuild all third-party plugin help tags'
   for _, rtdir in pairs(vim.opt.runtimepath:get()) do
     local docdir = vim.fn.glob(vim.fn.expand(vim.fn.fnameescape(rtdir .. '/doc')))
     local tagsfile = vim.fn.glob(docdir .. '/tags')

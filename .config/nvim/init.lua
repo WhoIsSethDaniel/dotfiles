@@ -169,6 +169,7 @@ vim.opt.shada = { "'250", '<50', 's250', 'h' }
 -- vim.opt.sessionoptions:append 'terminal'
 -- vim.opt.sessionoptions:remove 'buffers'
 -- vim.opt.sessionoptions:remove 'winsize'
+-- vim.opt.sessionoptions:remove 'blank'
 
 -- terminal
 -- scroll buffer; 100000 is the max

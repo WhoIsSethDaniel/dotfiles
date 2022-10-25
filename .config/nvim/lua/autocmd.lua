@@ -57,8 +57,8 @@ local autocmds = {
           vim.opt_local.number = false
           vim.opt_local.relativenumber = false
           vim.opt_local.signcolumn = 'no'
-          -- this breaks jumplist in help
-          -- vim.opt_local.bufhidden = 'wipe'
+          -- setting this to 'wipe' breaks jumplist in help
+          vim.opt_local.bufhidden = 'delete'
         end,
       },
     },

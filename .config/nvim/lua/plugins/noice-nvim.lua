@@ -20,10 +20,18 @@ require('noice').setup {
       timeout = 4000,
     },
   },
-  lsp_progress = {
-    enabled = true,
-    format = 'lsp_progress',
-    format_done = 'lsp_progress_done',
-    view = 'mini',
+  lsp = {
+    progress = {
+      enabled = true,
+      format = 'lsp_progress',
+      format_done = 'lsp_progress_done',
+      view = 'mini',
+    },
+    hover = {
+      enabled = false,
+    },
+    signature = {
+      enabled = false,
+    },
   },
 }

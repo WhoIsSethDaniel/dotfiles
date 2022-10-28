@@ -33,5 +33,10 @@ require('noice').setup {
     signature = {
       enabled = false,
     },
+    message = {
+      enabled = true,
+      view = 'mini',
+      opts = {},
+    },
   },
 }

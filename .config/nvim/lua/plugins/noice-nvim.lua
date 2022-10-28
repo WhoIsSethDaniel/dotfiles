@@ -32,7 +32,6 @@ require('noice').setup {
     },
     signature = {
       enabled = false,
-      auto_open = { enabled = false },
     },
     message = {
       enabled = true,

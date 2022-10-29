@@ -136,13 +136,13 @@ local function setup()
     start_delay = 5000,
   }
 
-  require('lsp_signature').setup {
-    bind = true,
-    wrap = true,
-    handler_opts = {
-      border = 'rounded',
-    },
-  }
+  -- require('lsp_signature').setup {
+  --   bind = true,
+  --   wrap = true,
+  --   handler_opts = {
+  --     border = 'rounded',
+  --   },
+  -- }
 
   require('lsp-inlayhints').setup {
     inlay_hints = {

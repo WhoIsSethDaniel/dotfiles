@@ -89,6 +89,15 @@
     "enabled": true,
     "frozen": false
   },
+  "dirbuf.nvim": {
+    "name": "dirbuf.nvim",
+    "url": "https://github.com/elihunter173/dirbuf.nvim",
+    "clean_name": "dirbuf-nvim",
+    "config_file": "dirbuf-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "dressing.nvim": {
     "name": "dressing.nvim",
     "url": "https://github.com/stevearc/dressing.nvim",
@@ -140,15 +149,6 @@
     "clean_name": "kanagawa-nvim",
     "config_file": "kanagawa-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
-    "frozen": false
-  },
-  "lir.nvim": {
-    "name": "lir.nvim",
-    "url": "https://github.com/tamago324/lir.nvim",
-    "clean_name": "lir-nvim",
-    "config_file": "lir-nvim.lua",
-    "colorscheme": false,
     "enabled": true,
     "frozen": false
   },

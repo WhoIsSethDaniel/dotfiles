@@ -415,7 +415,7 @@
   },
   "repossession.nvim": {
     "name": "repossession.nvim",
-    "url": "https://github.com/WhoIsSethDaniel/repossession.nvim",
+    "url": "git@github.com:WhoIsSethDaniel/repossession.nvim",
     "clean_name": "repossession-nvim",
     "config_file": "repossession-nvim.lua",
     "colorscheme": false,

@@ -31,6 +31,16 @@ local rebuild_help = function()
 end
 
 local autocmds = {
+  set_cd = {
+    {
+      FileType = {
+        pattern = { 'dirbuf' },
+        callback = function()
+          vim.keymap.set('n', '@', '<cmd>cd %<cr>', { noremap = true, silent = true, buffer = true })
+        end,
+      },
+    },
+  },
   spelling = {
     {
       FileType = {

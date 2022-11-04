@@ -3,4 +3,5 @@ require('project_nvim').setup {
   patterns = { 'go.work', '.git', 'go.mod', 'Makefile', 'selene.toml', 'stylua.toml' },
   silent_chdir = true,
   ignore_lsp = { 'null-ls' },
+  scope_chdir = 'global',
 }

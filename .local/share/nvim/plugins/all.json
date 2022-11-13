@@ -35,6 +35,15 @@
     "enabled": true,
     "frozen": false
   },
+  "cmp-cmdline": {
+    "name": "cmp-cmdline",
+    "url": "https://github.com/hrsh7th/cmp-cmdline",
+    "clean_name": "cmp-cmdline",
+    "config_file": "cmp-cmdline.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "cmp-emoji": {
     "name": "cmp-emoji",
     "url": "https://github.com/hrsh7th/cmp-emoji",
@@ -85,6 +94,15 @@
     "url": "https://github.com/hrsh7th/cmp-vsnip",
     "clean_name": "cmp-vsnip",
     "config_file": "cmp-vsnip.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "colorful-winsep.nvim": {
+    "name": "colorful-winsep.nvim",
+    "url": "https://github.com/nvim-zh/colorful-winsep.nvim",
+    "clean_name": "colorful-winsep-nvim",
+    "config_file": "colorful-winsep-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

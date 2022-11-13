@@ -2,6 +2,9 @@ return {
   settings = {
     perlnavigator = {
       perlPath = 'perl',
+      perlimportsLintEnabled = false,
+      perlimportsTidyEnabled = true,
+      perltidyEnabled = false,
     },
   },
   on_new_config = function(new_config, new_root)

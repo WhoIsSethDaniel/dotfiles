@@ -89,7 +89,7 @@ return {
         end
       end,
     },
-    fmt.perlimports.with { timeout = 10000 },
+    -- fmt.perlimports.with { timeout = 10000 },
     fmt.prettier.with {
       extra_filetypes = { 'toml', 'gohtml', 'gohtmltmpl' },
       extra_args = function(params)

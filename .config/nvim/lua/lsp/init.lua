@@ -182,7 +182,7 @@ local function setup()
   }
 
   require('lsp-format').setup {
-    perl = { exclude = { 'perlnavigator' } },
+    -- perl = { exclude = { 'perlnavigator' } },
   }
 
   require('nvim-navic').setup {

@@ -260,6 +260,15 @@
     "enabled": true,
     "frozen": false
   },
+  "neodev.nvim": {
+    "name": "neodev.nvim",
+    "url": "https://github.com/folke/neodev.nvim",
+    "clean_name": "neodev-nvim",
+    "config_file": "neodev-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "noice.nvim": {
     "name": "noice.nvim",
     "url": "https://github.com/folke/noice.nvim",

@@ -1,4 +1,5 @@
 local has_goldsmith, g = pcall(require, 'goldsmith')
+local has_lspsig, _ = pcall(require, 'lsp_signature')
 
 local M = {}
 
@@ -8,7 +9,9 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local bufnr = args.buf
     if (not has_goldsmith and client.name == 'gopls') or client.name ~= 'gopls' then
       require('lsp-format').on_attach(client)
-      -- require('lsp_signature').on_attach({}, bufnr)
+      if has_lspsig then
+        require('lsp_signature').on_attach({}, bufnr)
+      end
     end
     require('lsp-inlayhints').on_attach(client, bufnr, false)
     if client.name ~= 'null-ls' and client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
@@ -140,13 +143,15 @@ local function setup()
     start_delay = 5000,
   }
 
-  -- require('lsp_signature').setup {
-  --   bind = true,
-  --   wrap = true,
-  --   handler_opts = {
-  --     border = 'rounded',
-  --   },
-  -- }
+  if has_lspsig then
+    require('lsp_signature').setup {
+      bind = true,
+      wrap = true,
+      handler_opts = {
+        border = 'rounded',
+      },
+    }
+  end
 
   require('lsp-inlayhints').setup {
     inlay_hints = {

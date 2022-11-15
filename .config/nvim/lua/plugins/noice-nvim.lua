@@ -1,18 +1,22 @@
 require('noice').setup {
   cmdline = {
     enabled = true,
-    view = 'cmdline_popup',
+    -- view = 'cmdline_popup',
+    view = 'cmdline',
   },
   messages = {
-    enabled = true,
+    enabled = false,
     view = 'mini',
     view_error = 'mini',
     view_warn = 'mini',
     view_history = 'split',
     view_search = 'virtualtext',
   },
+  popupmenu = {
+    enabled = false,
+  },
   notify = {
-    enabled = true,
+    enabled = false,
     view = 'mini',
   },
   views = {

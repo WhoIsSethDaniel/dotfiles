@@ -19,9 +19,10 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       print(client.name .. ':')
       print(vim.inspect(client.server_capabilities))
     end
+
     -- dump_caps()
 
-    if client.name == 'gopls' then
+    if has_goldsmith and client.name == 'gopls' then
       return
     end
 
@@ -112,7 +113,7 @@ local function setup()
       'golangci-lint',
       'golines',
       'gomodifytags',
-      'gopls',
+      { 'gopls', version = 'v0.9.5' },
       'gotests',
       'gotestsum',
       'impl',

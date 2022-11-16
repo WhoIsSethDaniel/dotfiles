@@ -9,7 +9,6 @@
 /.config/mimeapps.list
 /.config/monitors.xml*
 /.config/nvim/lua/all.lua
-/.config/nvim/.luarc.json
 /.config/wezterm/sha256.txt
 /.lesshst
 /.psql_history

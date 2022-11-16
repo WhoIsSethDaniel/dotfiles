@@ -460,7 +460,7 @@
   },
   "rest.nvim": {
     "name": "rest.nvim",
-    "url": "https://github.com/NTBBloodbath/rest.nvim",
+    "url": "https://github.com/rest-nvim/rest.nvim",
     "clean_name": "rest-nvim",
     "config_file": "rest-nvim.lua",
     "colorscheme": false,

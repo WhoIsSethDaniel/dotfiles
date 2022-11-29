@@ -38,5 +38,14 @@ parser_config.http = {
   },
 }
 
+-- parser_config.gotmpl = {
+--   install_info = {
+--     url = "https://github.com/ngalaiko/tree-sitter-go-template",
+--     files = {"src/parser.c"},
+--   },
+--   filetype = "gotmpl",
+--   used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl"},
+-- }
+
 local ts_utils = require 'nvim-treesitter.ts_utils'
 ts_utils.get_node_text = vim.treesitter.query.get_node_text

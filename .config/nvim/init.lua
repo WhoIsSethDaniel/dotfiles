@@ -254,7 +254,7 @@ vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r
 -- filetypes
 vim.filetype.add {
   extension = {
-    gohtml = 'gohtml',
+    gohtml = 'gohtmltmpl',
   },
   pattern = {
     ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },

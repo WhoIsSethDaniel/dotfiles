@@ -5,6 +5,7 @@ return {
       perlimportsLintEnabled = false,
       perlimportsTidyEnabled = true,
       perltidyEnabled = false,
+      enableProgress = true,
     },
   },
   on_new_config = function(new_config, new_root)

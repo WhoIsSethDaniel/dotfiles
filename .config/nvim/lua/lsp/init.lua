@@ -123,7 +123,7 @@ local function setup()
       'json-to-struct',
       'lua-language-server',
       'markdownlint',
-      { 'perlnavigator', version = 'v0.4.1' },
+      'perlnavigator',
       'prettier',
       'revive',
       'selene',

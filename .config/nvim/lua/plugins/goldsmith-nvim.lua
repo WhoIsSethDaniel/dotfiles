@@ -47,11 +47,11 @@ require('goldsmith').config {
   window = {
     width = 100,
   },
-  gopls = {
-    config = function()
-      return lsp.get_config 'gopls'
-    end,
-  },
+  -- gopls = {
+  --   config = function()
+  --     return lsp.get_config 'gopls'
+  --   end,
+  -- },
   format = {
     max_line_length = 100,
     comments = { enabled = true },

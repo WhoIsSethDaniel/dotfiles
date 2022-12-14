@@ -116,7 +116,7 @@ local function setup()
       'golangci-lint',
       'golines',
       'gomodifytags',
-      { 'gopls', version = 'v0.9.5' },
+      'gopls',
       'gotests',
       'gotestsum',
       'impl',

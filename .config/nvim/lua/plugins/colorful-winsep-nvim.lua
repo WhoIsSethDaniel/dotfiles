@@ -1,1 +1,1 @@
-require('colorful-winsep').setup()
+require('colorful-winsep').setup{}

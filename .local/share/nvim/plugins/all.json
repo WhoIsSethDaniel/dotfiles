@@ -397,7 +397,7 @@
   },
   "nvim-ts-rainbow": {
     "name": "nvim-ts-rainbow",
-    "url": "https://github.com/p00f/nvim-ts-rainbow",
+    "url": "https://github.com/mrjones2014/nvim-ts-rainbow",
     "clean_name": "nvim-ts-rainbow",
     "config_file": "nvim-ts-rainbow.lua",
     "colorscheme": false,

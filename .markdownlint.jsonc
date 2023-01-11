@@ -26,5 +26,8 @@
   "MD030": {
     "ul_single": 1,
     "ul_multi": 1
+  },
+  "MD047": {
+    "single_trailing_newline": false
   }
 }

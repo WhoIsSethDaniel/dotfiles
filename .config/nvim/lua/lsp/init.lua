@@ -123,6 +123,7 @@ local function setup()
       'json-to-struct',
       'lua-language-server',
       'markdownlint',
+      'marksman',
       'perlnavigator',
       'prettier',
       'revive',

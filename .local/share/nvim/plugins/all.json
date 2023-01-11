@@ -143,6 +143,15 @@
     "enabled": true,
     "frozen": false
   },
+  "glow.nvim": {
+    "name": "glow.nvim",
+    "url": "https://github.com/ellisonleao/glow.nvim",
+    "clean_name": "glow-nvim",
+    "config_file": "glow-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "goldsmith.nvim": {
     "name": "goldsmith.nvim",
     "url": "git@github.com:WhoIsSethDaniel/goldsmith.nvim",

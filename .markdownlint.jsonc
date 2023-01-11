@@ -10,7 +10,7 @@
     // Include code blocks
     "code_blocks": true,
     // Include tables
-    "tables": true,
+    "tables": false,
     // Include headings
     "headings": true,
     // Include headings
@@ -21,10 +21,10 @@
     "stern": true
   },
   "MD007": {
-    "indent": 4
+    "indent": 2
   },
   "MD030": {
-    "ul_single": 3,
-    "ul_multi": 3
+    "ul_single": 1,
+    "ul_multi": 1
   }
 }

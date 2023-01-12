@@ -88,7 +88,7 @@ vim.opt.equalalways = false
 vim.opt.splitbelow = false
 vim.opt.splitright = true
 -- cursor position when splitting
-if vim.fn.has 'nvim-0.9.0' then
+if vim.fn.has 'nvim-0.9.0' == 1 then
   vim.opt.splitkeep = 'screen'
 end
 

@@ -81,15 +81,15 @@ return {
         end
       end,
     },
-    fmt.perltidy.with {
-      extra_args = function(params)
-        local m = string.match(params.cwd, '^(.*/work)')
-        if m then
-          return { string.format('-pro=%s/mm_website/.perltidyallrc', m) }
-        end
-      end,
-      timeout = 10000,
-    },
+    -- fmt.perltidy.with {
+    --   extra_args = function(params)
+    --     local m = string.match(params.cwd, '^(.*/work)')
+    --     if m then
+    --       return { string.format('-pro=%s/mm_website/.perltidyallrc', m) }
+    --     end
+    --   end,
+    --   timeout = 10000,
+    -- },
     -- fmt.perlimports.with { timeout = 10000 },
     fmt.prettier.with {
       extra_filetypes = { 'toml', 'gohtml', 'gohtmltmpl' },

@@ -4,7 +4,7 @@ return {
       perlPath = 'perl',
       perlimportsLintEnabled = false,
       perlimportsTidyEnabled = true,
-      perltidyEnabled = false,
+      perltidyEnabled = true,
       enableProgress = true,
     },
   },

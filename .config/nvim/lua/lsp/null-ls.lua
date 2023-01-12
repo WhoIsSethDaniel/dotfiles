@@ -20,7 +20,8 @@ local function match_conf(...)
   local patterns = ...
   local f = u.root_pattern(...)
   return function(root)
-    local d = f(root)
+    -- add an '/' at the end, otherwise root_pattern skips the parent directory
+    local d = f(string.format('%s/', root))
     for _, pattern in ipairs(vim.tbl_flatten { patterns }) do
       local c = string.format('%s/%s', d, pattern)
       if u.path.exists(c) then

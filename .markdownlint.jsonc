@@ -1,5 +1,8 @@
 // https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
 {
+  "MD007": {
+    "indent": 2
+  },
   "MD013": {
     "line_length": 140,
     "heading_line_length": 140,
@@ -11,12 +14,11 @@
     "strict": true,
     "stern": true
   },
-  "MD007": {
-    "indent": 2
-  },
   "MD030": {
     "ul_single": 1,
-    "ul_multi": 1
+    "ul_multi": 1,
+    "ol_single": 1,
+    "ol_multi": 1
   },
   "MD041": {
     "level": 2

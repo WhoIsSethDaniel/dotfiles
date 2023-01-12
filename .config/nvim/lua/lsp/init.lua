@@ -112,6 +112,7 @@ local function setup()
       'cbfmt',
       'codespell',
       'editorconfig-checker',
+      'glow',
       'gofumpt',
       'golangci-lint',
       'golines',

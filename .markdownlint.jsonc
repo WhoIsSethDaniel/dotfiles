@@ -1,23 +1,14 @@
+// https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
 {
-  // MD013/line-length - Line length
   "MD013": {
-    // Number of characters
     "line_length": 140,
-    // Number of characters for headings
     "heading_line_length": 140,
-    // Number of characters for code blocks
     "code_block_line_length": 140,
-    // Include code blocks
     "code_blocks": true,
-    // Include tables
     "tables": false,
-    // Include headings
     "headings": true,
-    // Include headings
     "headers": true,
-    // Strict length checking
     "strict": true,
-    // Stern length checking
     "stern": true
   },
   "MD007": {
@@ -26,6 +17,9 @@
   "MD030": {
     "ul_single": 1,
     "ul_multi": 1
+  },
+  "MD041": {
+    "level": 2
   },
   "MD047": {
     "single_trailing_newline": false

@@ -30,14 +30,6 @@ parser_config.perl = {
   filetype = 'perl',
 }
 
-parser_config.http = {
-  install_info = {
-    url = 'https://github.com/NTBBloodbath/tree-sitter-http',
-    files = { 'src/parser.c' },
-    branch = 'main',
-  },
-}
-
 -- parser_config.gotmpl = {
 --   install_info = {
 --     url = "https://github.com/ngalaiko/tree-sitter-go-template",

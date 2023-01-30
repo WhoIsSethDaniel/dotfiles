@@ -415,7 +415,7 @@
   },
   "nvim-web-devicons": {
     "name": "nvim-web-devicons",
-    "url": "https://github.com/kyazdani42/nvim-web-devicons",
+    "url": "https://github.com/nvim-tree/nvim-web-devicons",
     "clean_name": "nvim-web-devicons",
     "config_file": "nvim-web-devicons.lua",
     "colorscheme": false,

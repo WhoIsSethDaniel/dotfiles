@@ -118,6 +118,7 @@ local function setup()
       'golines',
       'gomodifytags',
       'gopls',
+      -- 'gospel',
       'gotests',
       'gotestsum',
       'impl',

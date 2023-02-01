@@ -54,6 +54,11 @@ return {
     --     '-',
     --   },
     -- },
+    -- diag.gospel.with {
+    --   cwd = function(params)
+    --     return vim.loop.cwd()
+    --   end,
+    -- },
     diag.markdownlint.with {
       extra_args = function(params)
         local c = match_conf '.markdownlint.jsonc'(params.root)

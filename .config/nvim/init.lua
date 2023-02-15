@@ -190,7 +190,7 @@ vim.opt.background = 'dark'
 
 -- configuration for completion
 vim.opt.complete = { '.', 'w', 'b', 'u' }
-vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
+-- vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 
 -- messages
 -- I: turn off vim 'intro' message

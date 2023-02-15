@@ -104,7 +104,6 @@ local function setup()
     end,
   }
   require('null-ls').setup(M.get_config 'null-ls')
-  -- require('lspconfig').perlpls.setup(M.get_config 'perlpls')
 
   require('mason-tool-installer').setup {
     ensure_installed = {

@@ -212,7 +212,7 @@
     "clean_name": "lsp_signature-nvim",
     "config_file": "lsp_signature-nvim.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "lspkind-nvim": {

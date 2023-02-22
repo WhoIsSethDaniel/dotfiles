@@ -107,15 +107,6 @@
     "enabled": true,
     "frozen": false
   },
-  "dirbuf.nvim": {
-    "name": "dirbuf.nvim",
-    "url": "https://github.com/elihunter173/dirbuf.nvim",
-    "clean_name": "dirbuf-nvim",
-    "config_file": "dirbuf-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "dressing.nvim": {
     "name": "dressing.nvim",
     "url": "https://github.com/stevearc/dressing.nvim",
@@ -418,6 +409,15 @@
     "url": "https://github.com/nvim-tree/nvim-web-devicons",
     "clean_name": "nvim-web-devicons",
     "config_file": "nvim-web-devicons.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "oil.nvim": {
+    "name": "oil.nvim",
+    "url": "https://github.com/stevearc/oil.nvim",
+    "clean_name": "oil-nvim",
+    "config_file": "oil-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

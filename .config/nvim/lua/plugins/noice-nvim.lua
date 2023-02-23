@@ -35,7 +35,7 @@ require('noice').setup {
       enabled = true,
     },
     signature = {
-      enabled = true,
+      enabled = false,
     },
     message = {
       enabled = true,

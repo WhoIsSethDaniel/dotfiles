@@ -20,7 +20,7 @@ require('oil').setup {
     spell = false,
     list = false,
     conceallevel = 3,
-    concealcursor = 'n',
+    concealcursor = 'nvic',
   },
   -- Restore window options to previous values when leaving an oil buffer
   restore_win_options = true,

@@ -142,7 +142,7 @@ local function setup()
     },
     auto_update = true,
     -- run_on_start = false,
-    start_delay = 5000,
+    start_delay = 1000,
   }
 
   if has_lspsig then

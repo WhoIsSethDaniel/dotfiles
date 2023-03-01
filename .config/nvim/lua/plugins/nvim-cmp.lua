@@ -23,6 +23,10 @@ cmp.setup {
       return vim_item
     end,
   },
+  window = {
+    completion = { border = 'rounded' },
+    documentation = { border = 'rounded' },
+  },
   snippet = {
     expand = function(args)
       vim.fn['vsnip#anonymous'](args.body)

@@ -77,6 +77,14 @@ require('telescope').setup {
     -- buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker
   },
   pickers = {
+    git_branches = {
+      i = {
+        ['<cr>'] = require('telescope.actions').git_switch_branch,
+      },
+      n = {
+        ['<cr>'] = require('telescope.actions').git_switch_branch,
+      },
+    },
     buffers = {
       sort_lastused = true,
       mappings = {

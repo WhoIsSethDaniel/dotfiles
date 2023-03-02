@@ -29,6 +29,10 @@ vim.keymap.set('n', '<leader>fm', function()
   require('telescope.builtin').oldfiles()
 end, {})
 
+vim.keymap.set('n', '<leader>gb', function()
+  require('telescope.builtin').git_branches { show_remote_tracking_branches = true }
+end, {})
+
 require('telescope').setup {
   defaults = {
     vimgrep_arguments = {

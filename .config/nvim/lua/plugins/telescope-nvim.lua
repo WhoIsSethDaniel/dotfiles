@@ -78,11 +78,13 @@ require('telescope').setup {
   },
   pickers = {
     git_branches = {
-      i = {
-        ['<cr>'] = require('telescope.actions').git_switch_branch,
-      },
-      n = {
-        ['<cr>'] = require('telescope.actions').git_switch_branch,
+      mappings = {
+        i = {
+          ['<cr>'] = require('telescope.actions').git_switch_branch,
+        },
+        n = {
+          ['<cr>'] = require('telescope.actions').git_switch_branch,
+        },
       },
     },
     buffers = {

@@ -66,3 +66,7 @@ require('oil').setup {
   },
 }
 vim.keymap.set('n', '-', require('oil').open, { desc = 'Open parent directory' })
+vim.keymap.set('n', '_', function()
+  print 'hi'
+  require('oil').open(vim.fn.getcwd())
+end, { desc = 'Open project root directory' })

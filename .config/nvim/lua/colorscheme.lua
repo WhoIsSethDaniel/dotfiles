@@ -1,16 +1,5 @@
--- require('github-theme').setup {
---   theme_style = 'dark',
---   keyword_style = 'bold',
---   hide_inactive_statusline = false,
---   sidebars = { 'qf' },
---   dark_float = false,
---   -- colors = { bg = '#000000', line_nr = '#008800' }
---   colors = { bg = '#000000' },
--- }
---
--- vim.cmd [[ colorscheme github_dark ]]
-
 require('kanagawa').setup {
+  compile = false,
   undercurl = true, -- enable undercurls
   commentStyle = { italic = true },
   functionStyle = {},
@@ -24,9 +13,30 @@ require('kanagawa').setup {
   dimInactive = true, -- dim inactive window `:h hl-NormalNC`
   globalstatus = true,
   terminalColors = true,
-  colors = { bg = '#000000' },
-  overrides = {},
-  theme = 'default',
+  colors = {
+    palette = {
+      -- dragonBlack0 = '#000000',
+      -- dragonBlack1 = '#000000',
+      -- dragonBlack2 = '#000000',
+      dragonBlack3 = '#000000',
+      dragonBlack4 = '#000000',
+      -- dragonBlack5 = '#000000',
+      -- dragonBlack6 = '#000000',
+    },
+    theme = {
+      all = {
+        ui = {
+          -- bg = 'veryBlack',
+        },
+      },
+    },
+  },
+  -- overrides = function(colors) end,
+  theme = 'dragon',
+  background = {
+    dark = 'dragon',
+    light = 'lotus',
+  },
 }
 
 vim.cmd [[ colorscheme kanagawa ]]

@@ -91,15 +91,15 @@ local autocmds = {
       },
     },
   },
-  create_missing_dirs = {
-    {
-      BufWritePre = {
-        callback = function()
-          create_missing_dirs()
-        end,
-      },
-    },
-  },
+  -- create_missing_dirs = {
+  --   {
+  --     BufWritePre = {
+  --       callback = function()
+  --         create_missing_dirs()
+  --       end,
+  --     },
+  --   },
+  -- },
   vim_on_start = {
     {
       VimEnter = {

@@ -80,6 +80,10 @@ local function setup()
   require('mason').setup {
     -- log_level = vim.log.levels.DEBUG,
     log_level = vim.log.levels.INFO,
+    registries = {
+      'lua:mason-registry.index',
+      'github:mason-org/mason-registry',
+    },
   }
 
   local mlsp = require 'mason-lspconfig'

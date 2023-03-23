@@ -17,7 +17,7 @@ mkdir -p $HOME/.config/dotfiles
 cd $HOME/.config/dotfiles
 git --git-dir=$HOME/.config/dotfiles/home --work-tree=$HOME clone --bare https://github.com/WhoIsSethDaniel/dotfiles $HOME/.config/dotfiles/home
 git --git-dir=$HOME/.config/dotfiles/home --work-tree=$HOME checkout -f
-. .bashrc
+. ~/.bashrc
 git clone git@github.com:WhoIsSethDaniel/dotfiles-home main
 cd ~
 git-crypt unlock <path to key>

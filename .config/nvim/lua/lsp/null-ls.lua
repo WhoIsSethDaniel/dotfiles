@@ -102,7 +102,7 @@ return {
       extra_args = function(params)
         local m = string.match(params.cwd, '^(.*/work)')
         if m then
-          return { '--config', string.format('%s/mm_website/.prettierrc', m) }
+          return { '--config', string.format('%s/mm_website/prettierrc.non-js.cjs', m) }
         end
       end,
     },

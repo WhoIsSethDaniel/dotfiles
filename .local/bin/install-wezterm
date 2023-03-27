@@ -2,7 +2,8 @@
 
 set -e
 
-ubuntu="$(lsb_release -r --short)"
+#ubuntu="$(lsb_release -r --short)"
+ubuntu="22.04"
 stable_version=$(curl -s https://api.github.com/repos/wez/wezterm/releases/latest | grep tag_name | cut -d '"' -f 4)
 version=${1:-${stable_version}}
 name="wezterm-${version}.Ubuntu${ubuntu}.deb"

@@ -1,4 +1,5 @@
-require('oil').setup {
+oil = require 'oil'
+oil.setup {
   -- Id is automatically added at the beginning, and name at the end
   -- See :help oil-columns
   columns = {
@@ -65,8 +66,14 @@ require('oil').setup {
     },
   },
 }
-vim.keymap.set('n', '-', require('oil').open, { desc = 'Open parent directory' })
+vim.keymap.set('n', '-', oil.open, { desc = 'Open parent directory' })
 vim.keymap.set('n', '_', function()
-  print 'hi'
-  require('oil').open(vim.fn.getcwd())
+  oil.open(vim.fn.getcwd())
 end, { desc = 'Open project root directory' })
+
+vim.api.nvim_create_autocmd('BufEnter', {
+  pattern = { 'oil://*' },
+  callback = function()
+    vim.api.nvim_command('lcd ' .. oil.get_current_dir())
+  end,
+})

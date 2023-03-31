@@ -23,7 +23,7 @@ require('nvim-treesitter.configs').setup {
   },
 }
 
-local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+-- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 -- parser_config.perl = {
 --   install_info = {
 --     url = 'https://github.com/tree-sitter-perl/tree-sitter-perl',
@@ -43,6 +43,3 @@ local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 --   filetype = "gotmpl",
 --   used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl"},
 -- }
-
-local ts_utils = require 'nvim-treesitter.ts_utils'
-ts_utils.get_node_text = vim.treesitter.query.get_node_text

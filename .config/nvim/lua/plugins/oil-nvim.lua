@@ -74,6 +74,9 @@ end, { desc = 'Open project root directory' })
 vim.api.nvim_create_autocmd('BufEnter', {
   pattern = { 'oil://*' },
   callback = function()
-    vim.api.nvim_command('lcd ' .. oil.get_current_dir())
+    local dir = oil.get_current_dir()
+    if vim.fn.isdirectory(dir) ~= 0 then
+      vim.api.nvim_command('lcd ' .. dir)
+    end
   end,
 })

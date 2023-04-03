@@ -152,15 +152,6 @@
     "enabled": true,
     "frozen": false
   },
-  "impatient.nvim": {
-    "name": "impatient.nvim",
-    "url": "https://github.com/lewis6991/impatient.nvim",
-    "clean_name": "impatient-nvim",
-    "config_file": "impatient-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "kanagawa.nvim": {
     "name": "kanagawa.nvim",
     "url": "https://github.com/rebelot/kanagawa.nvim/",

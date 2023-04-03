@@ -1,16 +1,7 @@
 -- cache modules
-vim.cmd [[ packadd! impatient.nvim ]]
-_G.__luacache_config = {
-  chunks = {
-    enable = true,
-    path = vim.fn.stdpath 'cache' .. '/luacache_chunks',
-  },
-  -- turn this off, otherwise disabling modules will not work
-  modpaths = {
-    enable = false,
-  },
-}
-require 'impatient'
+if vim.fn.has 'nvim-0.9.0' == 1 then
+  vim.loader.enable()
+end
 
 -- an interesting discussion about options
 -- https://www.reddit.com/r/vim/comments/gczg99/what_are_some_essential_but_not_obvious_set_opts/

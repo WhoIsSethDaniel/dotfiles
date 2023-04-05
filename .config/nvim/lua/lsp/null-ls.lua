@@ -37,7 +37,7 @@ return {
     -- diag.codespell,
     diag.editorconfig_checker.with {
       command = 'editorconfig-checker',
-      filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim' },
+      filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim', 'perl', 'sql' },
     },
     -- diag.luacheck.with {
     --   args = {

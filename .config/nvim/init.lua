@@ -192,7 +192,7 @@ vim.opt.shortmess:append 'Ics'
 
 -- use the patience algorithm when diffing; perhaps also try 'histogram';
 -- default algorithm is myers
-vim.opt.diffopt:append { 'algorithm:patience' }
+vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60' }
 
 -- thicker borders when using global status bar
 vim.opt.fillchars:append {
@@ -207,6 +207,12 @@ vim.opt.fillchars:append {
 
 -- command-line is not visible if not entering a command
 vim.opt.cmdheight = 0
+
+-- allow placing the entered command in the statusline
+-- (lualine doesn't support this yet)
+-- if vim.fn.has 'nvim-0.9.0' == 1 then
+-- vim.opt.showcmdloc = 'statusline'
+-- end
 
 -- turn on embedded highlighting for lua
 --   perhaps not relevant with treesitter

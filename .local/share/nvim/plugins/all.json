@@ -584,15 +584,6 @@
     "enabled": true,
     "frozen": false
   },
-  "vim-sleuth": {
-    "name": "vim-sleuth",
-    "url": "https://github.com/tpope/vim-sleuth",
-    "clean_name": "vim-sleuth",
-    "config_file": "vim-sleuth.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "vim-speeddating": {
     "name": "vim-speeddating",
     "url": "https://github.com/tpope/vim-speeddating",

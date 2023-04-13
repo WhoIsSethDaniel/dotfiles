@@ -332,15 +332,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-lightbulb": {
-    "name": "nvim-lightbulb",
-    "url": "https://github.com/kosayoda/nvim-lightbulb",
-    "clean_name": "nvim-lightbulb",
-    "config_file": "nvim-lightbulb.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-lspconfig": {
     "name": "nvim-lspconfig",
     "url": "https://github.com/neovim/nvim-lspconfig",

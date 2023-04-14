@@ -126,6 +126,7 @@ local function setup()
       'gotestsum',
       'impl',
       'json-to-struct',
+      'jsonlint',
       'lua-language-server',
       'markdownlint',
       'marksman',

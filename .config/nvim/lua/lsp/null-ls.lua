@@ -59,7 +59,6 @@ return {
     --     return vim.loop.cwd()
     --   end,
     -- },
-    diag.jsonlint,
     diag.markdownlint.with {
       extra_args = function(params)
         local c = match_conf '.markdownlint.jsonc'(params.root)

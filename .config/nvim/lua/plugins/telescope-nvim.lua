@@ -60,7 +60,7 @@ require('telescope').setup {
       horizontal = { mirror = false },
       vertical = { mirror = false },
       prompt_position = 'bottom',
-      width = 0.75,
+      width = 0.90,
       preview_cutoff = 120,
     },
     -- results_height = 1,

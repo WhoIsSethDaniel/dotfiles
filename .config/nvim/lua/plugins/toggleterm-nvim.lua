@@ -35,4 +35,5 @@ require('toggleterm').setup {
 
 -- fix <s-space> problem (for now)
 -- https://www.reddit.com/r/neovim/comments/1340ttr/issue_with_terminal_and_recent_wezterm/
+-- https://github.com/vim/vim/issues/6040
 vim.api.nvim_set_keymap('t', '<s-space>', '<space>', {})

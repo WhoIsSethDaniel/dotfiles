@@ -91,10 +91,11 @@ vim.opt.belloff = 'all'
 -- how gw/gq work
 -- t: autowrap text using textwidth
 -- c: autowrap comments
+-- r: autoinsert comment leader
 -- q: allow formatting of comments with gq
 -- j: remove comment leader when it makes sense; set by sensible
 -- n: recognize numbered lists; uses formatlistpat
-vim.opt.formatoptions = 'tcqjn'
+vim.opt.formatoptions = 'tcrqjn'
 
 -- 'enhanced' command-line completion (sensible turns this on)
 vim.opt.wildmenu = true

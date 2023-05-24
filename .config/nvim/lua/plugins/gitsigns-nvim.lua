@@ -40,4 +40,7 @@ require('gitsigns').setup {
   yadm = {
     enable = false,
   },
+  on_attach = function(bufnr)
+    vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk_inline<cr>', { buffer = bufnr })
+  end,
 }

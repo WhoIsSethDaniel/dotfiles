@@ -193,7 +193,7 @@ vim.opt.shortmess:append 'Ics'
 
 -- use the patience algorithm when diffing; perhaps also try 'histogram';
 -- default algorithm is myers
-vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60' }
+vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60', 'vertical' }
 
 -- thicker borders when using global status bar
 vim.opt.fillchars:append {

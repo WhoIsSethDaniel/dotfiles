@@ -1,5 +1,6 @@
 local has_goldsmith, g = pcall(require, 'goldsmith')
-local has_lspsig, _ = pcall(require, 'lsp_signature')
+local has_lspsig, sig = pcall(require, 'lsp_signature')
+local has_inlayhints, ih = pcall(require, 'lsp-inlayhints')
 
 local M = {}
 
@@ -10,10 +11,12 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     if (not has_goldsmith and client.name == 'gopls') or client.name ~= 'gopls' then
       require('lsp-format').on_attach(client)
       if has_lspsig then
-        require('lsp_signature').on_attach({}, bufnr)
+        sig.on_attach({}, bufnr)
       end
     end
-    require('lsp-inlayhints').on_attach(client, bufnr, false)
+    if has_inlayhints then
+      ih.on_attach(client, bufnr, false)
+    end
     if client.name ~= 'null-ls' and client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
       require('nvim-navic').attach(client, bufnr)
     end
@@ -53,9 +56,11 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     map('n', '<leader>dq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-    map('n', '<leader>ih', function()
-      require('lsp-inlayhints').toggle()
-    end, opts)
+    if has_inlayhints then
+      map('n', '<leader>ih', function()
+        ih.toggle()
+      end, opts)
+    end
   end,
 })
 
@@ -153,7 +158,7 @@ local function setup()
   }
 
   if has_lspsig then
-    require('lsp_signature').setup {
+    sig.setup {
       bind = true,
       wrap = true,
       handler_opts = {
@@ -162,42 +167,44 @@ local function setup()
     }
   end
 
-  require('lsp-inlayhints').setup {
-    inlay_hints = {
-      parameter_hints = {
-        show = true,
-        prefix = '<< ',
-        separator = ', ',
-        remove_colon_start = false,
-        remove_colon_end = true,
+  if has_inlayhints then
+    ih.setup {
+      inlay_hints = {
+        parameter_hints = {
+          show = true,
+          prefix = '<< ',
+          separator = ', ',
+          remove_colon_start = false,
+          remove_colon_end = true,
+        },
+        type_hints = {
+          -- type and other hints
+          show = true,
+          prefix = '',
+          separator = ', ',
+          remove_colon_start = false,
+          remove_colon_end = false,
+        },
+        only_current_line = false,
+        -- separator between types and parameter hints. Note that type hints are
+        -- shown before parameter
+        labels_separator = '  ',
+        -- whether to align to the length of the longest line in the file
+        max_len_align = false,
+        -- padding from the left if max_len_align is true
+        max_len_align_padding = 1,
+        -- whether to align to the extreme right or not
+        right_align = false,
+        -- padding from the right if right_align is true
+        right_align_padding = 7,
+        -- highlight group
+        -- highlight = 'Comment',
+        highlight = 'LspInlayHint',
       },
-      type_hints = {
-        -- type and other hints
-        show = true,
-        prefix = '',
-        separator = ', ',
-        remove_colon_start = false,
-        remove_colon_end = false,
-      },
-      only_current_line = false,
-      -- separator between types and parameter hints. Note that type hints are
-      -- shown before parameter
-      labels_separator = '  ',
-      -- whether to align to the length of the longest line in the file
-      max_len_align = false,
-      -- padding from the left if max_len_align is true
-      max_len_align_padding = 1,
-      -- whether to align to the extreme right or not
-      right_align = false,
-      -- padding from the right if right_align is true
-      right_align_padding = 7,
-      -- highlight group
-      -- highlight = 'Comment',
-      highlight = 'LspInlayHint',
-    },
-    enabled_at_startup = true,
-    debug_mode = false,
-  }
+      enabled_at_startup = true,
+      debug_mode = false,
+    }
+  end
 
   require('lsp-format').setup {
     -- perl = { exclude = { 'perlnavigator' } },

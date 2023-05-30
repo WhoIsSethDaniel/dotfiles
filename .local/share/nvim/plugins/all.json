@@ -143,11 +143,11 @@
     "enabled": true,
     "frozen": false
   },
-  "goldsmith.nvim": {
-    "name": "goldsmith.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/goldsmith.nvim",
-    "clean_name": "goldsmith-nvim",
-    "config_file": "goldsmith-nvim.lua",
+  "go-dev.nvim": {
+    "name": "go-dev.nvim",
+    "url": "git@github.com:WhoIsSethDaniel/go-dev.nvim",
+    "clean_name": "go-dev-nvim",
+    "config_file": "go-dev-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

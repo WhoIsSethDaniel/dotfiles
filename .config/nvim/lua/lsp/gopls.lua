@@ -24,6 +24,7 @@ return {
       importShortcut = 'Both',
       experimentalPostfixCompletions = true,
       diagnosticsDelay = '500ms',
+      vulncheck = 'Imports',
       hints = {
         assignVariableTypes = true,
         compositeLiteralFields = true,

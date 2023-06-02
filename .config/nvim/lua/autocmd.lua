@@ -44,18 +44,18 @@ local autocmds = {
       },
     },
   },
-  spelling = {
-    {
-      FileType = {
-        pattern = { 'go', 'lua', 'perl', 'sh' },
-        callback = function()
-          -- turn on spellsitter support
-          vim.opt_local.spell = true
-          vim.opt_local.spelloptions = 'noplainbuffer'
-        end,
-      },
-    },
-  },
+  -- spelling = {
+  --   {
+  --     FileType = {
+  --       pattern = { 'go', 'lua', 'perl', 'sh' },
+  --       callback = function()
+  --         -- turn on spellsitter support
+  --         vim.opt_local.spell = true
+  --         vim.opt_local.spelloptions = 'noplainbuffer'
+  --       end,
+  --     },
+  --   },
+  -- },
   doc_settings_and_win = {
     {
       FileType = {

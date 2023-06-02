@@ -8,6 +8,15 @@
     "enabled": true,
     "frozen": false
   },
+  "bamboo.nvim": {
+    "name": "bamboo.nvim",
+    "url": "https://github.com/ribru17/bamboo.nvim",
+    "clean_name": "bamboo-nvim",
+    "config_file": "bamboo-nvim.lua",
+    "colorscheme": true,
+    "enabled": true,
+    "frozen": false
+  },
   "bufjump.nvim": {
     "name": "bufjump.nvim",
     "url": "https://github.com/kwkarlwang/bufjump.nvim",

@@ -69,7 +69,9 @@ require('bamboo').setup {
     black = '#000000',
     bg0 = '#000000',
   }, -- Override default colors
-  highlights = {}, -- Override highlight groups
+  highlights = {
+    ['@comment'] = { fg = '$grey' },
+  }, -- Override highlight groups
 
   -- Plugins Config --
   diagnostics = {

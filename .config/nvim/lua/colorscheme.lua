@@ -42,6 +42,7 @@
 -- vim.cmd [[ colorscheme kanagawa ]]
 
 require('bamboo').setup {
+  style = 'multiplex',
   -- Main options --
   transparent = false, -- Show/hide background
   term_colors = true, -- Change terminal color as per the selected theme style

@@ -116,6 +116,15 @@
     "enabled": true,
     "frozen": false
   },
+  "diffview.nvim": {
+    "name": "diffview.nvim",
+    "url": "https://github.com/sindrets/diffview.nvim",
+    "clean_name": "diffview-nvim",
+    "config_file": "diffview-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "dressing.nvim": {
     "name": "dressing.nvim",
     "url": "https://github.com/stevearc/dressing.nvim",

@@ -77,12 +77,15 @@ function M.get_config(server)
 end
 
 local function setup()
-  require('vim.lsp.log').set_level(vim.log.levels.TRACE)
+  -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  require('vim.lsp.log').set_level(vim.log.levels.INFO)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
-  -- setup lua for neovim
+  vim.diagnostic.config { severity_sort = true, update_in_insert = true }
+  require('toggle_lsp_diagnostics').init(vim.diagnostic.config())
+  vim.api.nvim_set_keymap('n', '<leader>td', '<Plug>(toggle-lsp-diag)', { silent = true })
+
   require('neodev').setup()
 
   require('mason').setup {
@@ -244,8 +247,6 @@ local function setup()
     depth_limit = 0,
     depth_limit_indicator = '..',
   }
-
-  vim.diagnostic.config { severity_sort = true }
 
   local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
   for type, icon in pairs(signs) do

@@ -467,15 +467,6 @@
     "enabled": true,
     "frozen": false
   },
-  "search-replace.nvim": {
-    "name": "search-replace.nvim",
-    "url": "https://github.com/roobert/search-replace.nvim",
-    "clean_name": "search-replace-nvim",
-    "config_file": "search-replace-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "telescope-fzy-native.nvim": {
     "name": "telescope-fzy-native.nvim",
     "url": "https://github.com/nvim-telescope/telescope-fzy-native.nvim",

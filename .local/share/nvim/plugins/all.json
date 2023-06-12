@@ -176,7 +176,7 @@
     "clean_name": "kanagawa-nvim",
     "config_file": "kanagawa-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "lists.vim": {
@@ -463,6 +463,15 @@
     "url": "https://github.com/rest-nvim/rest.nvim",
     "clean_name": "rest-nvim",
     "config_file": "rest-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "search-replace.nvim": {
+    "name": "search-replace.nvim",
+    "url": "https://github.com/roobert/search-replace.nvim",
+    "clean_name": "search-replace-nvim",
+    "config_file": "search-replace-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

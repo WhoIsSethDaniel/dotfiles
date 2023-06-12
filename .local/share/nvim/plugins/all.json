@@ -530,15 +530,6 @@
     "enabled": true,
     "frozen": false
   },
-  "vim-dispatch": {
-    "name": "vim-dispatch",
-    "url": "https://github.com/tpope/vim-dispatch",
-    "clean_name": "vim-dispatch",
-    "config_file": "vim-dispatch.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "vim-eunuch": {
     "name": "vim-eunuch",
     "url": "https://github.com/tpope/vim-eunuch",
@@ -580,15 +571,6 @@
     "url": "https://github.com/machakann/vim-sandwich",
     "clean_name": "vim-sandwich",
     "config_file": "vim-sandwich.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "vim-speeddating": {
-    "name": "vim-speeddating",
-    "url": "https://github.com/tpope/vim-speeddating",
-    "clean_name": "vim-speeddating",
-    "config_file": "vim-speeddating.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

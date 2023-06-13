@@ -26,6 +26,7 @@ return {
   },
   default_gui_startup_args = { 'connect', 'unix' },
   force_reverse_video_cursor = true,
+  hide_mouse_cursor_when_typing = false,
   colors = {
     foreground = '#dcd7ba',
     background = '#000000',

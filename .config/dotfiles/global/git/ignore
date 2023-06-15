@@ -50,6 +50,7 @@
 /.local/bin/vim-config
 /.local/bin/vim-disable
 /.local/bin/vim-enable
+/.local/bin/vim-enable-cs
 /.local/bin/vim-freeze
 /.local/bin/vim-list
 /.local/bin/vim-remove

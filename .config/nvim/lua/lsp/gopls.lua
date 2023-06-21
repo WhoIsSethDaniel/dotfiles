@@ -1,5 +1,12 @@
 -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
 return {
+  capabilities = {
+    workspace = {
+      didChangeWatchedFile = {
+        dynamicRegistration = true,
+      },
+    },
+  },
   settings = {
     gopls = {
       buildFlags = nil,

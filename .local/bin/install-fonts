@@ -9,7 +9,7 @@ function install_font() {
     mkdir -p "$dir"
     pushd "$dir" || return
     wget -O font.zip "$url"
-    unzip -o font.zip
+    unzip -j -o font.zip
     rm -f font.zip
     popd || return
 }
@@ -19,5 +19,6 @@ install_font DejaVuSansMono https://github.com/ryanoasis/nerd-fonts/releases/dow
 install_font Hack https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Hack.zip
 # install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Ubuntu.zip
 install_font CascadiaCode https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/CascadiaCode.zip
+install_font intel-one-mono https://github.com/intel/intel-one-mono/raw/main/fonts/ttf.zip
 
 fc-cache -fv

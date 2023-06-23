@@ -35,11 +35,11 @@ return {
   log_level = 'debug',
   sources = {
     -- diag.codespell,
-    diag.editorconfig_checker.with {
-      method = null.methods.DIAGNOSTICS_ON_SAVE,
-      command = 'editorconfig-checker',
-      filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim', 'perl', 'sql' },
-    },
+    -- diag.editorconfig_checker.with {
+    --   method = null.methods.DIAGNOSTICS_ON_SAVE,
+    --   command = 'editorconfig-checker',
+    --   filetypes = { 'go', 'gomod', 'lua', 'json', 'sh', 'make', 'vim', 'perl', 'sql' },
+    -- },
     -- diag.luacheck.with {
     --   args = {
     --     '--globals',

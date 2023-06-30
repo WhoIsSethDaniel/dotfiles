@@ -2,7 +2,7 @@
 return {
   capabilities = {
     workspace = {
-      didChangeWatchedFile = {
+      didChangeWatchedFiles = {
         dynamicRegistration = true,
       },
     },

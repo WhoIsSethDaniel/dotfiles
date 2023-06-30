@@ -112,7 +112,8 @@ vim.opt.relativenumber = true
 vim.opt.numberwidth = 4
 
 -- turn on indenting
-vim.opt.smartindent = true
+-- use treesitter.indent instead
+-- vim.opt.smartindent = true
 -- follow previous line's indent
 vim.opt.autoindent = true
 

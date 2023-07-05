@@ -114,7 +114,7 @@ vim.opt.numberwidth = 4
 -- turn on indenting
 -- ** use treesitter.indent instead
 -- vim.opt.smartindent = true
--- follow previous line's indent
+-- follow previous line's indent (on by default)
 -- vim.opt.autoindent = true
 
 -- undo

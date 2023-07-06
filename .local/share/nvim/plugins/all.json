@@ -485,15 +485,6 @@
     "enabled": true,
     "frozen": false
   },
-  "telescope-live-grep-args.nvim": {
-    "name": "telescope-live-grep-args.nvim",
-    "url": "https://github.com/nvim-telescope/telescope-live-grep-args.nvim",
-    "clean_name": "telescope-live-grep-args-nvim",
-    "config_file": "telescope-live-grep-args-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "telescope.nvim": {
     "name": "telescope.nvim",
     "url": "https://github.com/nvim-telescope/telescope.nvim",

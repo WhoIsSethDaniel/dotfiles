@@ -101,7 +101,7 @@ require('telescope').setup {
   },
   extensions = {
     fzy_native = { override_generic_sorter = true, override_file_sorter = true },
-    live_grep_args = {},
+    -- live_grep_args = {},
   },
 }
 
@@ -118,4 +118,4 @@ if ok then
   require('telescope').load_extension 'possession'
 end
 require('telescope').load_extension 'fzy_native'
-require('telescope').load_extension 'live_grep_args'
+-- require('telescope').load_extension 'live_grep_args'

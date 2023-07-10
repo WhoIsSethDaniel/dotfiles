@@ -176,7 +176,7 @@
     "clean_name": "go-dev-nvim",
     "config_file": "go-dev-nvim.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "kanagawa.nvim": {
@@ -312,15 +312,6 @@
     "config_file": "nui-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
-  },
-  "null-ls.nvim": {
-    "name": "null-ls.nvim",
-    "url": "https://github.com/jose-elias-alvarez/null-ls.nvim",
-    "clean_name": "null-ls-nvim",
-    "config_file": "null-ls-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
     "frozen": false
   },
   "nvim-autopairs": {

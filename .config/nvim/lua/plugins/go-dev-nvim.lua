@@ -57,7 +57,7 @@ require('goldsmith').config {
     comments = { enabled = true },
   },
   null = {
-    enabled = true,
+    enabled = false,
     staticcheck = false,
     gofmt = false,
     gofumpt = false,

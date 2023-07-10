@@ -64,12 +64,17 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   end,
 })
 
-function M.get_config(server)
-  local ok, config = pcall(require, string.format('lsp.%s', server))
+function M.load_lsp_file(f)
+  local ok, config = pcall(require, string.format('lsp.%s', f))
   if not ok then
-    vim.api.nvim_err_writeln('failed to load server: ' .. server)
+    vim.api.nvim_err_writeln('failed to load lsp config: ' .. f)
     config = {}
   end
+  return config
+end
+
+function M.get_config(server)
+  local config = M.load_lsp_file(server)
   local cap = vim.lsp.protocol.make_client_capabilities()
   cap = require('cmp_nvim_lsp').default_capabilities(cap)
   config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
@@ -77,9 +82,9 @@ function M.get_config(server)
 end
 
 local function setup()
-  -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
+  require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
   vim.diagnostic.config { severity_sort = true, update_in_insert = true }
@@ -118,7 +123,21 @@ local function setup()
       end
     end,
   }
-  require('null-ls').setup(M.get_config 'null-ls')
+
+  local has_null, null = pcall(require, 'null-ls')
+  if has_null then
+    null.setup(M.get_config 'null-ls')
+  end
+
+  local has_fmt, fmt = pcall(require, 'formatter')
+  if has_fmt then
+    fmt.setup(M.get_config 'formatter')
+  end
+
+  local has_lint, _ = pcall(require, 'lint')
+  if has_lint then
+    M.load_lsp_file 'lint'
+  end
 
   require('mason-tool-installer').setup {
     ensure_installed = {

@@ -143,6 +143,15 @@
     "enabled": true,
     "frozen": false
   },
+  "formatter.nvim": {
+    "name": "formatter.nvim",
+    "url": "https://github.com/mhartington/formatter.nvim",
+    "clean_name": "formatter-nvim",
+    "config_file": "formatter-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "gitsigns.nvim": {
     "name": "gitsigns.nvim",
     "url": "https://github.com/lewis6991/gitsigns.nvim",
@@ -167,7 +176,7 @@
     "clean_name": "go-dev-nvim",
     "config_file": "go-dev-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "kanagawa.nvim": {
@@ -311,7 +320,7 @@
     "clean_name": "null-ls-nvim",
     "config_file": "null-ls-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "nvim-autopairs": {
@@ -346,6 +355,15 @@
     "url": "https://github.com/ethanholz/nvim-lastplace",
     "clean_name": "nvim-lastplace",
     "config_file": "nvim-lastplace.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "nvim-lint": {
+    "name": "nvim-lint",
+    "url": "https://github.com/mfussenegger/nvim-lint",
+    "clean_name": "nvim-lint",
+    "config_file": "nvim-lint.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

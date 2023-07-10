@@ -26,7 +26,7 @@ end
 -- TODO: prettier not yet working
 return {
   logging = true,
-  log_level = vim.log.levels.TRACE,
+  log_level = vim.log.levels.ERROR,
   filetype = {
     go = {
       ft.go.golines,

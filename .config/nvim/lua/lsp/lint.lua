@@ -1,3 +1,4 @@
+-- https://github.com/mfussenegger/nvim-lint
 local l = require 'lint'
 
 vim.api.nvim_create_augroup('Linting', { clear = true })

@@ -29,7 +29,11 @@ return {
   log_level = vim.log.levels.ERROR,
   filetype = {
     go = {
-      ft.go.golines,
+      function()
+        local c = ft.go.golines()
+        c.args = { '--max-len=120' }
+        return c
+      end,
     },
     gohtml = {
       prettier,

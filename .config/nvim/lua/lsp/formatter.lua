@@ -1,18 +1,18 @@
 -- https://github.com/mhartington/formatter.nvim
-local util = require 'formatter.util'
+local futil = require 'formatter.util'
 local fdef = require 'formatter.defaults'
 local ft = require 'formatter.filetypes'
 
-vim.api.nvim_create_augroup('Formatter', { clear = true })
+local ag = vim.api.nvim_create_augroup('Formatter', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
-  group = 'Formatter',
+  group = ag,
   pattern = { '*' },
   command = 'FormatWrite',
 })
 
 local function prettier()
   local f = fdef.prettier()
-  local m = string.match(util.get_current_buffer_file_path(), '^(.*/work)')
+  local m = string.match(futil.get_current_buffer_file_path(), '^(.*/work)')
   if m then
     table.insert(f.args, 1, string.format('%s/mm_website/.prettierrc.non-js.cjs', m))
     table.insert(f.args, 1, '--config')
@@ -41,11 +41,11 @@ return {
     json = {
       prettier,
     },
-    markdown = {
-      prettier,
-    },
     lua = {
       ft.lua.stylua,
+    },
+    markdown = {
+      prettier,
     },
     sh = {
       function()

@@ -1,9 +1,9 @@
 -- https://github.com/mfussenegger/nvim-lint
 local l = require 'lint'
 
-vim.api.nvim_create_augroup('Linting', { clear = true })
+local ag = vim.api.nvim_create_augroup('Linting', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufWritePost', 'VimEnter', 'BufReadPost' }, {
-  group = 'Linting',
+  group = ag,
   pattern = { '*' },
   callback = function()
     l.try_lint()
@@ -24,6 +24,19 @@ mdl.args = {
   end,
 }
 
+local sel = l.linters.selene
+sel.ignore_exitcode = false
+table.insert(sel.args, 1, function()
+  local conf = vim.fs.find('selene.toml', {
+    upward = true,
+    stop = vim.fs.dirname(vim.uv.os_homedir()),
+    path = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
+  })
+  if #conf > 0 then
+    return string.format('--config=%s', conf[1])
+  end
+end)
+
 local sf = l.linters.sqlfluff
 table.insert(sf.args, 2, '--dialect=postgres')
 
@@ -36,19 +49,6 @@ table.insert(yl.args, 1, function()
   })
   if #conf > 0 then
     return string.format('--config-file=%s', conf[1])
-  end
-end)
-
-local sel = l.linters.selene
-sel.ignore_exitcode = false
-table.insert(sel.args, 1, function()
-  local conf = vim.fs.find('selene.toml', {
-    upward = true,
-    stop = vim.fs.dirname(vim.uv.os_homedir()),
-    path = vim.fs.dirname(vim.api.nvim_buf_get_name(0)),
-  })
-  if #conf > 0 then
-    return string.format('--config=%s', conf[1])
   end
 end)
 

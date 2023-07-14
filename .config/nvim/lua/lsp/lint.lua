@@ -2,7 +2,7 @@
 local l = require 'lint'
 
 local ag = vim.api.nvim_create_augroup('Linting', { clear = true })
-vim.api.nvim_create_autocmd({ 'BufWritePost', 'VimEnter', 'BufReadPost', 'SessionLoadPost' }, {
+vim.api.nvim_create_autocmd({ 'BufWritePost', 'VimEnter', 'BufEnter' }, {
   group = ag,
   pattern = { '*' },
   callback = function()

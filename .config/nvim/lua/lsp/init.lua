@@ -1,24 +1,30 @@
 local has_goldsmith, g = pcall(require, 'goldsmith')
-local has_lspsig, sig = pcall(require, 'lsp_signature')
-local has_inlayhints, ih = pcall(require, 'lsp-inlayhints')
 
 local M = {}
+
+local if_has_then = function(module, f)
+  local ok, m = pcall(require, module)
+  if ok then
+    f(m)
+  end
+end
 
 vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
     local bufnr = args.buf
     if (not has_goldsmith and client.name == 'gopls') or client.name ~= 'gopls' then
-      require('lsp-format').on_attach(client)
-      if has_lspsig then
-        sig.on_attach({}, bufnr)
-      end
-    end
-    if has_inlayhints then
-      ih.on_attach(client, bufnr, false)
+      if_has_then('lsp-format', function(m)
+        m.on_attach(client)
+      end)
+      if_has_then('lsp_signature', function(m)
+        m.on_attach({}, bufnr)
+      end)
     end
     if client.name ~= 'null-ls' and client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
-      require('nvim-navic').attach(client, bufnr)
+      if_has_then('nvim-navic', function(m)
+        m.attach(client, bufnr)
+      end)
     end
 
     local function dump_caps()
@@ -56,11 +62,6 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     map('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     map('n', '<leader>dq', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-    if has_inlayhints then
-      map('n', '<leader>ih', function()
-        ih.toggle()
-      end, opts)
-    end
   end,
 })
 
@@ -82,190 +83,161 @@ function M.get_config(server)
 end
 
 local function setup()
-  require('vim.lsp.log').set_level(vim.log.levels.TRACE)
+  -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  require('vim.lsp.log').set_level(vim.log.levels.INFO)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
   vim.diagnostic.config { severity_sort = true, update_in_insert = true }
-  require('toggle_lsp_diagnostics').init(vim.diagnostic.config())
-  vim.api.nvim_set_keymap('n', '<leader>td', '<Plug>(toggle-lsp-diag)', { silent = true })
+  if_has_then('toggle_lsp_diagnostics', function(m)
+    m.init(vim.diagnostic.config())
+    vim.api.nvim_set_keymap('n', '<leader>td', '<Plug>(toggle-lsp-diag)', { silent = true })
+  end)
 
-  require('neodev').setup()
+  if_has_then('neodev', function(m)
+    m.setup()
+  end)
 
-  require('mason').setup {
-    -- log_level = vim.log.levels.DEBUG,
-    log_level = vim.log.levels.INFO,
-    registries = {
-      'lua:mason-registry.index',
-      'github:mason-org/mason-registry',
-    },
-  }
+  if_has_then('mason', function(mason)
+    mason.setup {
+      -- log_level = vim.log.levels.DEBUG,
+      log_level = vim.log.levels.INFO,
+      registries = {
+        'lua:mason-registry.index',
+        'github:mason-org/mason-registry',
+      },
+    }
 
-  local mlsp = require 'mason-lspconfig'
+    if_has_then('lspconfig', function(lspconf)
+      local disabled = {}
 
-  local disabled = {}
-  -- local disabled = { 'perlnavigator' }
-
-  local function goldsmith_managed(server)
-    if has_goldsmith then
-      return g.needed(server)
-    else
-      return false
-    end
-  end
-
-  mlsp.setup {}
-  mlsp.setup_handlers {
-    function(server)
-      if not vim.tbl_contains(disabled, server) and not goldsmith_managed(server) then
-        require('lspconfig')[server].setup(M.get_config(server))
+      local function goldsmith_managed(server)
+        if has_goldsmith then
+          return g.needed(server)
+        else
+          return false
+        end
       end
-    end,
-  }
 
-  local has_null, null = pcall(require, 'null-ls')
-  if has_null then
-    null.setup(M.get_config 'null-ls')
-  end
+      if_has_then('mason-lspconfig', function(mlsp)
+        mlsp.setup {}
+        mlsp.setup_handlers {
+          function(server)
+            if not vim.tbl_contains(disabled, server) and not goldsmith_managed(server) then
+              lspconf[server].setup(M.get_config(server))
+            end
+          end,
+        }
+      end)
+    end)
 
-  local has_fmt, fmt = pcall(require, 'formatter')
-  if has_fmt then
-    fmt.setup(M.get_config 'formatter')
-  end
+    if_has_then('null-ls', function(m)
+      m.setup(M.get_config 'null-ls')
+    end)
 
-  local has_lint, _ = pcall(require, 'lint')
-  if has_lint then
-    M.load_lsp_file 'lint'
-  end
+    if_has_then('formatter', function(m)
+      m.setup(M.get_config 'formatter')
+    end)
 
-  require('mason-tool-installer').setup {
-    ensure_installed = {
-      'bash-language-server',
-      'cbfmt',
-      'codespell',
-      'editorconfig-checker',
-      'glow',
-      'gofumpt',
-      'golangci-lint',
-      'golines',
-      'gomodifytags',
-      'gopls',
-      'gospel',
-      'gotests',
-      'gotestsum',
-      'impl',
-      'json-to-struct',
-      'lua-language-server',
-      'markdownlint',
-      'marksman',
-      'perlnavigator',
-      'prettier',
-      'revive',
-      'selene',
-      'shellcheck',
-      'shellharden',
-      'shfmt',
-      'sqlfluff',
-      'staticcheck',
-      'stylua',
-      'vim-language-server',
-      'vint',
-      'yamlfmt',
-      'yamllint',
-    },
-    auto_update = true,
-    -- run_on_start = false,
-    start_delay = 1000,
-  }
+    if_has_then('lint', function()
+      M.load_lsp_file 'lint'
+    end)
 
-  if has_lspsig then
-    sig.setup {
+    if_has_then('mason-tool-installer', function(m)
+      m.setup {
+        ensure_installed = {
+          'bash-language-server',
+          'cbfmt',
+          'codespell',
+          'editorconfig-checker',
+          'glow',
+          'gofumpt',
+          'golangci-lint',
+          'golines',
+          'gomodifytags',
+          'gopls',
+          'gospel',
+          'gotests',
+          'gotestsum',
+          'impl',
+          'json-to-struct',
+          'lua-language-server',
+          'markdownlint',
+          'marksman',
+          'perlnavigator',
+          'prettier',
+          'revive',
+          'selene',
+          'shellcheck',
+          'shellharden',
+          'shfmt',
+          'sqlfluff',
+          'staticcheck',
+          'stylua',
+          'vim-language-server',
+          'vint',
+          'yamlfmt',
+          'yamllint',
+        },
+        auto_update = true,
+        -- run_on_start = false,
+        start_delay = 1000,
+      }
+    end)
+  end)
+
+  if_has_then('lsp_signature', function(m)
+    m.setup {
       bind = true,
       wrap = true,
       handler_opts = {
         border = 'rounded',
       },
     }
-  end
+  end)
 
-  if has_inlayhints then
-    ih.setup {
-      inlay_hints = {
-        parameter_hints = {
-          show = true,
-          prefix = '<< ',
-          separator = ', ',
-          remove_colon_start = false,
-          remove_colon_end = true,
-        },
-        type_hints = {
-          -- type and other hints
-          show = true,
-          prefix = '',
-          separator = ', ',
-          remove_colon_start = false,
-          remove_colon_end = false,
-        },
-        only_current_line = false,
-        -- separator between types and parameter hints. Note that type hints are
-        -- shown before parameter
-        labels_separator = '  ',
-        -- whether to align to the length of the longest line in the file
-        max_len_align = false,
-        -- padding from the left if max_len_align is true
-        max_len_align_padding = 1,
-        -- whether to align to the extreme right or not
-        right_align = false,
-        -- padding from the right if right_align is true
-        right_align_padding = 7,
-        -- highlight group
-        -- highlight = 'Comment',
-        highlight = 'LspInlayHint',
-      },
-      enabled_at_startup = true,
-      debug_mode = false,
+  if_has_then('lsp-format', function(m)
+    m.setup {
+      -- perl = { exclude = { 'perlnavigator' } },
     }
-  end
+  end)
 
-  require('lsp-format').setup {
-    -- perl = { exclude = { 'perlnavigator' } },
-  }
-
-  require('nvim-navic').setup {
-    icons = {
-      File = ' ',
-      Module = ' ',
-      Namespace = ' ',
-      Package = ' ',
-      Class = ' ',
-      Method = ' ',
-      Property = ' ',
-      Field = ' ',
-      Constructor = ' ',
-      Enum = '練',
-      Interface = '練',
-      Function = ' ',
-      Variable = ' ',
-      Constant = ' ',
-      String = ' ',
-      Number = ' ',
-      Boolean = '◩ ',
-      Array = ' ',
-      Object = ' ',
-      Key = ' ',
-      Null = 'ﳠ ',
-      EnumMember = ' ',
-      Struct = ' ',
-      Event = ' ',
-      Operator = ' ',
-      TypeParameter = ' ',
-    },
-    highlight = false,
-    separator = ' > ',
-    depth_limit = 0,
-    depth_limit_indicator = '..',
-  }
+  if_has_then('nvim-navic', function(m)
+    m.setup {
+      icons = {
+        File = ' ',
+        Module = ' ',
+        Namespace = ' ',
+        Package = ' ',
+        Class = ' ',
+        Method = ' ',
+        Property = ' ',
+        Field = ' ',
+        Constructor = ' ',
+        Enum = '練',
+        Interface = '練',
+        Function = ' ',
+        Variable = ' ',
+        Constant = ' ',
+        String = ' ',
+        Number = ' ',
+        Boolean = '◩ ',
+        Array = ' ',
+        Object = ' ',
+        Key = ' ',
+        Null = 'ﳠ ',
+        EnumMember = ' ',
+        Struct = ' ',
+        Event = ' ',
+        Operator = ' ',
+        TypeParameter = ' ',
+      },
+      highlight = false,
+      separator = ' > ',
+      depth_limit = 0,
+      depth_limit_indicator = '..',
+    }
+  end)
 
   local signs = { Error = ' ', Warn = ' ', Hint = ' ', Info = ' ' }
   for type, icon in pairs(signs) do

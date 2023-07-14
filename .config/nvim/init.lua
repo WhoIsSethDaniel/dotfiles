@@ -271,4 +271,4 @@ require 'commands'
 require 'all'
 
 -- lsp setup
-require 'lsp'
+require('lsp').setup()

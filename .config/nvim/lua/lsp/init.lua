@@ -9,6 +9,23 @@ local if_has_then = function(module, f)
   end
 end
 
+function M.load_lsp_file(f)
+  local ok, config = pcall(require, string.format('lsp.%s', f))
+  if not ok then
+    vim.api.nvim_err_writeln('failed to load lsp config: ' .. f)
+    config = {}
+  end
+  return config
+end
+
+function M.get_config(server)
+  local config = M.load_lsp_file(server)
+  local cap = vim.lsp.protocol.make_client_capabilities()
+  cap = require('cmp_nvim_lsp').default_capabilities(cap)
+  config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
+  return config
+end
+
 vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
@@ -65,24 +82,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   end,
 })
 
-function M.load_lsp_file(f)
-  local ok, config = pcall(require, string.format('lsp.%s', f))
-  if not ok then
-    vim.api.nvim_err_writeln('failed to load lsp config: ' .. f)
-    config = {}
-  end
-  return config
-end
-
-function M.get_config(server)
-  local config = M.load_lsp_file(server)
-  local cap = vim.lsp.protocol.make_client_capabilities()
-  cap = require('cmp_nvim_lsp').default_capabilities(cap)
-  config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
-  return config
-end
-
-local function setup()
+function M.setup()
   -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
   require('vim.lsp.log').set_level(vim.log.levels.INFO)
@@ -245,7 +245,5 @@ local function setup()
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
   end
 end
-
-setup()
 
 return M

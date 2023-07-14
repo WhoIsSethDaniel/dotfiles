@@ -1,15 +1,26 @@
 local has_goldsmith, g = pcall(require, 'goldsmith')
+local has_lspconfig, lspconf = pcall(require, 'lspconfig')
+if not has_lspconfig then
+  return {
+    get_config = function()
+      return {}
+    end,
+    setup = function()
+      vim.api.nvim_err_writeln 'nvim-lspconfig is not installed; no configuration for LSP'
+    end,
+  }
+end
 
 local M = {}
 
-local if_has_then = function(module, f)
+local if_has_do = function(module, f)
   local ok, m = pcall(require, module)
   if ok then
     f(m)
   end
 end
 
-function M.load_lsp_file(f)
+local load_lsp_file = function(f)
   local ok, config = pcall(require, string.format('lsp.%s', f))
   if not ok then
     vim.api.nvim_err_writeln('failed to load lsp config: ' .. f)
@@ -18,28 +29,23 @@ function M.load_lsp_file(f)
   return config
 end
 
-function M.get_config(server)
-  local config = M.load_lsp_file(server)
-  local cap = vim.lsp.protocol.make_client_capabilities()
-  cap = require('cmp_nvim_lsp').default_capabilities(cap)
-  config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
-  return config
-end
-
 vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client == nil then
+      return
+    end
     local bufnr = args.buf
     if (not has_goldsmith and client.name == 'gopls') or client.name ~= 'gopls' then
-      if_has_then('lsp-format', function(m)
+      if_has_do('lsp-format', function(m)
         m.on_attach(client)
       end)
-      if_has_then('lsp_signature', function(m)
+      if_has_do('lsp_signature', function(m)
         m.on_attach({}, bufnr)
       end)
     end
     if client.name ~= 'null-ls' and client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
-      if_has_then('nvim-navic', function(m)
+      if_has_do('nvim-navic', function(m)
         m.attach(client, bufnr)
       end)
     end
@@ -82,6 +88,14 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   end,
 })
 
+function M.get_config(server)
+  local config = M.load_lsp_file(server)
+  local cap = vim.lsp.protocol.make_client_capabilities()
+  cap = require('cmp_nvim_lsp').default_capabilities(cap)
+  config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
+  return config
+end
+
 function M.setup()
   -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
@@ -89,16 +103,16 @@ function M.setup()
   require('vim.lsp.log').set_format_func(vim.inspect)
 
   vim.diagnostic.config { severity_sort = true, update_in_insert = true }
-  if_has_then('toggle_lsp_diagnostics', function(m)
+  if_has_do('toggle_lsp_diagnostics', function(m)
     m.init(vim.diagnostic.config())
     vim.api.nvim_set_keymap('n', '<leader>td', '<Plug>(toggle-lsp-diag)', { silent = true })
   end)
 
-  if_has_then('neodev', function(m)
+  if_has_do('neodev', function(m)
     m.setup()
   end)
 
-  if_has_then('mason', function(mason)
+  if_has_do('mason', function(mason)
     mason.setup {
       -- log_level = vim.log.levels.DEBUG,
       log_level = vim.log.levels.INFO,
@@ -108,42 +122,40 @@ function M.setup()
       },
     }
 
-    if_has_then('lspconfig', function(lspconf)
-      local disabled = {}
+    local disabled = {}
 
-      local function goldsmith_managed(server)
-        if has_goldsmith then
-          return g.needed(server)
-        else
-          return false
-        end
+    local function goldsmith_managed(server)
+      if has_goldsmith then
+        return g.needed(server)
+      else
+        return false
       end
+    end
 
-      if_has_then('mason-lspconfig', function(mlsp)
-        mlsp.setup {}
-        mlsp.setup_handlers {
-          function(server)
-            if not vim.tbl_contains(disabled, server) and not goldsmith_managed(server) then
-              lspconf[server].setup(M.get_config(server))
-            end
-          end,
-        }
-      end)
+    if_has_do('mason-lspconfig', function(mlsp)
+      mlsp.setup {}
+      mlsp.setup_handlers {
+        function(server)
+          if not vim.tbl_contains(disabled, server) and not goldsmith_managed(server) then
+            lspconf[server].setup(M.get_config(server))
+          end
+        end,
+      }
     end)
 
-    if_has_then('null-ls', function(m)
+    if_has_do('null-ls', function(m)
       m.setup(M.get_config 'null-ls')
     end)
 
-    if_has_then('formatter', function(m)
+    if_has_do('formatter', function(m)
       m.setup(M.get_config 'formatter')
     end)
 
-    if_has_then('lint', function()
-      M.load_lsp_file 'lint'
+    if_has_do('lint', function()
+      load_lsp_file 'lint'
     end)
 
-    if_has_then('mason-tool-installer', function(m)
+    if_has_do('mason-tool-installer', function(m)
       m.setup {
         ensure_installed = {
           'bash-language-server',
@@ -186,7 +198,7 @@ function M.setup()
     end)
   end)
 
-  if_has_then('lsp_signature', function(m)
+  if_has_do('lsp_signature', function(m)
     m.setup {
       bind = true,
       wrap = true,
@@ -196,13 +208,13 @@ function M.setup()
     }
   end)
 
-  if_has_then('lsp-format', function(m)
+  if_has_do('lsp-format', function(m)
     m.setup {
       -- perl = { exclude = { 'perlnavigator' } },
     }
   end)
 
-  if_has_then('nvim-navic', function(m)
+  if_has_do('nvim-navic', function(m)
     m.setup {
       icons = {
         File = ' ',

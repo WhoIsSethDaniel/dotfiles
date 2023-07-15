@@ -176,6 +176,15 @@
     "clean_name": "go-dev-nvim",
     "config_file": "go-dev-nvim.lua",
     "colorscheme": false,
+    "enabled": false,
+    "frozen": false
+  },
+  "goofball.nvim": {
+    "name": "goofball.nvim",
+    "url": "git@github.com:WhoIsSethDaniel/goofball.nvim",
+    "clean_name": "goofball-nvim",
+    "config_file": "goofball-nvim.lua",
+    "colorscheme": false,
     "enabled": true,
     "frozen": false
   },

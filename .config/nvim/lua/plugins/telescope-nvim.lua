@@ -109,9 +109,13 @@ local ok, _ = pcall(require, 'goldsmith')
 if ok then
   require('telescope').load_extension 'goldsmith'
 end
-local ok, _ = pcall(require, 'reposession')
+local ok, _ = pcall(require, 'repossession')
 if ok then
-  require('telescope').load_extension 'reposession'
+  require('telescope').load_extension 'repossession'
+end
+local ok, _ = pcall(require, 'goofball')
+if ok then
+  require('telescope').load_extension 'goofball'
 end
 local ok, _ = pcall(require, 'possession')
 if ok then

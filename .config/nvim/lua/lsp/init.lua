@@ -1,7 +1,8 @@
 local has_lspconfig, lspconf = pcall(require, 'lspconfig')
 if not has_lspconfig then
   return {
-    get_config = function()
+    get_config = function(server)
+      vim.api.nvim_err_writeln(string.format('empty get_config request for %s', server))
       return {}
     end,
     setup = function()
@@ -115,9 +116,8 @@ function M.setup()
       },
     }
 
-    local disabled = {}
-
     if_has_do('mason-lspconfig', function(mlsp)
+      local disabled = {}
       mlsp.setup {}
       mlsp.setup_handlers {
         function(server)

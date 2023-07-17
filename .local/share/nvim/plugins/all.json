@@ -170,15 +170,6 @@
     "enabled": true,
     "frozen": false
   },
-  "go-dev.nvim": {
-    "name": "go-dev.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/go-dev.nvim",
-    "clean_name": "go-dev-nvim",
-    "config_file": "go-dev-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "goofball.nvim": {
     "name": "goofball.nvim",
     "url": "git@github.com:WhoIsSethDaniel/goofball.nvim",

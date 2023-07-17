@@ -1,4 +1,3 @@
-local has_goldsmith, g = pcall(require, 'goldsmith')
 local has_lspconfig, lspconf = pcall(require, 'lspconfig')
 if not has_lspconfig then
   return {
@@ -36,14 +35,12 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       return
     end
     local bufnr = args.buf
-    if (not has_goldsmith and client.name == 'gopls') or client.name ~= 'gopls' then
-      if_has_do('lsp-format', function(m)
-        m.on_attach(client)
-      end)
-      if_has_do('lsp_signature', function(m)
-        m.on_attach({}, bufnr)
-      end)
-    end
+    if_has_do('lsp-format', function(m)
+      m.on_attach(client)
+    end)
+    if_has_do('lsp_signature', function(m)
+      m.on_attach({}, bufnr)
+    end)
     if client.name ~= 'null-ls' and client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
       if_has_do('nvim-navic', function(m)
         m.attach(client, bufnr)
@@ -56,10 +53,6 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     end
 
     -- dump_caps()
-
-    if has_goldsmith and client.name == 'gopls' then
-      return
-    end
 
     local map = vim.keymap.set
 
@@ -124,19 +117,11 @@ function M.setup()
 
     local disabled = {}
 
-    local function goldsmith_managed(server)
-      if has_goldsmith then
-        return g.needed(server)
-      else
-        return false
-      end
-    end
-
     if_has_do('mason-lspconfig', function(mlsp)
       mlsp.setup {}
       mlsp.setup_handlers {
         function(server)
-          if not vim.tbl_contains(disabled, server) and not goldsmith_managed(server) then
+          if not vim.tbl_contains(disabled, server) then
             lspconf[server].setup(M.get_config(server))
           end
         end,

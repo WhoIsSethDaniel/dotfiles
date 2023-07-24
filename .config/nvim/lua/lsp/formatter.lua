@@ -16,6 +16,7 @@ local function prettier()
   if m then
     table.insert(f.args, 1, string.format('%s/mm_website/.prettierrc.non-js.cjs', m))
     table.insert(f.args, 1, '--config')
+    f.cwd = string.format('%s/mm_website', m)
     return f
   end
   return f

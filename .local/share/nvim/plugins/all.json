@@ -377,15 +377,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-pqf": {
-    "name": "nvim-pqf",
-    "url": "https://gitlab.com/yorickpeterse/nvim-pqf",
-    "clean_name": "nvim-pqf",
-    "config_file": "nvim-pqf.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-treesitter": {
     "name": "nvim-treesitter",
     "url": "https://github.com/nvim-treesitter/nvim-treesitter",
@@ -463,6 +454,15 @@
     "url": "https://github.com/stevearc/qf_helper.nvim",
     "clean_name": "qf_helper-nvim",
     "config_file": "qf_helper-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "qfview.nvim": {
+    "name": "qfview.nvim",
+    "url": "https://github.com/ashfinal/qfview.nvim",
+    "clean_name": "qfview-nvim",
+    "config_file": "qfview-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

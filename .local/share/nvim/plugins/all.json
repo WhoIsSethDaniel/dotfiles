@@ -215,15 +215,6 @@
     "enabled": true,
     "frozen": false
   },
-  "lsp_signature.nvim": {
-    "name": "lsp_signature.nvim",
-    "url": "https://github.com/ray-x/lsp_signature.nvim",
-    "clean_name": "lsp_signature-nvim",
-    "config_file": "lsp_signature-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "lspkind-nvim": {
     "name": "lspkind-nvim",
     "url": "https://github.com/onsails/lspkind-nvim",

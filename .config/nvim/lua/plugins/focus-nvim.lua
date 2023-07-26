@@ -1,20 +1,9 @@
--- require('focus').setup {
---   relativenumber = false,
---   number = false,
---   hybridnumber = false,
---   signcolumn = false,
---   winhighlight = false,
---   autoresize = false,
---   excluded_buftypes = { 'prompt' },
---   excluded_filetypes = { 'DressingInput', 'TelescopePrompt' },
--- }
-
 require('focus').setup {
   enable = true, -- Enable module
   commands = true, -- Create Focus commands
   autoresize = {
-    enable = false, -- Enable or disable auto-resizing of splits
-    width = 0, -- Force width for the focused window
+    enable = true, -- Enable or disable auto-resizing of splits
+    width = 120, -- Force width for the focused window
     height = 0, -- Force height for the focused window
     minwidth = 0, -- Force minimum width for the unfocused window
     minheight = 0, -- Force minimum height for the unfocused window
@@ -40,3 +29,27 @@ require('focus').setup {
     winhighlight = false, -- Auto highlighting for focussed/unfocussed windows
   },
 }
+
+-- local ignore_filetypes = { 'DressingInput', 'TelescopePrompt' }
+-- local ignore_buftypes = { 'nofile', 'prompt', 'popup', 'terminal' }
+--
+-- local focusgroup = vim.api.nvim_create_augroup('FocusDisable', { clear = true })
+-- vim.api.nvim_create_autocmd('WinEnter', {
+--   group = focusgroup,
+--   callback = function(_)
+--     if vim.tbl_contains(ignore_buftypes, vim.bo.buftype) then
+--       vim.b.focus_disable = true
+--     end
+--   end,
+--   desc = 'Disable focus autoresize for BufType',
+-- })
+--
+-- vim.api.nvim_create_autocmd('FileType', {
+--   group = focusgroup,
+--   callback = function(_)
+--     if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
+--       vim.b.focus_disable = true
+--     end
+--   end,
+--   desc = 'Disable focus autoresize for FileType',
+-- })

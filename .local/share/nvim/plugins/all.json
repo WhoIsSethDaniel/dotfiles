@@ -278,6 +278,24 @@
     "enabled": true,
     "frozen": false
   },
+  "neotest": {
+    "name": "neotest",
+    "url": "https://github.com/nvim-neotest/neotest",
+    "clean_name": "neotest",
+    "config_file": "neotest.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "neotest-go": {
+    "name": "neotest-go",
+    "url": "https://github.com/nvim-neotest/neotest-go",
+    "clean_name": "neotest-go",
+    "config_file": "neotest-go.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "noice.nvim": {
     "name": "noice.nvim",
     "url": "https://github.com/folke/noice.nvim",

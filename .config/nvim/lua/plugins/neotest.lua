@@ -13,4 +13,12 @@ require('neotest').setup {
   adapters = {
     require 'neotest-go',
   },
+  output_panel = {
+    enabled = true,
+    open = 'vertical rightbelow 120vnew',
+  },
+  output = {
+    enabled = false,
+    open_on_run = true,
+  },
 }

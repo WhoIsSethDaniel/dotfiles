@@ -1,27 +1,32 @@
 --  https://github.com/nvim-treesitter/nvim-treesitter
-require('nvim-treesitter.configs').setup {
-  ensure_installed = 'all',
-  -- ignore_install = { 'cooklang' },
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true,
-  },
-  incremental_selection = {
-    enable = true,
-  },
-  autopairs = {
-    enable = true,
-  },
-  matchup = {
-    enable = true,
-  },
-  rainbow = {
-    enable = true,
-    extended_mode = true,
-  },
-}
+vim.api.nvim_create_autocmd('BufRead', {
+  callback = function()
+    ---@diagnostic disable-next-line:missing-fields
+    require('nvim-treesitter.configs').setup {
+      ensure_installed = 'all',
+      -- ignore_install = { 'cooklang' },
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+      incremental_selection = {
+        enable = true,
+      },
+      autopairs = {
+        enable = true,
+      },
+      matchup = {
+        enable = true,
+      },
+      rainbow = {
+        enable = true,
+        extended_mode = true,
+      },
+    }
+  end,
+})
 
 -- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
 -- parser_config.perl = {

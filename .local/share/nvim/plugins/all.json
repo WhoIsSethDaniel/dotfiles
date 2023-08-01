@@ -287,6 +287,15 @@
     "enabled": true,
     "frozen": false
   },
+  "neotest-consumers": {
+    "name": "neotest-consumers",
+    "url": "https://github.com/thenbe/neotest-consumers",
+    "clean_name": "neotest-consumers",
+    "config_file": "neotest-consumers.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "neotest-go": {
     "name": "neotest-go",
     "url": "https://github.com/nvim-neotest/neotest-go",

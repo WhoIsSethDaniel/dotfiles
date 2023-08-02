@@ -287,6 +287,15 @@
     "enabled": true,
     "frozen": false
   },
+  "neotest-consumer-cmdline.nvim": {
+    "name": "neotest-consumer-cmdline.nvim",
+    "url": "git@github.com:WhoIsSethDaniel/neotest-consumer-cmdline.nvim",
+    "clean_name": "neotest-consumer-cmdline-nvim",
+    "config_file": "neotest-consumer-cmdline-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "neotest-consumers": {
     "name": "neotest-consumers",
     "url": "https://github.com/thenbe/neotest-consumers",

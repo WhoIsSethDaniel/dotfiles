@@ -10,6 +10,15 @@ vim.diagnostic.config({
 
 ---@diagnostic disable-next-line:missing-fields
 require('neotest').setup {
+  consumers = {
+    ntc = function(client)
+      return {
+        cmdline = function()
+          require('neotest-consumer-cmdline').cmdline(client)
+        end,
+      }
+    end,
+  },
   adapters = {
     require 'neotest-go',
   },

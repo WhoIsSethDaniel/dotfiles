@@ -122,4 +122,3 @@ if ok then
   require('telescope').load_extension 'possession'
 end
 require('telescope').load_extension 'fzy_native'
--- require('telescope').load_extension 'live_grep_args'

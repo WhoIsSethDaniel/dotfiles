@@ -2,25 +2,25 @@
 ---
 live_config_reload: true
 window:
-  startup_mode: Maximized
-  dynamic_title: false
+    startup_mode: Maximized
+    dynamic_title: false
 scrolling:
-  history: 100000
+    history: 100000
 font:
-  normal:
-    family: "DejaVuSansMono Nerd Font"
-  size: 18.0
+    normal:
+        family: "DejaVuSansMono Nerd Font"
+    size: 18.0
 mouse:
-  hide_when_typing: true
+    hide_when_typing: true
 colors:
-  primary:
-    background: "#000000"
-    foreground: "#c5c8c6"
-  transparent_background_colors: false
+    primary:
+        background: "#000000"
+        foreground: "#c5c8c6"
+    transparent_background_colors: false
 bell:
-  duration: 0
+    duration: 0
 ipc_socket: true
 debug:
-  log_level: Warn
-  persistent_logging: false
-  print_events: false
+    log_level: Warn
+    persistent_logging: false
+    print_events: false

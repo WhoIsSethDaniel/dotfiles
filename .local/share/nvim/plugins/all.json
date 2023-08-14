@@ -404,15 +404,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-ts-rainbow": {
-    "name": "nvim-ts-rainbow",
-    "url": "https://github.com/mrjones2014/nvim-ts-rainbow",
-    "clean_name": "nvim-ts-rainbow",
-    "config_file": "nvim-ts-rainbow.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-web-devicons": {
     "name": "nvim-web-devicons",
     "url": "https://github.com/nvim-tree/nvim-web-devicons",
@@ -472,6 +463,15 @@
     "url": "https://github.com/ashfinal/qfview.nvim",
     "clean_name": "qfview-nvim",
     "config_file": "qfview-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "rainbow-delimiters.nvim": {
+    "name": "rainbow-delimiters.nvim",
+    "url": "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
+    "clean_name": "rainbow-delimiters-nvim",
+    "config_file": "rainbow-delimiters-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

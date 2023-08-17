@@ -4,7 +4,7 @@ set +P
 set -o vi
 set bell-style none
 shopt -u nullglob
-shopt -s cdspell checkwinsize
+shopt -s cdspell checkwinsize dirspell
 
 # aliases
 # set_alias ls 'ls -C --color=tty -F -T 0'

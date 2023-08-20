@@ -278,15 +278,6 @@
     "enabled": true,
     "frozen": false
   },
-  "neoformat": {
-    "name": "neoformat",
-    "url": "https://github.com/sbdchd/neoformat",
-    "clean_name": "neoformat",
-    "config_file": "neoformat.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "neotest": {
     "name": "neotest",
     "url": "https://github.com/nvim-neotest/neotest",

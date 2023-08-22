@@ -80,15 +80,6 @@
     "enabled": true,
     "frozen": false
   },
-  "cmp-nvim-lua": {
-    "name": "cmp-nvim-lua",
-    "url": "https://github.com/hrsh7th/cmp-nvim-lua",
-    "clean_name": "cmp-nvim-lua",
-    "config_file": "cmp-nvim-lua.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "cmp-path": {
     "name": "cmp-path",
     "url": "https://github.com/hrsh7th/cmp-path",
@@ -265,15 +256,6 @@
     "url": "https://github.com/williamboman/mason.nvim",
     "clean_name": "mason-nvim",
     "config_file": "mason-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "neodev.nvim": {
-    "name": "neodev.nvim",
-    "url": "https://github.com/folke/neodev.nvim",
-    "clean_name": "neodev-nvim",
-    "config_file": "neodev-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

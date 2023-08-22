@@ -170,15 +170,6 @@
     "enabled": true,
     "frozen": false
   },
-  "kanagawa.nvim": {
-    "name": "kanagawa.nvim",
-    "url": "https://github.com/rebelot/kanagawa.nvim/",
-    "clean_name": "kanagawa-nvim",
-    "config_file": "kanagawa-nvim.lua",
-    "colorscheme": true,
-    "enabled": false,
-    "frozen": false
-  },
   "lists.vim": {
     "name": "lists.vim",
     "url": "https://github.com/lervag/lists.vim",

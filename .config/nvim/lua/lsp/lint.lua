@@ -25,7 +25,7 @@ mdl.args = {
 }
 
 local sel = l.linters.selene
-sel.ignore_exitcode = false
+-- sel.ignore_exitcode = false
 table.insert(sel.args, 1, function()
   local conf = vim.fs.find('selene.toml', {
     upward = true,

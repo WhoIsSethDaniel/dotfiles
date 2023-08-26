@@ -107,6 +107,15 @@
     "enabled": true,
     "frozen": false
   },
+  "diagnosticls-configs-nvim": {
+    "name": "diagnosticls-configs-nvim",
+    "url": "https://github.com/creativenull/diagnosticls-configs-nvim",
+    "clean_name": "diagnosticls-configs-nvim",
+    "config_file": "diagnosticls-configs-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "diffview.nvim": {
     "name": "diffview.nvim",
     "url": "https://github.com/sindrets/diffview.nvim",
@@ -121,6 +130,15 @@
     "url": "https://github.com/stevearc/dressing.nvim",
     "clean_name": "dressing-nvim",
     "config_file": "dressing-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "efmls-configs-nvim": {
+    "name": "efmls-configs-nvim",
+    "url": "https://github.com/creativenull/efmls-configs-nvim",
+    "clean_name": "efmls-configs-nvim",
+    "config_file": "efmls-configs-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

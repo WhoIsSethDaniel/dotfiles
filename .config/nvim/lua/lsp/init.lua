@@ -144,7 +144,9 @@ function M.setup()
       mlsp.setup {}
       mlsp.setup_handlers {
         function(server)
-          if not vim.tbl_contains(disabled, server) then
+          if server == 'diagnosticls' then
+            load_lsp_file 'diagnosticls'
+          elseif not vim.tbl_contains(disabled, server) then
             lspconf[server].setup(M.get_config(server))
           end
         end,

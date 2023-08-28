@@ -195,6 +195,7 @@ function M.setup()
           'vim-language-server',
           'vint',
           'yamllint',
+          'yq',
         },
         auto_update = true,
         -- run_on_start = false,

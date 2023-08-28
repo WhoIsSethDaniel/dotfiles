@@ -1,8 +1,8 @@
 local dap = require 'dap'
 dap.adapters.perl = {
   type = 'executable',
-  command = 'node',
-  args = { '/home/seth/src/vscode-perl-debug/out/debugAdapter.js' },
+  command = '/home/seth/.local/share/nvim/mason/bin/perl-debug-adapter',
+  args = {},
 }
 dap.configurations.perl = {
   {

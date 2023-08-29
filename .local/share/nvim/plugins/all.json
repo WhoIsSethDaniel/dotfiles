@@ -107,6 +107,15 @@
     "enabled": true,
     "frozen": false
   },
+  "conform.nvim": {
+    "name": "conform.nvim",
+    "url": "https://github.com/stevearc/conform.nvim",
+    "clean_name": "conform-nvim",
+    "config_file": "conform-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "diffview.nvim": {
     "name": "diffview.nvim",
     "url": "https://github.com/sindrets/diffview.nvim",
@@ -140,7 +149,7 @@
     "clean_name": "formatter-nvim",
     "config_file": "formatter-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "gitsigns.nvim": {
@@ -194,7 +203,7 @@
     "clean_name": "lsp-format-nvim",
     "config_file": "lsp-format-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "lspkind-nvim": {

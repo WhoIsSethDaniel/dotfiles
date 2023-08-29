@@ -69,7 +69,12 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    map('n', '<leader>cf', "<cmd>lua require'lsp-format'.format({})<CR>", opts)
+    if_has_do('lsp-format', function(m)
+      map('n', '<leader>cf', "<cmd>lua require'lsp-format'.format({})<CR>", opts)
+    end)
+    if_has_do('conform', function(m)
+      map('n', '<leader>cf', "<cmd>lua require'conform'.format()<CR>", opts)
+    end)
 
     map('n', '<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>', opts)
     map('n', '<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>', opts)

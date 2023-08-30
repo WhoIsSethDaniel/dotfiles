@@ -143,15 +143,6 @@
     "enabled": true,
     "frozen": false
   },
-  "formatter.nvim": {
-    "name": "formatter.nvim",
-    "url": "https://github.com/mhartington/formatter.nvim",
-    "clean_name": "formatter-nvim",
-    "config_file": "formatter-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "gitsigns.nvim": {
     "name": "gitsigns.nvim",
     "url": "https://github.com/lewis6991/gitsigns.nvim",
@@ -195,15 +186,6 @@
     "config_file": "loupe.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
-  },
-  "lsp-format.nvim": {
-    "name": "lsp-format.nvim",
-    "url": "https://github.com/lukas-reineke/lsp-format.nvim",
-    "clean_name": "lsp-format-nvim",
-    "config_file": "lsp-format-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
     "frozen": false
   },
   "lspkind-nvim": {

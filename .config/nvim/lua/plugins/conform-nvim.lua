@@ -1,10 +1,8 @@
-local shfmt = require 'conform.formatters.shfmt'
-shfmt.args = function()
+require('conform.formatters.shfmt').args = function()
   return { '-i=4', '-ci', '-s', '-bn' }
 end
 
-local golines = require 'conform.formatters.golines'
-golines.args = function()
+require('conform.formatters.golines').args = function()
   return { '--max-len=120' }
 end
 
@@ -41,9 +39,8 @@ require('conform').setup {
     yaml = { 'prettier' },
   },
   format_on_save = {
-    timeout_ms = 1000,
+    timeout_ms = 15000,
     lsp_fallback = true,
-    async = true,
   },
   log_level = vim.log.levels.TRACE,
 }

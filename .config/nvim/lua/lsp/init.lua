@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     if_has_do('lsp_signature', function(m)
       m.on_attach({}, bufnr)
     end)
-    if client.name ~= 'null-ls' and client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
+    if client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
       if_has_do('nvim-navic', function(m)
         m.attach(client, bufnr)
       end)
@@ -156,18 +156,6 @@ function M.setup()
           end
         end,
       }
-    end)
-
-    if_has_do('null-ls', function(m)
-      m.setup(M.get_config 'null-ls')
-    end)
-
-    if_has_do('formatter', function(m)
-      m.setup(M.get_config 'formatter')
-    end)
-
-    if_has_do('lint', function()
-      load_lsp_file 'lint'
     end)
 
     if_has_do('mason-tool-installer', function(m)

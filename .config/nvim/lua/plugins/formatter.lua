@@ -22,7 +22,7 @@ local function prettier()
   return f
 end
 
-return {
+require('formatter').setup {
   logging = true,
   log_level = vim.log.levels.ERROR,
   filetype = {

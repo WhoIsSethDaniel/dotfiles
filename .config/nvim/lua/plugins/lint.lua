@@ -60,5 +60,3 @@ l.linters_by_ft = {
   vim = { 'vint' },
   yaml = { 'yamllint' },
 }
-
-return {}

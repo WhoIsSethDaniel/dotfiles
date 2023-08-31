@@ -1,3 +1,4 @@
+-- https://github.com/stevearc/conform.nvim
 require('conform.formatters.shfmt').args = function()
   return { '-i=4', '-ci', '-s', '-bn' }
 end

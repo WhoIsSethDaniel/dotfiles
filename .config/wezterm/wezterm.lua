@@ -8,7 +8,7 @@ return {
   warn_about_missing_glyphs = false,
   font_size = 18.0,
   font = wezterm.font_with_fallback {
-    'DejaVuSansMono Nerd Font',
+    'DejaVuSansM Nerd Font',
     { family = 'IntelOne Mono', weight = 'Medium' },
     'CaskadydiaCove Nerd Font Mono',
     'Hack Nerd Font Mono',

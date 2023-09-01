@@ -48,13 +48,50 @@ c.setup {
   log_level = vim.log.levels.TRACE,
 }
 
+local disable_by_type = {}
 vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
   pattern = '*',
   callback = function(args)
+    local ft = vim.bo[args.buf].filetype
     local to = 500
-    if vim.bo[args.buf].filetype == 'perl' then
+    if ft == 'perl' then
       to = 15000
+    end
+    if vim.g.disable_formatting or vim.b[args.buf].disable_formatting or disable_by_type[ft] then
+      return
     end
     c.format { timeout_ms = to, lsp_fallback = true, bufnr = args.buf }
   end,
 })
+
+vim.api.nvim_create_user_command('FormatCtl', function(args)
+  if #args.fargs == 0 then
+    if vim.g.disable_formatting then
+      vim.g.disable_formatting = false
+      print 'turning formatting on globally'
+    else
+      vim.g.disable_formatting = true
+      print 'turning formatting off globally'
+    end
+  elseif #args.fargs == 1 then
+    local cmd = args.fargs[1]
+    if cmd == 'buf' then
+      if vim.b.disable_formatting then
+        vim.b.disable_formatting = false
+        print 'turning formatting on for buffer'
+      else
+        vim.b.disable_formatting = true
+        print 'turning formatting off for buffer'
+      end
+    elseif cmd == 'ft' then
+      local ft = vim.bo.filetype
+      if disable_by_type[ft] then
+        disable_by_type[ft] = false
+        print('turning formatting on for ' .. ft .. ' files')
+      else
+        disable_by_type[ft] = true
+        print('turning formatting off for ' .. ft .. ' files')
+      end
+    end
+  end
+end, { nargs = '*' })

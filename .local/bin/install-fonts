@@ -1,10 +1,12 @@
 #!/bin/bash
 
+INSTALL_DIR=$HOME/.local/share/fonts
+
 function install_font() {
     local name=$1
     local url=$2
 
-    local dir=$HOME/.local/share/fonts/${name}
+    local dir=$INSTALL_DIR/${name}
     echo "installing ${name} to ${dir}"
     mkdir -p "$dir"
     pushd "$dir" || return
@@ -14,11 +16,30 @@ function install_font() {
     popd || return
 }
 
-version=$(curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep tag_name | cut -d '"' -f 4)
-install_font DejaVuSansMono https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/DejaVuSansMono.zip
-install_font Hack https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Hack.zip
-# install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Ubuntu.zip
-install_font CascadiaCode https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/CascadiaCode.zip
-install_font intel-one-mono https://github.com/intel/intel-one-mono/raw/main/fonts/ttf.zip
+function install_fonts() {
+    install_font DejaVuSansMono https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/DejaVuSansMono.zip
+    install_font Hack https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Hack.zip
+    install_font CascadiaCode https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/CascadiaCode.zip
+    # install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Ubuntu.zip
+    # install_font intel-one-mono https://github.com/intel/intel-one-mono/raw/main/fonts/ttf.zip
+    fc-cache -fv
+}
 
-fc-cache -fv
+version=$(curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/latest | grep tag_name | cut -d '"' -f 4)
+
+if [[ -e "$INSTALL_DIR/version" ]]; then
+    current=$(cat "$INSTALL_DIR"/version)
+    if [[ -n $current ]]; then
+        echo "current version: $current -> new version: $version"
+        if [[ $current != "$version" ]]; then
+            install_fonts
+        fi
+    else
+        install_fonts
+    fi
+else
+    install_fonts
+fi
+
+echo "$version" >"$INSTALL_DIR"/version
+

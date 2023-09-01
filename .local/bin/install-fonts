@@ -13,9 +13,9 @@ function install_font() {
 
     if [[ -e $version_file ]]; then
         current=$(cat "$version_file")
-        echo "current version: $current"
+        echo "$name current version: $current"
         if [[ -n $current ]]; then
-            echo "new version: $version"
+            echo "$name new version: $version"
             if [[ $current != "$version" ]]; then
                 install=1
             fi
@@ -27,7 +27,7 @@ function install_font() {
     fi
     [[ install -eq 0 ]] && return
 
-    echo "installing ${name} to ${dir}"
+    echo "$name installing to ${dir}"
     mkdir -p "$dir"
     pushd "$dir" || return
     wget -O font.zip "$url"
@@ -41,7 +41,8 @@ version=$(curl -s https://api.github.com/repos/ryanoasis/nerd-fonts/releases/lat
 install_font DejaVuSansMono "$version" https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/DejaVuSansMono.zip
 install_font Hack "$version" https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Hack.zip
 install_font CascadiaCode "$version" https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/CascadiaCode.zip
-# install_font Ubuntu https://github.com/ryanoasis/nerd-fonts/releases/download/"$version"/Ubuntu.zip
-# install_font intel-one-mono https://github.com/intel/intel-one-mono/raw/main/fonts/ttf.zip
-fc-cache -fv
+
+version=$(curl -s https://api.github.com/repos/intel/intel-one-mono/releases/latest | grep tag_name | cut -d '"' -f 4)
+install_font intel-one-mono "$version" https://github.com/intel/intel-one-mono/releases/download/"$version"/ttf.zip
+fc-cache -f
 

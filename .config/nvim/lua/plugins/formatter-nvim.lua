@@ -3,9 +3,7 @@ local futil = require 'formatter.util'
 local fdef = require 'formatter.defaults'
 local ft = require 'formatter.filetypes'
 
-local ag = vim.api.nvim_create_augroup('Formatter', { clear = true })
 vim.api.nvim_create_autocmd('BufWritePost', {
-  group = ag,
   pattern = { '*' },
   command = 'FormatWrite',
 })

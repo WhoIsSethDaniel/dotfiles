@@ -1,4 +1,6 @@
 -- https://github.com/stevearc/conform.nvim
+local c = require 'conform'
+
 require('conform.formatters.shfmt').args = function()
   return { '-i=4', '-ci', '-s', '-bn' }
 end
@@ -21,7 +23,7 @@ require('conform').formatters.prettier = function(bufnr)
   end
 end
 
-require('conform').setup {
+c.setup {
   formatters_by_ft = {
     go = { 'golines' },
     gohtml = { 'prettier' },
@@ -39,9 +41,20 @@ require('conform').setup {
     },
     yaml = { 'prettier' },
   },
-  format_on_save = {
-    timeout_ms = 15000,
-    lsp_fallback = true,
-  },
+  -- format_on_save = {
+  --   timeout_ms = 15000,
+  --   lsp_fallback = true,
+  -- },
   log_level = vim.log.levels.TRACE,
 }
+
+vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
+  pattern = '*',
+  callback = function(args)
+    local to = 500
+    if vim.bo[args.buf].filetype == 'perl' then
+      to = 15000
+    end
+    c.format { timeout_ms = to, lsp_fallback = true, bufnr = args.buf }
+  end,
+})

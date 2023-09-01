@@ -1,9 +1,7 @@
 -- https://github.com/mfussenegger/nvim-lint
 local l = require 'lint'
 
-local ag = vim.api.nvim_create_augroup('Linting', { clear = true })
 vim.api.nvim_create_autocmd({ 'BufWritePost', 'VimEnter', 'BufEnter' }, {
-  group = ag,
   pattern = { '*' },
   callback = function()
     l.try_lint()

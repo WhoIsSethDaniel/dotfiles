@@ -29,27 +29,3 @@ require('focus').setup {
     winhighlight = false, -- Auto highlighting for focussed/unfocussed windows
   },
 }
-
--- local ignore_filetypes = { 'DressingInput', 'TelescopePrompt' }
--- local ignore_buftypes = { 'nofile', 'prompt', 'popup', 'terminal' }
---
--- local focusgroup = vim.api.nvim_create_augroup('FocusDisable', { clear = true })
--- vim.api.nvim_create_autocmd('WinEnter', {
---   group = focusgroup,
---   callback = function(_)
---     if vim.tbl_contains(ignore_buftypes, vim.bo.buftype) then
---       vim.b.focus_disable = true
---     end
---   end,
---   desc = 'Disable focus autoresize for BufType',
--- })
---
--- vim.api.nvim_create_autocmd('FileType', {
---   group = focusgroup,
---   callback = function(_)
---     if vim.tbl_contains(ignore_filetypes, vim.bo.filetype) then
---       vim.b.focus_disable = true
---     end
---   end,
---   desc = 'Disable focus autoresize for FileType',
--- })

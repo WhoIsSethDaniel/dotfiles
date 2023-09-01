@@ -1,3 +1,4 @@
+-- https://github.com/LuaLS/lua-language-server
 -- local has_luarc = function()
 --   return vim.uv.fs_stat '.luarc.json' or vim.uv.fs_stat '.luarc.jsonc'
 -- end

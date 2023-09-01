@@ -1,3 +1,5 @@
+-- https://github.com/iamcco/diagnostic-languageserver
+-- https://github.com/creativenull/diagnosticls-configs-nvim
 -- local dlsconfig = require 'diagnosticls-configs'
 -- local perltidy = require 'diagnosticls-configs.formatters.perltidy'
 -- local perlimports = require 'diagnosticls-configs.formatters.perlimports'

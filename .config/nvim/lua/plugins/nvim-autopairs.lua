@@ -1,3 +1,4 @@
+-- https://github.com/windwp/nvim-autopairs
 local pairs = require 'nvim-autopairs'
 pairs.setup {
   map_bs = true,

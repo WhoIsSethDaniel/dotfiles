@@ -24,24 +24,3 @@ vim.api.nvim_create_autocmd('BufRead', {
     }
   end,
 })
-
--- local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
--- parser_config.perl = {
---   install_info = {
---     url = 'https://github.com/tree-sitter-perl/tree-sitter-perl',
---     revision = 'release',
---     files = { 'src/parser.c', 'src/scanner.c' },
---     -- generate_requires_npm = true,
---   },
---   maintainers = { '@leonerd' },
---   filetype = 'perl',
--- }
-
--- parser_config.gotmpl = {
---   install_info = {
---     url = "https://github.com/ngalaiko/tree-sitter-go-template",
---     files = {"src/parser.c"},
---   },
---   filetype = "gotmpl",
---   used_by = {"gohtmltmpl", "gotexttmpl", "gotmpl"},
--- }

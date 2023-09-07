@@ -42,7 +42,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     if_has_do('lsp_signature', function(m)
       m.on_attach({}, bufnr)
     end)
-    if client.name ~= 'bashls' and client.name ~= 'perlnavigator' then
+    if client.server_capabilities.documentSymbolProvider then
       if_has_do('nvim-navic', function(m)
         m.attach(client, bufnr)
       end)

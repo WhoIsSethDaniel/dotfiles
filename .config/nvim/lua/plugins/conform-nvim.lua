@@ -32,13 +32,7 @@ c.setup {
     lua = { 'stylua' },
     markdown = { 'prettier' },
     -- perl = { 'perltidy', 'perlimports' },
-    sh = {
-      formatters = {
-        'shfmt',
-        'shellharden',
-      },
-      run_all_formatters = true,
-    },
+    sh = { 'shfmt', 'shellharden' },
     yaml = { 'prettier' },
   },
   -- format_on_save = {

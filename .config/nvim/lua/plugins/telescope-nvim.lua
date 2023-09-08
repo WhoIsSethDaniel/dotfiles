@@ -1,3 +1,4 @@
+-- https://github.com/nvim-telescope/telescope.nvim
 vim.keymap.set('n', '<leader>ff', function()
   require('telescope.builtin').find_files {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },

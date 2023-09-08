@@ -1,4 +1,5 @@
-oil = require 'oil'
+-- https://github.com/stevearc/oil.nvim
+local oil = require 'oil'
 oil.setup {
   -- Id is automatically added at the beginning, and name at the end
   -- See :help oil-columns

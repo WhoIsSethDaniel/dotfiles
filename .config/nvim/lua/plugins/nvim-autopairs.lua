@@ -1,22 +1,25 @@
 -- https://github.com/windwp/nvim-autopairs
 local pairs = require 'nvim-autopairs'
 pairs.setup {
-  map_bs = true,
-  map_c_h = false,
-  map_c_w = false,
-  map_cr = true,
   disable_filetype = { 'TelescopePrompt', 'spectre_panel' },
   disable_in_macro = false,
   disable_in_visualblock = false,
+  disable_in_replace_mode = true,
   ignored_next_char = string.gsub([[ [%w%%%'%[%"%.] ]], '%s+', ''),
-  check_ts = false,
   enable_moveright = true,
   enable_afterquote = true,
   enable_check_bracket_line = true,
+  enable_bracket_in_quote = true,
+  enable_abbr = false,
+  break_undo = true,
+  check_ts = true,
+  map_cr = true,
+  map_bs = true,
+  map_c_h = false,
+  map_c_w = false,
   -- only if check_ts is true
   ts_config = {
     lua = { 'string', 'source' },
-    javascript = { 'string', 'template_string' },
   },
   fast_wrap = {},
   -- fast_wrap = {

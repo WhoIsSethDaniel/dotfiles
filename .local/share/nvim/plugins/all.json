@@ -116,15 +116,6 @@
     "enabled": true,
     "frozen": false
   },
-  "diffview.nvim": {
-    "name": "diffview.nvim",
-    "url": "https://github.com/sindrets/diffview.nvim",
-    "clean_name": "diffview-nvim",
-    "config_file": "diffview-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "dressing.nvim": {
     "name": "dressing.nvim",
     "url": "https://github.com/stevearc/dressing.nvim",
@@ -139,6 +130,15 @@
     "url": "https://github.com/beauwilliams/focus.nvim",
     "clean_name": "focus-nvim",
     "config_file": "focus-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "git-conflict.nvim": {
+    "name": "git-conflict.nvim",
+    "url": "https://github.com/akinsho/git-conflict.nvim",
+    "clean_name": "git-conflict-nvim",
+    "config_file": "git-conflict-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

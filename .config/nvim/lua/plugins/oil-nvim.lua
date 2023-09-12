@@ -24,8 +24,6 @@ oil.setup {
     conceallevel = 3,
     concealcursor = 'nvic',
   },
-  -- Restore window options to previous values when leaving an oil buffer
-  restore_win_options = true,
   -- Skip the confirmation popup for simple operations
   skip_confirm_for_simple_edits = true,
   -- Keymaps in oil buffer. Can be any value that `vim.keymap.set` accepts OR a table of keymap

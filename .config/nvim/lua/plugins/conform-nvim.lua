@@ -23,41 +23,7 @@ require('conform').formatters.prettier = function(bufnr)
   end
 end
 
-c.setup {
-  formatters_by_ft = {
-    go = { 'golines' },
-    gohtml = { 'prettier' },
-    gohtmltmpl = { 'prettier' },
-    json = { 'prettier' },
-    lua = { 'stylua' },
-    markdown = { 'prettier' },
-    -- perl = { 'perltidy', 'perlimports' },
-    sh = { 'shfmt', 'shellharden' },
-    yaml = { 'prettier' },
-  },
-  -- format_on_save = {
-  --   timeout_ms = 15000,
-  --   lsp_fallback = true,
-  -- },
-  log_level = vim.log.levels.TRACE,
-}
-
 local disable_by_type = {}
-vim.api.nvim_create_autocmd({ 'BufWritePre' }, {
-  pattern = '*',
-  callback = function(args)
-    local ft = vim.bo[args.buf].filetype
-    local to = 500
-    if ft == 'perl' then
-      to = 15000
-    end
-    if vim.g.disable_formatting or vim.b[args.buf].disable_formatting or disable_by_type[ft] then
-      return
-    end
-    c.format { timeout_ms = to, lsp_fallback = true, bufnr = args.buf }
-  end,
-})
-
 vim.api.nvim_create_user_command('FormatCtl', function(args)
   if #args.fargs == 0 then
     if vim.g.disable_formatting then
@@ -89,3 +55,31 @@ vim.api.nvim_create_user_command('FormatCtl', function(args)
     end
   end
 end, { nargs = '*' })
+
+c.setup {
+  formatters_by_ft = {
+    go = { 'golines' },
+    gohtmltmpl = { 'prettier' },
+    json = { 'prettier' },
+    lua = { 'stylua' },
+    markdown = { 'prettier' },
+    -- perl = { 'perltidy', 'perlimports' },
+    sh = { 'shfmt', 'shellharden' },
+    yaml = { 'prettier' },
+  },
+  format_on_save = function(bufnr)
+    local ft = vim.bo[bufnr].filetype
+    local to = 500
+    local fb = true
+    if vim.g.disable_formatting or vim.b[bufnr].disable_formatting or disable_by_type[ft] then
+      return
+    end
+    if ft == 'perl' then
+      to = 15000
+    elseif ft == 'go' then
+      fb = 'always'
+    end
+    return { timeout_ms = to, lsp_fallback = fb }
+  end,
+  log_level = vim.log.levels.TRACE,
+}

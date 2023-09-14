@@ -75,11 +75,21 @@ c.setup {
       return
     end
     if ft == 'perl' then
-      to = 15000
+      return
     elseif ft == 'go' then
       fb = 'always'
     end
     return { timeout_ms = to, lsp_fallback = fb }
+  end,
+  format_after_save = function(bufnr)
+    local ft = vim.bo[bufnr].filetype
+    if vim.g.disable_formatting or vim.b[bufnr].disable_formatting or disable_by_type[ft] then
+      return
+    end
+    if ft ~= 'perl' then
+      return
+    end
+    return { timeout_ms = 15000, lsp_fallback = 'always' }
   end,
   log_level = vim.log.levels.TRACE,
 }

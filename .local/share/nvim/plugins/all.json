@@ -293,7 +293,7 @@
     "clean_name": "nvim-autopairs",
     "config_file": "nvim-autopairs.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "nvim-bqf": {
@@ -500,7 +500,7 @@
     "clean_name": "ultimate-autopair-nvim",
     "config_file": "ultimate-autopair-nvim.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "vim-conjoin": {
@@ -518,7 +518,7 @@
     "clean_name": "vim-eunuch",
     "config_file": "vim-eunuch.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "vim-fugitive": {

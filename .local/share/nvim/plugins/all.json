@@ -518,7 +518,7 @@
     "clean_name": "vim-eunuch",
     "config_file": "vim-eunuch.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "vim-fugitive": {

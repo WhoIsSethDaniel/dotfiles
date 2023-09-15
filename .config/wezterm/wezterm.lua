@@ -9,9 +9,9 @@ return {
   font_size = 18.0,
   font = wezterm.font_with_fallback {
     'DejaVuSansM Nerd Font',
-    { family = 'Intel One Mono', weight = 'Medium' },
-    'CaskadydiaCove Nerd Font Mono',
     'Hack Nerd Font Mono',
+    'CaskaydiaCove Nerd Font Mono',
+    { family = 'Intel One Mono', weight = 'Medium' },
   },
   -- color_scheme = 'kanagawabones',  -- for some reason really slows things down; particularly neovim
   default_prog = { '/bin/bash' },

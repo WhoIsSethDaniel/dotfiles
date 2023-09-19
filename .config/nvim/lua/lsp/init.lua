@@ -185,6 +185,7 @@ function M.setup()
           'sqlfluff',
           'staticcheck',
           'stylua',
+          'typos',
           'vim-language-server',
           'vint',
           'yamllint',

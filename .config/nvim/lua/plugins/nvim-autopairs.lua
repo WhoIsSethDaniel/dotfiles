@@ -42,4 +42,5 @@ cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done {})
 
 -- info on endwise: https://github.com/windwp/nvim-autopairs/wiki/Endwise
 -- perhaps also see https://github.com/RRethy/nvim-treesitter-endwise
-pairs.add_rules(require 'nvim-autopairs.rules.endwise-lua')
+-- (now using nvim-treesitter-endwise so this is redundant)
+-- pairs.add_rules(require 'nvim-autopairs.rules.endwise-lua')

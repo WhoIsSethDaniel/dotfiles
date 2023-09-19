@@ -6,16 +6,19 @@ vim.api.nvim_create_autocmd('BufRead', {
     require('nvim-treesitter.configs').setup {
       ensure_installed = 'all',
       -- ignore_install = { 'cooklang' },
-      highlight = {
+      autopairs = {
         enable = true,
       },
-      indent = {
+      endwise = {
+        enable = true,
+      },
+      highlight = {
         enable = true,
       },
       incremental_selection = {
         enable = true,
       },
-      autopairs = {
+      indent = {
         enable = true,
       },
       matchup = {

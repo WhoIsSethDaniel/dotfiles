@@ -368,6 +368,15 @@
     "enabled": true,
     "frozen": false
   },
+  "nvim-treesitter-endwise": {
+    "name": "nvim-treesitter-endwise",
+    "url": "https://github.com/RRethy/nvim-treesitter-endwise",
+    "clean_name": "nvim-treesitter-endwise",
+    "config_file": "nvim-treesitter-endwise.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "nvim-treesitter-textobjects": {
     "name": "nvim-treesitter-textobjects",
     "url": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",

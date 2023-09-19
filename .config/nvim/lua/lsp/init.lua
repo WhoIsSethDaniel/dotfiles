@@ -140,7 +140,7 @@ function M.setup()
       registries = {
         'lua:mason-registry.index',
         'github:mason-org/mason-registry',
-        -- 'file:/home/seth/src/local-mason-registry',
+        -- 'file:/home/seth/src/mason-registry',
       },
     }
 

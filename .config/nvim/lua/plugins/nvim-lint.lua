@@ -58,3 +58,7 @@ l.linters_by_ft = {
   vim = { 'vint' },
   yaml = { 'yamllint' },
 }
+
+for ft, _ in pairs(l.linters_by_ft) do
+  table.insert(l.linters_by_ft[ft], 'typos')
+end

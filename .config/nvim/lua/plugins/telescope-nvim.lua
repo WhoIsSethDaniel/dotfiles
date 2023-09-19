@@ -34,6 +34,10 @@ vim.keymap.set('n', '<leader>gb', function()
   require('telescope.builtin').git_branches { show_remote_tracking_branches = true }
 end, {})
 
+vim.keymap.set('n', '<leader>pp', function()
+  require('telescope').extensions.projects.projects {}
+end, {})
+
 require('telescope').setup {
   defaults = {
     vimgrep_arguments = {
@@ -117,6 +121,10 @@ end
 local ok, _ = pcall(require, 'goofball')
 if ok then
   require('telescope').load_extension 'goofball'
+end
+local ok, _ = pcall(require, 'projects')
+if ok then
+  require('telescope').load_extension 'projects'
 end
 local ok, _ = pcall(require, 'possession')
 if ok then

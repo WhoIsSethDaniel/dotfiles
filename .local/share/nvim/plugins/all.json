@@ -287,15 +287,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-autopairs": {
-    "name": "nvim-autopairs",
-    "url": "https://github.com/windwp/nvim-autopairs",
-    "clean_name": "nvim-autopairs",
-    "config_file": "nvim-autopairs.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "nvim-bqf": {
     "name": "nvim-bqf",
     "url": "https://github.com/kevinhwang91/nvim-bqf",

@@ -431,15 +431,6 @@
     "enabled": true,
     "frozen": false
   },
-  "rainbow-delimiters.nvim": {
-    "name": "rainbow-delimiters.nvim",
-    "url": "https://gitlab.com/HiPhish/rainbow-delimiters.nvim",
-    "clean_name": "rainbow-delimiters-nvim",
-    "config_file": "rainbow-delimiters-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "repossession.nvim": {
     "name": "repossession.nvim",
     "url": "git@github.com:WhoIsSethDaniel/repossession.nvim",

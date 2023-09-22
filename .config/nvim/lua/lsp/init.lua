@@ -163,6 +163,7 @@ function M.setup()
         ensure_installed = {
           'bash-language-server',
           'cbfmt',
+          'dprint',
           'editorconfig-checker',
           'glow',
           'golangci-lint',

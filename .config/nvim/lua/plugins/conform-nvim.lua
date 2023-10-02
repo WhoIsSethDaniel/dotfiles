@@ -62,7 +62,7 @@ c.setup {
     gohtmltmpl = { 'prettier' },
     json = { 'prettier' },
     lua = { 'stylua' },
-    markdown = { 'prettier' },
+    markdown = { 'prettier', 'injected' },
     -- perl = { 'perltidy', 'perlimports' },
     sh = { 'shfmt', 'shellharden' },
     toml = { 'dprint' },

@@ -6,7 +6,7 @@ require('conform.formatters.shfmt').args = function()
 end
 
 require('conform.formatters.golines').args = function()
-  return { '--max-len=120' }
+  return { '--shorten-comments' }
 end
 
 require('conform').formatters.prettier = function(bufnr)

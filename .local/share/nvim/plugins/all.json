@@ -17,6 +17,15 @@
     "enabled": true,
     "frozen": false
   },
+  "bigfile.nvim": {
+    "name": "bigfile.nvim",
+    "url": "https://github.com/LunarVim/bigfile.nvim",
+    "clean_name": "bigfile-nvim",
+    "config_file": "bigfile-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "bufjump.nvim": {
     "name": "bufjump.nvim",
     "url": "https://github.com/kwkarlwang/bufjump.nvim",

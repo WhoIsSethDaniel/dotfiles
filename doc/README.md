@@ -37,6 +37,12 @@ install-sys76-deb-repo
 install-wezterm
 ```
 
+## Install tmux completions
+
+```bash
+install-tmux-completions
+```
+
 ## (Neo)Vim
 
 First install the vim and neovim repositories and packages (see above)

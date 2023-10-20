@@ -1,0 +1,3 @@
+#!/bin/bash
+
+curl -o "$HOME"/.bash-init/tmux.sh https://raw.githubusercontent.com/imomaliev/tmux-bash-completion/master/completions/tmux

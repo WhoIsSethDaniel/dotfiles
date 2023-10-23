@@ -518,7 +518,7 @@
     "clean_name": "vim-matchup",
     "config_file": "vim-matchup.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "vim-repeat": {

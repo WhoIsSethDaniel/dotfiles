@@ -3,14 +3,17 @@ if vim.fn.has 'nvim-0.9.0' == 1 then
   vim.loader.enable()
 end
 
+--
 -- an interesting discussion about options
 -- https://www.reddit.com/r/vim/comments/gczg99/what_are_some_essential_but_not_obvious_set_opts/
 --
+
 -- when writing to registers A-Z append with a leading <CR>
 vim.opt.cpoptions:append '>'
 
 -- turn off mouse support
 vim.opt.mouse = ''
+vim.opt.mousescroll = 'hor:0,ver:0'
 
 -- unicode emojis are not always considered full width
 vim.opt.emoji = false

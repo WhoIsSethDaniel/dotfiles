@@ -232,19 +232,26 @@ if vim.env.SSH_CONNECTION then
   -- if not remote consider that we may want to copy locally and
   -- paste it remotely (via osc 52)
   -- else
-  -- let s:copy['+'] = ['wl-copy', '--type', 'text/plain']
-  -- let s:copy['*'] = ['wl-copy', '--primary', '--type', 'text/plain']
-  -- vim.g.clipboard = {
-  --   name = 'Custom wl-copy / OSC 52',
-  --   copy = {
-  --     ['+'] = require('vim.clipboard.osc52').copy,
-  --     ['*'] = require('vim.clipboard.osc52').copy,
-  --   },
-  --   paste = {
-  --     ['+'] = require('vim.clipboard.osc52').paste,
-  --     ['*'] = require('vim.clipboard.osc52').paste,
-  --   },
-  -- }
+  --   -- let s:copy['+'] = ['wl-copy', '--type', 'text/plain']
+  --   -- let s:copy['*'] = ['wl-copy', '--primary', '--type', 'text/plain']
+  --   -- let s:paste['+'] = ['wl-paste', '--no-newline']
+  --   -- let s:paste['*'] = ['wl-paste', '--no-newline', '--primary']
+  --   vim.g.clipboard = {
+  --     name = 'Custom wl-copy / OSC 52',
+  --     copy = {
+  --       -- ['+'] = require('vim.clipboard.osc52').copy,
+  --       -- ['*'] = require('vim.clipboard.osc52').copy,
+  --       ['+'] = function(lines)
+  --
+  --       end,
+  --       -- { 'wl-copy', '--type', 'text/plain' },
+  --       ['*'] = { 'wl-copy', '--primary', '--type', 'text/plain' },
+  --     },
+  --     paste = {
+  --       ['+'] = { 'wl-paste', '--no-newline' },
+  --       ['*'] = { 'wl-paste', '--no-newline', '--primary' },
+  --     },
+  --   }
 end
 
 -- allow placing the entered command in the statusline

@@ -213,8 +213,10 @@ vim.opt.fillchars:append {
 -- command-line is not visible if not entering a command
 vim.opt.cmdheight = 0
 
--- use osc 52 for clipboard
-if not vim.env.WAYLAND_DISPLAY then
+-- use osc 52 for clipboard, if remote.
+-- potential other tests:
+-- - non-existence of $WAYLAND_DISPLAY -- session is (likely) remote
+if vim.env.SSH_CONNECTION then
   vim.g.clipboard = {
     name = 'OSC 52',
     copy = {

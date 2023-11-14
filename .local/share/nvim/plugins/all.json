@@ -14,7 +14,7 @@
     "clean_name": "bamboo-nvim",
     "config_file": "bamboo-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "bigfile.nvim": {
@@ -248,6 +248,15 @@
     "clean_name": "mason-nvim",
     "config_file": "mason-nvim.lua",
     "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "midnight.nvim": {
+    "name": "midnight.nvim",
+    "url": "https://github.com/dasupradyumna/midnight.nvim",
+    "clean_name": "midnight-nvim",
+    "config_file": "midnight-nvim.lua",
+    "colorscheme": true,
     "enabled": true,
     "frozen": false
   },

@@ -22,10 +22,17 @@ if vim.env.SSH_CONNECTION then
 
     vim.g.clipboard = {
       name = 'nvim-osc52',
-      copy = { ['+'] = copy, ['*'] = copy },
-      paste = { ['+'] = paste, ['*'] = paste },
+      copy = {
+        ['+'] = copy,
+        ['*'] = copy,
+      },
+      paste = {
+        ['+'] = paste,
+        ['*'] = paste,
+      },
     }
   elseif vim.fn.has 'nvim-0.10.0' == 1 then
+    -- currently does not work with tmux
     vim.g.clipboard = {
       name = 'native OSC 52',
       copy = {

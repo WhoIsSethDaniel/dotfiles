@@ -350,6 +350,15 @@
     "enabled": true,
     "frozen": false
   },
+  "nvim-osc52": {
+    "name": "nvim-osc52",
+    "url": "https://github.com/ojroques/nvim-osc52",
+    "clean_name": "nvim-osc52",
+    "config_file": "nvim-osc52.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "nvim-treesitter": {
     "name": "nvim-treesitter",
     "url": "https://github.com/nvim-treesitter/nvim-treesitter",

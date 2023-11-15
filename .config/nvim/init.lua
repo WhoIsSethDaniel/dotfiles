@@ -217,16 +217,16 @@ vim.opt.cmdheight = 0
 -- NOTE: pasting does not work with wezterm (https://github.com/wez/wezterm/issues/3979#issuecomment-1634374139)
 -- potential other tests:
 -- - non-existence of $WAYLAND_DISPLAY -- session is (likely) remote
-if vim.env.SSH_CONNECTION then
+if vim.env.SSH_CONNECTION and vim.fn.has 'nvim-0.10.0' == 1 then
   vim.g.clipboard = {
     name = 'OSC 52',
     copy = {
-      ['+'] = require('vim.clipboard.osc52').copy,
-      ['*'] = require('vim.clipboard.osc52').copy,
+      ['+'] = require('vim.ui.clipboard.osc52').copy,
+      ['*'] = require('vim.ui.clipboard.osc52').copy,
     },
     paste = {
-      ['+'] = require('vim.clipboard.osc52').paste,
-      ['*'] = require('vim.clipboard.osc52').paste,
+      ['+'] = require('vim.ui.clipboard.osc52').paste,
+      ['*'] = require('vim.ui.clipboard.osc52').paste,
     },
   }
 end

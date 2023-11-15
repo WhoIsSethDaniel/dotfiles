@@ -217,32 +217,35 @@ vim.opt.cmdheight = 0
 -- NOTE: pasting does not work with wezterm (https://github.com/wez/wezterm/issues/3979#issuecomment-1634374139)
 -- potential other tests:
 -- - non-existence of $WAYLAND_DISPLAY -- session is (likely) remote
-local function copy(lines, _)
-  require('osc52').copy(table.concat(lines, '\n'))
-end
+if vim.env.SSH_CONNECTION then
+  local osc52_ok, osc52 = pcall(require, 'osc52')
+  if osc52_ok then
+    local function copy(lines, _)
+      osc52.copy(table.concat(lines, '\n'))
+    end
 
-local function paste()
-  return { vim.fn.split(vim.fn.getreg '', '\n'), vim.fn.getregtype '' }
-end
+    local function paste()
+      return { vim.fn.split(vim.fn.getreg '', '\n'), vim.fn.getregtype '' }
+    end
 
-if vim.env.SSH_CONNECTION and vim.fn.has 'nvim-0.10.0' == 1 then
-  vim.g.clipboard = {
-    name = 'osc52',
-    copy = { ['+'] = copy, ['*'] = copy },
-    paste = { ['+'] = paste, ['*'] = paste },
-  }
-
-  -- vim.g.clipboard = {
-  --   name = 'OSC 52',
-  --   copy = {
-  --     ['+'] = require('vim.ui.clipboard.osc52').copy,
-  --     ['*'] = require('vim.ui.clipboard.osc52').copy,
-  --   },
-  --   paste = {
-  --     ['+'] = require('vim.ui.clipboard.osc52').paste,
-  --     ['*'] = require('vim.ui.clipboard.osc52').paste,
-  --   },
-  -- }
+    vim.g.clipboard = {
+      name = 'nvim-osc52',
+      copy = { ['+'] = copy, ['*'] = copy },
+      paste = { ['+'] = paste, ['*'] = paste },
+    }
+  elseif vim.fn.has 'nvim-0.10.0' == 1 then
+    vim.g.clipboard = {
+      name = 'native OSC 52',
+      copy = {
+        ['+'] = require('vim.ui.clipboard.osc52').copy,
+        ['*'] = require('vim.ui.clipboard.osc52').copy,
+      },
+      paste = {
+        ['+'] = require('vim.ui.clipboard.osc52').paste,
+        ['*'] = require('vim.ui.clipboard.osc52').paste,
+      },
+    }
+  end
 end
 
 -- allow placing the entered command in the statusline

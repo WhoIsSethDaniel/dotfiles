@@ -127,7 +127,7 @@ vim.opt.undodir = vim.env.XDG_DATA_HOME .. '/nvim/undo'
 vim.opt.undolevels = 500
 vim.opt.history = 10000
 
---  swap and backup files
+-- swap and backup files
 -- vim.opt.directory = vim.env.XDG_DATA_HOME .. '/nvim/swap//'
 -- disable swap
 vim.opt.directory = ''
@@ -214,6 +214,7 @@ vim.opt.fillchars:append {
 vim.opt.cmdheight = 0
 
 -- use osc 52 for clipboard, if remote.
+-- NOTE: pasting does not work with wezterm (https://github.com/wez/wezterm/issues/3979#issuecomment-1634374139)
 -- potential other tests:
 -- - non-existence of $WAYLAND_DISPLAY -- session is (likely) remote
 if vim.env.SSH_CONNECTION then

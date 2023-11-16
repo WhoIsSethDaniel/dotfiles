@@ -9,7 +9,7 @@ require('osc52').setup {
 -- NOTE: pasting does not work with wezterm (https://github.com/wez/wezterm/issues/3979#issuecomment-1634374139)
 -- potential other tests:
 -- - non-existence of $WAYLAND_DISPLAY -- session is (likely) remote
-if vim.env.SSH_CONNECTION then
+if vim.env.SSH_TTY then
   local osc52_ok, osc52 = pcall(require, 'osc52')
   if osc52_ok then
     local function copy(lines, _)

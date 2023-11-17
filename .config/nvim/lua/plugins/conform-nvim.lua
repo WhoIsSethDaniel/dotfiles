@@ -70,7 +70,7 @@ c.setup {
   },
   format_on_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
-    local to = 500
+    local to = 1000
     local fb = true
     if vim.g.disable_formatting or vim.b[bufnr].disable_formatting or disable_by_type[ft] then
       return

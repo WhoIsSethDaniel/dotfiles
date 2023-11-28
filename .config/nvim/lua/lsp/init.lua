@@ -149,6 +149,7 @@ function M.setup()
       mlsp.setup {}
       mlsp.setup_handlers {
         function(server)
+          vim.api.nvim_err_writeln(server)
           if server == 'diagnosticls' then
             load_lsp_file 'diagnosticls'
           elseif not vim.tbl_contains(disabled, server) then
@@ -187,6 +188,7 @@ function M.setup()
           'staticcheck',
           'stylua',
           'typos',
+          'typos-lsp',
           'vim-language-server',
           'vint',
           'yamllint',
@@ -194,7 +196,7 @@ function M.setup()
         },
         auto_update = true,
         -- run_on_start = false,
-        start_delay = 1000,
+        -- start_delay = 1000,
       }
     end)
   end)

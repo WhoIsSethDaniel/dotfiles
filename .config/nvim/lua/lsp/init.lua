@@ -149,7 +149,6 @@ function M.setup()
       mlsp.setup {}
       mlsp.setup_handlers {
         function(server)
-          vim.api.nvim_err_writeln(server)
           if server == 'diagnosticls' then
             load_lsp_file 'diagnosticls'
           elseif not vim.tbl_contains(disabled, server) then

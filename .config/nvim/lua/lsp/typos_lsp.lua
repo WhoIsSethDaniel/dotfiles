@@ -1,2 +1,9 @@
 -- https://github.com/tekumara/typos-vscode
-return {}
+return {
+  settings = {
+    typos = {
+      -- unclear if this is being used
+      path = vim.env.MASON .. '/bin/typos',
+    },
+  },
+}

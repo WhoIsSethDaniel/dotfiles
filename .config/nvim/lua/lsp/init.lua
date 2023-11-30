@@ -96,9 +96,9 @@ function M.get_config(server)
 end
 
 function M.setup()
-  -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
+  require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
   vim.diagnostic.config { severity_sort = true, update_in_insert = true }

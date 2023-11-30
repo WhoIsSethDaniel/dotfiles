@@ -4,7 +4,7 @@ return {
     vimls = {
       isNeovim = true,
       vimruntime = os.getenv 'VIMRUNTIME',
-      runtimepath = vim.api.nvim_get_option 'rtp',
+      runtimepath = vim.api.nvim_get_option_value('rtp', {}),
       diagnostic = { enable = true },
       indexes = {
         runtimepath = true,

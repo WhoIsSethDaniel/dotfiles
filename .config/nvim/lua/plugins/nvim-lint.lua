@@ -59,7 +59,6 @@ l.linters_by_ft = {
   yaml = { 'yamllint' },
 }
 
--- use typos-lsp instead
--- for ft, _ in pairs(l.linters_by_ft) do
---   table.insert(l.linters_by_ft[ft], 'typos')
--- end
+for ft, _ in pairs(l.linters_by_ft) do
+  table.insert(l.linters_by_ft[ft], 'typos')
+end

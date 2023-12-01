@@ -187,7 +187,6 @@ function M.setup()
           'staticcheck',
           'stylua',
           'typos',
-          'typos-lsp',
           'vim-language-server',
           'vint',
           'yamllint',

@@ -37,7 +37,7 @@ function vim-cd() {
     local statedir=$HOME/.local/state/nvim
     local indir=${vim_install_dir}
     local cachedir=$HOME/.cache/nvim
-    local lspdir=$XDG_CONFIG_HOME/nvim/lua/lsp
+    local lspdir=$XDG_CONFIG_HOME/nvim/lua/plugins/lsp
     if [[ $1 == "config" || $1 == "cf" || $1 == "conf" ]]; then
         cd "$cfdir" || return
     elif [[ $1 == "local" || $1 == "loc" ]]; then

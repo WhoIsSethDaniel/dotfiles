@@ -69,10 +69,10 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', '<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     map('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
     map('n', '<leader>ca', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
-    if_has_do('lsp-format', function(m)
+    if_has_do('lsp-format', function(_)
       map('n', '<leader>cf', "<cmd>lua require'lsp-format'.format({})<CR>", opts)
     end)
-    if_has_do('conform', function(m)
+    if_has_do('conform', function(_)
       map('n', '<leader>cf', "<cmd>lua require'conform'.format()<CR>", opts)
     end)
 
@@ -96,10 +96,16 @@ function M.get_config(server)
 end
 
 function M.setup()
-  require('vim.lsp.log').set_level(vim.log.levels.TRACE)
+  -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  require('vim.lsp.log').set_level(vim.log.levels.INFO)
   require('vim.lsp.log').set_format_func(vim.inspect)
+
+  local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+  for type, icon in pairs(signs) do
+    local hl = 'DiagnosticSign' .. type
+    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
+  end
 
   vim.diagnostic.config { severity_sort = true, update_in_insert = true }
   if_has_do('toggle_lsp_diagnostics', function(m)
@@ -122,7 +128,7 @@ function M.setup()
       -- for your Neovim config directory, the config.library settings will be used as is
       -- for plugin directories (root_dirs having a /lua directory), config.library.plugins will be disabled
       -- for any other directory, config.library.enabled will be set to false
-      override = function(root_dir, options) end,
+      override = function(_, _) end,
       -- With lspconfig, Neodev will automatically setup your lua-language-server
       -- If you disable this, then you have to set {before_init=require("neodev.lsp").before_init}
       -- in your lsp start options
@@ -223,12 +229,6 @@ function M.setup()
       depth_limit_indicator = '..',
     }
   end)
-
-  local signs = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
-  for type, icon in pairs(signs) do
-    local hl = 'DiagnosticSign' .. type
-    vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
-  end
 end
 
 return M

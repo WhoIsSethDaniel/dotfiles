@@ -21,7 +21,7 @@ local if_has_do = function(module, f)
 end
 
 local load_lsp_file = function(f)
-  local ok, config = pcall(require, string.format('lsp.%s', f))
+  local ok, config = pcall(require, string.format('plugins.lsp.%s', f))
   if not ok then
     vim.api.nvim_err_writeln('failed to load lsp config: ' .. f)
     config = {}

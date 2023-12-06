@@ -1,5 +1,6 @@
 -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
 return {
+  cmd = { 'gopls', '--remote=auto' },
   capabilities = {
     workspace = {
       didChangeWatchedFiles = {

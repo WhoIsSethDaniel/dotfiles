@@ -12,9 +12,7 @@ local run = function(opts)
   end
 end
 local bufname = function(flags)
-  local f = vim.fn.fnameescape(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), flags))
-  print(f)
-  return f
+  return vim.fn.fnameescape(vim.fn.fnamemodify(vim.api.nvim_buf_get_name(0), flags))
 end
 
 -- TODO: look for ways to complete test names

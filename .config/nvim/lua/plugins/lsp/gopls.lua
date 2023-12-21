@@ -34,7 +34,7 @@ return {
       diagnosticsDelay = '500ms',
       vulncheck = 'Imports',
       hints = {
-        assignVariableTypes = true,
+        assignVariableTypes = false,
         compositeLiteralFields = true,
         compositeLiteralTypes = true,
         constantValues = true,

@@ -38,8 +38,8 @@ return {
         compositeLiteralFields = true,
         compositeLiteralTypes = true,
         constantValues = true,
-        functionTypeParameters = true,
-        parameterNames = true,
+        functionTypeParameters = false,
+        parameterNames = false,
         rangeVariableTypes = true,
       },
       analyses = {

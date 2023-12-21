@@ -14,7 +14,7 @@
     "clean_name": "bamboo-nvim",
     "config_file": "bamboo-nvim.lua",
     "colorscheme": true,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "bigfile.nvim": {
@@ -500,7 +500,7 @@
     "clean_name": "tokyonight-nvim",
     "config_file": "tokyonight-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "ultimate-autopair.nvim": {

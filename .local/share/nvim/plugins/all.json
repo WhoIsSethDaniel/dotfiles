@@ -257,7 +257,7 @@
     "clean_name": "midnight-nvim",
     "config_file": "midnight-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "neotest": {
@@ -491,6 +491,15 @@
     "clean_name": "toggleterm-nvim",
     "config_file": "toggleterm-nvim.lua",
     "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "tokyonight.nvim": {
+    "name": "tokyonight.nvim",
+    "url": "https://github.com/folke/tokyonight.nvim",
+    "clean_name": "tokyonight-nvim",
+    "config_file": "tokyonight-nvim.lua",
+    "colorscheme": true,
     "enabled": true,
     "frozen": false
   },

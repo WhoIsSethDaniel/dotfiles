@@ -13,6 +13,9 @@ end
 
 local M = {}
 
+local disabled_lsp_servers = {}
+local no_inlay_hints = { 'lua_ls' }
+
 local if_has_do = function(module, f)
   local ok, m = pcall(require, module)
   if ok then
@@ -31,22 +34,22 @@ end
 
 vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   callback = function(args)
-    local client = vim.lsp.get_client_by_id(args.data.client_id)
-    if client == nil then
-      return
-    end
     local bufnr = args.buf
+    local client_id = args.data.client_id
+    local client = vim.lsp.get_client_by_id(client_id)
     if client.server_capabilities.documentSymbolProvider then
       if_has_do('nvim-navic', function(m)
         m.attach(client, bufnr)
       end)
+    end
+    if client.server_capabilities.inlayHintProvider and not vim.tbl_contains(no_inlay_hints, client.name) then
+      vim.lsp.inlay_hint.enable(bufnr, true)
     end
 
     local function dump_caps()
       print(client.name .. ':')
       print(vim.inspect(client.server_capabilities))
     end
-
     -- dump_caps()
 
     local map = vim.keymap.set
@@ -116,13 +119,12 @@ function M.setup()
     }
 
     if_has_do('mason-lspconfig', function(mlsp)
-      local disabled = {}
       mlsp.setup {}
       mlsp.setup_handlers {
         function(server)
           if server == 'diagnosticls' then
             load_lsp_file 'diagnosticls'
-          elseif not vim.tbl_contains(disabled, server) then
+          elseif not vim.tbl_contains(disabled_lsp_servers, server) then
             lspconf[server].setup(M.get_config(server))
           end
         end,

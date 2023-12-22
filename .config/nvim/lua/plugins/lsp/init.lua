@@ -13,7 +13,7 @@ end
 
 local M = {}
 
-local disabled_lsp_servers = {}
+local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = { 'lua_ls' }
 
 local if_has_do = function(module, f)

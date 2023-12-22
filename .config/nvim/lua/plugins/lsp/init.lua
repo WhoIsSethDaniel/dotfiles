@@ -135,7 +135,6 @@ function M.setup()
       m.setup {
         ensure_installed = {
           'bash-language-server',
-          'cbfmt',
           'dprint',
           'editorconfig-checker',
           'glow',

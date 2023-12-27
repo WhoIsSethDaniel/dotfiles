@@ -8,15 +8,6 @@
     "enabled": true,
     "frozen": false
   },
-  "bamboo.nvim": {
-    "name": "bamboo.nvim",
-    "url": "https://github.com/ribru17/bamboo.nvim",
-    "clean_name": "bamboo-nvim",
-    "config_file": "bamboo-nvim.lua",
-    "colorscheme": true,
-    "enabled": true,
-    "frozen": false
-  },
   "bigfile.nvim": {
     "name": "bigfile.nvim",
     "url": "https://github.com/LunarVim/bigfile.nvim",
@@ -122,6 +113,15 @@
     "clean_name": "conform-nvim",
     "config_file": "conform-nvim.lua",
     "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "cyberdream.nvim": {
+    "name": "cyberdream.nvim",
+    "url": "https://github.com/scottmckendry/cyberdream.nvim",
+    "clean_name": "cyberdream-nvim",
+    "config_file": "cyberdream-nvim.lua",
+    "colorscheme": true,
     "enabled": true,
     "frozen": false
   },

@@ -122,7 +122,7 @@
     "clean_name": "cyberdream-nvim",
     "config_file": "cyberdream-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "dressing.nvim": {
@@ -177,6 +177,15 @@
     "config_file": "goofball-nvim.lua",
     "colorscheme": false,
     "enabled": true,
+    "frozen": false
+  },
+  "hybrid.nvim": {
+    "name": "hybrid.nvim",
+    "url": "https://github.com/HoNamDuong/hybrid.nvim",
+    "clean_name": "hybrid-nvim",
+    "config_file": "hybrid-nvim.lua",
+    "colorscheme": true,
+    "enabled": false,
     "frozen": false
   },
   "lists.vim": {
@@ -500,7 +509,7 @@
     "clean_name": "tokyonight-nvim",
     "config_file": "tokyonight-nvim.lua",
     "colorscheme": true,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "ultimate-autopair.nvim": {

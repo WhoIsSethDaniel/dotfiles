@@ -35,6 +35,9 @@ require('tokyonight').setup {
     highlights.Normal = {
       bg = '#000000',
     }
+    highlights.SignColumn = {
+      bg = '#000000',
+    }
   end,
 }
 vim.cmd [[colorscheme tokyonight]]

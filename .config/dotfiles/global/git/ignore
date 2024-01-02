@@ -81,7 +81,7 @@
 /.config/pcloud/
 /.config/pulse/
 /.config/sound-juicer/
-/.config/systemd/
+/.config/systemd/user/default.target.wants/
 /.config/totem/
 
 /.bundle/cache/

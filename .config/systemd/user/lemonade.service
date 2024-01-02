@@ -1,0 +1,8 @@
+[Unit]
+Description=Lemonade
+
+[Service]
+ExecStart=/home/seth/.local/bin/lemonade server
+
+[Install]
+WantedBy=default.target

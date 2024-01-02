@@ -365,7 +365,7 @@
     "clean_name": "nvim-osc52",
     "config_file": "nvim-osc52.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "nvim-treesitter": {

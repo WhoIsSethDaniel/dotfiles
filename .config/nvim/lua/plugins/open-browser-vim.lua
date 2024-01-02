@@ -1,5 +1,6 @@
 vim.g.netrw_nogx = 1
 vim.g.openbrowser_browser_commands = {
+  { name = 'lemonade', args = { 'open', '{uri}' } },
   { name = 'local-open', args = { '{browser}', '{uri}' } },
   { name = 'xdg-open', args = { '{browser}', '{uri}' } },
   { name = 'x-www-browser', args = { '{browser}', '{uri}' } },

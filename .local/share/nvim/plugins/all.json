@@ -134,15 +134,6 @@
     "enabled": true,
     "frozen": false
   },
-  "focus.nvim": {
-    "name": "focus.nvim",
-    "url": "https://github.com/beauwilliams/focus.nvim",
-    "clean_name": "focus-nvim",
-    "config_file": "focus-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": true
-  },
   "git-conflict.nvim": {
     "name": "git-conflict.nvim",
     "url": "https://github.com/akinsho/git-conflict.nvim",
@@ -357,15 +348,6 @@
     "config_file": "nvim-navic.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
-  },
-  "nvim-osc52": {
-    "name": "nvim-osc52",
-    "url": "https://github.com/ojroques/nvim-osc52",
-    "clean_name": "nvim-osc52",
-    "config_file": "nvim-osc52.lua",
-    "colorscheme": false,
-    "enabled": false,
     "frozen": false
   },
   "nvim-treesitter": {

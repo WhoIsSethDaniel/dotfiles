@@ -114,3 +114,12 @@ run
 ```bash
 bundle exec jekyll build
 ```
+
+## lemonade
+
+activate and start systemd user service
+
+```bash
+systemctl --user enable lemonade.service
+systemctl --user start lemonade.service
+```

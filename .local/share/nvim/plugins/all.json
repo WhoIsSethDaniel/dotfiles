@@ -176,7 +176,7 @@
     "clean_name": "hybrid-nvim",
     "config_file": "hybrid-nvim.lua",
     "colorscheme": true,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "lists.vim": {
@@ -491,7 +491,7 @@
     "clean_name": "tokyonight-nvim",
     "config_file": "tokyonight-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "ultimate-autopair.nvim": {

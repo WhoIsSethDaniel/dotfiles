@@ -170,6 +170,15 @@
     "enabled": true,
     "frozen": false
   },
+  "hardtime.nvim": {
+    "name": "hardtime.nvim",
+    "url": "https://github.com/m4xshen/hardtime.nvim",
+    "clean_name": "hardtime-nvim",
+    "config_file": "hardtime-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "hybrid.nvim": {
     "name": "hybrid.nvim",
     "url": "https://github.com/HoNamDuong/hybrid.nvim",

@@ -293,7 +293,7 @@
     "clean_name": "noice-nvim",
     "config_file": "noice-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "nui.nvim": {

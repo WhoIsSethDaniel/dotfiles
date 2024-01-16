@@ -24,6 +24,16 @@ vim.api.nvim_create_autocmd('BufRead', {
       matchup = {
         enable = true,
       },
+      textobjects = {
+        select = {
+          enable = true,
+          lookahead = true,
+          keymaps = {
+            ['af'] = '@function.outer',
+            ['if'] = '@function.inner',
+          },
+        },
+      },
     }
   end,
 })

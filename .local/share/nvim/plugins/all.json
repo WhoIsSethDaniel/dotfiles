@@ -287,15 +287,6 @@
     "enabled": true,
     "frozen": false
   },
-  "noice.nvim": {
-    "name": "noice.nvim",
-    "url": "https://github.com/folke/noice.nvim",
-    "clean_name": "noice-nvim",
-    "config_file": "noice-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "nui.nvim": {
     "name": "nui.nvim",
     "url": "https://github.com/MunifTanjim/nui.nvim",

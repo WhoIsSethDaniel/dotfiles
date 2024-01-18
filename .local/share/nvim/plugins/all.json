@@ -134,6 +134,15 @@
     "enabled": true,
     "frozen": false
   },
+  "fidget.nvim": {
+    "name": "fidget.nvim",
+    "url": "https://github.com/j-hui/fidget.nvim",
+    "clean_name": "fidget-nvim",
+    "config_file": "fidget-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "git-conflict.nvim": {
     "name": "git-conflict.nvim",
     "url": "https://github.com/akinsho/git-conflict.nvim",
@@ -283,15 +292,6 @@
     "url": "https://github.com/nvim-neotest/neotest-go",
     "clean_name": "neotest-go",
     "config_file": "neotest-go.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "noice.nvim": {
-    "name": "noice.nvim",
-    "url": "https://github.com/folke/noice.nvim",
-    "clean_name": "noice-nvim",
-    "config_file": "noice-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

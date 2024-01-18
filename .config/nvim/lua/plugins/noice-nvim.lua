@@ -1,6 +1,6 @@
 require('noice').setup {
   cmdline = {
-    enabled = true,
+    enabled = false,
     -- view = 'cmdline_popup',
     view = 'cmdline',
   },

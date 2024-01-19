@@ -212,6 +212,7 @@ vim.opt.fillchars:append {
 
 -- command-line is not visible if not entering a command
 vim.opt.cmdheight = 1
+vim.opt.clipboard = 'unnamedplus'
 
 -- allow placing the entered command in the statusline
 -- (lualine doesn't support this yet)

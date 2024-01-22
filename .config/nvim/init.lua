@@ -212,6 +212,8 @@ vim.opt.fillchars:append {
 
 -- command-line is not visible if not entering a command
 vim.opt.cmdheight = 1
+
+-- this is needed for lemonade
 vim.opt.clipboard = 'unnamedplus'
 
 -- allow placing the entered command in the statusline
@@ -253,6 +255,7 @@ vim.api.nvim_set_keymap('n', '<leader>ev', ':edit $MYVIMRC<cr>', { silent = true
 -- correctly paste from the * or + register (possibly others too) when using c_<C-R>
 -- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315
 vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r>' : '<c-r><c-o>' ]], false)
+vim.api.nvim_command [[ command! -nargs=0 LoadAll :args `fdfind --type f --exclude .git -c never -H`<cr> ]]
 
 -- filetypes
 vim.filetype.add {
@@ -266,9 +269,6 @@ vim.filetype.add {
 
 -- autocommands
 require 'autocmd'
-
--- commands
-require 'commands'
 
 -- source all plugins and their custom config (if any)
 require 'all'

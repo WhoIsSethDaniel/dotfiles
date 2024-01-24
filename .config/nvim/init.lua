@@ -214,7 +214,7 @@ vim.opt.fillchars:append {
 vim.opt.cmdheight = 1
 
 -- this is needed for lemonade
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 
 -- allow placing the entered command in the statusline
 -- (lualine doesn't support this yet)

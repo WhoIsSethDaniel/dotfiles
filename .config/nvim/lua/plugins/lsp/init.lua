@@ -147,7 +147,7 @@ function M.setup()
           'gotestsum',
           'impl',
           'json-to-struct',
-          'lemonade',
+          -- 'lemonade',
           'lua-language-server',
           'markdownlint',
           'marksman',

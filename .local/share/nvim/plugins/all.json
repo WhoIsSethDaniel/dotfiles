@@ -23,7 +23,7 @@
     "clean_name": "bmessages-nvim",
     "config_file": "bmessages-nvim.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "bufjump.nvim": {
@@ -141,15 +141,6 @@
     "config_file": "dressing-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
-  },
-  "fidget.nvim": {
-    "name": "fidget.nvim",
-    "url": "https://github.com/j-hui/fidget.nvim",
-    "clean_name": "fidget-nvim",
-    "config_file": "fidget-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
     "frozen": false
   },
   "git-conflict.nvim": {

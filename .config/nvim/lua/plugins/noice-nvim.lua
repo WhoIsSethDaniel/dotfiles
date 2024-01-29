@@ -9,7 +9,7 @@ require('noice').setup {
     view = 'mini',
     view_error = 'mini',
     view_warn = 'mini',
-    view_history = 'split',
+    view_history = 'messages',
     view_search = 'virtualtext',
   },
   popupmenu = {

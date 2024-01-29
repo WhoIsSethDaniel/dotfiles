@@ -23,7 +23,7 @@
     "clean_name": "bmessages-nvim",
     "config_file": "bmessages-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "bufjump.nvim": {
@@ -149,7 +149,7 @@
     "clean_name": "fidget-nvim",
     "config_file": "fidget-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "git-conflict.nvim": {
@@ -301,6 +301,15 @@
     "url": "https://github.com/nvim-neotest/neotest-go",
     "clean_name": "neotest-go",
     "config_file": "neotest-go.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "noice.nvim": {
+    "name": "noice.nvim",
+    "url": "https://github.com/folke/noice.nvim",
+    "clean_name": "noice-nvim",
+    "config_file": "noice-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

@@ -211,7 +211,7 @@ vim.opt.fillchars:append {
 }
 
 -- command-line is not visible if not entering a command
-vim.opt.cmdheight = 1
+vim.opt.cmdheight = 0
 
 -- this is needed for lemonade
 -- vim.opt.clipboard = 'unnamedplus'

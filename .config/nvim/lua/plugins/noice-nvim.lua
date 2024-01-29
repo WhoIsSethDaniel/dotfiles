@@ -1,6 +1,6 @@
 require('noice').setup {
   cmdline = {
-    enabled = false,
+    enabled = true,
     -- view = 'cmdline_popup',
     view = 'cmdline',
   },
@@ -41,6 +41,11 @@ require('noice').setup {
       enabled = true,
       view = 'mini',
       opts = {},
+    },
+    override = {
+      ['vim.lsp.util.convert_input_to_markdown_lines'] = true,
+      ['vim.lsp.util.stylize_markdown'] = true,
+      ['cmp.entry.get_documentation'] = true,
     },
   },
 }

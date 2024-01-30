@@ -114,7 +114,7 @@ local autocmds = {
       -- allow the modeline to set the correct
       -- filetype for plugin help files.
       BufReadPost = {
-        pattern = { '*.txt' },
+        pattern = { '*/doc/*.txt' },
         callback = function()
           vim.opt_local.modeline = true
           vim.opt_local.modelines = 5

@@ -146,9 +146,10 @@ vim.opt.showcmd = true
 -- show the cursorline
 vim.opt.cursorline = true
 
--- ignore modelines
+-- modelines are needed when setting ft=help
+-- for plugin help files
 vim.opt.modeline = true
-vim.opt.modelines = 0
+vim.opt.modelines = 1
 
 -- turn on/off the sign column
 vim.opt.signcolumn = 'yes'
@@ -264,16 +265,6 @@ vim.filetype.add {
   },
   pattern = {
     ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },
-    -- may be a bug in current nightly (0.10) that it doesn't correctly
-    -- identify the help filetype for plugin help files
-    ['.*/doc/.*.txt'] = function(path)
-      for _, p in ipairs(vim.opt.rtp:get()) do
-        if string.match(path, p .. '.*/doc.*.txt') ~= nil then
-          return 'help'
-        end
-      end
-      return nil
-    end,
   },
 }
 

@@ -146,13 +146,15 @@ vim.opt.showcmd = true
 -- show the cursorline
 vim.opt.cursorline = true
 
--- modelines are needed when setting ft=help
+-- Modelines are needed when setting ft=help
 -- for plugin help files.
--- see section below re: setting filetype for
+-- See section below re: setting filetype for
 -- plugin help files.
-vim.opt.modeline = true
--- default is 5
-vim.opt.modelines = 1
+-- Currently this is turned on locally via an
+-- auto command.
+vim.opt.modeline = false
+-- default is 5 -- ignored if 'modeline' is false
+-- vim.opt.modelines = 1
 
 -- turn on/off the sign column
 vim.opt.signcolumn = 'yes'
@@ -271,6 +273,8 @@ vim.filetype.add {
     -- see 'modeline' and 'modelines' setting above. If 'modelines'
     -- is set to 0 or 'modeline' is turned off the following should
     -- be uncommented for plugin help files to be identified properly.
+    -- 'modeline' is currently turned on locally via an autocmd so this
+    -- is not needed.
     -- ['.*/doc/.*.txt'] = function(path)
     --   for _, p in ipairs(vim.opt.rtp:get()) do
     --     if string.match(path, p .. '.*/doc.*.txt') ~= nil then

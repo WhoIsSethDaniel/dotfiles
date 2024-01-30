@@ -107,6 +107,21 @@ local autocmds = {
       },
     },
   },
+  use_modeline_for_help = {
+    {
+      -- locally turn on modelines for anything
+      -- that looks like a help file. This will
+      -- allow the modeline to set the correct
+      -- filetype for plugin help files.
+      BufReadPost = {
+        pattern = { '*.txt' },
+        callback = function()
+          vim.opt_local.modeline = true
+          vim.opt_local.modelines = 5
+        end,
+      },
+    },
+  },
 }
 
 -- setup all autocmds

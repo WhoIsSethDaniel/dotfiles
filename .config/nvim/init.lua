@@ -264,6 +264,16 @@ vim.filetype.add {
   },
   pattern = {
     ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },
+    -- may be a bug in current nightly (0.10) that it doesn't correctly
+    -- identify the help filetype for plugin help files
+    ['.*/doc/.*.txt'] = function(path)
+      for _, p in ipairs(vim.opt.rtp:get()) do
+        if string.match(path, p .. '.*/doc.*.txt') ~= nil then
+          return 'help'
+        end
+      end
+      return nil
+    end,
   },
 }
 

@@ -151,6 +151,7 @@ vim.opt.cursorline = true
 -- see section below re: setting filetype for
 -- plugin help files.
 vim.opt.modeline = true
+-- default is 5
 vim.opt.modelines = 1
 
 -- turn on/off the sign column

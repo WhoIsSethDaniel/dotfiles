@@ -48,7 +48,7 @@ vim.opt.showmatch = true
 -- recursive find; may want to change at some point (see above reddit link)
 vim.opt.path = { ',', '**' }
 
--- USE vim-sleuth instead of following few settings
+-- USE editorconfig instead of following few settings
 -- use spaces instead of tabs
 -- vim.opt.expandtab = true
 
@@ -65,7 +65,7 @@ vim.opt.path = { ',', '**' }
 
 -- autoformatting (gw/gq)
 vim.opt.textwidth = 120
--- END vim-sleuth
+-- END editorconfig
 
 -- only add one space when joining
 vim.opt.joinspaces = false
@@ -73,7 +73,7 @@ vim.opt.joinspaces = false
 vim.opt.breakindent = true
 vim.opt.breakindentopt = 'shift:2'
 
--- do not automatically change directory (use rooter instead)
+-- do not automatically change directory (use project.nvim instead)
 vim.opt.autochdir = false
 
 -- do not automatically equalize window sizes
@@ -101,6 +101,7 @@ vim.opt.belloff = 'all'
 vim.opt.formatoptions = 'tcrqjn'
 
 -- 'enhanced' command-line completion (sensible turns this on)
+-- [not needed or used when using cmp-cmdline]
 vim.opt.wildmenu = true
 vim.opt.wildmode = 'longest:full,full'
 -- case insensitive file matching
@@ -125,6 +126,7 @@ vim.opt.undofile = true
 vim.opt.undodir = vim.env.XDG_DATA_HOME .. '/nvim/undo'
 -- reduce from default (1000)
 vim.opt.undolevels = 500
+-- cannot be larger than 10000
 vim.opt.history = 10000
 
 -- swap and backup files
@@ -183,11 +185,12 @@ vim.opt.scrollback = 100000
 -- vim.opt.grepformat = { '%f:%l:%c:%m', '%f:%l:%m' }
 -- vim.api.nvim_command 'command -nargs=* Grep silent! grep! <args> | cwindow | redraw!'
 
--- color scheme -- set actual scheme in colorscheme.vim
+-- color scheme
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 
 -- configuration for completion
+-- [not necessary with nvim-cmp]
 vim.opt.complete = { '.', 'w', 'b', 'u' }
 -- vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 

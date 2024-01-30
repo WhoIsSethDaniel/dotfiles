@@ -147,7 +147,9 @@ vim.opt.showcmd = true
 vim.opt.cursorline = true
 
 -- modelines are needed when setting ft=help
--- for plugin help files
+-- for plugin help files.
+-- see section below re: setting filetype for
+-- plugin help files.
 vim.opt.modeline = true
 vim.opt.modelines = 1
 
@@ -265,6 +267,17 @@ vim.filetype.add {
   },
   pattern = {
     ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },
+    -- see 'modeline' and 'modelines' setting above. If 'modelines'
+    -- is set to 0 or 'modeline' is turned off the following should
+    -- be uncommented for plugin help files to be identified properly.
+    -- ['.*/doc/.*.txt'] = function(path)
+    --   for _, p in ipairs(vim.opt.rtp:get()) do
+    --     if string.match(path, p .. '.*/doc.*.txt') ~= nil then
+    --       return 'help'
+    --     end
+    --   end
+    --   return nil
+    -- end,
   },
 }
 

@@ -124,6 +124,9 @@ function M.setup()
       mlsp.setup {}
       mlsp.setup_handlers {
         function(server)
+          vim.schedule(function()
+            print(server .. ' (mason)')
+          end)
           if server == 'diagnosticls' then
             load_lsp_file 'diagnosticls'
           elseif not vim.tbl_contains(disabled_lsp_servers, server) then
@@ -185,6 +188,9 @@ function M.setup()
   end)
 
   for _, server in ipairs(manual_config_lsp) do
+    vim.schedule(function()
+      print(server .. ' (manual)')
+    end)
     lspconf[server].setup(M.get_config(server))
   end
 end

@@ -15,6 +15,7 @@ local M = {}
 
 local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = { 'lua_ls' }
+local manual_config_lsp = { 'dprint' }
 
 local if_has_do = function(module, f)
   local ok, m = pcall(require, module)
@@ -183,7 +184,9 @@ function M.setup()
     }
   end)
 
-  lspconf['dprint'].setup(M.get_config 'dprint')
+  for _, server in ipairs(manual_config_lsp) do
+    lspconf[server].setup(M.get_config(server))
+  end
 end
 
 return M

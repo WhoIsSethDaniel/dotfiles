@@ -65,7 +65,7 @@ c.setup {
     markdown = { 'prettier', 'injected' },
     -- perl = { 'perltidy', 'perlimports' },
     sh = { 'shfmt', 'shellharden' },
-    toml = { 'dprint' },
+    -- toml = { 'dprint' },
     yaml = { 'prettier' },
   },
   format_on_save = function(bufnr)

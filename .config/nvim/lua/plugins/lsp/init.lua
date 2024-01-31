@@ -182,6 +182,8 @@ function M.setup()
       depth_limit_indicator = '..',
     }
   end)
+
+  lspconf['dprint'].setup(M.get_config 'dprint')
 end
 
 return M

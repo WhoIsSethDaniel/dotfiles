@@ -1,6 +1,7 @@
 #!/bin/bash
 
 INSTALL_DIR=$HOME/.local/share/fonts
+updated=0
 
 function install_font() {
     local name=$1
@@ -27,6 +28,7 @@ function install_font() {
     fi
     [[ install -eq 0 ]] && return
 
+    updated=1
     echo "$name installing to ${dir}"
     mkdir -p "$dir"
     pushd "$dir" || return
@@ -44,5 +46,4 @@ install_font CascadiaCode "$version" https://github.com/ryanoasis/nerd-fonts/rel
 
 version=$(curl -s https://api.github.com/repos/intel/intel-one-mono/releases/latest | grep tag_name | cut -d '"' -f 4)
 install_font intel-one-mono "$version" https://github.com/intel/intel-one-mono/releases/download/"$version"/ttf.zip
-fc-cache -f
-
+[[ $updated -eq 1 ]] && fc-cache -f

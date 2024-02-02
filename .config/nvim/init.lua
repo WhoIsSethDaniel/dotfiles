@@ -272,17 +272,19 @@ vim.filetype.add {
     ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },
     -- see 'modeline' and 'modelines' setting above. If 'modelines'
     -- is set to 0 or 'modeline' is turned off the following should
-    -- be uncommented for plugin help files to be identified properly.
-    -- 'modeline' is currently turned on locally via an autocmd so this
-    -- is not needed.
-    -- ['.*/doc/.*.txt'] = function(path)
-    --   for _, p in ipairs(vim.opt.rtp:get()) do
-    --     if string.match(path, p .. '.*/doc.*.txt') ~= nil then
-    --       return 'help'
-    --     end
-    --   end
-    --   return nil
-    -- end,
+    -- be uncommented for plugin help files to be identified properly --
+    -- but not always -- not all help files have modelines.
+    -- There is currently a (commented out) autocmd that turns on
+    -- modeline locally for things that look like help files. It doesn't
+    -- always work since help files are not required to have modelines.
+    ['.*/doc/.*.txt'] = function(path)
+      for _, p in ipairs(vim.opt.rtp:get()) do
+        if string.match(path, p .. '.*/doc.*.txt') ~= nil then
+          return 'help'
+        end
+      end
+      return nil
+    end,
   },
 }
 

@@ -35,12 +35,12 @@ return {
       vulncheck = 'Imports',
       hints = {
         assignVariableTypes = false,
-        compositeLiteralFields = true,
-        compositeLiteralTypes = true,
+        compositeLiteralFields = false,
+        compositeLiteralTypes = false,
         constantValues = true,
         functionTypeParameters = false,
         parameterNames = false,
-        rangeVariableTypes = true,
+        rangeVariableTypes = false,
       },
       analyses = {
         asmdecl = true,

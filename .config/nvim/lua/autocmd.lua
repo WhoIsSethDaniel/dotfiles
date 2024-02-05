@@ -50,7 +50,9 @@ local autocmds = {
     {
       VimEnter = {
         callback = function()
-          vim.cmd [[ TSUpdate ]]
+          vim.defer_fn(function()
+            vim.cmd [[ TSUpdate ]]
+          end, 1000)
         end,
       },
     },

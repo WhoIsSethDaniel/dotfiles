@@ -74,9 +74,15 @@ require('telescope').setup {
     color_devicons = true,
     use_less = true,
     set_env = { ['COLORTERM'] = 'truecolor' }, -- default = nil,
-    file_previewer = require('telescope.previewers').vim_buffer_cat.new,
-    grep_previewer = require('telescope.previewers').vim_buffer_vimgrep.new,
-    qflist_previewer = require('telescope.previewers').vim_buffer_qflist.new,
+    file_previewer = function(opts)
+      return require('telescope.previewers').vim_buffer_cat.new(opts)
+    end,
+    grep_previewer = function(opts)
+      return require('telescope.previewers').vim_buffer_vimgrep.new(opts)
+    end,
+    qflist_previewer = function(opts)
+      return require('telescope.previewers').vim_buffer_qflist.new(opts)
+    end,
 
     -- Developer configurations: Not meant for general override
     -- buffer_previewer_maker = require'telescope.previewers'.buffer_previewer_maker

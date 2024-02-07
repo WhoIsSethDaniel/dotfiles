@@ -23,6 +23,19 @@ require('noice').setup {
     mini = {
       timeout = 4000,
     },
+    cmdline_popup = {
+      -- position = {
+      --   row = -3,
+      -- },
+      border = {
+        style = 'none',
+        padding = { 2, 3 },
+      },
+      filter_options = {},
+      win_options = {
+        winhighlight = 'NormalFloat:NormalFloat,FloatBorder:FloatBorder',
+      },
+    },
   },
   lsp = {
     progress = {

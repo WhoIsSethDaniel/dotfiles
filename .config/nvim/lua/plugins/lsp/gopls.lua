@@ -1,5 +1,7 @@
 -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
 return {
+  -- https://github.com/mvdan/gofumpt/issues/2
+  -- https://github.com/mvdan/gofumpt/pull/70
   -- cmd_env = {
   --   GOFUMPT_SPLIT_LONG_LINES = 'on',
   -- },

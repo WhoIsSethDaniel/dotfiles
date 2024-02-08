@@ -1,5 +1,8 @@
 -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
 return {
+  -- cmd_env = {
+  --   GOFUMPT_SPLIT_LONG_LINES = 'on',
+  -- },
   cmd = { 'gopls', '--remote=auto' },
   capabilities = {
     workspace = {

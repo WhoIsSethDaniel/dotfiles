@@ -36,8 +36,8 @@ pairs.setup {
 }
 
 -- cmp -- not certain what this is doing
-local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 local cmp = require 'cmp'
+local cmp_autopairs = require 'nvim-autopairs.completion.cmp'
 cmp.event:on('confirm_done', cmp_autopairs.on_confirm_done {})
 
 -- info on endwise: https://github.com/windwp/nvim-autopairs/wiki/Endwise

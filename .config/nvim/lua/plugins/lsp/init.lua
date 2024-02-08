@@ -121,18 +121,19 @@ function M.setup()
     }
 
     if_has_do('mason-lspconfig', function(mlsp)
-      mlsp.setup {}
-      mlsp.setup_handlers {
-        function(server)
-          if server == 'diagnosticls' then
-            load_lsp_file 'diagnosticls'
-          elseif not vim.tbl_contains(disabled_lsp_servers, server) then
-            lspconf[server].setup(M.get_config(server))
-            vim.schedule(function()
-              print(server .. ' (mason)')
-            end)
-          end
-        end,
+      mlsp.setup {
+        handlers = {
+          function(server)
+            if server == 'diagnosticls' then
+              load_lsp_file 'diagnosticls'
+            elseif not vim.tbl_contains(disabled_lsp_servers, server) then
+              lspconf[server].setup(M.get_config(server))
+              vim.schedule(function()
+                print(server .. ' (mason)')
+              end)
+            end
+          end,
+        },
       }
     end)
 

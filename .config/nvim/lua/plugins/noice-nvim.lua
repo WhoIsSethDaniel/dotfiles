@@ -1,5 +1,4 @@
 -- https://github.com/folke/noice.nvim
--- config recipes:
 -- https://github.com/folke/noice.nvim/wiki/Configuration-Recipes
 require('noice').setup {
   cmdline = {

@@ -14,7 +14,7 @@ end
 local M = {}
 
 local disabled_lsp_servers = { 'templ' }
-local no_inlay_hints = { 'lua_ls' }
+local no_inlay_hints = {}
 local manual_config_lsp = { 'dprint' }
 
 local if_has_do = function(module, f)

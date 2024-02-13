@@ -194,7 +194,7 @@
     "clean_name": "hybrid-nvim",
     "config_file": "hybrid-nvim.lua",
     "colorscheme": true,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "lists.vim": {
@@ -464,6 +464,15 @@
     "clean_name": "repossession-nvim",
     "config_file": "repossession-nvim.lua",
     "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "rose-pine": {
+    "name": "rose-pine",
+    "url": "https://github.com/rose-pine/neovim",
+    "clean_name": "rose-pine",
+    "config_file": "rose-pine.lua",
+    "colorscheme": true,
     "enabled": true,
     "frozen": false
   },

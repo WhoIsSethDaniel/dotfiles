@@ -49,6 +49,7 @@ require('rose-pine').setup {
 
   highlight_groups = {
     Normal = { bg = '#000000' },
+    TelescopeNormal = { bg = '#000000' },
     -- Comment = { fg = "foam" },
     -- VertSplit = { fg = "muted", bg = "muted" },
   },

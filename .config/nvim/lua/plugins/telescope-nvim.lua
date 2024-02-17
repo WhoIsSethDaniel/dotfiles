@@ -116,6 +116,9 @@ vim.api.nvim_create_autocmd('VimEnter', {
       extensions = {
         fzy_native = { override_generic_sorter = true, override_file_sorter = true },
         -- live_grep_args = {},
+        ['ui-select'] = {
+          require('telescope.themes').get_dropdown {},
+        },
       },
     }
 
@@ -140,5 +143,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
       require('telescope').load_extension 'possession'
     end
     require('telescope').load_extension 'fzy_native'
+    require('telescope').load_extension 'ui-select'
   end,
 })

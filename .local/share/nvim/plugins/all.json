@@ -485,6 +485,15 @@
     "enabled": true,
     "frozen": false
   },
+  "telescope-ui-select.nvim": {
+    "name": "telescope-ui-select.nvim",
+    "url": "https://github.com/nvim-telescope/telescope-ui-select.nvim",
+    "clean_name": "telescope-ui-select-nvim",
+    "config_file": "telescope-ui-select-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "telescope.nvim": {
     "name": "telescope.nvim",
     "url": "https://github.com/nvim-telescope/telescope.nvim",

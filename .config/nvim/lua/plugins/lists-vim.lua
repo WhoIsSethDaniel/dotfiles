@@ -1,6 +1,4 @@
-vim.cmd [[
-  augroup enable_lists
-  autocmd!
-  autocmd BufRead *.wiki,*.md ListsEnable
-  augroup END
-]]
+vim.api.nvim_create_autocmd('BufRead', {
+  pattern = { '*.wiki', '*.md' },
+  command = 'ListsEnable',
+})

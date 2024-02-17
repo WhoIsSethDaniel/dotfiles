@@ -122,10 +122,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
       },
     }
 
-    local ok, _ = pcall(require, 'goldsmith')
-    if ok then
-      require('telescope').load_extension 'goldsmith'
-    end
     local ok, _ = pcall(require, 'repossession')
     if ok then
       require('telescope').load_extension 'repossession'
@@ -137,10 +133,6 @@ vim.api.nvim_create_autocmd('VimEnter', {
     local ok, _ = pcall(require, 'projects')
     if ok then
       require('telescope').load_extension 'projects'
-    end
-    local ok, _ = pcall(require, 'possession')
-    if ok then
-      require('telescope').load_extension 'possession'
     end
     require('telescope').load_extension 'fzy_native'
     require('telescope').load_extension 'ui-select'

@@ -15,7 +15,7 @@ local M = {}
 
 local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = {}
-local manual_config_lsp = { 'dprint' }
+local manual_config_lsp = {}
 
 local if_has_do = function(module, f)
   local ok, m = pcall(require, module)

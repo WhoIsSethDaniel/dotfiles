@@ -197,6 +197,15 @@
     "enabled": false,
     "frozen": false
   },
+  "leap.nvim": {
+    "name": "leap.nvim",
+    "url": "https://github.com/ggandor/leap.nvim",
+    "clean_name": "leap-nvim",
+    "config_file": "leap-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "lists.vim": {
     "name": "lists.vim",
     "url": "https://github.com/lervag/lists.vim",

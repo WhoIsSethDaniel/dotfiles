@@ -152,7 +152,6 @@ function M.setup()
           'gotestsum',
           'impl',
           'json-to-struct',
-          -- 'lemonade',
           'lua-language-server',
           'markdownlint',
           'marksman',
@@ -189,10 +188,10 @@ function M.setup()
   end)
 
   for _, server in ipairs(manual_config_lsp) do
+    lspconf[server].setup(M.get_config(server))
     vim.schedule(function()
       print(server .. ' (manual)')
     end)
-    lspconf[server].setup(M.get_config(server))
   end
 end
 

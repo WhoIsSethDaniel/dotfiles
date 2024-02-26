@@ -15,28 +15,16 @@ return {
   },
   settings = {
     gopls = {
-      buildFlags = nil,
-      env = nil,
-      directoryFilters = nil,
+      -- useful for -tags (and other things)
+      -- buildFlags = nil,
+      directoryFilters = { '+go' },
+      templateExtensions = { 'gohtml' },
       ['local'] = '',
-      memoryMode = 'Normal',
       gofumpt = true,
       usePlaceholders = true,
       semanticTokens = true,
       staticcheck = true,
       hoverKind = 'Structured',
-      annotations = {
-        bounds = true,
-        escape = true,
-        inline = true,
-        ['nil'] = true,
-      },
-      -- may also be "godoc.org"
-      linkTarget = 'pkg.go.dev',
-      linksInHover = true,
-      importShortcut = 'Both',
-      experimentalPostfixCompletions = true,
-      diagnosticsDelay = '500ms',
       vulncheck = 'Imports',
       hints = {
         assignVariableTypes = false,

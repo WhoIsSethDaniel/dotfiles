@@ -5,6 +5,7 @@ return {
   -- cmd_env = {
   --   GOFUMPT_SPLIT_LONG_LINES = 'on',
   -- },
+  filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gohtmltmpl' },
   cmd = { 'gopls', '--remote=auto' },
   capabilities = {
     workspace = {

@@ -56,6 +56,13 @@ vim.api.nvim_create_user_command('FormatCtl', function(args)
   end
 end, { nargs = '*' })
 
+local should_format = function(b, ft)
+  if vim.g.disable_formatting or vim.b[b].disable_formatting or disable_by_type[ft] then
+    return false
+  end
+  return true
+end
+
 c.setup {
   formatters_by_ft = {
     go = { 'golines' },
@@ -72,7 +79,7 @@ c.setup {
     local ft = vim.bo[bufnr].filetype
     local to = 1000
     local fb = true
-    if vim.g.disable_formatting or vim.b[bufnr].disable_formatting or disable_by_type[ft] then
+    if not should_format(bufnr, ft) then
       return
     end
     if ft == 'perl' then
@@ -84,7 +91,7 @@ c.setup {
   end,
   format_after_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
-    if vim.g.disable_formatting or vim.b[bufnr].disable_formatting or disable_by_type[ft] then
+    if not should_format(bufnr, ft) then
       return
     end
     if ft ~= 'perl' then

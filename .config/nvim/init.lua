@@ -271,7 +271,10 @@ end, { silent = true, noremap = true })
 
 -- correctly paste from the * or + register (possibly others too) when using c_<C-R>
 -- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315
-vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r>' : '<c-r><c-o>' ]], false)
+-- unclear if this is required for wezterm or anything other than gnome terminal
+-- vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r>' : '<c-r><c-o>' ]], false)
+
+-- find all non git files within the pwd and place them in args
 vim.api.nvim_command [[ command! -nargs=0 LoadAll :args `fdfind --type f --exclude .git -c never -H`<cr> ]]
 
 -- filetypes

@@ -7,13 +7,13 @@ return {
   -- },
   filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gohtmltmpl', 'gotexttmpl' },
   cmd = { 'gopls', '--remote=auto' },
-  capabilities = {
-    workspace = {
-      didChangeWatchedFiles = {
-        dynamicRegistration = true,
-      },
-    },
-  },
+  -- capabilities = {
+  --   workspace = {
+  --     didChangeWatchedFiles = {
+  --       dynamicRegistration = true,
+  --     },
+  --   },
+  -- },
   settings = {
     gopls = {
       -- useful for -tags (and other things)

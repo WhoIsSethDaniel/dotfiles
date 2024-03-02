@@ -52,6 +52,7 @@ local autocmds = {
         callback = function()
           vim.defer_fn(function()
             vim.cmd [[ TSUpdate ]]
+            vim.cmd [[ helptags ALL ]]
           end, 1000)
         end,
       },

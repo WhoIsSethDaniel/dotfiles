@@ -177,6 +177,7 @@ vim.opt.shada = { "'250", '<50', 's250', 'h' }
 -- terminal
 -- scroll buffer; 100000 is the max
 vim.opt.scrollback = 100000
+-- default is 0 for scrolloff
 -- vim.opt.scrolloff = 25
 
 -- commented out: use telescope instead
@@ -204,6 +205,9 @@ vim.opt.shortmess:append 'Ics'
 -- use the patience algorithm when diffing; perhaps also try 'histogram';
 -- default algorithm is myers
 vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60', 'vertical' }
+
+-- unneeded with a statusline
+vim.opt.showmode = false
 
 -- thicker borders when using global status bar
 vim.opt.fillchars:append {
@@ -258,8 +262,14 @@ vim.g.mapleader = ' '
 -- vim.g.maplocalleader = '\'
 
 -- key mappings
-vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', { silent = true, noremap = true })
-vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC<cr>', { silent = true, noremap = true })
+
+local opts = { silent = true, noremap = true }
+vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
+vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.open_float, opts)
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
+vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC<cr>', opts)
 vim.keymap.set('n', '<leader>ch', function()
   local bufs = vim.api.nvim_list_bufs()
   for _, b in ipairs(bufs) do
@@ -267,7 +277,7 @@ vim.keymap.set('n', '<leader>ch', function()
       vim.api.nvim_buf_delete(b, { force = true })
     end
   end
-end, { silent = true, noremap = true })
+end, opts)
 
 -- correctly paste from the * or + register (possibly others too) when using c_<C-R>
 -- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315

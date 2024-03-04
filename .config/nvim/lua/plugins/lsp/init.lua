@@ -58,7 +58,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local map = vim.keymap.set
     map('n', 'gD', vim.lsp.buf.declaration, opts)
     map('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
-    map('n', 'gi', require('telescope.builtin').lsp_implementation, opts)
+    map('n', 'gi', require('telescope.builtin').lsp_implementations, opts)
     map('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opts)
     map('n', 'gr', require('telescope.builtin').lsp_references, opts)
     map('n', '<leader>rn', vim.lsp.buf.rename, opts)

@@ -458,11 +458,11 @@
     "enabled": false,
     "frozen": false
   },
-  "telescope-fzy-native.nvim": {
-    "name": "telescope-fzy-native.nvim",
-    "url": "https://github.com/nvim-telescope/telescope-fzy-native.nvim",
-    "clean_name": "telescope-fzy-native-nvim",
-    "config_file": "telescope-fzy-native-nvim.lua",
+  "telescope-fzf-native.nvim": {
+    "name": "telescope-fzf-native.nvim",
+    "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
+    "clean_name": "telescope-fzf-native-nvim",
+    "config_file": "telescope-fzf-native-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

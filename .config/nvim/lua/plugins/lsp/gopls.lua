@@ -18,7 +18,7 @@ return {
     gopls = {
       -- useful for -tags (and other things)
       -- buildFlags = nil,
-      directoryFilters = { '+go' },
+      -- directoryFilters = { '+go' },
       templateExtensions = { 'gohtml', 'gotoml' },
       ['local'] = '',
       gofumpt = true,

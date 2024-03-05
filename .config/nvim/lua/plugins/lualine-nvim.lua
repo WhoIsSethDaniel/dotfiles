@@ -43,9 +43,6 @@ require('lualine').setup {
     },
     lualine_x = {
       { "require'goldsmith'.status()" },
-      -- { 'lsp_progress' },
-      -- { 'lsp_progress', only_show_attached = true, hide = { 'null-ls' } },
-      -- { 'lsp_progress', hide = { 'null-ls' } },
       'encoding',
       'fileformat',
       'filetype',

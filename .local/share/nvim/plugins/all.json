@@ -224,15 +224,6 @@
     "enabled": true,
     "frozen": false
   },
-  "lualine-lsp-progress.nvim": {
-    "name": "lualine-lsp-progress.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/lualine-lsp-progress.nvim",
-    "clean_name": "lualine-lsp-progress-nvim",
-    "config_file": "lualine-lsp-progress-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "lualine.nvim": {
     "name": "lualine.nvim",
     "url": "https://github.com/nvim-lualine/lualine.nvim",

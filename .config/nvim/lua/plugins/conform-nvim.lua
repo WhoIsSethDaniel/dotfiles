@@ -93,8 +93,7 @@ c.setup {
     local ft = vim.bo[bufnr].filetype
     if not should_format(bufnr, ft) then
       return
-    end
-    if ft ~= 'perl' then
+    elseif ft ~= 'perl' then
       return
     end
     return { timeout_ms = 15000, lsp_fallback = 'always' }

@@ -33,7 +33,6 @@ require('lualine').setup {
         'diagnostics',
         update_in_insert = true,
         always_visible = true,
-        -- cond = vim.lsp.buf.server_ready,
       },
     },
     lualine_c = {

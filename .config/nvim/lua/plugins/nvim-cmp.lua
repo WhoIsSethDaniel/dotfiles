@@ -1,9 +1,5 @@
 -- https://github.com/hrsh7th/nvim-cmp
--- also useful:  https://github.com/nvim-lua/kickstart.nvim/blob/b529bc33590cbb81a5916408b2d6001a643e596c/init.lua#L619
 local cmp = require 'cmp'
-local luasnip = require 'luasnip'
-
-luasnip.config.setup {}
 cmp.setup {
   formatting = {
     format = function(entry, vim_item)
@@ -15,6 +11,7 @@ cmp.setup {
         emoji = 'emoji',
         nvim_lsp = 'LSP',
         luasnip = 'luasnip',
+        vsnip = 'vsnip',
         nvim_lua = 'lua',
         nvim_lsp_signature_help = 'LSP Signature',
       }
@@ -33,7 +30,7 @@ cmp.setup {
   },
   snippet = {
     expand = function(args)
-      luasnip.lsp_expand(args.body)
+      vim.fn['vsnip#anonymous'](args.body)
     end,
   },
   mapping = cmp.mapping.preset.insert {
@@ -45,7 +42,8 @@ cmp.setup {
     { name = 'path', priority = 5 },
     { name = 'calc', priority = 4 },
     { name = 'nvim_lua', priority = 9 },
-    { name = 'luasnip', priority = 8 },
+    { name = 'nvim_lsp', priority = 9 },
+    { name = 'vsnip', priority = 8 },
   },
   -- preselect = cmp.PreselectMode.Item,
   preselect = cmp.PreselectMode.None,

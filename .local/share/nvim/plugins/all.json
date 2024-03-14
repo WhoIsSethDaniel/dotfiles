@@ -8,6 +8,15 @@
     "enabled": true,
     "frozen": false
   },
+  "LuaSnip": {
+    "name": "LuaSnip",
+    "url": "https://github.com/L3MON4D3/LuaSnip",
+    "clean_name": "LuaSnip",
+    "config_file": "LuaSnip.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "bigfile.nvim": {
     "name": "bigfile.nvim",
     "url": "https://github.com/LunarVim/bigfile.nvim",
@@ -98,11 +107,11 @@
     "enabled": true,
     "frozen": false
   },
-  "cmp-vsnip": {
-    "name": "cmp-vsnip",
-    "url": "https://github.com/hrsh7th/cmp-vsnip",
-    "clean_name": "cmp-vsnip",
-    "config_file": "cmp-vsnip.lua",
+  "cmp_luasnip": {
+    "name": "cmp_luasnip",
+    "url": "https://github.com/saadparwaiz1/cmp_luasnip",
+    "clean_name": "cmp_luasnip",
+    "config_file": "cmp_luasnip.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false
@@ -571,15 +580,6 @@
     "url": "https://github.com/machakann/vim-sandwich",
     "clean_name": "vim-sandwich",
     "config_file": "vim-sandwich.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "vim-vsnip": {
-    "name": "vim-vsnip",
-    "url": "https://github.com/hrsh7th/vim-vsnip",
-    "clean_name": "vim-vsnip",
-    "config_file": "vim-vsnip.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

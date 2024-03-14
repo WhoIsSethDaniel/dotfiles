@@ -1,5 +1,6 @@
 -- https://github.com/hrsh7th/nvim-cmp
 -- https://github.com/nvim-lua/kickstart.nvim/blob/b529bc33590cbb81a5916408b2d6001a643e596c/init.lua#L619
+-- for snippets, perhaps: https://github.com/rafamadriz/friendly-snippets
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 

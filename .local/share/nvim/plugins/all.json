@@ -179,6 +179,15 @@
     "enabled": true,
     "frozen": false
   },
+  "gx.nvim": {
+    "name": "gx.nvim",
+    "url": "https://github.com/chrishrb/gx.nvim",
+    "clean_name": "gx-nvim",
+    "config_file": "gx-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "hardtime.nvim": {
     "name": "hardtime.nvim",
     "url": "https://github.com/m4xshen/hardtime.nvim",
@@ -400,15 +409,6 @@
     "url": "https://github.com/stevearc/oil.nvim",
     "clean_name": "oil-nvim",
     "config_file": "oil-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "open-browser.vim": {
-    "name": "open-browser.vim",
-    "url": "https://github.com/tyru/open-browser.vim",
-    "clean_name": "open-browser-vim",
-    "config_file": "open-browser-vim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

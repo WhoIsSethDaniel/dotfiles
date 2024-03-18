@@ -1,4 +1,7 @@
 -- https://github.com/chrishrb/gx.nvim
+
+-- by default neovim sets 'gx' to vim.ui.open()
+vim.keymap.set({ 'n', 'x' }, 'gx', '<cmd>Browse<cr>')
 require('gx').setup {
   open_browser_app = 'xdg-open', -- specify your browser app; default for macOS is "open", Linux "xdg-open" and Windows "powershell.exe"
   -- open_browser_args = { '--background' }, -- specify any arguments, such as --background for macOS' "open".

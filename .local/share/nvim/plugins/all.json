@@ -368,6 +368,15 @@
     "enabled": true,
     "frozen": false
   },
+  "nvim-nio": {
+    "name": "nvim-nio",
+    "url": "https://github.com/nvim-neotest/nvim-nio",
+    "clean_name": "nvim-nio",
+    "config_file": "nvim-nio.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "nvim-treesitter": {
     "name": "nvim-treesitter",
     "url": "https://github.com/nvim-treesitter/nvim-treesitter",

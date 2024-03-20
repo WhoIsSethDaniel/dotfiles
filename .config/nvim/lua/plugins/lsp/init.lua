@@ -134,7 +134,7 @@ function M.setup()
           'dprint',
           'editorconfig-checker',
           'glow',
-          { 'golangci-lint', version = 'v1.56.2' },
+          'golangci-lint',
           'golines',
           'gomodifytags',
           'gopls',

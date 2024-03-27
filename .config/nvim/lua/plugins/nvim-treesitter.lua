@@ -34,6 +34,22 @@ vim.api.nvim_create_autocmd('BufRead', {
             ['if'] = '@function.inner',
           },
         },
+        move = {
+          enable = true,
+          set_jumps = true,
+          goto_next_start = {
+            [']]'] = '@function.outer',
+          },
+          goto_next_end = {
+            [']['] = '@function.outer',
+          },
+          goto_previous_start = {
+            ['[['] = '@function.outer',
+          },
+          goto_previous_end = {
+            ['[]'] = '@function.outer',
+          },
+        },
       },
     }
   end,

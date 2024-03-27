@@ -9,8 +9,7 @@ return {
       enableProgress = true,
       perlcriticProfile = '$workspaceFolder/.perlcriticrc',
       perltidyProfile = '$workspaceFolder/.perltidyallrc',
-      perlimportsProfile = 'does-not-exist',
-      logging = true,
+      -- logging = true,
     },
   },
   on_new_config = function(new_config, new_root)

@@ -1,6 +1,8 @@
 -- https://github.com/hrsh7th/nvim-cmp
+-- https://www.reddit.com/r/neovim/comments/1bojtr0/please_share_your_nvimcmp_config/
+-- * many examples of cmp being configured
 -- https://github.com/nvim-lua/kickstart.nvim/blob/b529bc33590cbb81a5916408b2d6001a643e596c/init.lua#L619
--- for snippets, perhaps: https://github.com/rafamadriz/friendly-snippets
+-- * for snippets, perhaps: https://github.com/rafamadriz/friendly-snippets
 local cmp = require 'cmp'
 local luasnip = require 'luasnip'
 
@@ -30,8 +32,8 @@ cmp.setup {
     end,
   },
   window = {
-    completion = { border = 'rounded' },
-    documentation = { border = 'rounded' },
+    completion = cmp.config.window.bordered { border = 'rounded' },
+    documentation = cmp.config.window.bordered { border = 'rounded' },
   },
   snippet = {
     expand = function(args)
@@ -57,6 +59,7 @@ cmp.setup {
   },
   experimental = {
     ghost_text = true,
+    native_menu = false,
   },
 }
 

@@ -557,15 +557,6 @@
     "enabled": true,
     "frozen": false
   },
-  "vim-fugitive": {
-    "name": "vim-fugitive",
-    "url": "https://github.com/tpope/vim-fugitive",
-    "clean_name": "vim-fugitive",
-    "config_file": "vim-fugitive.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "vim-matchup": {
     "name": "vim-matchup",
     "url": "https://github.com/andymass/vim-matchup",

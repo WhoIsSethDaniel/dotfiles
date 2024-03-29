@@ -377,6 +377,15 @@
     "enabled": true,
     "frozen": false
   },
+  "nvim-spider": {
+    "name": "nvim-spider",
+    "url": "https://github.com/chrisgrieser/nvim-spider",
+    "clean_name": "nvim-spider",
+    "config_file": "nvim-spider.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "nvim-treesitter": {
     "name": "nvim-treesitter",
     "url": "https://github.com/nvim-treesitter/nvim-treesitter",

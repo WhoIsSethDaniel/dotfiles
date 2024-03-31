@@ -49,6 +49,9 @@ cmp.setup {
   preselect = cmp.PreselectMode.None,
   view = {
     -- entries = 'native',
+    entries = {
+      follow_cursor = true,
+    },
   },
   experimental = {
     ghost_text = true,

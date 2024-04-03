@@ -431,15 +431,6 @@
     "enabled": true,
     "frozen": false
   },
-  "output-panel.nvim": {
-    "name": "output-panel.nvim",
-    "url": "https://github.com/mhanberg/output-panel.nvim",
-    "clean_name": "output-panel-nvim",
-    "config_file": "output-panel-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "plenary.nvim": {
     "name": "plenary.nvim",
     "url": "https://github.com/nvim-lua/plenary.nvim",

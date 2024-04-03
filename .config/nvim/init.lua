@@ -133,7 +133,7 @@ vim.opt.history = 10000
 -- vim.opt.directory = vim.env.XDG_DATA_HOME .. '/nvim/swap//'
 -- disable swap
 vim.opt.directory = ''
-vim.opt.backupdir = vim.env.XDG_DATA_HOME .. '/nvim/backup'
+-- vim.opt.backupdir = vim.env.XDG_DATA_HOME .. '/nvim/backup'
 
 -- typing
 vim.opt.ttimeout = true

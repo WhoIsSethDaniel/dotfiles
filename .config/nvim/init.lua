@@ -61,7 +61,7 @@ vim.opt.path = { ',', '**' }
 -- use spaces when tab used at front of line
 -- vim.opt.smarttab = true
 --
--- vim.opt.softtabstop = true
+-- vim.opt.softtabstop = 4
 
 -- autoformatting (gw/gq)
 vim.opt.textwidth = 120
@@ -123,7 +123,7 @@ vim.opt.numberwidth = 4
 
 -- undo
 vim.opt.undofile = true
-vim.opt.undodir = vim.env.XDG_DATA_HOME .. '/nvim/undo'
+-- vim.opt.undodir = vim.env.XDG_DATA_HOME .. '/nvim/undo'
 -- reduce from default (1000)
 vim.opt.undolevels = 500
 -- cannot be larger than 10000

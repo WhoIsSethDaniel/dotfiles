@@ -1,13 +1,4 @@
 {
-  "Comment.nvim": {
-    "name": "Comment.nvim",
-    "url": "https://github.com/numToStr/Comment.nvim",
-    "clean_name": "Comment-nvim",
-    "config_file": "Comment-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "LuaSnip": {
     "name": "LuaSnip",
     "url": "https://github.com/L3MON4D3/LuaSnip",

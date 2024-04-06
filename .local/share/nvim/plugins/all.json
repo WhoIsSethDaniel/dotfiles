@@ -5,7 +5,7 @@
     "clean_name": "Comment-nvim",
     "config_file": "Comment-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "LuaSnip": {

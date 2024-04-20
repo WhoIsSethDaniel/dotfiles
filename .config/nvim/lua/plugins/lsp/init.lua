@@ -44,7 +44,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       end)
     end
     if client.server_capabilities.inlayHintProvider and not vim.tbl_contains(no_inlay_hints, client.name) then
-      vim.lsp.inlay_hint.enable(bufnr, true)
+      vim.lsp.inlay_hint.enable(true)
     end
 
     local function dump_caps()

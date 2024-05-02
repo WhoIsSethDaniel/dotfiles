@@ -188,15 +188,6 @@
     "enabled": true,
     "frozen": false
   },
-  "hybrid.nvim": {
-    "name": "hybrid.nvim",
-    "url": "https://github.com/HoNamDuong/hybrid.nvim",
-    "clean_name": "hybrid-nvim",
-    "config_file": "hybrid-nvim.lua",
-    "colorscheme": true,
-    "enabled": false,
-    "frozen": false
-  },
   "leap.nvim": {
     "name": "leap.nvim",
     "url": "https://github.com/ggandor/leap.nvim",
@@ -483,15 +474,6 @@
     "config_file": "repossession-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
-  },
-  "rose-pine": {
-    "name": "rose-pine",
-    "url": "https://github.com/rose-pine/neovim",
-    "clean_name": "rose-pine",
-    "config_file": "rose-pine.lua",
-    "colorscheme": true,
-    "enabled": false,
     "frozen": false
   },
   "telescope-fzf-native.nvim": {

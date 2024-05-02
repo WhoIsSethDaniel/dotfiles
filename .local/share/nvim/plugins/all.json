@@ -284,6 +284,15 @@
     "clean_name": "neotest-go",
     "config_file": "neotest-go.lua",
     "colorscheme": false,
+    "enabled": false,
+    "frozen": false
+  },
+  "neotest-golang": {
+    "name": "neotest-golang",
+    "url": "https://github.com/fredrikaverpil/neotest-golang",
+    "clean_name": "neotest-golang",
+    "config_file": "neotest-golang.lua",
+    "colorscheme": false,
     "enabled": true,
     "frozen": false
   },

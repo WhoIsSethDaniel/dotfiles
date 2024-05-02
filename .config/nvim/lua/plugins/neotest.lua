@@ -1,3 +1,6 @@
+-- https://github.com/nvim-neotest/neotest
+-- https://github.com/nvim-neotest/neotest-go
+-- https://github.com/fredrikaverpil/neotest-golang
 local neotest = require 'neotest'
 local neotest_ns = vim.api.nvim_create_namespace 'neotest'
 vim.diagnostic.config({
@@ -12,7 +15,8 @@ vim.diagnostic.config({
 ---@diagnostic disable-next-line:missing-fields
 neotest.setup {
   adapters = {
-    require 'neotest-go',
+    -- require 'neotest-go',
+    require 'neotest-golang',
   },
   output_panel = {
     enabled = true,

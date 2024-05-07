@@ -476,15 +476,6 @@
     "enabled": true,
     "frozen": false
   },
-  "telescope-fzf-native.nvim": {
-    "name": "telescope-fzf-native.nvim",
-    "url": "https://github.com/nvim-telescope/telescope-fzf-native.nvim",
-    "clean_name": "telescope-fzf-native-nvim",
-    "config_file": "telescope-fzf-native-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "telescope-ui-select.nvim": {
     "name": "telescope-ui-select.nvim",
     "url": "https://github.com/nvim-telescope/telescope-ui-select.nvim",

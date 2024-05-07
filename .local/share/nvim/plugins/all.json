@@ -494,6 +494,15 @@
     "enabled": true,
     "frozen": false
   },
+  "telescope-zf-native.nvim": {
+    "name": "telescope-zf-native.nvim",
+    "url": "https://github.com/natecraddock/telescope-zf-native.nvim",
+    "clean_name": "telescope-zf-native-nvim",
+    "config_file": "telescope-zf-native-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "telescope.nvim": {
     "name": "telescope.nvim",
     "url": "https://github.com/nvim-telescope/telescope.nvim",

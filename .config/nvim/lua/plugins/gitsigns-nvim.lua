@@ -43,6 +43,13 @@ require('gitsigns').setup {
     col = 1,
   },
   on_attach = function(bufnr)
-    vim.keymap.set('n', '<leader>gp', '<cmd>Gitsigns preview_hunk_inline<cr>', { buffer = bufnr })
+    local function map(mode, lhs, rhs, opts)
+      opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
+      vim.keymap.set(mode, lhs, rhs, opts)
+    end
+
+    map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk_inline<cr>', { buffer = bufnr })
+    map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true, buffer = bufnr })
+    map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true, buffer = bufnr })
   end,
 }

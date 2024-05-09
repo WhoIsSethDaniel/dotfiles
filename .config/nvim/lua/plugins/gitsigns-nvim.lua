@@ -1,5 +1,6 @@
 -- https://github.com/lewis6991/gitsigns.nvim
-require('gitsigns').setup {
+local gitsigns = require 'gitsigns'
+gitsigns.setup {
   signs = {
     add = { text = '│' },
     change = { text = '│' },
@@ -43,13 +44,27 @@ require('gitsigns').setup {
     col = 1,
   },
   on_attach = function(bufnr)
-    local function map(mode, lhs, rhs, opts)
-      opts = vim.tbl_extend('force', { noremap = true, silent = true }, opts or {})
-      vim.keymap.set(mode, lhs, rhs, opts)
+    local function map(mode, l, r, opts)
+      opts = opts or {}
+      opts.buffer = bufnr
+      vim.keymap.set(mode, l, r, opts)
     end
 
-    map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk_inline<cr>', { buffer = bufnr })
-    map('n', ']c', "&diff ? ']c' : '<cmd>Gitsigns next_hunk<CR>'", { expr = true, buffer = bufnr })
-    map('n', '[c', "&diff ? '[c' : '<cmd>Gitsigns prev_hunk<CR>'", { expr = true, buffer = bufnr })
+    -- Navigation
+    map('n', ']c', function()
+      if vim.wo.diff then
+        vim.cmd.normal { ']c', bang = true }
+      else
+        gitsigns.nav_hunk 'next'
+      end
+    end)
+    map('n', '[c', function()
+      if vim.wo.diff then
+        vim.cmd.normal { '[c', bang = true }
+      else
+        gitsigns.nav_hunk 'prev'
+      end
+    end)
+    map('n', '<leader>gp', '<cmd>Gitsigns preview_hunk_inline<cr>')
   end,
 }

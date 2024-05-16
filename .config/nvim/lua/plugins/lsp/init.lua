@@ -63,7 +63,6 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', 'gr', require('telescope.builtin').lsp_references, opts)
     map('n', '<leader>rn', vim.lsp.buf.rename, opts)
     map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-    map('n', 'K', vim.lsp.buf.hover, opts)
     map('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     if_has_do('conform', function(_)
       map('n', '<leader>cf', require('conform').format, opts)

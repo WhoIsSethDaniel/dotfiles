@@ -187,7 +187,8 @@ vim.opt.scrollback = 100000
 -- vim.api.nvim_command 'command -nargs=* Grep silent! grep! <args> | cwindow | redraw!'
 
 -- color scheme
-vim.opt.termguicolors = true
+-- this should be set to true by default if the host terminal supports it
+-- vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 
 -- configuration for completion
@@ -264,9 +265,6 @@ vim.g.mapleader = ' '
 -- key mappings
 
 local opts = { silent = true, noremap = true }
-vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
-vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
-vim.keymap.set('n', '<leader>dl', vim.diagnostic.open_float, opts)
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
 vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
 vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC<cr>', opts)

@@ -5,7 +5,7 @@ vim.api.nvim_create_autocmd('BufRead', {
     ---@diagnostic disable-next-line:missing-fields
     require('nvim-treesitter.configs').setup {
       auto_install = true,
-      ensure_installed = { 'regex' },
+      ensure_installed = { 'regex', 'pod' },
       -- ignore_install = { 'cooklang' },
       autopairs = {
         enable = true,

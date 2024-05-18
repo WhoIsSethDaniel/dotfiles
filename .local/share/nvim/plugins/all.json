@@ -80,15 +80,6 @@
     "enabled": true,
     "frozen": false
   },
-  "cmp-nvim-lsp-document-symbol": {
-    "name": "cmp-nvim-lsp-document-symbol",
-    "url": "https://github.com/hrsh7th/cmp-nvim-lsp-document-symbol",
-    "clean_name": "cmp-nvim-lsp-document-symbol",
-    "config_file": "cmp-nvim-lsp-document-symbol.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "cmp-path": {
     "name": "cmp-path",
     "url": "https://github.com/hrsh7th/cmp-path",
@@ -442,7 +433,7 @@
   },
   "project.nvim": {
     "name": "project.nvim",
-    "url": "https://github.com/ahmedkhalf/project.nvim",
+    "url": "git@github.com:WhoIsSethDaniel/project.nvim",
     "clean_name": "project-nvim",
     "config_file": "project-nvim.lua",
     "colorscheme": false,

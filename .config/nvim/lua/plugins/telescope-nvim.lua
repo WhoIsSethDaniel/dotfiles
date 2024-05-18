@@ -18,6 +18,29 @@ vim.keymap.set('n', '<leader>ff', function()
   }
 end, {})
 
+vim.keymap.set('n', '<leader>ec', function()
+  local dirs = {}
+  local files = {}
+  local cfg = '~/.config/nvim'
+  for name, type in vim.fs.dir(cfg) do
+    if name ~= 'pack' then
+      if type == 'file' then
+        table.insert(files, vim.fs.normalize(vim.fs.joinpath(cfg, name)))
+      end
+      if type == 'directory' then
+        table.insert(dirs, vim.fs.normalize(vim.fs.joinpath(cfg, name)))
+      end
+    end
+  end
+
+  builtin.find_files {
+    find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
+    hidden = true,
+    search_dirs = dirs,
+    search_files = files,
+  }
+end, {})
+
 vim.keymap.set('n', '<leader>fc', function()
   builtin.find_files {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
@@ -46,11 +69,11 @@ vim.keymap.set('n', '<leader>gb', function()
 end, {})
 
 local has_projects, project = load 'projects'
-vim.keymap.set('n', '<leader>pp', function()
-  if has_projects then
+if has_projects then
+  vim.keymap.set('n', '<leader>pp', function()
     project.projects {}
-  end
-end, {})
+  end, {})
+end
 
 vim.api.nvim_create_autocmd('VimEnter', {
   once = true,

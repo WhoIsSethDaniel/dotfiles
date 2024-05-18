@@ -2,8 +2,16 @@
 -- https://github.com/nvim-telescope/telescope-fzy-native.nvim
 -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
 -- https://github.com/natecraddock/telescope-zf-native.nvim
+
+local builtin = require 'telescope.builtin'
+local telescope = require 'telescope'
+
+local load = function(n)
+  return pcall(telescope.load_extension, n)
+end
+
 vim.keymap.set('n', '<leader>ff', function()
-  require('telescope.builtin').find_files {
+  builtin.find_files {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
     search_dirs = { '~' },
@@ -11,40 +19,43 @@ vim.keymap.set('n', '<leader>ff', function()
 end, {})
 
 vim.keymap.set('n', '<leader>fc', function()
-  require('telescope.builtin').find_files {
+  builtin.find_files {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
   }
 end, {})
 
 vim.keymap.set('n', '<leader>gg', function()
-  require('telescope.builtin').live_grep()
+  builtin.live_grep()
 end, {})
 
 vim.keymap.set('n', '<leader>go', function()
-  require('telescope.builtin').live_grep { grep_open_files = true }
+  builtin.live_grep { grep_open_files = true }
 end, {})
 
 vim.keymap.set('n', '<leader>fb', function()
-  require('telescope.builtin').buffers { ignore_current_buffer = true }
+  builtin.buffers { ignore_current_buffer = true }
 end, {})
 
 vim.keymap.set('n', '<leader>fm', function()
-  require('telescope.builtin').oldfiles()
+  builtin.oldfiles()
 end, {})
 
 vim.keymap.set('n', '<leader>gb', function()
-  require('telescope.builtin').git_branches { show_remote_tracking_branches = true }
+  builtin.git_branches { show_remote_tracking_branches = true }
 end, {})
 
+local has_projects, project = load 'projects'
 vim.keymap.set('n', '<leader>pp', function()
-  require('telescope').extensions.projects.projects {}
+  if has_projects then
+    project.projects {}
+  end
 end, {})
 
 vim.api.nvim_create_autocmd('VimEnter', {
   once = true,
   callback = function()
-    require('telescope').setup {
+    telescope.setup {
       defaults = {
         vimgrep_arguments = {
           'rg',
@@ -168,21 +179,11 @@ vim.api.nvim_create_autocmd('VimEnter', {
       },
     }
 
-    local ok, _ = pcall(require, 'repossession')
-    if ok then
-      require('telescope').load_extension 'repossession'
-    end
-    local ok, _ = pcall(require, 'goofball')
-    if ok then
-      require('telescope').load_extension 'goofball'
-    end
-    local ok, _ = pcall(require, 'projects')
-    if ok then
-      require('telescope').load_extension 'projects'
-    end
-    -- require('telescope').load_extension 'fzy_native'
-    -- require('telescope').load_extension 'fzf'
-    require('telescope').load_extension 'zf-native'
-    require('telescope').load_extension 'ui-select'
+    load 'repossession'
+    load 'goofball'
+    load 'projects'
+    load 'fzf'
+    load 'zf-native'
+    load 'ui-select'
   end,
 })

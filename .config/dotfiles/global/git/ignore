@@ -79,7 +79,6 @@
 /.config/mm/
 /.config/mssh/
 /.config/nvim/pack/git-plugins/opt/
-/.config/pcloud/
 /.config/pulse/
 /.config/sound-juicer/
 /.config/systemd/user/default.target.wants/

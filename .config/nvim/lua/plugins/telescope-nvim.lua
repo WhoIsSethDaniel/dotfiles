@@ -19,25 +19,18 @@ vim.keymap.set('n', '<leader>ff', function()
 end, {})
 
 vim.keymap.set('n', '<leader>ec', function()
-  local dirs = {}
-  local files = {}
   local cfg = '~/.config/nvim'
-  for name, type in vim.fs.dir(cfg) do
+  local entries = {}
+  for name, _ in vim.fs.dir(cfg) do
     if name ~= 'pack' then
-      if type == 'file' then
-        table.insert(files, vim.fs.normalize(vim.fs.joinpath(cfg, name)))
-      end
-      if type == 'directory' then
-        table.insert(dirs, vim.fs.normalize(vim.fs.joinpath(cfg, name)))
-      end
+      table.insert(entries, vim.fs.joinpath(cfg, name))
     end
   end
 
   builtin.find_files {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
-    search_dirs = dirs,
-    search_files = files,
+    search_dirs = entries,
   }
 end, {})
 

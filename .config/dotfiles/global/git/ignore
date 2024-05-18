@@ -70,6 +70,7 @@
 /.config/gedit/
 /.config/gh/
 /.config/gnome-*/
+/.config/go/
 /.config/google/
 /.config/google-chrome*/
 /.config/gtk-*/

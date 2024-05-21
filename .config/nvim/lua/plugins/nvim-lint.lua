@@ -21,6 +21,8 @@ mdl.args = {
     end
   end,
 }
+local mdl2 = l.linters['markdownlint-cli2']
+mdl2.args = mdl.args
 
 local sel = l.linters.selene
 -- sel.ignore_exitcode = false
@@ -53,8 +55,7 @@ end)
 l.linters_by_ft = {
   go = { 'golangcilint' },
   lua = { 'selene' },
-  -- markdown = { 'markdownlint-cli2' },
-  markdown = { 'markdownlint' },
+  markdown = { 'markdownlint-cli2' },
   sql = { 'sqlfluff' },
   vim = { 'vint' },
   yaml = { 'yamllint' },

@@ -53,6 +53,7 @@ end)
 l.linters_by_ft = {
   go = { 'golangcilint' },
   lua = { 'selene' },
+  -- markdown = { 'markdownlint-cli2' },
   markdown = { 'markdownlint' },
   sql = { 'sqlfluff' },
   vim = { 'vint' },

@@ -143,6 +143,7 @@ function M.setup()
           'json-to-struct',
           'lua-language-server',
           'markdownlint',
+          'markdownlint-cli2',
           'marksman',
           'perlnavigator',
           'prettier',

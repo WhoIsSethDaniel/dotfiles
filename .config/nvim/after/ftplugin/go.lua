@@ -1,5 +1,3 @@
-local neotest = require 'neotest'
-
 local function cmd(name, f, opts)
   vim.api.nvim_buf_create_user_command(0, name, f, opts or {})
 end
@@ -8,7 +6,7 @@ local function key(mode, lhs, f, opts)
 end
 local run = function(opts)
   return function()
-    neotest.run.run(opts)
+    require('neotest').run.run(opts)
   end
 end
 local bufname = function(flags)
@@ -20,11 +18,13 @@ cmd('GoTestNearest', run())
 cmd('GoTestRun', run(bufname ':p'))
 cmd('GoTestPkg', run(bufname ':p:h'))
 cmd('GoTestSuite', run(vim.fn.getcwd()))
-cmd('GoTestClear', neotest.output_panel.clear)
+cmd('GoTestClear', function()
+  require('neotest').output_panel.clear()
+end)
 
 key('n', '<leader>tp', function()
-  neotest.output_panel.toggle()
+  require('neotest').output_panel.toggle()
 end)
 key('n', '<leader>ts', function()
-  neotest.summary.toggle()
+  require('neotest').summary.toggle()
 end)

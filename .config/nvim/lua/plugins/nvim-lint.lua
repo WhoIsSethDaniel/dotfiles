@@ -8,8 +8,8 @@ vim.api.nvim_create_autocmd({ 'BufWritePost', 'VimEnter', 'BufEnter' }, {
   end,
 })
 
-local mdl = l.linters.markdownlint
-mdl.args = {
+local mdl2 = l.linters['markdownlint-cli2']
+mdl2.args = {
   function()
     local conf = vim.fs.find('.markdownlint.jsonc', {
       upward = true,
@@ -21,8 +21,6 @@ mdl.args = {
     end
   end,
 }
-local mdl2 = l.linters['markdownlint-cli2']
-mdl2.args = mdl.args
 
 local sel = l.linters.selene
 -- sel.ignore_exitcode = false

@@ -251,6 +251,15 @@
     "enabled": true,
     "frozen": false
   },
+  "mini-git": {
+    "name": "mini-git",
+    "url": "https://github.com/echasnovski/mini-git",
+    "clean_name": "mini-git",
+    "config_file": "mini-git.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "neotest": {
     "name": "neotest",
     "url": "https://github.com/nvim-neotest/neotest",

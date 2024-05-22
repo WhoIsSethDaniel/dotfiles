@@ -66,5 +66,4 @@ require('lualine').setup {
     lualine_y = { 'branch' },
     lualine_z = { { 'filename', path = 1 } },
   },
-  extensions = { 'fugitive' },
 }

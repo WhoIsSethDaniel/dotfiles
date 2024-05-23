@@ -312,7 +312,7 @@ vim.filetype.add {
 }
 
 -- lots of deprecation messages just after 0.10 release.
--- vim.deprecate = function() end
+vim.deprecate = function() end
 
 -- autocommands
 require 'autocmd'

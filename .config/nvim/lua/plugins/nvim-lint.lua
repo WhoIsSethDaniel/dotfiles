@@ -1,6 +1,8 @@
 -- https://github.com/mfussenegger/nvim-lint
 local l = require 'lint'
 
+-- don't use VimEnter for try_lint as this monkeys-up the terminal checks for the
+-- osc52 provider; use BufReadPost instead.
 vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'BufEnter' }, {
   pattern = { '*' },
   callback = function()

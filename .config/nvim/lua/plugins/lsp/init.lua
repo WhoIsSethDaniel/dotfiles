@@ -73,8 +73,11 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 function M.get_config(server)
   local config = load_lsp_file(server)
   local cap = vim.lsp.protocol.make_client_capabilities()
-  cap = require('cmp_nvim_lsp').default_capabilities(cap)
-  config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
+  local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
+  if has_cmp_nvim_lsp then
+    cap = cmp_nvim_lsp.default_capabilities(cap)
+    config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
+  end
   return config
 end
 

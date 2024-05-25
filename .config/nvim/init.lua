@@ -311,7 +311,7 @@ vim.filetype.add {
   },
 }
 
--- lots of deprecation messages just after 0.10 release.
+-- lots of deprecation messages following 0.10 release.
 vim.deprecate = function() end
 
 -- autocommands

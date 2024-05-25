@@ -288,8 +288,8 @@ vim.api.nvim_command [[ command! -nargs=0 LoadAll :args `fdfind --type f --exclu
 -- filetypes
 vim.filetype.add {
   extension = {
-    gohtml = 'gohtmltmpl',
-    gotoml = 'gotexttmpl',
+    gohtml = 'gotmpl',
+    gotoml = 'gotmpl',
   },
   pattern = {
     ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },

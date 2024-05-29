@@ -1,13 +1,22 @@
 -- https://github.com/hrsh7th/nvim-cmp
+-- https://github.com/L3MON4D3/LuaSnip
+-- https://github.com/garymjr/nvim-snippets
 -- https://www.reddit.com/r/neovim/comments/1bojtr0/please_share_your_nvimcmp_config/
 -- * many examples of cmp being configured
+-- https://github.com/LazyVim/LazyVim/blob/fba06ce9f522b91be8a342f9c028948c2733132d/lua/lazyvim/plugins/coding.lua
+-- * lazyvim cmp config
 -- https://github.com/nvim-lua/kickstart.nvim/blob/b529bc33590cbb81a5916408b2d6001a643e596c/init.lua#L619
 -- * for snippets, perhaps: https://github.com/rafamadriz/friendly-snippets
 local cmp = require 'cmp'
-local luasnip = require 'luasnip'
+local snippets = require 'snippets'
+-- local luasnip = require 'luasnip'
 
-luasnip.config.setup {}
+snippets.setup {}
+-- luasnip.config.setup {}
 cmp.setup {
+  completion = {
+    completeopt = 'menu,menuone,noinsert',
+  },
   formatting = {
     format = require('lspkind').cmp_format {
       mode = 'symbol_text', -- show only symbol annotations
@@ -28,11 +37,12 @@ cmp.setup {
     completion = cmp.config.window.bordered { border = 'rounded' },
     documentation = cmp.config.window.bordered { border = 'rounded' },
   },
-  snippet = {
-    expand = function(args)
-      luasnip.lsp_expand(args.body)
-    end,
-  },
+  -- uses built-in vim.snippet.expand() by default
+  -- snippet = {
+  -- expand = function(args)
+  --   luasnip.lsp_expand(args.body)
+  -- end,
+  -- },
   mapping = cmp.mapping.preset.insert {
     ['<CR>'] = cmp.mapping.confirm { select = false },
   },
@@ -43,7 +53,7 @@ cmp.setup {
     { name = 'calc', priority = 4 },
     { name = 'nvim_lua', priority = 9 },
     { name = 'nvim_lsp', priority = 9 },
-    { name = 'luasnip', priority = 8 },
+    { name = 'snippets', priority = 8 },
   },
   -- preselect = cmp.PreselectMode.Item,
   preselect = cmp.PreselectMode.None,
@@ -54,7 +64,9 @@ cmp.setup {
     },
   },
   experimental = {
-    ghost_text = true,
+    ghost_text = {
+      hl_group = 'CmpGhostText',
+    },
     native_menu = false,
   },
 }

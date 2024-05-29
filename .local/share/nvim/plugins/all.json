@@ -1,13 +1,4 @@
 {
-  "LuaSnip": {
-    "name": "LuaSnip",
-    "url": "https://github.com/L3MON4D3/LuaSnip",
-    "clean_name": "LuaSnip",
-    "config_file": "LuaSnip.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "bigfile.nvim": {
     "name": "bigfile.nvim",
     "url": "https://github.com/LunarVim/bigfile.nvim",
@@ -364,6 +355,15 @@
     "url": "https://github.com/nvim-neotest/nvim-nio",
     "clean_name": "nvim-nio",
     "config_file": "nvim-nio.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "nvim-snippets": {
+    "name": "nvim-snippets",
+    "url": "https://github.com/garymjr/nvim-snippets",
+    "clean_name": "nvim-snippets",
+    "config_file": "nvim-snippets.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

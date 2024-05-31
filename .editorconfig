@@ -42,3 +42,9 @@ tab_width = 4
 
 [*.sql]
 tab_width = 4
+
+[*.txt]
+indent_style = tab
+
+[*.csv]
+indent_style = tab

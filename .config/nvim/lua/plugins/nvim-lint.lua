@@ -38,7 +38,8 @@ table.insert(sel.args, 1, function()
 end)
 
 local sf = l.linters.sqlfluff
-table.insert(sf.args, 2, '--dialect=postgres')
+table.remove(sf.args)
+table.insert(sf.args, '--dialect=postgres')
 
 local yl = l.linters.yamllint
 table.insert(yl.args, 1, function()

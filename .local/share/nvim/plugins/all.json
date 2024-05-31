@@ -80,15 +80,6 @@
     "enabled": true,
     "frozen": false
   },
-  "cmp_luasnip": {
-    "name": "cmp_luasnip",
-    "url": "https://github.com/saadparwaiz1/cmp_luasnip",
-    "clean_name": "cmp_luasnip",
-    "config_file": "cmp_luasnip.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "colorful-winsep.nvim": {
     "name": "colorful-winsep.nvim",
     "url": "https://github.com/nvim-zh/colorful-winsep.nvim",

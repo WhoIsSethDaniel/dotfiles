@@ -9,10 +9,8 @@
 -- * for snippets, perhaps: https://github.com/rafamadriz/friendly-snippets
 local cmp = require 'cmp'
 local snippets = require 'snippets'
--- local luasnip = require 'luasnip'
 
 snippets.setup {}
--- luasnip.config.setup {}
 cmp.setup {
   completion = {
     completeopt = 'menu,menuone,noinsert',

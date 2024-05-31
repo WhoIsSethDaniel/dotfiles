@@ -7,6 +7,7 @@ trim_trailing_whitespace = true
 max_line_length = 140
 insert_final_newline = true
 tab_width = 4
+indent_style = space
 
 [*.sh]
 indent_style = space

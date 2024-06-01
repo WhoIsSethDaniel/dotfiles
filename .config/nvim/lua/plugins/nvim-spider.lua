@@ -1,6 +1,6 @@
 -- https://github.com/chrisgrieser/nvim-spider
 require('spider').setup {
-  skipInsignificantPunctuation = true,
+  skipInsignificantPunctuation = false,
   subwordMovement = true,
   customPatterns = {}, -- check "Custom Movement Patterns" in the README for details
 }

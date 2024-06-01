@@ -19,10 +19,10 @@ echo
 # echo
 
 # neovim (https://launchpad.net/~neovim-ppa/+archive/ubuntu/unstable)
-echo "neovim"
-sudo add-apt-repository ppa:neovim-ppa/unstable
-sudo add-apt-repository ppa:neovim-ppa/stable
-echo
+# echo "neovim"
+# sudo add-apt-repository ppa:neovim-ppa/unstable
+# sudo add-apt-repository ppa:neovim-ppa/stable
+# echo
 
 # bluetooth updates
 echo "bluetooth codecs"
@@ -50,7 +50,7 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 # install
 sudo apt update
 sudo apt install google-chrome-stable
-sudo apt install neovim
+# sudo apt install neovim
 sudo apt install pulseaudio-modules-bt libldac
 sudo apt install git git-man
 sudo apt install pipewire wireplumber \

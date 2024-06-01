@@ -575,15 +575,6 @@
     "enabled": true,
     "frozen": false
   },
-  "vim-zoom": {
-    "name": "vim-zoom",
-    "url": "https://github.com/dhruvasagar/vim-zoom",
-    "clean_name": "vim-zoom",
-    "config_file": "vim-zoom.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "wiki.vim": {
     "name": "wiki.vim",
     "url": "https://github.com/lervag/wiki.vim",

@@ -1,6 +1,7 @@
 -- https://github.com/nvim-telescope/telescope.nvim
 -- https://github.com/nvim-telescope/telescope-fzy-native.nvim
 -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
+-- https://github.com/nvim-telescope/telescope-ui-select.nvim
 -- https://github.com/natecraddock/telescope-zf-native.nvim
 
 local builtin = require 'telescope.builtin'

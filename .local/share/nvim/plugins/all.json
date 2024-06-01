@@ -251,15 +251,6 @@
     "enabled": true,
     "frozen": false
   },
-  "neotest-go": {
-    "name": "neotest-go",
-    "url": "https://github.com/nvim-neotest/neotest-go",
-    "clean_name": "neotest-go",
-    "config_file": "neotest-go.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "neotest-golang": {
     "name": "neotest-golang",
     "url": "https://github.com/fredrikaverpil/neotest-golang",

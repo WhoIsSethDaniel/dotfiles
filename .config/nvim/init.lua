@@ -98,7 +98,7 @@ vim.opt.belloff = 'all'
 -- q: allow formatting of comments with gq
 -- j: remove comment leader when it makes sense; set by sensible
 -- n: recognize numbered lists; uses formatlistpat
-vim.opt.formatoptions = 'tcrqjn'
+vim.opt.formatoptions = 'tcrqjno'
 
 -- 'enhanced' command-line completion (sensible turns this on)
 -- [not needed or used when using cmp-cmdline]

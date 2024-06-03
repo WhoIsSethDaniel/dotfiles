@@ -42,7 +42,16 @@ cmp.setup {
   -- end,
   -- },
   mapping = cmp.mapping.preset.insert {
-    ['<CR>'] = cmp.mapping.confirm { select = false },
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Insert,
+      select = false,
+    },
+    ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
+    ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
+    ['<C-b>'] = cmp.mapping.scroll_docs(-5),
+    ['<C-f>'] = cmp.mapping.scroll_docs(5),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-q>'] = cmp.mapping.abort(),
   },
   sources = cmp.config.sources {
     { name = 'buffer', priority = 7, keyword_length = 4 },

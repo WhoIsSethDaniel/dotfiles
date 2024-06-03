@@ -73,7 +73,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- now 'gra' in >= 0.10
     -- map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
     -- now 'grr' in >= 0.10
-    -- map('n', '<leader>ca', vim.lsp.buf.references, opts)
+    -- map('n', '<leader>cr', vim.lsp.buf.references, opts)
     -- now 'C-S' in insert mode in >= 0.10
     -- map('n', '<C-k>', vim.lsp.buf.signature_help, opts)
     if_has_do('conform', function(_)

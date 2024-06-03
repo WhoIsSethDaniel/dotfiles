@@ -71,6 +71,7 @@ c.setup {
     lua = { 'stylua' },
     markdown = { 'prettier', 'injected' },
     -- perl = { 'perltidy', 'perlimports' },
+    query = { 'format-queries' },
     sh = { 'shfmt', 'shellharden' },
     toml = { 'dprint' },
     yaml = { 'prettier' },

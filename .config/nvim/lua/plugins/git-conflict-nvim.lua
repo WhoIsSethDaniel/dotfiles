@@ -11,10 +11,11 @@ require('git-conflict').setup {
   debug = false,
 }
 
--- these are all the default maps
-vim.keymap.set('n', 'co', '<Plug>(git-conflict-ours)')
-vim.keymap.set('n', 'ct', '<Plug>(git-conflict-theirs)')
-vim.keymap.set('n', 'cb', '<Plug>(git-conflict-both)')
-vim.keymap.set('n', 'c0', '<Plug>(git-conflict-none)')
+-- use <leader> for these instead of just 'c'. Using 'c' causes a delay
+-- when using 'c' for change[motion] operations.
+vim.keymap.set('n', '<leader>co', '<Plug>(git-conflict-ours)')
+vim.keymap.set('n', '<leader>ct', '<Plug>(git-conflict-theirs)')
+vim.keymap.set('n', '<leader>cb', '<Plug>(git-conflict-both)')
+vim.keymap.set('n', '<leader>c0', '<Plug>(git-conflict-none)')
 vim.keymap.set('n', ']x', '<Plug>(git-conflict-prev-conflict)')
 vim.keymap.set('n', '[x', '<Plug>(git-conflict-next-conflict)')

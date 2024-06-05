@@ -150,7 +150,6 @@ vim.opt.cursorline = true
 
 -- Modelines are needed when setting ft=help for plugin help files.
 -- See section below re: setting filetype for plugin help files.
--- Currently this is turned on locally via an auto command.
 vim.opt.modeline = false
 -- default is 5 -- ignored if 'modeline' is false
 -- vim.opt.modelines = 1
@@ -287,10 +286,6 @@ vim.api.nvim_command [[ command! -nargs=0 LoadAll :args `fdfind --type f --exclu
 
 -- filetypes
 vim.filetype.add {
-  extension = {
-    gohtml = 'gotmpl',
-    gotoml = 'gotmpl',
-  },
   pattern = {
     ['.*/ssh/config'] = { 'sshconfig', { priority = -math.huge } },
     -- see 'modeline' and 'modelines' setting above. If 'modelines'

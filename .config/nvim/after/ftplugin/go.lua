@@ -31,3 +31,10 @@ if ok then
     neotest.summary.toggle()
   end)
 end
+
+vim.filetype.add {
+  extension = {
+    gohtml = 'gotmpl',
+    gotoml = 'gotmpl',
+  },
+}

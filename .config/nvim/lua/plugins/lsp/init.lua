@@ -43,7 +43,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local bufnr = args.buf
     local client_id = args.data.client_id
     local client = vim.lsp.get_client_by_id(client_id)
-    print(client.name .. ' (attached)')
+    vim.notify(client.name .. ' (attached)', vim.log.levels.INFO)
 
     if client.server_capabilities.documentSymbolProvider then
       if_has_do('nvim-navic', function(m)
@@ -133,7 +133,7 @@ function M.setup()
             elseif not vim.tbl_contains(disabled_lsp_servers, server) then
               lspconf[server].setup(M.get_config(server))
               vim.schedule(function()
-                print(server .. ' (mason)')
+                vim.notify(server .. ' (mason)', vim.log.levels.INFO)
               end)
             end
           end,
@@ -155,7 +155,8 @@ function M.setup()
           'gotests',
           'gotestsum',
           'impl',
-          'json-to-struct',
+          -- borked
+          -- 'json-to-struct',
           'lua-language-server',
           'markdownlint-cli2',
           'marksman',
@@ -195,7 +196,7 @@ function M.setup()
   for _, server in ipairs(manual_config_lsp) do
     lspconf[server].setup(M.get_config(server))
     vim.schedule(function()
-      print(server .. ' (manual)')
+      vim.notify(server .. ' (manual)', vim.log.levels.INFO)
     end)
   end
 end

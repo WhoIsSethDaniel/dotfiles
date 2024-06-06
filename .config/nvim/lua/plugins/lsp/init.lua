@@ -22,6 +22,12 @@ local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = {}
 local manual_config_lsp = {}
 
+local notify = function(msg)
+  vim.schedule(function()
+    vim.notify(msg, vim.log.levels.INFO)
+  end)
+end
+
 local if_has_do = function(module, f)
   local ok, m = pcall(require, module)
   if ok then
@@ -38,12 +44,19 @@ local load_lsp_file = function(f)
   return config
 end
 
+vim.api.nvim_create_autocmd({ 'LspDetach' }, {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    notify(client.name .. ' (unattached)')
+  end,
+})
+
 vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   callback = function(args)
     local bufnr = args.buf
     local client_id = args.data.client_id
     local client = vim.lsp.get_client_by_id(client_id)
-    vim.notify(client.name .. ' (attached)', vim.log.levels.INFO)
+    notify(client.name .. ' (attached)')
 
     if client.server_capabilities.documentSymbolProvider then
       if_has_do('nvim-navic', function(m)
@@ -132,9 +145,7 @@ function M.setup()
               load_lsp_file 'diagnosticls'
             elseif not vim.tbl_contains(disabled_lsp_servers, server) then
               lspconf[server].setup(M.get_config(server))
-              vim.schedule(function()
-                vim.notify(server .. ' (mason)', vim.log.levels.INFO)
-              end)
+              notify(server .. ' (mason)')
             end
           end,
         },
@@ -194,9 +205,7 @@ function M.setup()
 
   for _, server in ipairs(manual_config_lsp) do
     lspconf[server].setup(M.get_config(server))
-    vim.schedule(function()
-      vim.notify(server .. ' (manual)', vim.log.levels.INFO)
-    end)
+    notify(server .. ' (manual)')
   end
 end
 

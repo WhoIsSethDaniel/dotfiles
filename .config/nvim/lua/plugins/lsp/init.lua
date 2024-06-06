@@ -155,8 +155,7 @@ function M.setup()
           'gotests',
           'gotestsum',
           'impl',
-          -- borked
-          -- 'json-to-struct',
+          'json-to-struct',
           'lua-language-server',
           'markdownlint-cli2',
           'marksman',

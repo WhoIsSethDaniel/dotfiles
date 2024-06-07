@@ -64,7 +64,7 @@ vim.opt.path = { ',', '**' }
 -- vim.opt.softtabstop = 4
 
 -- autoformatting (gw/gq)
-vim.opt.textwidth = 120
+-- vim.opt.textwidth = 120
 -- END editorconfig
 
 -- only add one space when joining

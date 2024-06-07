@@ -7,7 +7,7 @@ require('qf_helper').setup {
     default_options = true,
     max_height = 10,
     min_height = 4,
-    track_location = 'cursor',
+    track_location = true,
   },
   loclist = {
     autoclose = true,
@@ -15,12 +15,11 @@ require('qf_helper').setup {
     default_options = true,
     max_height = 10,
     min_height = 4,
-    track_location = 'cursor',
+    track_location = true,
   },
 }
 
-local opts = { noremap = true, silent = true }
-vim.api.nvim_set_keymap('n', ']q', '<cmd>QNext<cr>', opts)
-vim.api.nvim_set_keymap('n', '[q', '<cmd>QPrev<cr>', opts)
-vim.api.nvim_set_keymap('n', '<leader>cl', '<cmd>QFToggle!<cr>', opts)
-vim.api.nvim_set_keymap('n', '<leader>ll', '<cmd>LLToggle!<cr>', opts)
+vim.keymap.set('n', '<C-n>', '<cmd>QNext<cr>')
+vim.keymap.set('n', '<C-p>', '<cmd>QPrev<cr>')
+vim.keymap.set('n', '<leader>cl', '<cmd>QFToggle!<cr>')
+vim.keymap.set('n', '<leader>ll', '<cmd>LLToggle!<cr>')

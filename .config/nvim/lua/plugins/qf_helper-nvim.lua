@@ -1,3 +1,4 @@
+-- https://github.com/stevearc/qf_helper.nvim
 require('qf_helper').setup {
   prefer_loclist = true,
   sort_lsp_diagnostics = true,

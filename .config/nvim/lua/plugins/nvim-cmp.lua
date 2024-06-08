@@ -44,7 +44,7 @@ cmp.setup {
   mapping = cmp.mapping.preset.insert {
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Insert,
-      select = false,
+      select = true,
     },
     ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
     ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
@@ -63,7 +63,7 @@ cmp.setup {
     { name = 'snippets', priority = 8 },
   },
   -- preselect = cmp.PreselectMode.Item,
-  preselect = cmp.PreselectMode.None,
+  -- preselect = cmp.PreselectMode.None,
   view = {
     -- entries = 'native',
     entries = {

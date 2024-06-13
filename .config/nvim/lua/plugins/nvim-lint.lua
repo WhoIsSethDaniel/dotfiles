@@ -25,7 +25,6 @@ mdl2.args = {
 }
 
 local sel = l.linters.selene
--- sel.ignore_exitcode = false
 table.insert(sel.args, 1, function()
   local conf = vim.fs.find('selene.toml', {
     upward = true,
@@ -53,6 +52,10 @@ table.insert(yl.args, 1, function()
   end
 end)
 
+local golint = l.linters.golangcilint
+golint.ignore_exitcode = false
+table.insert(golint.args, 2, '--issues-exit-code=0')
+
 l.linters_by_ft = {
   go = { 'golangcilint' },
   lua = { 'selene' },
@@ -63,5 +66,10 @@ l.linters_by_ft = {
 }
 
 for ft, _ in pairs(l.linters_by_ft) do
+  -- add 'typos' for all defined filetypes
   table.insert(l.linters_by_ft[ft], 'typos')
+
+  -- for _, linter in ipairs(l.linters_by_ft[ft]) do
+  --   l.linters[linter].ignore_exitcode = false
+  -- end
 end

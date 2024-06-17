@@ -25,6 +25,8 @@ return {
       gofumpt = true,
       usePlaceholders = true,
       semanticTokens = true,
+      -- turn off semantic token strings otherwise it overrides
+      -- ts injections for sql
       noSemanticString = true,
       staticcheck = true,
       hoverKind = 'Structured',

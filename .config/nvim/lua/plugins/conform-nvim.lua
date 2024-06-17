@@ -79,16 +79,16 @@ c.setup {
   format_on_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
     local to = 1000
-    local fb = true
+    local form = 'fallback'
     if not should_format(bufnr, ft) then
       return
     end
     if ft == 'perl' then
       return
     elseif ft == 'go' then
-      fb = 'always'
+      form = 'last'
     end
-    return { timeout_ms = to, lsp_fallback = fb }
+    return { timeout_ms = to, lsp_format = form }
   end,
   format_after_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
@@ -97,7 +97,7 @@ c.setup {
     elseif ft ~= 'perl' then
       return
     end
-    return { timeout_ms = 15000, lsp_fallback = 'always' }
+    return { timeout_ms = 15000, lsp_format = 'prefer' }
   end,
   log_level = vim.log.levels.TRACE,
 }

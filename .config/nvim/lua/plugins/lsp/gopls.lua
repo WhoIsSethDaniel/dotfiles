@@ -25,6 +25,7 @@ return {
       gofumpt = true,
       usePlaceholders = true,
       semanticTokens = true,
+      noSemanticString = true,
       staticcheck = true,
       hoverKind = 'Structured',
       vulncheck = 'Imports',

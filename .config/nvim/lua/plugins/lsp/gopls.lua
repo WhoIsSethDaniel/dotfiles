@@ -1,4 +1,5 @@
 -- https://github.com/golang/tools/blob/master/gopls/doc/settings.md
+-- https://github.com/golang/tools/blob/master/gopls/doc/semantictokens.md
 return {
   -- https://github.com/mvdan/gofumpt/issues/2
   -- https://github.com/mvdan/gofumpt/pull/70
@@ -24,10 +25,11 @@ return {
       ['local'] = '',
       gofumpt = true,
       usePlaceholders = true,
-      semanticTokens = true,
+      -- semanticTokens = true,
       -- turn off semantic token strings when using injections,
-      -- otherwise it overrides ts injections for sql
+      -- otherwise it overrides ts injections for sql (and others)
       -- noSemanticString = true,
+      -- noSemanticNumber = true,
       staticcheck = true,
       hoverKind = 'Structured',
       vulncheck = 'Imports',

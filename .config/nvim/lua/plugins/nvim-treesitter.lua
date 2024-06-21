@@ -5,7 +5,9 @@ vim.api.nvim_create_autocmd('BufRead', {
     ---@diagnostic disable-next-line:missing-fields
     require('nvim-treesitter.configs').setup {
       auto_install = true,
-      ensure_installed = { 'regex', 'pod', 'sql' },
+      -- the comment parser is for comment *tags* such as TODO and FIXME;
+      -- see https://github.com/stsewd/tree-sitter-comment
+      ensure_installed = { 'regex', 'pod', 'sql', 'comment' },
       -- ignore_install = { 'cooklang' },
       autopairs = {
         enable = true,

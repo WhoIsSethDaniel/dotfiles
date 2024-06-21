@@ -81,14 +81,13 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', 'gi', require('telescope.builtin').lsp_implementations, opts)
     map('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opts)
     map('n', 'gr', require('telescope.builtin').lsp_references, opts)
-    -- now 'grn' in >= 0.10
-    -- map('n', '<leader>rn', vim.lsp.buf.rename, opts)
-    -- now 'gra' in >= 0.10
-    -- map('n', '<leader>ca', vim.lsp.buf.code_action, opts)
-    -- now 'grr' in >= 0.10
-    -- map('n', '<leader>cr', vim.lsp.buf.references, opts)
-    -- now 'C-S' in insert mode in >= 0.10
-    -- map('n', '<C-k>', vim.lsp.buf.signature_help, opts)
+    if vim.fn.has 'nvim-0.11.0' == 0 then
+      -- each of these is set by default in 0.11.0; see :h grn
+      map('n', 'grn', vim.lsp.buf.rename, opts)
+      map('n', 'gra', vim.lsp.buf.code_action, opts)
+      map('n', 'grr', vim.lsp.buf.references, opts)
+      map('n', '<C-S>', vim.lsp.buf.signature_help, opts)
+    end
     if_has_do('conform', function(_)
       map('n', '<leader>cf', require('conform').format, opts)
     end)

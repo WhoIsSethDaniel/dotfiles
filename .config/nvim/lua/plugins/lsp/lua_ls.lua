@@ -44,7 +44,7 @@ return {
       },
       runtime = {},
       semantic = {
-        enable = false,
+        enable = true,
       },
       telemetry = {
         enable = false,

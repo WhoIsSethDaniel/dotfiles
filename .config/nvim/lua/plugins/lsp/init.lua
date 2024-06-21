@@ -67,6 +67,9 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       vim.lsp.inlay_hint.enable(true)
     end
 
+    -- turn off semantic tokens from all servers
+    client.server_capabilities.semanticTokensProvider = nil
+
     local function dump_caps()
       print(client.name .. ':')
       print(vim.inspect(client.server_capabilities))

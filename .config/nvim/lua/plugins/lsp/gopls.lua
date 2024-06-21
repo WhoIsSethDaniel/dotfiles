@@ -25,7 +25,7 @@ return {
       ['local'] = '',
       gofumpt = true,
       usePlaceholders = true,
-      -- semanticTokens = true,
+      semanticTokens = false,
       -- turn off semantic token strings when using injections,
       -- otherwise it overrides ts injections for sql (and others)
       -- noSemanticString = true,

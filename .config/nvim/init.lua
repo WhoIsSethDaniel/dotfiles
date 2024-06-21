@@ -266,7 +266,6 @@ vim.g.mapleader = ' '
 local opts = { silent = true, noremap = true }
 vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
 vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
-vim.keymap.set('n', '<leader>ev', ':edit $MYVIMRC<cr>', opts)
 vim.keymap.set('n', '<leader>ch', function()
   local bufs = vim.api.nvim_list_bufs()
   for _, b in ipairs(bufs) do

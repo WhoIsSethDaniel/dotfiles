@@ -34,7 +34,6 @@ return {
         -- use stylua instead
         enable = false,
       },
-      runtime = {},
       hint = {
         enable = true,
         arrayIndex = 'Auto',
@@ -43,12 +42,16 @@ return {
         paramType = false,
         paramName = 'Disable',
       },
-      workspace = {
-        -- maxPreload = 4000,
-        -- preloadFileSize = 150,
+      runtime = {},
+      semantic = {
+        enable = false,
       },
       telemetry = {
         enable = false,
+      },
+      workspace = {
+        -- maxPreload = 4000,
+        -- preloadFileSize = 150,
       },
     },
   },

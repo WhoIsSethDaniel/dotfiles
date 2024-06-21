@@ -80,12 +80,12 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
     map('n', 'gi', require('telescope.builtin').lsp_implementations, opts)
     map('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opts)
-    map('n', 'gr', require('telescope.builtin').lsp_references, opts)
+    map('n', 'grr', require('telescope.builtin').lsp_references, opts)
     if vim.fn.has 'nvim-0.11.0' == 0 then
       -- each of these is set by default in 0.11.0; see :h grn
       map('n', 'grn', vim.lsp.buf.rename, opts)
       map('n', 'gra', vim.lsp.buf.code_action, opts)
-      map('n', 'grr', vim.lsp.buf.references, opts)
+      -- map('n', 'grr', vim.lsp.buf.references, opts)
       map('n', '<C-S>', vim.lsp.buf.signature_help, opts)
     end
     if_has_do('conform', function(_)

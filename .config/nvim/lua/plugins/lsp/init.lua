@@ -69,6 +69,8 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 
     -- turn off semantic tokens from all servers
     client.server_capabilities.semanticTokensProvider = nil
+    -- change priority of semantic tokens; see :h vim.highlight.priorities
+    -- vim.highlight.priorities.semantic_tokens = 95
 
     local function dump_caps()
       print(client.name .. ':')

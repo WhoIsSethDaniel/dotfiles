@@ -7,7 +7,12 @@ vim.api.nvim_create_autocmd('BufRead', {
       auto_install = true,
       -- the comment parser is for comment *tags* such as TODO and FIXME;
       -- see https://github.com/stsewd/tree-sitter-comment
-      ensure_installed = { 'regex', 'pod', 'sql', 'comment' },
+      ensure_installed = {
+        'comment',
+        'pod',
+        'regex',
+        'sql',
+      },
       -- ignore_install = { 'cooklang' },
       autopairs = {
         enable = true,

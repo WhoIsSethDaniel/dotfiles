@@ -67,8 +67,9 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       vim.lsp.inlay_hint.enable(true)
     end
 
-    -- turn off semantic tokens from all servers
-    client.server_capabilities.semanticTokensProvider = nil
+    -- turn off semantic token support
+    -- client.server_capabilities.semanticTokensProvider = nil
+
     -- change priority of semantic tokens; see :h vim.highlight.priorities
     -- vim.highlight.priorities.semantic_tokens = 95
 

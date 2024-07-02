@@ -13,7 +13,7 @@ local snippets = require 'snippets'
 snippets.setup {}
 cmp.setup {
   completion = {
-    completeopt = 'menu,menuone,noinsert',
+    completeopt = 'menu,menuone',
   },
   formatting = {
     format = require('lspkind').cmp_format {
@@ -86,7 +86,14 @@ cmp.setup.cmdline('/', {
 })
 
 cmp.setup.cmdline(':', {
-  mapping = cmp.mapping.preset.cmdline {},
+  mapping = cmp.mapping.preset.cmdline {
+    ['<CR>'] = {
+      c = cmp.mapping.confirm {
+        behavior = cmp.ConfirmBehavior.Insert,
+        select = true,
+      },
+    },
+  },
   sources = cmp.config.sources {
     { name = 'cmdline', keyword_length = 2 },
     { name = 'nvim_lua' },

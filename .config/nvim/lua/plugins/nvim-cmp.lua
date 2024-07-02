@@ -48,8 +48,8 @@ cmp.setup {
     },
     ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior.Select },
     ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior.Select },
-    ['<C-b>'] = cmp.mapping.scroll_docs(-5),
-    ['<C-f>'] = cmp.mapping.scroll_docs(5),
+    ['<C-b>'] = cmp.mapping.select_prev_item { count = 5 },
+    ['<C-f>'] = cmp.mapping.select_next_item { count = 5 },
     ['<C-Space>'] = cmp.mapping.complete(),
     ['<C-q>'] = cmp.mapping.abort(),
   },
@@ -92,6 +92,15 @@ cmp.setup.cmdline(':', {
         behavior = cmp.ConfirmBehavior.Insert,
         select = true,
       },
+    },
+    ['<C-q>'] = {
+      c = cmp.mapping.abort(),
+    },
+    ['<C-b>'] = {
+      c = cmp.mapping.select_prev_item { count = 5 },
+    },
+    ['<C-f>'] = {
+      c = cmp.mapping.select_next_item { count = 5 },
     },
   },
   sources = cmp.config.sources {

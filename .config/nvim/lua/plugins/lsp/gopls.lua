@@ -24,7 +24,7 @@ return {
       -- templateExtensions = { 'gohtml', 'gotoml' },
       ['local'] = '',
       gofumpt = true,
-      usePlaceholders = true,
+      usePlaceholders = false,
       semanticTokens = true,
       -- turn off semantic token strings when using injections,
       -- otherwise it overrides ts injections for sql (and others)

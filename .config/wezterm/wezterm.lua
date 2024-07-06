@@ -1,5 +1,8 @@
 -- https://wezfurlong.org/wezterm/config/lua/config/index.html
 -- https://wezfurlong.org/wezterm/config/lua/keyassignment/index.html
+--
+-- potential annotations solution(s):
+-- https://github.com/wez/wezterm/issues/3132
 local wezterm = require 'wezterm'
 
 return {

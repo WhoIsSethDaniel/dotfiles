@@ -9,6 +9,7 @@ vim.api.nvim_create_autocmd('BufRead', {
       -- see https://github.com/stsewd/tree-sitter-comment
       ensure_installed = {
         'comment',
+        'diff',
         'pod',
         'regex',
         'sql',

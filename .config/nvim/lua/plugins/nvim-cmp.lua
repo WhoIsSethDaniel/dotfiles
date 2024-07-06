@@ -90,7 +90,10 @@ cmp.setup.cmdline(':', {
     ['<CR>'] = {
       c = function(fallback)
         if cmp.visible() and cmp.get_selected_entry() then
-          cmp.confirm { behavior = cmp.ConfirmBehavior.Insert, select = true }
+          cmp.confirm {
+            behavior = cmp.ConfirmBehavior.Insert,
+            select = true,
+          }
           local CR = vim.api.nvim_replace_termcodes('<CR>', true, true, true)
           return vim.api.nvim_feedkeys(CR, 'n', false)
         end

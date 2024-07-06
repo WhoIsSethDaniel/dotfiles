@@ -251,6 +251,15 @@
     "enabled": true,
     "frozen": false
   },
+  "mini.icons": {
+    "name": "mini.icons",
+    "url": "https://github.com/echasnovski/mini.icons",
+    "clean_name": "mini-icons",
+    "config_file": "mini-icons.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "neotest": {
     "name": "neotest",
     "url": "https://github.com/nvim-neotest/neotest",
@@ -391,15 +400,6 @@
     "url": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
     "clean_name": "nvim-treesitter-textobjects",
     "config_file": "nvim-treesitter-textobjects.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-web-devicons": {
-    "name": "nvim-web-devicons",
-    "url": "https://github.com/nvim-tree/nvim-web-devicons",
-    "clean_name": "nvim-web-devicons",
-    "config_file": "nvim-web-devicons.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

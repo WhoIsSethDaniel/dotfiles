@@ -66,10 +66,31 @@ l.linters_by_ft = {
 }
 
 for ft, _ in pairs(l.linters_by_ft) do
-  -- add 'typos' for all defined filetypes
-  table.insert(l.linters_by_ft[ft], 'typos')
+  local linters = l.linters_by_ft[ft]
 
-  -- for _, linter in ipairs(l.linters_by_ft[ft]) do
-  --   l.linters[linter].ignore_exitcode = false
-  -- end
+  -- add 'typos' for all defined filetypes
+  table.insert(linters, 'typos')
+
+  for _, linter in ipairs(linters) do
+    local ns = l.get_namespace(linter)
+
+    if linter == 'golangcilint' then
+      -- for golangcilint prepend the internal linter name to diagnostic message
+      vim.diagnostic.config({
+        virtual_text = {
+          format = function(d)
+            return string.format('%s %s', d.source, d.message)
+          end,
+        },
+      }, ns)
+    else
+      -- prepend linter name to diagnostic message
+      vim.diagnostic.config({
+        virtual_text = { prefix = string.format('%s:', linter) },
+      }, ns)
+    end
+
+    -- do not ignore the exit code
+    -- l.linters[linter].ignore_exitcode = false
+  end
 end

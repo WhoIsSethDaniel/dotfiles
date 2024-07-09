@@ -79,7 +79,7 @@ for ft, _ in pairs(l.linters_by_ft) do
       vim.diagnostic.config({
         virtual_text = {
           format = function(d)
-            return string.format('%s %s', d.source, d.message)
+            return string.format('%s: %s', d.source, d.message)
           end,
         },
       }, ns)

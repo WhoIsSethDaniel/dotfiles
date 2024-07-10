@@ -306,7 +306,9 @@ vim.filetype.add {
 }
 
 -- lots of deprecation messages following 0.10 release.
-vim.deprecate = function() end
+if vim.fn.has 'nvim-0.10.0' == 1 then
+  vim.deprecate = function() end
+end
 
 -- autocommands
 require 'autocmd'

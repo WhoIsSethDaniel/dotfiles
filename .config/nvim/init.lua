@@ -305,8 +305,8 @@ vim.filetype.add {
   },
 }
 
--- lots of deprecation messages following 0.10 release.
-if vim.fn.has 'nvim-0.10.0' == 1 then
+-- lots of deprecation messages in nightly following 0.10 release.
+if vim.fn.has 'nvim-0.11.0' == 1 then
   vim.deprecate = function() end
 end
 

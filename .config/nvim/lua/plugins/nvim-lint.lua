@@ -86,7 +86,9 @@ for ft, _ in pairs(l.linters_by_ft) do
     else
       -- prepend linter name to diagnostic message
       vim.diagnostic.config({
-        virtual_text = { prefix = string.format('%s:', linter) },
+        virtual_text = {
+          prefix = string.format('%s:', linter),
+        },
       }, ns)
     end
 

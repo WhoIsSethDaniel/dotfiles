@@ -20,6 +20,7 @@ local M = {}
 
 local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = {}
+local no_semantic_tokens = { 'gopls', 'lua_ls' }
 local manual_config_lsp = {}
 
 local notify = function(msg)
@@ -58,6 +59,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local client = vim.lsp.get_client_by_id(client_id)
     -- notify(client.name .. ' (attached)')
 
+    -- prefix diagnostics with the name of the client
     local ns = vim.lsp.diagnostic.get_namespace(client_id)
     vim.diagnostic.config({
       virtual_text = {
@@ -70,15 +72,19 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
         m.attach(client, bufnr)
       end)
     end
+
+    -- turn on inlay hints
     if client.server_capabilities.inlayHintProvider and not vim.tbl_contains(no_inlay_hints, client.name) then
       vim.lsp.inlay_hint.enable(true)
     end
 
-    -- turn off semantic token support
-    -- client.server_capabilities.semanticTokensProvider = nil
+    -- turn on semantic token support
+    if client.server_capabilities.semanticTokensProvider and vim.tbl_contains(no_semantic_tokens, client.name) then
+      client.server_capabilities.semanticTokensProvider = nil
+    end
 
-    -- change priority of semantic tokens; see :h vim.highlight.priorities
-    vim.highlight.priorities.semantic_tokens = 95
+    -- change priority of semantic tokens to be less than treesitter; see :h vim.highlight.priorities
+    -- vim.highlight.priorities.semantic_tokens = 95
 
     local function dump_caps()
       print(client.name .. ':')

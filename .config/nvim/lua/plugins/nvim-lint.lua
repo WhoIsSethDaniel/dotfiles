@@ -74,23 +74,16 @@ for ft, _ in pairs(l.linters_by_ft) do
   for _, linter in ipairs(linters) do
     local ns = l.get_namespace(linter)
 
-    if linter == 'golangcilint' then
-      -- for golangcilint prepend the internal linter name to diagnostic message
-      vim.diagnostic.config({
-        virtual_text = {
-          format = function(d)
-            return string.format('%s: %s', d.source, d.message)
-          end,
-        },
-      }, ns)
-    else
-      -- prepend linter name to diagnostic message
-      vim.diagnostic.config({
-        virtual_text = {
-          prefix = string.format('%s:', linter),
-        },
-      }, ns)
-    end
+    -- for golangcilint prepend the internal linter name to diagnostic message;
+    -- otherwise just prepend the name of the linter
+    vim.diagnostic.config({
+      virtual_text = {
+        format = function(d)
+          local name = linter == 'golangcilint' and d.source or linter
+          return string.format('%s: %s', name, d.message)
+        end,
+      },
+    }, ns)
 
     -- do not ignore the exit code
     -- l.linters[linter].ignore_exitcode = false

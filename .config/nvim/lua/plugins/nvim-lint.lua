@@ -78,6 +78,8 @@ for ft, _ in pairs(l.linters_by_ft) do
     -- otherwise just prepend the name of the linter
     vim.diagnostic.config({
       virtual_text = {
+        -- using prefix sometimes causes a doubling up of the client name
+        -- prefix = string.format('%s:', client.name),
         format = function(d)
           local name = linter == 'golangcilint' and d.source or linter
           return string.format('%s: %s', name, d.message)

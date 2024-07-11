@@ -82,7 +82,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       vim.lsp.inlay_hint.enable(true)
     end
 
-    -- turn on semantic token support
+    -- turn off semantic token support
     if client.server_capabilities.semanticTokensProvider and vim.tbl_contains(no_semantic_tokens, client.name) then
       client.server_capabilities.semanticTokensProvider = nil
     end

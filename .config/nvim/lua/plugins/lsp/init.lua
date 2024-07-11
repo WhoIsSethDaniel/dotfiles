@@ -58,6 +58,13 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local client = vim.lsp.get_client_by_id(client_id)
     -- notify(client.name .. ' (attached)')
 
+    local ns = vim.lsp.diagnostic.get_namespace(client_id)
+    vim.diagnostic.config({
+      virtual_text = {
+        prefix = string.format('%s:', client.name),
+      },
+    }, ns)
+
     if client.server_capabilities.documentSymbolProvider then
       if_has_do('nvim-navic', function(m)
         m.attach(client, bufnr)

@@ -63,7 +63,11 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local ns = vim.lsp.diagnostic.get_namespace(client_id)
     vim.diagnostic.config({
       virtual_text = {
-        prefix = string.format('%s:', client.name),
+        -- using prefix sometimes causes a doubling up of the client name
+        -- prefix = string.format('%s:', client.name),
+        format = function(d)
+          return string.format('%s: %s', client.name, d.message)
+        end,
       },
     }, ns)
 

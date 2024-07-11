@@ -142,11 +142,6 @@ function M.setup()
   end
 
   vim.diagnostic.config { severity_sort = true, update_in_insert = true }
-  if_has_do('toggle_lsp_diagnostics', function(m)
-    m.init(vim.diagnostic.config())
-    vim.api.nvim_set_keymap('n', '<leader>td', '<Plug>(toggle-lsp-diag)', { silent = true })
-    -- vim.api.nvim_set_keymap('n', '<leader>tv', '<Plug>(toggle-lsp-diag-vtext)', { silent = true })
-  end)
 
   if_has_do('mason', function(mason)
     mason.setup {

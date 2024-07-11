@@ -494,15 +494,6 @@
     "enabled": true,
     "frozen": false
   },
-  "toggle-lsp-diagnostics.nvim": {
-    "name": "toggle-lsp-diagnostics.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/toggle-lsp-diagnostics.nvim",
-    "clean_name": "toggle-lsp-diagnostics-nvim",
-    "config_file": "toggle-lsp-diagnostics-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "toggleterm.nvim": {
     "name": "toggleterm.nvim",
     "url": "https://github.com/akinsho/toggleterm.nvim",

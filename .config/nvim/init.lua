@@ -262,11 +262,12 @@ vim.g.mapleader = ' '
 -- vim.g.maplocalleader = '\'
 
 -- key mappings
-
 local opts = { silent = true, noremap = true }
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setloclist, opts)
-vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
-vim.keymap.set('n', '<leader>ch', function()
+local map = vim.keymap.set
+map('n', '<leader>dq', vim.diagnostic.setloclist, opts)
+map('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
+-- close any open help window
+map('n', '<leader>ch', function()
   local bufs = vim.api.nvim_list_bufs()
   for _, b in ipairs(bufs) do
     if vim.api.nvim_buf_is_loaded(b) and vim.api.nvim_get_option_value('filetype', { buf = b }) == 'help' then
@@ -274,6 +275,23 @@ vim.keymap.set('n', '<leader>ch', function()
     end
   end
 end, opts)
+-- toggle showing/hiding the diagnostics
+map(
+  'n',
+  '<leader>td',
+  (function()
+    local diag_status = 1 -- 1 is show; 0 is hide
+    return function()
+      if diag_status == 1 then
+        diag_status = 0
+        vim.diagnostic.hide()
+      else
+        diag_status = 1
+        vim.diagnostic.show()
+      end
+    end
+  end)()
+)
 
 -- correctly paste from the * or + register (possibly others too) when using c_<C-R>
 -- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315

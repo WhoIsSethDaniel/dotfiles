@@ -64,6 +64,7 @@ local should_format = function(b, ft)
 end
 
 c.setup {
+  log_level = vim.log.levels.INFO,
   formatters_by_ft = {
     go = { 'golines' },
     gohtmltmpl = { 'prettier' },
@@ -99,5 +100,4 @@ c.setup {
     end
     return { timeout_ms = 15000, lsp_format = 'prefer' }
   end,
-  log_level = vim.log.levels.TRACE,
 }

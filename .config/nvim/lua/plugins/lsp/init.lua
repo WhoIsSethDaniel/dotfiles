@@ -101,6 +101,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     map('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
     map('n', 'gi', require('telescope.builtin').lsp_implementations, opts)
     map('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opts)
+    -- override default grr (which only exists >= 0.11) and use telescope instead
     map('n', 'grr', require('telescope.builtin').lsp_references, opts)
     if vim.fn.has 'nvim-0.11.0' == 0 then
       -- each of these is set by default in 0.11.0; see :h grn

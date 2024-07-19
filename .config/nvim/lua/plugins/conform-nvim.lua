@@ -12,14 +12,15 @@ c.formatters.golines = {
 c.formatters.prettier = function(bufnr)
   local bufname = vim.api.nvim_buf_get_name(bufnr)
   local m = string.match(bufname, '^(.*/work)')
-  local default = require 'conform.formatters.prettier'
   if m then
-    return vim.tbl_deep_extend('force', default, {
-      args = { string.format('--config=%s/mm_website/.prettierrc.non-js.cjs', m), '--stdin-filepath', '$FILENAME' },
+    return {
+      prepend_args = {
+        string.format('--config=%s/mm_website/.prettierrc.non-js.cjs', m),
+      },
       cwd = function()
         return string.format('%s/mm_website', m)
       end,
-    })
+    }
   end
 end
 
@@ -64,7 +65,7 @@ local should_format = function(b, ft)
 end
 
 c.setup {
-  log_level = vim.log.levels.INFO,
+  log_level = vim.log.levels.DEBUG,
   notify_on_error = true,
   notify_no_formatters = true,
   formatters_by_ft = {

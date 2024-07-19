@@ -74,10 +74,12 @@ c.setup {
     json = { 'prettier' },
     lua = { 'stylua' },
     markdown = { 'prettier', 'injected' },
+    -- use perlnavigator
     -- perl = { 'perltidy', 'perlimports' },
     query = { 'format-queries' },
     sh = { 'shfmt', 'shellharden' },
-    toml = { 'dprint' },
+    -- use the dprint language server
+    -- toml = { 'dprint' },
     yaml = { 'prettier' },
   },
   format_on_save = function(bufnr)

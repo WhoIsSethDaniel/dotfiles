@@ -1,15 +1,15 @@
 -- https://github.com/stevearc/conform.nvim
 local c = require 'conform'
 
-require('conform.formatters.shfmt').args = function()
-  return { '-i=4', '-ci', '-s', '-bn' }
-end
+c.formatters.shfmt = {
+  prepend_args = { '-i=4', '-ci', '-s', '-bn' },
+}
 
-require('conform.formatters.golines').args = function()
-  return { '--shorten-comments' }
-end
+c.formatters.golines = {
+  prepend_args = { '--shorten-comments' },
+}
 
-require('conform').formatters.prettier = function(bufnr)
+c.formatters.prettier = function(bufnr)
   local bufname = vim.api.nvim_buf_get_name(bufnr)
   local m = string.match(bufname, '^(.*/work)')
   local default = require 'conform.formatters.prettier'
@@ -65,6 +65,8 @@ end
 
 c.setup {
   log_level = vim.log.levels.INFO,
+  notify_on_error = true,
+  notify_no_formatters = true,
   formatters_by_ft = {
     go = { 'golines' },
     gohtmltmpl = { 'prettier' },

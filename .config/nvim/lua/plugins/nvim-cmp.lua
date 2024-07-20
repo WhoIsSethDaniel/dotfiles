@@ -90,7 +90,7 @@ cmp.setup.cmdline(':', {
     ['<CR>'] = {
       c = function(fallback)
         if cmp.visible() and cmp.get_selected_entry() then
-          cmp.confirm {
+          return cmp.confirm {
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
           }

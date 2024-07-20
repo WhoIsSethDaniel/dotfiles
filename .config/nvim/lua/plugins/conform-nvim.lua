@@ -55,7 +55,12 @@ vim.api.nvim_create_user_command('FormatCtl', function(args)
       end
     end
   end
-end, { nargs = '*' })
+end, {
+  complete = function()
+    return { 'buf', 'ft' }
+  end,
+  nargs = '*',
+})
 
 local should_format = function(b, ft)
   if vim.g.disable_formatting or vim.b[b].disable_formatting or disable_by_type[ft] then

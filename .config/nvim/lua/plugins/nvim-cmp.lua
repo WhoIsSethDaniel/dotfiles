@@ -111,7 +111,7 @@ cmp.setup.cmdline(':', {
     },
   },
   sources = cmp.config.sources {
-    { name = 'cmdline', keyword_length = 2 },
+    { name = 'cmdline', keyword_length = 1 },
     { name = 'nvim_lua' },
     { name = 'path' },
   },

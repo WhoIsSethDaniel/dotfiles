@@ -68,6 +68,9 @@ c.setup {
   log_level = vim.log.levels.DEBUG,
   notify_on_error = true,
   notify_no_formatters = true,
+  default_format_opts = {
+    lsp_format = 'fallback',
+  },
   formatters_by_ft = {
     go = { 'golines' },
     gohtmltmpl = { 'prettier' },
@@ -77,7 +80,7 @@ c.setup {
     -- use perlnavigator
     -- perl = { 'perltidy', 'perlimports' },
     query = { 'format-queries' },
-    sh = { 'shfmt', 'shellharden' },
+    sh = { 'shellharden', lsp_format = 'last' },
     -- use the dprint language server
     -- toml = { 'dprint' },
     yaml = { 'prettier' },
@@ -85,7 +88,7 @@ c.setup {
   format_on_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
     local to = 1000
-    local form = 'fallback'
+    local form
     if not should_format(bufnr, ft) then
       return
     end

@@ -94,8 +94,9 @@ cmp.setup.cmdline(':', {
             behavior = cmp.ConfirmBehavior.Insert,
             select = true,
           }
-          local CR = vim.api.nvim_replace_termcodes('<CR>', true, true, true)
-          return vim.api.nvim_feedkeys(CR, 'n', false)
+          -- submit the command immediately
+          -- local CR = vim.api.nvim_replace_termcodes('<CR>', true, true, true)
+          -- return vim.api.nvim_feedkeys(CR, 'n', false)
         end
         fallback()
       end,

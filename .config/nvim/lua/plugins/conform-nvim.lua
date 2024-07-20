@@ -80,6 +80,7 @@ c.setup {
     -- use perlnavigator
     -- perl = { 'perltidy', 'perlimports' },
     query = { 'format-queries' },
+    -- bashls uses 'shellcheck' for formatting
     sh = { 'shellharden', lsp_format = 'last' },
     -- use the dprint language server
     -- toml = { 'dprint' },

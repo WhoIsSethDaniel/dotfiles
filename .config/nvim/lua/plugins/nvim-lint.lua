@@ -60,6 +60,8 @@ l.linters_by_ft = {
   go = { 'golangcilint' },
   lua = { 'selene' },
   markdown = { 'markdownlint-cli2' },
+  -- perlnavigator runs perlcritic
+  -- perl = { 'perlcritic' },
   -- bashls runs shellcheck
   -- sh = { 'shellcheck' },
   sql = { 'sqlfluff' },

@@ -69,10 +69,11 @@ c.setup {
   notify_on_error = true,
   notify_no_formatters = true,
   default_format_opts = {
+    timeout_ms = 1000,
     lsp_format = 'fallback',
   },
   formatters_by_ft = {
-    go = { 'golines' },
+    go = { 'golines', lsp_format = 'last' },
     gohtmltmpl = { 'prettier' },
     json = { 'prettier' },
     lua = { 'stylua' },
@@ -82,31 +83,23 @@ c.setup {
     query = { 'format-queries' },
     -- bashls uses 'shellcheck' for formatting
     sh = { 'shellharden', lsp_format = 'last' },
-    -- use the dprint language server
-    -- toml = { 'dprint' },
+    -- if the dprint lsp server isn't running try the cli
+    toml = { 'dprint', lsp_format = 'prefer' },
     yaml = { 'prettier' },
   },
   format_on_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
-    local to = 1000
-    local form
-    if not should_format(bufnr, ft) then
-      return
+    if should_format(bufnr, ft) then
+      return {}
     end
-    if ft == 'perl' then
-      return
-    elseif ft == 'go' then
-      form = 'last'
-    end
-    return { timeout_ms = to, lsp_format = form }
   end,
   format_after_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
     if not should_format(bufnr, ft) then
       return
-    elseif ft ~= 'perl' then
-      return
+    elseif ft == 'perl' then
+      return { timeout_ms = 15000, lsp_format = 'prefer' }
     end
-    return { timeout_ms = 15000, lsp_format = 'prefer' }
+    return {}
   end,
 }

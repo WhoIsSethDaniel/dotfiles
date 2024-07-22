@@ -256,6 +256,11 @@ vim.g.loaded_2html_plugin = 1
 vim.g.loaded_tutor_mode_plugin = 1
 -- make certain the matchit plugin is not loaded (per the matchup documentation matchit should not be loaded)
 vim.g.loaded_matchit = 1
+-- turn off un-needed language providers
+vim.g.loaded_ruby_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_node_provider = 0
 
 -- \ is the default
 vim.g.mapleader = ' '

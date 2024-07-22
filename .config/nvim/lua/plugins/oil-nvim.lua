@@ -48,6 +48,7 @@ oil.setup {
     ['_'] = 'actions.open_cwd',
     ['`'] = 'actions.cd',
     ['~'] = 'actions.tcd',
+    ['gs'] = 'actions.change_sort',
     ['g.'] = 'actions.toggle_hidden',
   },
   -- Set to false to disable all of the above keymaps

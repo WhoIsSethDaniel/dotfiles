@@ -56,6 +56,9 @@ local golint = l.linters.golangcilint
 golint.ignore_exitcode = false
 table.insert(golint.args, 2, '--issues-exit-code=0')
 
+local vint = l.linters.vint
+vint.ignore_exitcode = false
+
 l.linters_by_ft = {
   go = { 'golangcilint' },
   lua = { 'selene' },

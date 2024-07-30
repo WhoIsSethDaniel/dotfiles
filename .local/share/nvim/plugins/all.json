@@ -161,15 +161,6 @@
     "enabled": true,
     "frozen": false
   },
-  "injected-highlighter.nvim": {
-    "name": "injected-highlighter.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/injected-highlighter.nvim",
-    "clean_name": "injected-highlighter-nvim",
-    "config_file": "injected-highlighter-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "leap.nvim": {
     "name": "leap.nvim",
     "url": "https://github.com/ggandor/leap.nvim",

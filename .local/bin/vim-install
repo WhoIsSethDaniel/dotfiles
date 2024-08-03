@@ -5,18 +5,18 @@ set -e
 max_old_versions=5
 
 declare -A versions
-eval versions=\("${VIM_VERSIONS}"\)
+eval versions=\("$VIM_VERSIONS"\)
 
 if [[ -z $1 ]]; then
-    echo "must provide an argument"
-    echo "possible args: ${!versions[*]}"
-    exit 1
+        echo "must provide an argument"
+        echo "possible args: ${!versions[*]}"
+        exit 1
 fi
 
 if [[ -z ${versions[*]} ]]; then
-    echo "cannot determine available nvim versions"
-    echo "is VIM_VERSIONS set?"
-    exit 1
+        echo "cannot determine available nvim versions"
+        echo "is VIM_VERSIONS set?"
+        exit 1
 fi
 
 pkg=nvim-linux64.tar.gz
@@ -29,49 +29,50 @@ STORE=$XDG_DATA_HOME"/nvim"
 VERSION=${versions[$1]}
 
 if [[ -z ${VERSION} ]]; then
-    echo "provided version is invalid"
-    exit 1
+        echo "provided version is invalid"
+        exit 1
 fi
 
 rmtmpdir() {
-    [[ -n $tmpdir ]] && rm -rf "$tmpdir"
+        [[ -n $tmpdir ]] && rm -rf "$tmpdir"
 }
 
 tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit 1
-curl -LSo "$SUM_LOCAL_NAME" "${url}${1}/${SUM_NAME}"
+echo "${url}${VERSION}/${SUM_NAME}"
+curl -LSo "$SUM_LOCAL_NAME" "${url}v${VERSION}/${SUM_NAME}"
 
 OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
 if [[ -e $OLD_SUM ]]; then
-    OLD=$(cut -d\  -f1 "${OLD_SUM}")
-    NEW=$(cut -d\  -f1 "${tmpdir}/${SUM_LOCAL_NAME}")
-    echo "old: ${OLD}"
-    echo "new: ${NEW}"
-    if [[ $NEW == "$OLD" ]]; then
-        echo "no update available"
-        exit 0
-    else
-        echo "update available"
-    fi
+        OLD=$(cut -d\  -f1 "$OLD_SUM")
+        NEW=$(cut -d\  -f1 "${tmpdir}/${SUM_LOCAL_NAME}")
+        echo "old: ${OLD}"
+        echo "new: ${NEW}"
+        if [[ $NEW == "$OLD" ]]; then
+                echo "no update available"
+                exit 0
+        else
+                echo "update available"
+        fi
 else
-    echo "no old sum found"
+        echo "no old sum found"
 fi
 
-curl -LSo nvim.tar.gz "${url}${1}/${pkg}"
+curl -LSo nvim.tar.gz "${url}v${VERSION}/${pkg}"
 
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1
 if [[ -e ${VERSION} ]]; then
-    for bak in $(seq $((max_old_versions - 1)) -1 1); do
-        oldest=$((bak + 1))
-        if [[ -e "${VERSION}-${bak}" ]]; then
-            rm -rf "${VERSION}-${oldest}"
-            mv "$VERSION-${bak}" "${VERSION}-${oldest}"
-        fi
-    done
-    mv "$VERSION" "${VERSION}-1"
+        for bak in "$(seq $((max_old_versions - 1)) -1 1)"; do
+                oldest=$((bak + 1))
+                if [[ -e "${VERSION}-${bak}" ]]; then
+                        rm -rf "${VERSION}-${oldest}"
+                        mv "$VERSION-${bak}" "${VERSION}-${oldest}"
+                fi
+        done
+        mv "$VERSION" "${VERSION}-1"
 fi
 
 tar xzf "$tmpdir"/nvim.tar.gz

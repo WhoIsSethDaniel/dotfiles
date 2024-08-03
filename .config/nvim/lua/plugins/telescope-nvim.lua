@@ -94,6 +94,11 @@ vim.api.nvim_create_autocmd('VimEnter', {
         file_ignore_patterns = {},
         generic_sorter = require('telescope.sorters').get_generic_fuzzy_sorter,
         path_display = { 'truncate' },
+        -- path_display = {
+        --   filename_first = {
+        --     reverse_directories = true,
+        --   },
+        -- },
         winblend = 0,
         layout_config = {
           horizontal = { mirror = false },
@@ -196,11 +201,11 @@ vim.api.nvim_create_autocmd('VimEnter', {
       },
     }
 
-    load 'repossession'
+    load 'fzf'
     load 'goofball'
     load 'projects'
-    load 'fzf'
-    load 'zf-native'
     load 'ui-select'
+    load 'repossession'
+    load 'zf-native'
   end,
 })

@@ -3,7 +3,7 @@
 set_pre_path_var PATH "$HOME/.local/nvim/current/bin"
 set_pre_path_var PATH "$HOME/.local/share/nvim/mason/bin"
 
-set_export_var VIM_VERSIONS "[stable]=0.10.0 [nightly]=0.11.0"
+set_export_var VIM_VERSIONS "[stable]=0.10.1 [nightly]=0.11.0"
 
 editor_list="nvim vim vi"
 if [[ -S $NVIM_LISTEN_ADDRESS ]]; then

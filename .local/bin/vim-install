@@ -70,13 +70,13 @@ curl -LSo nvim.tar.gz "${url}${url_version}/${pkg}"
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1
 if [[ -e ${VERSION} ]]; then
-        for bak in $(seq $((max_old_versions - 1)) -1 1); do
+        while read -r bak; do
                 oldest=$((bak + 1))
                 if [[ -e "${VERSION}-${bak}" ]]; then
                         rm -rf "${VERSION}-${oldest}"
                         mv "$VERSION-${bak}" "${VERSION}-${oldest}"
                 fi
-        done
+        done < <(seq $((max_old_versions - 1)) -1 1)
         mv "$VERSION" "${VERSION}-1"
 fi
 

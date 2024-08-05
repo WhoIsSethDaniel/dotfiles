@@ -87,7 +87,7 @@ c.setup {
     -- perl = { 'perltidy', 'perlimports' },
     query = { 'format-queries' },
     -- bashls uses 'shellcheck' for formatting
-    sh = { 'shellharden', lsp_format = 'last' },
+    sh = { lsp_format = 'last' },
     -- if the dprint lsp server isn't running try the cli
     toml = { 'dprint', lsp_format = 'prefer' },
     yaml = { 'prettier' },

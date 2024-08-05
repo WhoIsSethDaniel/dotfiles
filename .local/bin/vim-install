@@ -37,12 +37,17 @@ rmtmpdir() {
         [[ -n $tmpdir ]] && rm -rf "$tmpdir"
 }
 
+if [[ $1 == "nightly" ]]; then
+        url_version="nightly"
+else
+        url_version="v${VERSION}"
+fi
+
 tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit 1
-echo "${url}${VERSION}/${SUM_NAME}"
-curl -LSo "$SUM_LOCAL_NAME" "${url}v${VERSION}/${SUM_NAME}"
+curl -LSo "$SUM_LOCAL_NAME" "${url}${url_version}/${SUM_NAME}"
 
 OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
 if [[ -e $OLD_SUM ]]; then
@@ -60,12 +65,12 @@ else
         echo "no old sum found"
 fi
 
-curl -LSo nvim.tar.gz "${url}v${VERSION}/${pkg}"
+curl -LSo nvim.tar.gz "${url}${url_version}/${pkg}"
 
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1
 if [[ -e ${VERSION} ]]; then
-        for bak in "$(seq $((max_old_versions - 1)) -1 1)"; do
+        for bak in $(seq $((max_old_versions - 1)) -1 1); do
                 oldest=$((bak + 1))
                 if [[ -e "${VERSION}-${bak}" ]]; then
                         rm -rf "${VERSION}-${oldest}"

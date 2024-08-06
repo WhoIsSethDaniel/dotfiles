@@ -206,6 +206,15 @@
     "enabled": true,
     "frozen": false
   },
+  "markview.nvim": {
+    "name": "markview.nvim",
+    "url": "https://github.com/OXY2DEV/markview.nvim",
+    "clean_name": "markview-nvim",
+    "config_file": "markview-nvim.lua",
+    "colorscheme": false,
+    "enabled": false,
+    "frozen": false
+  },
   "mason-lspconfig.nvim": {
     "name": "mason-lspconfig.nvim",
     "url": "https://github.com/williamboman/mason-lspconfig.nvim",
@@ -472,6 +481,15 @@
     "url": "https://github.com/nvim-telescope/telescope.nvim",
     "clean_name": "telescope-nvim",
     "config_file": "telescope-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "tiny-code-action.nvim": {
+    "name": "tiny-code-action.nvim",
+    "url": "https://github.com/rachartier/tiny-code-action.nvim",
+    "clean_name": "tiny-code-action-nvim",
+    "config_file": "tiny-code-action-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

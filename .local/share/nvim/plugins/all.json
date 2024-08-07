@@ -206,15 +206,6 @@
     "enabled": true,
     "frozen": false
   },
-  "markview.nvim": {
-    "name": "markview.nvim",
-    "url": "https://github.com/OXY2DEV/markview.nvim",
-    "clean_name": "markview-nvim",
-    "config_file": "markview-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "mason-lspconfig.nvim": {
     "name": "mason-lspconfig.nvim",
     "url": "https://github.com/williamboman/mason-lspconfig.nvim",

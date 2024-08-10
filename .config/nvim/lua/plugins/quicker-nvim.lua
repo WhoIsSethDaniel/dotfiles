@@ -32,21 +32,21 @@ quicker.setup {
       function()
         require('quicker').expand()
       end,
-      desc = 'Expand quickfix context',
+      desc = 'Expand quickfix list.',
     },
     {
       '<',
       function()
         require('quicker').collapse()
       end,
-      desc = 'Collapse quickfix context',
+      desc = 'Collapse quickfix list.',
     },
     {
       'r',
       function()
         require('quicker').refresh()
       end,
-      desc = 'Refresh quickfix',
+      desc = 'Refresh quickfix.',
     },
   },
   -- Callback function to run any custom logic or keymaps for the quickfix buffer

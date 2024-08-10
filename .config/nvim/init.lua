@@ -269,7 +269,8 @@ vim.g.mapleader = ' '
 -- key mappings
 local opts = { silent = true, noremap = true }
 local map = vim.keymap.set
-map('n', '<leader>dq', vim.diagnostic.setloclist, opts)
+map('n', '<leader>dq', vim.diagnostic.setqflist, opts)
+map('n', '<leader>dl', vim.diagnostic.setloclist, opts)
 map('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
 -- close any open help window
 map('n', '<leader>ch', function()

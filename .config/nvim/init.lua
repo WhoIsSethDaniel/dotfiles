@@ -282,22 +282,9 @@ map('n', '<leader>ch', function()
   end
 end, opts)
 -- toggle showing/hiding the diagnostics
-map(
-  'n',
-  '<leader>td',
-  (function()
-    local diag_status = 1 -- 1 is show; 0 is hide
-    return function()
-      if diag_status == 1 then
-        diag_status = 0
-        vim.diagnostic.hide()
-      else
-        diag_status = 1
-        vim.diagnostic.show()
-      end
-    end
-  end)()
-)
+map('n', '<leader>td', function()
+  vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+end)
 
 -- correctly paste from the * or + register (possibly others too) when using c_<C-R>
 -- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315

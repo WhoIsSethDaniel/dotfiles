@@ -9,6 +9,10 @@ c.formatters.golines = {
   prepend_args = { '--shorten-comments' },
 }
 
+c.formatters.gci = {
+  prepend_args = { '-s=standard', '-s=default', '-s=prefix(github.maxmind.com/maxmind/mm_website' },
+}
+
 c.formatters.prettier = function(bufnr)
   local bufname = vim.api.nvim_buf_get_name(bufnr)
   local m = string.match(bufname, '^(.*/work)')

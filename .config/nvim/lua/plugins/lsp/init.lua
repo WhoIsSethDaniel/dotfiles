@@ -175,6 +175,7 @@ function M.setup()
           'dprint',
           'editorconfig-checker',
           -- 'eugene',
+          'gci',
           'glow',
           'golangci-lint',
           'golines',

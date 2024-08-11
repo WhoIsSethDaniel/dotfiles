@@ -78,7 +78,7 @@ c.setup {
     lsp_format = 'fallback',
   },
   formatters_by_ft = {
-    go = { 'golines', lsp_format = 'last' },
+    go = { 'gci', 'golines', lsp_format = 'last' },
     gohtmltmpl = { 'prettier' },
     json = { 'prettier' },
     lua = { 'stylua' },

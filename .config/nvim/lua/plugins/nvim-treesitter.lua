@@ -35,14 +35,6 @@ vim.api.nvim_create_autocmd('BufRead', {
         enable = true,
       },
       textobjects = {
-        select = {
-          enable = true,
-          lookahead = true,
-          keymaps = {
-            ['af'] = '@function.outer',
-            ['if'] = '@function.inner',
-          },
-        },
         move = {
           enable = true,
           set_jumps = true,

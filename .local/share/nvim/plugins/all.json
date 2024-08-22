@@ -251,6 +251,15 @@
     "enabled": true,
     "frozen": false
   },
+  "mini.ai": {
+    "name": "mini.ai",
+    "url": "https://github.com/echasnovski/mini.ai",
+    "clean_name": "mini-ai",
+    "config_file": "mini-ai.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "mini.icons": {
     "name": "mini.icons",
     "url": "https://github.com/echasnovski/mini.icons",

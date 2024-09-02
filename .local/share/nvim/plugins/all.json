@@ -269,15 +269,6 @@
     "enabled": true,
     "frozen": false
   },
-  "mini.pairs": {
-    "name": "mini.pairs",
-    "url": "https://github.com/echasnovski/mini.pairs",
-    "clean_name": "mini-pairs",
-    "config_file": "mini-pairs.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "neotest": {
     "name": "neotest",
     "url": "https://github.com/nvim-neotest/neotest",
@@ -310,6 +301,15 @@
     "url": "https://github.com/MunifTanjim/nui.nvim",
     "clean_name": "nui-nvim",
     "config_file": "nui-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "nvim-autopairs": {
+    "name": "nvim-autopairs",
+    "url": "https://github.com/windwp/nvim-autopairs",
+    "clean_name": "nvim-autopairs",
+    "config_file": "nvim-autopairs.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

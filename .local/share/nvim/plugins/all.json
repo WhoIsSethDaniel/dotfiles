@@ -305,15 +305,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-autopairs": {
-    "name": "nvim-autopairs",
-    "url": "https://github.com/windwp/nvim-autopairs",
-    "clean_name": "nvim-autopairs",
-    "config_file": "nvim-autopairs.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-bqf": {
     "name": "nvim-bqf",
     "url": "https://github.com/kevinhwang91/nvim-bqf",
@@ -518,6 +509,15 @@
     "clean_name": "tokyonight-nvim",
     "config_file": "tokyonight-nvim.lua",
     "colorscheme": true,
+    "enabled": true,
+    "frozen": false
+  },
+  "ultimate-autopair.nvim": {
+    "name": "ultimate-autopair.nvim",
+    "url": "https://github.com/altermo/ultimate-autopair.nvim",
+    "clean_name": "ultimate-autopair-nvim",
+    "config_file": "ultimate-autopair-nvim.lua",
+    "colorscheme": false,
     "enabled": true,
     "frozen": false
   },

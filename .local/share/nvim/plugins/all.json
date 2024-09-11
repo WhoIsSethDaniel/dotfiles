@@ -152,15 +152,6 @@
     "enabled": true,
     "frozen": false
   },
-  "gx.nvim": {
-    "name": "gx.nvim",
-    "url": "https://github.com/chrishrb/gx.nvim",
-    "clean_name": "gx-nvim",
-    "config_file": "gx-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "hardtime.nvim": {
     "name": "hardtime.nvim",
     "url": "https://github.com/m4xshen/hardtime.nvim",

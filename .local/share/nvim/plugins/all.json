@@ -1,13 +1,4 @@
 {
-  "auto-fix-return.nvim": {
-    "name": "auto-fix-return.nvim",
-    "url": "https://github.com/Jay-Madden/auto-fix-return.nvim",
-    "clean_name": "auto-fix-return-nvim",
-    "config_file": "auto-fix-return-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "bigfile.nvim": {
     "name": "bigfile.nvim",
     "url": "https://github.com/LunarVim/bigfile.nvim",

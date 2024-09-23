@@ -100,11 +100,10 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- vim.highlight.priorities.semantic_tokens = 95
 
     local function dump_caps()
-      print(client.name .. ':')
-      print(vim.inspect(client.capabilities.workspace))
+      -- print(vim.inspect(client.capabilities.workspace))
       -- print(vim.inspect(client.server_capabilities))
     end
-    dump_caps()
+    -- dump_caps()
 
     -- mappings
     local opts = { noremap = true, silent = true, buffer = bufnr }

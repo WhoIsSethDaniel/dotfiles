@@ -9,13 +9,13 @@ return {
   -- filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gohtmltmpl', 'gotexttmpl' },
   filetypes = { 'go', 'gomod', 'gowork' },
   cmd = { 'gopls', '--remote=auto' },
-  capabilities = {
-    workspace = {
-      didChangeWatchedFiles = {
-        dynamicRegistration = false,
-      },
-    },
-  },
+  -- capabilities = {
+  --   workspace = {
+  --     didChangeWatchedFiles = {
+  --       dynamicRegistration = false,
+  --     },
+  --   },
+  -- },
   settings = {
     gopls = {
       -- useful for -tags (and other things)

@@ -85,14 +85,25 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       client.server_capabilities.semanticTokensProvider = nil
     end
 
+    -- https://www.reddit.com/r/neovim/comments/1b4bk5h/psa_new_fswatch_watchfunc_backend_available_on/
+    -- turn off automatic file watching
+    if
+      client.capabilities.workspace.didChangeWatchedFiles
+      and client.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration == false
+      and vim.tbl_contains(watch_files, client.name)
+    then
+      client.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
+    end
+
     -- change priority of semantic tokens to be less than treesitter; see :h vim.highlight.priorities
     -- vim.highlight.priorities.semantic_tokens = 95
 
     local function dump_caps()
       print(client.name .. ':')
-      print(vim.inspect(client.server_capabilities))
+      print(vim.inspect(client.capabilities.workspace))
+      -- print(vim.inspect(client.server_capabilities))
     end
-    -- dump_caps()
+    dump_caps()
 
     -- mappings
     local opts = { noremap = true, silent = true, buffer = bufnr }

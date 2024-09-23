@@ -21,6 +21,7 @@ local M = {}
 local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = {}
 local no_semantic_tokens = { 'gopls', 'lua_ls' }
+local watch_files = {}
 local manual_config_lsp = {}
 
 local notify = function(msg)

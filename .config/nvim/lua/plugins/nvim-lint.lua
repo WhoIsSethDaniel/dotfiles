@@ -67,7 +67,7 @@ l.linters_by_ft = {
   -- perl = { 'perlcritic' },
   -- bashls runs shellcheck
   -- sh = { 'shellcheck' },
-  sql = { 'sqlfluff' },
+  sql = { 'sqlfluff', 'eugene' },
   vim = { 'vint' },
   yaml = { 'yamllint' },
 }

@@ -197,6 +197,15 @@
     "enabled": true,
     "frozen": false
   },
+  "magazine.nvim": {
+    "name": "magazine.nvim",
+    "url": "https://github.com/iguanacucumber/magazine.nvim",
+    "clean_name": "magazine-nvim",
+    "config_file": "magazine-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "mason-lspconfig.nvim": {
     "name": "mason-lspconfig.nvim",
     "url": "https://github.com/williamboman/mason-lspconfig.nvim",
@@ -302,7 +311,7 @@
     "clean_name": "nvim-cmp",
     "config_file": "nvim-cmp.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "nvim-lastplace": {

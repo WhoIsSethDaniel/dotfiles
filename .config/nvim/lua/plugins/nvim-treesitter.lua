@@ -33,6 +33,7 @@ vim.api.nvim_create_autocmd('BufRead', {
       },
       matchup = {
         enable = true,
+        enable_quotes = true,
       },
       textobjects = {
         move = {

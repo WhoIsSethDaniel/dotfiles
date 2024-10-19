@@ -476,15 +476,6 @@
     "enabled": true,
     "frozen": false
   },
-  "tiny-code-action.nvim": {
-    "name": "tiny-code-action.nvim",
-    "url": "https://github.com/rachartier/tiny-code-action.nvim",
-    "clean_name": "tiny-code-action-nvim",
-    "config_file": "tiny-code-action-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "toggleterm.nvim": {
     "name": "toggleterm.nvim",
     "url": "https://github.com/akinsho/toggleterm.nvim",

@@ -111,8 +111,7 @@ cmp.setup.cmdline(':', {
     },
   },
   sources = cmp.config.sources {
-    { name = 'cmdline', keyword_length = 2 },
-    -- { name = 'nvim_lua' },
-    { name = 'async_path' },
+    { name = 'cmdline', keyword_length = 3, priority = 8 },
+    { name = 'async_path', priority = 9 },
   },
 })

@@ -26,6 +26,15 @@
     "enabled": true,
     "frozen": false
   },
+  "cmp-async-path": {
+    "name": "cmp-async-path",
+    "url": "https://codeberg.org/FelipeLema/cmp-async-path",
+    "clean_name": "cmp-async-path",
+    "config_file": "cmp-async-path.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "cmp-buffer": {
     "name": "cmp-buffer",
     "url": "https://github.com/hrsh7th/cmp-buffer",
@@ -67,15 +76,6 @@
     "url": "https://github.com/hrsh7th/cmp-nvim-lsp",
     "clean_name": "cmp-nvim-lsp",
     "config_file": "cmp-nvim-lsp.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "cmp-path": {
-    "name": "cmp-path",
-    "url": "https://github.com/hrsh7th/cmp-path",
-    "clean_name": "cmp-path",
-    "config_file": "cmp-path.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false
@@ -195,6 +195,33 @@
     "config_file": "lualine-nvim.lua",
     "colorscheme": false,
     "enabled": true,
+    "frozen": false
+  },
+  "mag-buffer": {
+    "name": "mag-buffer",
+    "url": "https://github.com/iguanacucumber/mag-buffer",
+    "clean_name": "mag-buffer",
+    "config_file": "mag-buffer.lua",
+    "colorscheme": false,
+    "enabled": false,
+    "frozen": false
+  },
+  "mag-cmdline": {
+    "name": "mag-cmdline",
+    "url": "https://github.com/iguanacucumber/mag-cmdline",
+    "clean_name": "mag-cmdline",
+    "config_file": "mag-cmdline.lua",
+    "colorscheme": false,
+    "enabled": false,
+    "frozen": false
+  },
+  "mag-nvim-lsp": {
+    "name": "mag-nvim-lsp",
+    "url": "https://github.com/iguanacucumber/mag-nvim-lsp",
+    "clean_name": "mag-nvim-lsp",
+    "config_file": "mag-nvim-lsp.lua",
+    "colorscheme": false,
+    "enabled": false,
     "frozen": false
   },
   "magazine.nvim": {

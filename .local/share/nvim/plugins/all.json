@@ -41,7 +41,7 @@
     "clean_name": "cmp-buffer",
     "config_file": "cmp-buffer.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "cmp-calc": {
@@ -59,7 +59,7 @@
     "clean_name": "cmp-cmdline",
     "config_file": "cmp-cmdline.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "cmp-emoji": {
@@ -203,7 +203,7 @@
     "clean_name": "mag-buffer",
     "config_file": "mag-buffer.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "mag-cmdline": {
@@ -212,7 +212,7 @@
     "clean_name": "mag-cmdline",
     "config_file": "mag-cmdline.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "mag-nvim-lsp": {

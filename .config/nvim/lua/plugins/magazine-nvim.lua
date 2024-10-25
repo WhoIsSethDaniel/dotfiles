@@ -56,7 +56,7 @@ cmp.setup {
   sources = cmp.config.sources {
     { name = 'buffer', priority = 7, keyword_length = 4 },
     { name = 'emoji', priority = 3 },
-    { name = 'path', priority = 5 },
+    { name = 'async_path', priority = 5 },
     { name = 'calc', priority = 4 },
     { name = 'nvim_lua', priority = 9 },
     { name = 'nvim_lsp', priority = 9 },
@@ -114,6 +114,6 @@ cmp.setup.cmdline(':', {
   sources = cmp.config.sources {
     { name = 'cmdline', keyword_length = 2 },
     { name = 'nvim_lua' },
-    { name = 'path' },
+    { name = 'async_path' },
   },
 })

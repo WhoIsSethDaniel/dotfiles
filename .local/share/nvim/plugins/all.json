@@ -35,24 +35,6 @@
     "enabled": true,
     "frozen": false
   },
-  "cmp-buffer": {
-    "name": "cmp-buffer",
-    "url": "https://github.com/hrsh7th/cmp-buffer",
-    "clean_name": "cmp-buffer",
-    "config_file": "cmp-buffer.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
-  "cmp-cmdline": {
-    "name": "cmp-cmdline",
-    "url": "https://github.com/hrsh7th/cmp-cmdline",
-    "clean_name": "cmp-cmdline",
-    "config_file": "cmp-cmdline.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "cmp-emoji": {
     "name": "cmp-emoji",
     "url": "https://github.com/hrsh7th/cmp-emoji",

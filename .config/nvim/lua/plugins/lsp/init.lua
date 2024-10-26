@@ -87,7 +87,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     end
 
     -- https://www.reddit.com/r/neovim/comments/1b4bk5h/psa_new_fswatch_watchfunc_backend_available_on/
-    -- turn off automatic file watching
+    -- turn on automatic file watching
     if
       client.capabilities.workspace.didChangeWatchedFiles
       and client.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration == false

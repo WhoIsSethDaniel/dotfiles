@@ -7,6 +7,12 @@
 -- * lazyvim cmp config
 -- https://github.com/nvim-lua/kickstart.nvim/blob/b529bc33590cbb81a5916408b2d6001a643e596c/init.lua#L619
 -- * for snippets, perhaps: https://github.com/rafamadriz/friendly-snippets
+--
+-- magazine:
+-- https://github.com/iguanacucumber/magazine.nvim
+-- https://github.com/iguanacucumber/mag-nvim-lsp
+-- https://github.com/iguanacucumber/mag-buffer
+-- https://github.com/iguanacucumber/mag-cmdline
 local cmp = require 'cmp'
 local snippets = require 'snippets'
 

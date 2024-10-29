@@ -44,15 +44,6 @@
     "enabled": true,
     "frozen": false
   },
-  "cmp-nvim-lsp": {
-    "name": "cmp-nvim-lsp",
-    "url": "https://github.com/hrsh7th/cmp-nvim-lsp",
-    "clean_name": "cmp-nvim-lsp",
-    "config_file": "cmp-nvim-lsp.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "colorful-winsep.nvim": {
     "name": "colorful-winsep.nvim",
     "url": "https://github.com/nvim-zh/colorful-winsep.nvim",
@@ -194,7 +185,7 @@
     "clean_name": "mag-nvim-lsp",
     "config_file": "mag-nvim-lsp.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "magazine.nvim": {
@@ -303,15 +294,6 @@
     "config_file": "nvim-bqf.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
-  },
-  "nvim-cmp": {
-    "name": "nvim-cmp",
-    "url": "https://github.com/hrsh7th/nvim-cmp",
-    "clean_name": "nvim-cmp",
-    "config_file": "nvim-cmp.lua",
-    "colorscheme": false,
-    "enabled": false,
     "frozen": false
   },
   "nvim-lastplace": {

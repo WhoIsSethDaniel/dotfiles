@@ -62,12 +62,32 @@ vim.keymap.set('n', '<leader>gb', function()
   builtin.git_branches { show_remote_tracking_branches = true }
 end, {})
 
-local has_projects, project = load 'projects'
-if has_projects then
-  vim.keymap.set('n', '<leader>pp', function()
-    project.projects {}
-  end, {})
-end
+local has_workspaces, _ = load 'workspaces'
+vim.keymap.set('n', '<leader>pp', function()
+  if has_workspaces then
+    local ws = require 'workspaces'
+    local plugindir = vim.fs.normalize '~/.config/nvim/pack/git-plugins/opt/'
+    local entries = ws.get()
+    local current = {}
+    for _, entry in ipairs(entries) do
+      if
+        string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
+        and vim.fn.isdirectory(entry.path) == 0
+      then
+        ws.remove(entry.name)
+      else
+        current[entry.path] = entry.path
+      end
+    end
+    for name, _ in vim.fs.dir(plugindir) do
+      local path = vim.fs.joinpath(plugindir, name) .. '/'
+      if string.match(name, '^%.') == nil and current[path] == nil then
+        ws.add(path)
+      end
+    end
+    vim.cmd [[Telescope workspaces]]
+  end
+end, {})
 
 vim.api.nvim_create_autocmd('VimEnter', {
   once = true,
@@ -198,14 +218,20 @@ vim.api.nvim_create_autocmd('VimEnter', {
         ['ui-select'] = {
           require('telescope.themes').get_dropdown {},
         },
+        workspaces = {
+          -- keep insert mode after selection in the picker, default is false
+          keep_insert = false,
+          -- Highlight group used for the path in the picker, default is "String"
+          path_hl = 'String',
+        },
       },
     }
 
     load 'fzf'
     load 'goofball'
-    load 'projects'
     load 'ui-select'
     load 'repossession'
+    load 'workspaces'
     load 'zf-native'
   end,
 })

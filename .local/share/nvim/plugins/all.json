@@ -410,7 +410,7 @@
     "clean_name": "project-nvim",
     "config_file": "project-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "quicker.nvim": {
@@ -535,6 +535,15 @@
     "url": "https://github.com/lervag/wiki.vim",
     "clean_name": "wiki-vim",
     "config_file": "wiki-vim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "workspaces.nvim": {
+    "name": "workspaces.nvim",
+    "url": "https://github.com/natecraddock/workspaces.nvim",
+    "clean_name": "workspaces-nvim",
+    "config_file": "workspaces-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

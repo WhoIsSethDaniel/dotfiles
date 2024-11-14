@@ -93,12 +93,12 @@ vim.keymap.set('n', '_', function()
   oil.open(vim.fn.getcwd())
 end, { desc = 'Open project root directory' })
 
-vim.api.nvim_create_autocmd('BufEnter', {
-  pattern = { 'oil://*' },
-  callback = function()
-    local dir = oil.get_current_dir()
-    if vim.fn.isdirectory(dir) ~= 0 then
-      vim.api.nvim_command('lcd ' .. dir)
-    end
-  end,
-})
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--   pattern = { 'oil://*' },
+--   callback = function()
+--     local dir = oil.get_current_dir()
+--     if vim.fn.isdirectory(dir) ~= 0 then
+--       vim.api.nvim_command('lcd ' .. dir)
+--     end
+--   end,
+-- })

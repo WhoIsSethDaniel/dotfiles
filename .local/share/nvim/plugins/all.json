@@ -251,15 +251,6 @@
     "enabled": true,
     "frozen": false
   },
-  "mini.notify": {
-    "name": "mini.notify",
-    "url": "https://github.com/echasnovski/mini.notify",
-    "clean_name": "mini-notify",
-    "config_file": "mini-notify.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "neotest": {
     "name": "neotest",
     "url": "https://github.com/nvim-neotest/neotest",

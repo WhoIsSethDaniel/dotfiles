@@ -53,7 +53,6 @@ vim.keymap.set('n', '<leader>mm', function()
       buf = id
       for _, w in ipairs(vim.api.nvim_list_wins()) do
         if vim.api.nvim_win_get_buf(w) == id then
-          print('delete: ' .. id)
           vim.api.nvim_buf_delete(id, { force = true })
           return
         end
@@ -64,7 +63,6 @@ vim.keymap.set('n', '<leader>mm', function()
 
   if buf == nil then
     buf = vim.api.nvim_create_buf(true, true)
-    print('create: ' .. buf)
     vim.bo[buf].filetype = 'mininotify-history'
   end
   local notif_arr = mn.get_all()

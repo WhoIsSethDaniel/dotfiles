@@ -41,7 +41,7 @@ require('noice').setup {
   },
   lsp = {
     progress = {
-      enabled = true,
+      enabled = false,
       format = 'lsp_progress',
       format_done = 'lsp_progress_done',
       view = 'mini',

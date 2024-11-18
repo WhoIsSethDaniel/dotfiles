@@ -8,15 +8,6 @@
     "enabled": true,
     "frozen": false
   },
-  "bmessages.nvim": {
-    "name": "bmessages.nvim",
-    "url": "https://github.com/ariel-frischer/bmessages.nvim",
-    "clean_name": "bmessages-nvim",
-    "config_file": "bmessages-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "bufjump.nvim": {
     "name": "bufjump.nvim",
     "url": "https://github.com/kwkarlwang/bufjump.nvim",
@@ -257,7 +248,7 @@
     "clean_name": "mini-notify",
     "config_file": "mini-notify.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "frozen": false
   },
   "neotest": {

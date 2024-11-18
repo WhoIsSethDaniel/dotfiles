@@ -46,26 +46,40 @@ mn.setup {
 
 vim.notify = mn.make_notify()
 
--- vim.keymap.set('n', '<leader>mm', function()
---   local notif_arr = mn.get_all()
---   table.sort(notif_arr, function(a, b)
---     return a.ts_update < b.ts_update
---   end)
---   local msgs = {}
---   for _, mm in ipairs(notif_arr) do
---     table.insert(msgs, mm.msg)
---   end
---   local buf_id
---   for _, id in ipairs(vim.api.nvim_list_bufs()) do
---     if vim.bo[id].filetype == 'mininotify-history' then
---       buf_id = id
---     end
---   end
---   if buf_id == nil then
---     buf_id = vim.api.nvim_create_buf(true, true)
---     vim.bo[buf_id].filetype = 'mininotify-history'
---   end
---   vim.api.nvim_buf_set_lines(buf_id, 0, -1, false, msgs)
---   vim.api.nvim_win_set_buf(0, buf_id)
---   vim.api.nvim_win_set_cursor(0, { vim.api.nvim_buf_line_count(buf_id), 0 })
--- end, { noremap = true, silent = true })
+vim.keymap.set('n', '<leader>mm', function()
+  local buf
+  for _, id in ipairs(vim.api.nvim_list_bufs()) do
+    if vim.bo[id].filetype == 'mininotify-history' then
+      buf = id
+      for _, w in ipairs(vim.api.nvim_list_wins()) do
+        if vim.api.nvim_win_get_buf(w) == id then
+          print('delete: ' .. id)
+          vim.api.nvim_buf_delete(id, { force = true })
+          return
+        end
+      end
+      break
+    end
+  end
+
+  if buf == nil then
+    buf = vim.api.nvim_create_buf(true, true)
+    print('create: ' .. buf)
+    vim.bo[buf].filetype = 'mininotify-history'
+  end
+  local notif_arr = mn.get_all()
+  table.sort(notif_arr, function(a, b)
+    return a.ts_update < b.ts_update
+  end)
+  local msgs = {}
+  for _, mm in ipairs(notif_arr) do
+    table.insert(msgs, mm.msg)
+  end
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, msgs)
+  local current = vim.api.nvim_get_current_win()
+  vim.cmd(string.format('%s %s %d%s', 'vertical', 'rightbelow', 120, 'vnew'))
+  local win = vim.api.nvim_get_current_win()
+  vim.fn.win_gotoid(current)
+  vim.api.nvim_win_set_buf(win, buf)
+  vim.api.nvim_win_set_cursor(win, { vim.api.nvim_buf_line_count(buf), 0 })
+end, { noremap = true, silent = true })

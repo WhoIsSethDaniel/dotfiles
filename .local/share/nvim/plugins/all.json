@@ -404,15 +404,6 @@
     "enabled": true,
     "frozen": false
   },
-  "project.nvim": {
-    "name": "project.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/project.nvim",
-    "clean_name": "project-nvim",
-    "config_file": "project-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "quicker.nvim": {
     "name": "quicker.nvim",
     "url": "https://github.com/stevearc/quicker.nvim",

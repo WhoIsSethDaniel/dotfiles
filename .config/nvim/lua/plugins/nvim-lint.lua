@@ -40,6 +40,10 @@ local sf = l.linters.sqlfluff
 table.remove(sf.args)
 table.insert(sf.args, '--dialect=postgres')
 
+local eug = l.linters.eugene
+table.insert(eug.args, '--sort-mode=name')
+table.insert(eug.args, '--ignore=E4')
+
 local yl = l.linters.yamllint
 table.insert(yl.args, 1, function()
   local conf = vim.fs.find('.yamllintrc', {

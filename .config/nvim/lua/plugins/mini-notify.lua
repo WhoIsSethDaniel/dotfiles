@@ -1,3 +1,4 @@
+-- https://github.com/echasnovski/mini.notify
 local mn = require 'mini.notify'
 mn.setup {
   -- Content management

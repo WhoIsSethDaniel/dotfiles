@@ -54,7 +54,7 @@ vim.keymap.set('n', '<leader>mm', function()
       buf = id
       for _, w in ipairs(vim.api.nvim_list_wins()) do
         if vim.api.nvim_win_get_buf(w) == id then
-          vim.api.nvim_buf_delete(id, { force = true })
+          vim.api.nvim_win_close(w, true)
           return
         end
       end

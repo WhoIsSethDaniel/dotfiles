@@ -63,7 +63,7 @@ vim.keymap.set('n', '<leader>mm', function()
   end
 
   if buf == nil then
-    buf = vim.api.nvim_create_buf(true, true)
+    buf = vim.api.nvim_create_buf(false, true)
     vim.bo[buf].filetype = 'mininotify-history'
   end
   local notif_arr = mn.get_all()

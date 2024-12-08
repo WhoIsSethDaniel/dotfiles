@@ -210,7 +210,9 @@ vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60', 'vertical' }
 vim.opt.showmode = false
 
 -- turn off message
-vim.opt.messagesopt = { 'wait:0', 'history:10000' }
+if vim.fn.has 'nvim-0.11.0' == 1 then
+  vim.opt.messagesopt = { 'wait:0', 'history:10000' }
+end
 
 -- thicker borders when using global status bar
 vim.opt.fillchars:append {

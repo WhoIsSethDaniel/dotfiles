@@ -209,6 +209,9 @@ vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60', 'vertical' }
 -- unneeded with a statusline
 vim.opt.showmode = false
 
+-- turn off message
+vim.opt.messagesopt = { 'wait:0', 'history:10000' }
+
 -- thicker borders when using global status bar
 vim.opt.fillchars:append {
   horiz = '━',

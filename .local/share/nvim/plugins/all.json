@@ -8,6 +8,15 @@
     "enabled": true,
     "frozen": false
   },
+  "blink.cmp": {
+    "name": "blink.cmp",
+    "url": "https://github.com/Saghen/blink.cmp",
+    "clean_name": "blink-cmp",
+    "config_file": "blink-cmp.lua",
+    "colorscheme": false,
+    "enabled": false,
+    "frozen": false
+  },
   "bufjump.nvim": {
     "name": "bufjump.nvim",
     "url": "https://github.com/kwkarlwang/bufjump.nvim",

@@ -225,7 +225,8 @@ vim.opt.cmdheight = 0
 
 -- turn off 'hit-enter' message; have insane history
 if vim.fn.has 'nvim-0.11.0' == 1 then
-  vim.opt.messagesopt = { 'wait:0', 'history:10000' }
+  -- vim.opt.messagesopt = { 'wait:0', 'history:10000' }
+  vim.opt.messagesopt = { 'hit-enter', 'wait:0', 'history:10000' }
 end
 
 -- this is needed for lemonade

@@ -53,7 +53,7 @@ require('noice').setup {
       enabled = true,
     },
     message = {
-      enabled = true,
+      enabled = false,
       view = 'mini',
       opts = {},
     },

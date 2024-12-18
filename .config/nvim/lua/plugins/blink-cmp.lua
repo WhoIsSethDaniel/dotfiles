@@ -1,4 +1,8 @@
+-- https://github.com/Saghen/blink.cmp
 require('blink.cmp').setup {
+  enabled = function()
+    return true
+  end,
   -- 'default' for mappings similar to built-in completion
   -- 'super-tab' for mappings similar to vscode (tab to accept, arrow keys to navigate)
   -- 'enter' for mappings similar to 'super-tab' but with 'enter' to accept
@@ -26,6 +30,14 @@ require('blink.cmp').setup {
 
   -- experimental signature help support
   signature = { enabled = true },
+
+  completion = {
+    accept = {
+      auto_brackets = {
+        enabled = true,
+      },
+    },
+  },
 
   fuzzy = {
     prebuilt_binaries = {

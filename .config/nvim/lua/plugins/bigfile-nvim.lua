@@ -1,6 +1,6 @@
 -- https://github.com/LunarVim/bigfile.nvim
 require('bigfile').setup {
-  filesize = 1,
+  filesize = 2,
   -- pattern = { "*" },
   -- features = {
   --   "indent_blankline",

@@ -81,7 +81,7 @@ if [[ -e ${VERSION} ]]; then
 fi
 
 tar xzf "$tmpdir"/nvim.tar.gz
-mv nvim-linux64 "$VERSION"
+mv "nvim-linux-x86_64" "$VERSION"
 
 # only do this if everything else succeeds
 cp --force "${tmpdir}/${SUM_LOCAL_NAME}" "$STORE/${SUM_LOCAL_NAME}"

@@ -22,9 +22,8 @@ fi
 pkg=nvim-linux-x86_64.tar.gz
 url="https://github.com/neovim/neovim/releases/download/"
 
-SUM_EXT="sha256sum"
-SUM_NAME="${pkg}.${SUM_EXT}"
-SUM_LOCAL_NAME=$1"."$SUM_EXT
+SUM_NAME="shasum.txt"
+SUM_LOCAL_NAME=$1".sha256sum"
 STORE=$XDG_DATA_HOME"/nvim"
 VERSION=${versions[$1]}
 
@@ -47,12 +46,12 @@ tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit 1
-curl -LSo "$SUM_LOCAL_NAME" "${url}${url_version}/${SUM_NAME}"
+curl -LSo - "${url}${url_version}/${SUM_NAME}" | grep "$pkg" >"$tmpdir/$SUM_LOCAL_NAME"
 
 OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
 if [[ -e $OLD_SUM ]]; then
         OLD=$(cut -d\  -f1 "$OLD_SUM")
-        NEW=$(cut -d\  -f1 "${tmpdir}/${SUM_LOCAL_NAME}")
+        NEW=$(cut -d\  -f1 "$SUM_LOCAL_NAME")
         echo "old: ${OLD}"
         echo "new: ${NEW}"
         if [[ $NEW == "$OLD" ]]; then
@@ -65,7 +64,7 @@ else
         echo "no old sum found"
 fi
 
-curl -LSo nvim.tar.gz "${url}${url_version}/${pkg}"
+curl -LSo "$pkg" "${url}${url_version}/${pkg}"
 
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1
@@ -80,7 +79,7 @@ if [[ -e ${VERSION} ]]; then
         mv "$VERSION" "${VERSION}-1"
 fi
 
-tar xzf "$tmpdir"/nvim.tar.gz
+tar xzf "$tmpdir"/"$pkg"
 mv "nvim-linux-x86_64" "$VERSION"
 
 # only do this if everything else succeeds

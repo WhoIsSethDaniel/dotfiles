@@ -88,7 +88,7 @@ for ft, _ in pairs(l.linters_by_ft) do
     -- for golangcilint prepend the internal linter name to diagnostic message;
     -- otherwise just prepend the name of the linter
     vim.diagnostic.config({
-      virtual_text = {
+      virtual_lines = {
         format = function(d)
           local name = linter == 'golangcilint' and d.source or linter
           return string.format('%s: %s', name, d.message)

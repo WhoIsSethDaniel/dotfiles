@@ -63,7 +63,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- prefix diagnostics with the name of the client
     local ns = vim.lsp.diagnostic.get_namespace(client_id)
     vim.diagnostic.config({
-      virtual_text = {
+      virtual_lines = {
         format = function(d)
           return string.format('%s: %s', client.name, d.message)
         end,

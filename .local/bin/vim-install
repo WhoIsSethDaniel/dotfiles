@@ -46,7 +46,8 @@ tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit 1
-curl -LSo - "${url}${url_version}/${SUM_NAME}" | grep "$pkg" >"$tmpdir/$SUM_LOCAL_NAME"
+curl -LSo - "${url}${url_version}/${SUM_NAME}" | grep "$pkg" >"$SUM_NAME"
+cp "$SUM_NAME" "$SUM_LOCAL_NAME"
 
 OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
 if [[ -e $OLD_SUM ]]; then
@@ -65,6 +66,8 @@ else
 fi
 
 curl -LSo "$pkg" "${url}${url_version}/${pkg}"
+
+sha256sum --check "$SUM_NAME"
 
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1

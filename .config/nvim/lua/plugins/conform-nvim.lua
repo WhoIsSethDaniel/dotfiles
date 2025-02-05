@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 -- https://github.com/stevearc/conform.nvim
 local c = require 'conform'
 
@@ -73,11 +74,6 @@ local should_format = function(b, ft)
   return true
 end
 
-local notify = function(msg)
-  vim.schedule(function()
-    vim.notify(msg, vim.log.levels.INFO)
-  end)
-end
 c.setup {
   log_level = vim.log.levels.DEBUG,
   notify_on_error = true,

@@ -73,6 +73,11 @@ local should_format = function(b, ft)
   return true
 end
 
+local notify = function(msg)
+  vim.schedule(function()
+    vim.notify(msg, vim.log.levels.INFO)
+  end)
+end
 c.setup {
   log_level = vim.log.levels.DEBUG,
   notify_on_error = true,
@@ -98,7 +103,7 @@ c.setup {
   },
   format_on_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
-    if should_format(bufnr, ft) then
+    if ft ~= 'perl' and should_format(bufnr, ft) then
       return {}
     end
   end,
@@ -107,7 +112,7 @@ c.setup {
     if not should_format(bufnr, ft) then
       return
     elseif ft == 'perl' then
-      return { timeout_ms = 15000, lsp_format = 'prefer' }
+      return { lsp_format = 'prefer' }
     end
     return {}
   end,

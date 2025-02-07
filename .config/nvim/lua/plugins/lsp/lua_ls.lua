@@ -1,5 +1,5 @@
 -- https://github.com/LuaLS/lua-language-server
--- https://github.com/LuaLS/lua-language-server/wiki/Settings
+-- https://luals.github.io/wiki/settings/
 return {
   on_init = function(client)
     local path = client.workspace_folders and client.workspace_folders[1].name

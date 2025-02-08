@@ -21,6 +21,7 @@ mdl2.args = {
     if #conf > 0 then
       return string.format('--config=%s', conf[1])
     end
+    return ''
   end,
 }
 

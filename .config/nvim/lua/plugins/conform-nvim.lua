@@ -97,12 +97,9 @@ c.setup {
     toml = { 'dprint', lsp_format = 'prefer' },
     yaml = { 'prettier' },
   },
-  format_on_save = function(bufnr)
-    local ft = vim.bo[bufnr].filetype
-    if ft ~= 'perl' and should_format(bufnr, ft) then
-      return {}
-    end
-  end,
+  -- format_on_save = function(bufnr)
+  --   return
+  -- end,
   format_after_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
     if not should_format(bufnr, ft) then

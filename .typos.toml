@@ -1,3 +1,4 @@
+# https://github.com/crate-ci/typos/blob/master/docs/reference.md
 [default.extend-words]
 unmarshaling = "unmarshaling"
 marshaling = "marshaling"

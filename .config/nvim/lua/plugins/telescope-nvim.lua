@@ -157,11 +157,29 @@ vim.api.nvim_create_autocmd('VimEnter', {
             },
           },
         },
+        find_files = {
+          mappings = {
+            i = {
+              ['<c-k>'] = require('telescope.actions').cycle_history_prev,
+              ['<c-j>'] = require('telescope.actions').cycle_history_next,
+            },
+          },
+        },
+        live_grep = {
+          mappings = {
+            i = {
+              ['<c-k>'] = require('telescope.actions').cycle_history_prev,
+              ['<c-j>'] = require('telescope.actions').cycle_history_next,
+            },
+          },
+        },
         buffers = {
           sort_lastused = true,
           mappings = {
             i = {
               ['<c-d>'] = require('telescope.actions').delete_buffer,
+              ['<c-k>'] = require('telescope.actions').cycle_history_prev,
+              ['<c-j>'] = require('telescope.actions').cycle_history_next,
             },
             n = {
               ['<c-d>'] = require('telescope.actions').delete_buffer,

@@ -187,7 +187,7 @@ function M.setup()
           'bash-language-server',
           'dprint',
           'editorconfig-checker',
-          -- 'eugene',
+          'eugene',
           'gci',
           'glow',
           'golangci-lint',

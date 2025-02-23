@@ -22,7 +22,7 @@ require('workspaces').setup {
   mru_sort = true,
 
   -- option to automatically activate workspace when opening neovim in a workspace directory
-  auto_open = false,
+  auto_open = true,
 
   -- option to automatically activate workspace when changing directory not via this plugin
   -- set to "autochdir" to enable auto_dir when using :e and vim.opt.autochdir

@@ -7,11 +7,11 @@ local has_lspconfig, lspconf = pcall(require, 'lspconfig')
 if not has_lspconfig then
   return {
     get_config = function(server)
-      vim.api.nvim_err_writeln(string.format('empty get_config request for %s', server))
+      vim.api.nvim_echo({ { string.format('empty get_config request for %s', server) } }, false, { err = true })
       return {}
     end,
     setup = function()
-      vim.api.nvim_err_writeln 'nvim-lspconfig is not installed; no configuration for LSP'
+      vim.api.nvim_echo({ { 'nvim-lspconfig is not installed; no configuration for LSP' } }, false, { err = true })
     end,
   }
 end
@@ -40,7 +40,7 @@ end
 local load_lsp_file = function(f)
   local ok, config = pcall(require, string.format('plugins.lsp.%s', f))
   if not ok then
-    vim.api.nvim_err_writeln('failed to load lsp config: ' .. f)
+    vim.api.nvim_echo({ { 'failed to load lsp config: ' .. f } }, false, { err = true })
     config = {}
   end
   return config

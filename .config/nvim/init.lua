@@ -316,10 +316,10 @@ end
 
 -- filetypes
 vim.filetype.add {
+  extension = {
+    gohtml = 'gohtml',
+  },
   pattern = {
-    extension = {
-      gohtml = 'gohtml',
-    },
     ['.*/ssh/config'] = {
       'sshconfig',
       { priority = -math.huge },

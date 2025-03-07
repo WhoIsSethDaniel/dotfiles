@@ -7,7 +7,7 @@ return {
   --   GOFUMPT_SPLIT_LONG_LINES = 'on',
   -- },
   -- filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gohtmltmpl', 'gotexttmpl' },
-  filetypes = { 'go', 'gomod', 'gowork', 'gohtml' },
+  filetypes = { 'go', 'gomod', 'gowork' },
   cmd = { 'gopls', '--remote=auto' },
   -- capabilities = {
   --   workspace = {

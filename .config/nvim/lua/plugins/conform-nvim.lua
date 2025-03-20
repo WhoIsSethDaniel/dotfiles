@@ -85,6 +85,7 @@ c.setup {
   formatters_by_ft = {
     go = { 'gci', 'golines', lsp_format = 'last' },
     gohtml = { 'prettier' },
+    gotmpl = { 'prettier' },
     json = { 'prettier' },
     lua = { 'stylua' },
     markdown = { 'prettier', 'injected' },

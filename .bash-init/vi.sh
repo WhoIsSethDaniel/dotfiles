@@ -32,18 +32,12 @@ vim_install_dir=$HOME/.local/nvim
 function vim-cd() {
     [[ -z $1 ]] && echo "usage: vim-cd <plugin> | config | conf | cf | in | install | lsp | local | loc | state | cache | plugins" && return
     local pldir=$XDG_CONFIG_HOME/nvim/pack/git-plugins/opt
-    local cfdir=$XDG_CONFIG_HOME/nvim/lua/plugins
     local locdir=$XDG_DATA_HOME/nvim
     local statedir=$HOME/.local/state/nvim
     local indir=${vim_install_dir}
     local cachedir=$HOME/.cache/nvim
-    local lspdir=$XDG_CONFIG_HOME/nvim/lua/plugins/lsp
-    if [[ $1 == "config" || $1 == "cf" || $1 == "conf" ]]; then
-        cd "$cfdir" || return
-    elif [[ $1 == "local" || $1 == "loc" ]]; then
+    if [[ $1 == "local" || $1 == "loc" ]]; then
         cd "$locdir" || return
-    elif [[ $1 == "lsp" ]]; then
-        cd "$lspdir" || return
     elif [[ $1 == "in" || $1 == "install" ]]; then
         cd "$indir" || return
     elif [[ $1 == "plugins" ]]; then

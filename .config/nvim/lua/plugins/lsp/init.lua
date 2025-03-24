@@ -1,3 +1,4 @@
+--# selene: allow(mixed_table)
 -- https://github.com/neovim/nvim-lspconfig
 -- https://github.com/williamboman/mason.nvim
 -- https://github.com/williamboman/mason-lspconfig.nvim
@@ -190,7 +191,7 @@ function M.setup()
           'eugene',
           'gci',
           'glow',
-          'golangci-lint',
+          { 'golangci-lint', version = 'v1.64.8' },
           'golines',
           'gomodifytags',
           'gopls',

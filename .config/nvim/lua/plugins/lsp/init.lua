@@ -203,6 +203,7 @@ function M.setup()
           'markdownlint-cli2',
           'marksman',
           'perlnavigator',
+          'postgrestools',
           'prettier',
           'selene',
           'shellcheck',

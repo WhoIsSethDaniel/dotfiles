@@ -272,6 +272,9 @@ vim.g.loaded_node_provider = 0
 vim.g.mapleader = ' '
 -- vim.g.maplocalleader = '\'
 
+-- make healthcheck floating
+vim.g.health = { style = 'float' }
+
 -- key mappings
 local opts = { silent = true, noremap = true }
 local map = vim.keymap.set

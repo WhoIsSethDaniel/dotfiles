@@ -131,7 +131,7 @@
     "clean_name": "lualine-nvim",
     "config_file": "lualine-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "frozen": false
   },
   "mason-lspconfig.nvim": {

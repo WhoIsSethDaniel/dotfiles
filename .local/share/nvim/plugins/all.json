@@ -8,29 +8,20 @@
     "enabled": true,
     "frozen": false
   },
+  "blink.cmp": {
+    "name": "blink.cmp",
+    "url": "https://github.com/Saghen/blink.cmp",
+    "clean_name": "blink-cmp",
+    "config_file": "blink-cmp.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "bufjump.nvim": {
     "name": "bufjump.nvim",
     "url": "https://github.com/kwkarlwang/bufjump.nvim",
     "clean_name": "bufjump-nvim",
     "config_file": "bufjump-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "cmp-async-path": {
-    "name": "cmp-async-path",
-    "url": "https://codeberg.org/FelipeLema/cmp-async-path",
-    "clean_name": "cmp-async-path",
-    "config_file": "cmp-async-path.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "cmp-emoji": {
-    "name": "cmp-emoji",
-    "url": "https://github.com/hrsh7th/cmp-emoji",
-    "clean_name": "cmp-emoji",
-    "config_file": "cmp-emoji.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false
@@ -148,42 +139,6 @@
     "url": "https://github.com/nvim-lualine/lualine.nvim",
     "clean_name": "lualine-nvim",
     "config_file": "lualine-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "mag-buffer": {
-    "name": "mag-buffer",
-    "url": "https://github.com/iguanacucumber/mag-buffer",
-    "clean_name": "mag-buffer",
-    "config_file": "mag-buffer.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "mag-cmdline": {
-    "name": "mag-cmdline",
-    "url": "https://github.com/iguanacucumber/mag-cmdline",
-    "clean_name": "mag-cmdline",
-    "config_file": "mag-cmdline.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "mag-nvim-lsp": {
-    "name": "mag-nvim-lsp",
-    "url": "https://github.com/iguanacucumber/mag-nvim-lsp",
-    "clean_name": "mag-nvim-lsp",
-    "config_file": "mag-nvim-lsp.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "magazine.nvim": {
-    "name": "magazine.nvim",
-    "url": "https://github.com/iguanacucumber/magazine.nvim",
-    "clean_name": "magazine-nvim",
-    "config_file": "magazine-nvim.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

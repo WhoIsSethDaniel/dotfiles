@@ -25,12 +25,6 @@ local no_semantic_tokens = { 'gopls', 'lua_ls' }
 local watch_files = {}
 local manual_config_lsp = {}
 
-local notify = function(msg)
-  vim.schedule(function()
-    vim.notify(msg, vim.log.levels.INFO)
-  end)
-end
-
 local if_has_do = function(module, f)
   local ok, m = pcall(require, module)
   if ok then
@@ -50,7 +44,7 @@ end
 vim.api.nvim_create_autocmd({ 'LspDetach' }, {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
-    notify(client.name .. ' (unattached)')
+    Notify(client.name .. ' (unattached)')
   end,
 })
 
@@ -59,7 +53,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local bufnr = args.buf
     local client_id = args.data.client_id
     local client = vim.lsp.get_client_by_id(client_id)
-    -- notify(client.name .. ' (attached)')
+    -- Notify(client.name .. ' (attached)')
 
     -- prefix diagnostics with the name of the client
     local ns = vim.lsp.diagnostic.get_namespace(client_id)
@@ -175,7 +169,7 @@ function M.setup()
           function(server)
             if not vim.tbl_contains(disabled_lsp_servers, server) then
               lspconf[server].setup(M.get_config(server))
-              notify(server .. ' (mason)')
+              Notify(server .. ' (mason)')
             end
           end,
         },
@@ -237,7 +231,7 @@ function M.setup()
 
   for _, server in ipairs(manual_config_lsp) do
     lspconf[server].setup(M.get_config(server))
-    notify(server .. ' (manual)')
+    Notify(server .. ' (manual)')
   end
 end
 

@@ -209,7 +209,7 @@ vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60', 'vertical' }
 -- unneeded with a statusline
 vim.opt.showmode = false
 
--- thicker borders when using global status bar
+-- thicker borders when using global statusline
 vim.opt.fillchars:append {
   horiz = '━',
   horizup = '┻',
@@ -219,6 +219,8 @@ vim.opt.fillchars:append {
   vertright = '┣',
   verthoriz = '╋',
 }
+
+vim.opt.laststatus = 3
 
 -- command-line is not visible if not entering a command
 vim.opt.cmdheight = 0
@@ -342,6 +344,12 @@ vim.filetype.add {
     end,
   },
 }
+
+Notify = function(msg)
+  vim.schedule(function()
+    vim.notify(msg, vim.log.levels.INFO)
+  end)
+end
 
 -- turn off deprecation notices
 -- if vim.fn.has 'nvim-0.12.0' == 1 then

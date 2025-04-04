@@ -125,15 +125,6 @@
     "enabled": true,
     "frozen": false
   },
-  "lualine.nvim": {
-    "name": "lualine.nvim",
-    "url": "https://github.com/nvim-lualine/lualine.nvim",
-    "clean_name": "lualine-nvim",
-    "config_file": "lualine-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "mason-lspconfig.nvim": {
     "name": "mason-lspconfig.nvim",
     "url": "https://github.com/williamboman/mason-lspconfig.nvim",

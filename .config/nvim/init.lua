@@ -345,7 +345,7 @@ vim.filetype.add {
   },
 }
 
-Notify = function(msg)
+_G.notify = function(msg)
   vim.schedule(function()
     vim.notify(msg, vim.log.levels.INFO)
   end)

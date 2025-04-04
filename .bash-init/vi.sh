@@ -36,10 +36,13 @@ function vim-cd() {
     local statedir=$HOME/.local/state/nvim
     local indir=${vim_install_dir}
     local cachedir=$HOME/.cache/nvim
+    local cfdir=$XDG_CONFIG_HOME/nvim/lua/plugins/
     if [[ $1 == "local" || $1 == "loc" ]]; then
         cd "$locdir" || return
     elif [[ $1 == "in" || $1 == "install" ]]; then
         cd "$indir" || return
+    elif [[ $1 == "config" || $1 == "cf" || $1 == "conf" ]]; then
+        cd "$cfdir" || return
     elif [[ $1 == "plugins" ]]; then
         cd "$pldir" || return
     elif [[ $1 == "state" ]]; then

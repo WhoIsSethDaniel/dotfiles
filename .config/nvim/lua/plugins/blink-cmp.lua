@@ -2,7 +2,7 @@
 -- https://cmp.saghen.dev/
 -- https://cmp.saghen.dev/configuration/reference.html
 require('blink.cmp').setup {
-  -- https://cmp.saghen.dev/configuration/fuzzy.html
+  -- https://cmp.saghen.dev/configuration/keymap.html
   keymap = {
     preset = 'default',
   },
@@ -15,6 +15,15 @@ require('blink.cmp').setup {
     enabled = true,
     window = {
       show_documentation = true,
+    },
+  },
+  -- https://cmp.saghen.dev/configuration/completion.html
+  completion = {
+    documentation = {
+      auto_show = true,
+    },
+    ghost_text = {
+      enabled = true,
     },
   },
   -- https://cmp.saghen.dev/modes/cmdline.html

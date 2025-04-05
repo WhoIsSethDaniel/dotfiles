@@ -32,6 +32,7 @@
 /.local/share/nvim/mason/
 /.local/share/nvim/undo/
 /.local/share/nvim/sessions/*.vim
+/.local/share/nvim/snacks/*
 /.local/share/nvim/project_nvim/project_history
 /.local/share/nvim/shada/main.shada
 /.local/share/nvim/swap/*.sw*

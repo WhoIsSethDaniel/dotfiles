@@ -323,6 +323,15 @@
     "enabled": true,
     "frozen": false
   },
+  "snacks.nvim": {
+    "name": "snacks.nvim",
+    "url": "https://github.com/folke/snacks.nvim",
+    "clean_name": "snacks-nvim",
+    "config_file": "snacks-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
   "telescope-ui-select.nvim": {
     "name": "telescope-ui-select.nvim",
     "url": "https://github.com/nvim-telescope/telescope-ui-select.nvim",

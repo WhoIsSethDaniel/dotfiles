@@ -12,6 +12,11 @@ require('blink.cmp').setup {
   },
   -- https://cmp.saghen.dev/configuration/completion.html
   completion = {
+    accept = {
+      auto_brackets = {
+        enabled = false,
+      },
+    },
     documentation = {
       auto_show = true,
     },

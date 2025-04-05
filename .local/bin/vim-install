@@ -13,23 +13,17 @@ if [[ -z $1 ]]; then
         exit 1
 fi
 
-if [[ -z ${versions[*]} ]]; then
-        echo "cannot determine available nvim versions"
-        echo "is VIM_VERSIONS set?"
-        exit 1
-fi
-
 pkg=nvim-linux-x86_64.tar.gz
 url="https://github.com/neovim/neovim/releases/download/"
 
 SUM_NAME="shasum.txt"
 SUM_LOCAL_NAME=$1".sha256sum"
 STORE=$XDG_DATA_HOME"/nvim"
-VERSION=${versions[$1]}
-
-if [[ -z ${VERSION} ]]; then
-        echo "provided version is invalid"
-        exit 1
+if [[ "${versions[$1]}" ]]; then
+        KNOWN_VERSION=1
+        VERSION="${versions[$1]}"
+else
+        VERSION=$1
 fi
 
 rmtmpdir() {
@@ -46,28 +40,35 @@ tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit 1
-curl -LSo - "${url}${url_version}/${SUM_NAME}" | grep "$pkg" >"$SUM_NAME"
-cp "$SUM_NAME" "$SUM_LOCAL_NAME"
 
-OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
-if [[ -e $OLD_SUM ]]; then
-        OLD=$(cut -d\  -f1 "$OLD_SUM")
-        NEW=$(cut -d\  -f1 "$SUM_LOCAL_NAME")
-        echo "old: ${OLD}"
-        echo "new: ${NEW}"
-        if [[ $NEW == "$OLD" ]]; then
-                echo "no update available"
-                exit 0
+if [[ "$KNOWN_VERSION" ]]; then
+        curl -LSo - "${url}${url_version}/${SUM_NAME}" | grep "$pkg" >"$SUM_NAME"
+        cp "$SUM_NAME" "$SUM_LOCAL_NAME"
+
+        OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
+        if [[ -e $OLD_SUM ]]; then
+                OLD=$(cut -d\  -f1 "$OLD_SUM")
+                NEW=$(cut -d\  -f1 "$SUM_LOCAL_NAME")
+                echo "old: ${OLD}"
+                echo "new: ${NEW}"
+                if [[ $NEW == "$OLD" ]]; then
+                        echo "no update available"
+                        exit 0
+                else
+                        echo "update available"
+                fi
         else
-                echo "update available"
+                echo "no old sum found"
         fi
 else
-        echo "no old sum found"
+        echo "version not in VIM_VERSIONS; skipping sha check"
 fi
 
 curl -LSo "$pkg" "${url}${url_version}/${pkg}"
 
-sha256sum --check "$SUM_NAME"
+if [[ "$KNOWN_VERSION" ]]; then
+        sha256sum --check "$SUM_NAME"
+fi
 
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1
@@ -86,4 +87,6 @@ tar xzf "$tmpdir"/"$pkg"
 mv "nvim-linux-x86_64" "$VERSION"
 
 # only do this if everything else succeeds
-cp --force "${tmpdir}/${SUM_LOCAL_NAME}" "$STORE/${SUM_LOCAL_NAME}"
+if [[ "$KNOWN_VERSION" ]]; then
+        cp --force "${tmpdir}/${SUM_LOCAL_NAME}" "$STORE/${SUM_LOCAL_NAME}"
+fi

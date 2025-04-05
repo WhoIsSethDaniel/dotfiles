@@ -35,15 +35,6 @@
     "enabled": true,
     "frozen": false
   },
-  "dressing.nvim": {
-    "name": "dressing.nvim",
-    "url": "https://github.com/stevearc/dressing.nvim",
-    "clean_name": "dressing-nvim",
-    "config_file": "dressing-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "git-conflict.nvim": {
     "name": "git-conflict.nvim",
     "url": "https://github.com/akinsho/git-conflict.nvim",

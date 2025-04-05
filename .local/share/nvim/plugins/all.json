@@ -1,13 +1,4 @@
 {
-  "bigfile.nvim": {
-    "name": "bigfile.nvim",
-    "url": "https://github.com/LunarVim/bigfile.nvim",
-    "clean_name": "bigfile-nvim",
-    "config_file": "bigfile-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "blink.cmp": {
     "name": "blink.cmp",
     "url": "https://github.com/Saghen/blink.cmp",

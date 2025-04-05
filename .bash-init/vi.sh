@@ -28,28 +28,28 @@ set_alias vim-ls vim-list
 
 set_export_var MANPAGER "$EDITOR +Man!"
 
+pldir=$XDG_CONFIG_HOME/nvim/pack/git-plugins/opt
 vim_install_dir=$HOME/.local/nvim
+declare -A vim_cd
+vim_cd=(
+    [cache]="$HOME/.cache/nvim"
+    [config]="$XDG_CONFIG_HOME/nvim/lua/plugins/"
+    [install]="$vim_install_dir"
+    [local]="$XDG_DATA_HOME/nvim"
+    [plugins]="$pldir"
+    [state]="$HOME/.local/state/nvim"
+)
+
 function vim-cd() {
-    [[ -z $1 ]] && echo "usage: vim-cd <plugin> | config | conf | cf | in | install | lsp | local | loc | state | cache | plugins" && return
-    local pldir=$XDG_CONFIG_HOME/nvim/pack/git-plugins/opt
-    local locdir=$XDG_DATA_HOME/nvim
-    local statedir=$HOME/.local/state/nvim
-    local indir=${vim_install_dir}
-    local cachedir=$HOME/.cache/nvim
-    local cfdir=$XDG_CONFIG_HOME/nvim/lua/plugins/
-    if [[ $1 == "local" || $1 == "loc" ]]; then
-        cd "$locdir" || return
-    elif [[ $1 == "in" || $1 == "install" ]]; then
-        cd "$indir" || return
-    elif [[ $1 == "config" || $1 == "cf" || $1 == "conf" ]]; then
-        cd "$cfdir" || return
-    elif [[ $1 == "plugins" ]]; then
-        cd "$pldir" || return
-    elif [[ $1 == "state" ]]; then
-        cd "$statedir" || return
-    elif [[ $1 == "cache" ]]; then
-        cd "$cachedir" || return
-    elif [[ -d "$pldir/$1" ]]; then
+    local cd_keys=$(echo "${!vim_cd[*]}" | tr " " "|")
+    [[ -z $1 ]] && echo "usage: vim-cd <plugin>|$cd_keys" && return
+    for K in "${!vim_cd[@]}"; do
+        if [[ $1 == "$K" ]]; then
+            cd "${vim_cd[$K]}" || return
+            return
+        fi
+    done
+    if [[ -d "$pldir/$1" ]]; then
         cd "$pldir/$1" || return
     else
         echo "cannot find directory for '$1'"
@@ -75,6 +75,13 @@ _complete_vim_plugins() {
     read -r -a COMPREPLY <<<"$(vim-ls | grep -iF "${2}" | tr "\n" " " 2>/dev/null)"
 }
 
+_complete_vim_cd() {
+    local plugin_names=$(vim-ls)
+    local cd_keys=$(echo "${!vim_cd[*]}" | tr " " "\n")
+    possibles="$plugin_names $cd_keys"
+    read -r -a COMPREPLY <<<"$(echo "$possibles" | grep -iF "${2}" | tr "\n" " " 2>/dev/null)"
+}
+
 _complete_vim_installed_versions() {
     pushd "$vim_install_dir" >/dev/null || return
     for d in ./*; do
@@ -90,6 +97,7 @@ declare -A versions
 eval versions=\("$VIM_VERSIONS"\)
 complete -W "${!versions[*]}" vim-install
 complete -F _complete_vim_installed_versions vim-switch
-complete -F _complete_vim_plugins vim-cd vim-check vim-enable vim-disable vim-rename vim-remove vim-log vim-config vim-freeze vim-thaw
+complete -F _complete_vim_plugins vim-check vim-enable vim-disable vim-rename vim-remove vim-log vim-config vim-freeze vim-thaw
+complete -F _complete_vim_cd vim-cd
 
 unset_var versions

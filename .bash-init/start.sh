@@ -24,7 +24,14 @@ set_export_var HISTFILESIZE 10000
 set_export_var HISTSIZE 10000
 set_export_var HISTCONTROL 'ignoredups:erasedups'
 set_export_var HISTIGNORE 'clear'
-set_export_var PROMPT_COMMAND 'history -n; history -w; history -c; history -r'
+function histmerge() {
+    history -n
+    history -w
+    history -c
+    history -r
+}
+trap histmerge EXIT
+set_export_var PROMPT_COMMAND 'history -a'
 
 set_export_prog_var PAGER less view more
 

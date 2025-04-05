@@ -233,15 +233,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-navic": {
-    "name": "nvim-navic",
-    "url": "https://github.com/SmiteshP/nvim-navic",
-    "clean_name": "nvim-navic",
-    "config_file": "nvim-navic.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-nio": {
     "name": "nvim-nio",
     "url": "https://github.com/nvim-neotest/nvim-nio",

@@ -185,7 +185,7 @@ function M.setup()
           'eugene',
           'gci',
           'glow',
-          { 'golangci-lint', version = 'v1.64.8' },
+          'golangci-lint',
           'golines',
           'gomodifytags',
           'gopls',

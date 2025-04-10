@@ -150,7 +150,7 @@ function M.setup()
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = '' })
   end
 
-  vim.diagnostic.config { severity_sort = true, update_in_insert = true }
+  vim.diagnostic.config { severity_sort = true, update_in_insert = false }
 
   if_has_do('mason', function(mason)
     mason.setup {

@@ -226,7 +226,7 @@ vim.opt.laststatus = 3
 vim.opt.cmdheight = 0
 
 -- set the border style for floating windows
-vim.opt.winborder = 'solid'
+vim.opt.winborder = ''
 
 -- maybe turn off 'hit-enter' message; have insane history
 if vim.fn.has 'nvim-0.11.0' == 1 then

@@ -57,9 +57,6 @@ table.insert(yl.args, 1, function()
   end
 end)
 
-local vint = l.linters.vint
-vint.ignore_exitcode = false
-
 l.linters_by_ft = {
   go = { 'golangcilint' },
   lua = { 'selene' },

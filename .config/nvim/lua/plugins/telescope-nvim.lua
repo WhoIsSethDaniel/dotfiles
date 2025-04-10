@@ -3,6 +3,8 @@
 -- https://github.com/nvim-telescope/telescope-fzf-native.nvim
 -- https://github.com/nvim-telescope/telescope-ui-select.nvim
 -- https://github.com/natecraddock/telescope-zf-native.nvim
+-- winborder w/ telescope
+-- https://github.com/nvim-telescope/telescope.nvim/issues/3436
 
 local builtin = require 'telescope.builtin'
 local telescope = require 'telescope'

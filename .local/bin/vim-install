@@ -42,7 +42,9 @@ trap rmtmpdir EXIT
 cd "$tmpdir" || exit 1
 
 if [[ "$KNOWN_VERSION" ]]; then
-        curl -LSo - "${url}${url_version}/${SUM_NAME}" | grep "$pkg" >"$SUM_NAME"
+        sha_url="${url}${url_version}/${SUM_NAME}"
+        echo "download sha url: ${sha_url}"
+        curl -LSo - "$sha_url" | grep "$pkg" >"$SUM_NAME"
         cp "$SUM_NAME" "$SUM_LOCAL_NAME"
 
         OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
@@ -64,7 +66,9 @@ else
         echo "version not in VIM_VERSIONS; skipping sha check"
 fi
 
-curl -LSo "$pkg" "${url}${url_version}/${pkg}"
+pkg_url="${url}${url_version}/${pkg}"
+echo "download package url: ${pkg_url}"
+curl -LSo "$pkg" "$pkg_url"
 
 if [[ "$KNOWN_VERSION" ]]; then
         sha256sum --check "$SUM_NAME"

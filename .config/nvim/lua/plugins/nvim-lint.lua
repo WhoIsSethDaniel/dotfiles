@@ -57,9 +57,6 @@ table.insert(yl.args, 1, function()
   end
 end)
 
-local golint = l.linters.golangcilint
-golint.ignore_exitcode = false
-
 local vint = l.linters.vint
 vint.ignore_exitcode = false
 

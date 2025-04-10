@@ -78,7 +78,7 @@ _complete_vim_plugins() {
 _complete_vim_cd() {
     local plugin_names=$(vim-ls)
     local cd_keys="${!vim_cd[*]}"
-    possibles="$(echo "$cd_keys" "$plugin_names" | tr " " "\n")"
+    local possibles="$(echo "$cd_keys" "$plugin_names" | tr " " "\n")"
     read -r -a COMPREPLY <<<"$(echo "$possibles" | grep -iF "${2}" | tr "\n" " " 2>/dev/null)"
 }
 

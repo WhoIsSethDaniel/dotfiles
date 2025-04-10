@@ -225,6 +225,9 @@ vim.opt.laststatus = 3
 -- command-line is not visible if not entering a command
 vim.opt.cmdheight = 0
 
+-- set the border style for floating windows
+vim.opt.winborder = 'solid'
+
 -- maybe turn off 'hit-enter' message; have insane history
 if vim.fn.has 'nvim-0.11.0' == 1 then
   -- vim.opt.messagesopt = { 'wait:0', 'history:10000' }

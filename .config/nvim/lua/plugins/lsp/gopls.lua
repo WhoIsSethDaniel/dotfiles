@@ -33,7 +33,7 @@ return {
       -- noSemanticString = true,
       -- noSemanticNumber = true,
       staticcheck = true,
-      hoverKind = 'Structured',
+      hoverKind = 'FullDocumentation',
       vulncheck = 'Imports',
       analysisProgressReporting = true,
       hints = {

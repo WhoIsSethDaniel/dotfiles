@@ -52,7 +52,10 @@ local autocmds = {
       VimEnter = {
         callback = function()
           vim.defer_fn(function()
-            vim.cmd [[ TSUpdate ]]
+            local has_ts, _ = pcall(require, 'nvim-treesitter')
+            if has_ts then
+              vim.cmd [[ TSUpdate ]]
+            end
             vim.cmd [[ helptags ALL ]]
           end, 1000)
         end,

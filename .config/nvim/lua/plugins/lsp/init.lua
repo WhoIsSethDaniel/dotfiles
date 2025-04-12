@@ -101,14 +101,20 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- dump_caps()
 
     -- mappings
+    local has_tele, _ = pcall(require, 'telescope')
     local opts = { noremap = true, silent = true, buffer = bufnr }
     local map = vim.keymap.set
     map('n', 'gD', vim.lsp.buf.declaration, opts)
-    map('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
-    map('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opts)
-    -- override default grr/gri (which only exists >= 0.11) and use telescope instead
-    map('n', 'grr', require('telescope.builtin').lsp_references, opts)
-    map('n', 'gri', require('telescope.builtin').lsp_implementations, opts)
+    if has_tele then
+      map('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
+      map('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opts)
+      -- override default grr/gri (which only exists >= 0.11) and use telescope instead
+      map('n', 'grr', require('telescope.builtin').lsp_references, opts)
+      map('n', 'gri', require('telescope.builtin').lsp_implementations, opts)
+    else
+      map('n', 'gd', vim.lsp.buf.definition, opts)
+      map('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+    end
     if vim.fn.has 'nvim-0.11.0' == 0 then
       -- each of these is set by default in 0.11.0; see :h grn
       map('n', 'grn', vim.lsp.buf.rename, opts)

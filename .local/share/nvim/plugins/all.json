@@ -179,15 +179,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-lastplace": {
-    "name": "nvim-lastplace",
-    "url": "https://github.com/ethanholz/nvim-lastplace",
-    "clean_name": "nvim-lastplace",
-    "config_file": "nvim-lastplace.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-lint": {
     "name": "nvim-lint",
     "url": "https://github.com/mfussenegger/nvim-lint",

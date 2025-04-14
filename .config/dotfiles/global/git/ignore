@@ -86,6 +86,7 @@
 /.config/systemd/user/default.target.wants/
 /.config/tiling-assistant/
 /.config/totem/
+/.config/.wrangler/
 
 /.bundle/cache/
 /.cache/

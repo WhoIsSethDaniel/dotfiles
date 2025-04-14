@@ -12,8 +12,8 @@ return {
       -- logging = true,
     },
   },
-  on_new_config = function(new_config, new_root)
-    local m = string.match(new_root, '^(.*/work)')
+  before_init = function(params, new_config)
+    local m = string.match(vim.fn.getcwd(), '^(.*/work)')
     if m then
       new_config.settings.perlnavigator.perlPath = 'mm-perl'
       new_config.settings.perlnavigator.perlcriticProfile = table.concat({ m, 'mm_website/.perlcriticrc' }, '/')

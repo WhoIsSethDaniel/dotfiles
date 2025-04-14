@@ -174,7 +174,8 @@ function M.setup()
         handlers = {
           function(server)
             if not vim.tbl_contains(disabled_lsp_servers, server) then
-              lspconf[server].setup(M.get_config(server))
+              vim.lsp.config(server, M.get_config(server))
+              vim.lsp.enable(server)
               notify(server .. ' (mason)')
             end
           end,

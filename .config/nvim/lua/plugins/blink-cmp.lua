@@ -67,6 +67,7 @@ require('blink.cmp').setup {
     },
   },
   -- https://cmp.saghen.dev/configuration/snippets.html
+  -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-snippets.md
   snippets = {
     preset = 'mini_snippets',
   },

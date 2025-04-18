@@ -66,4 +66,8 @@ require('blink.cmp').setup {
       show_documentation = true,
     },
   },
+  -- https://cmp.saghen.dev/configuration/snippets.html
+  snippets = {
+    preset = 'mini_snippets',
+  },
 }

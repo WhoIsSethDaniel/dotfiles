@@ -206,15 +206,6 @@
     "enabled": true,
     "frozen": false
   },
-  "nvim-snippets": {
-    "name": "nvim-snippets",
-    "url": "https://github.com/garymjr/nvim-snippets",
-    "clean_name": "nvim-snippets",
-    "config_file": "nvim-snippets.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "nvim-spider": {
     "name": "nvim-spider",
     "url": "https://github.com/chrisgrieser/nvim-spider",

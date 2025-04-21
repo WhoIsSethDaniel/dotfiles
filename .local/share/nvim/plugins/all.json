@@ -62,15 +62,6 @@
     "enabled": true,
     "frozen": false
   },
-  "hardtime.nvim": {
-    "name": "hardtime.nvim",
-    "url": "https://github.com/m4xshen/hardtime.nvim",
-    "clean_name": "hardtime-nvim",
-    "config_file": "hardtime-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "leap.nvim": {
     "name": "leap.nvim",
     "url": "https://github.com/ggandor/leap.nvim",
@@ -211,6 +202,15 @@
     "url": "https://github.com/chrisgrieser/nvim-spider",
     "clean_name": "nvim-spider",
     "config_file": "nvim-spider.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "nvim-surround": {
+    "name": "nvim-surround",
+    "url": "https://github.com/kylechui/nvim-surround",
+    "clean_name": "nvim-surround",
+    "config_file": "nvim-surround.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false
@@ -373,15 +373,6 @@
     "url": "https://github.com/tpope/vim-repeat",
     "clean_name": "vim-repeat",
     "config_file": "vim-repeat.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "vim-sandwich": {
-    "name": "vim-sandwich",
-    "url": "https://github.com/machakann/vim-sandwich",
-    "clean_name": "vim-sandwich",
-    "config_file": "vim-sandwich.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

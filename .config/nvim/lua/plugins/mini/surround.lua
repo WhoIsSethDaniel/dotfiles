@@ -1,1 +1,3 @@
-require('mini.surround').setup {}
+require('mini.surround').setup {
+  search_method = 'nearest',
+}

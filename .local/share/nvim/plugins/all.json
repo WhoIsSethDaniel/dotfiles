@@ -341,15 +341,6 @@
     "enabled": true,
     "frozen": false
   },
-  "ultimate-autopair.nvim": {
-    "name": "ultimate-autopair.nvim",
-    "url": "https://github.com/altermo/ultimate-autopair.nvim",
-    "clean_name": "ultimate-autopair-nvim",
-    "config_file": "ultimate-autopair-nvim.lua",
-    "colorscheme": false,
-    "enabled": false,
-    "frozen": false
-  },
   "vim-conjoin": {
     "name": "vim-conjoin",
     "url": "https://github.com/flwyd/vim-conjoin",

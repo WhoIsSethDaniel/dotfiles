@@ -130,15 +130,9 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 
 function M.get_config(server)
   local config = load_lsp_file(server)
-  local cap = vim.lsp.protocol.make_client_capabilities()
-  local has_cmp_nvim_lsp, cmp_nvim_lsp = pcall(require, 'cmp_nvim_lsp')
   local has_blink_cmp, blink_cmp = pcall(require, 'blink.cmp')
-  if has_cmp_nvim_lsp then
-    cap = cmp_nvim_lsp.default_capabilities(cap)
-    config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
-  elseif has_blink_cmp then
-    cap = blink_cmp.get_lsp_capabilities(cap)
-    config = vim.tbl_deep_extend('force', { capabilities = cap }, config)
+  if has_blink_cmp then
+    config = blink_cmp.get_lsp_capabilities(config, true)
   end
   return config
 end

@@ -31,7 +31,8 @@ function histmerge() {
     history -r
 }
 trap histmerge EXIT
-set_export_var PROMPT_COMMAND 'history -a'
+# emit osc-133 escape codes
+set_export_var PROMPT_COMMAND 'printf \"\\033]133;A\\007\"; history -a'
 
 set_export_prog_var PAGER less view more
 

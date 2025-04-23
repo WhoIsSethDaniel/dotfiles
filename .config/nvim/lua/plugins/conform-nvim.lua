@@ -83,7 +83,7 @@ c.setup {
     lsp_format = 'fallback',
   },
   formatters_by_ft = {
-    go = { 'golangci-lint', lsp_format = 'never' },
+    go = { 'golangci-lint', lsp_format = 'fallback' },
     gohtml = { 'prettier' },
     gotmpl = { 'prettier' },
     json = { 'prettier' },
@@ -98,13 +98,8 @@ c.setup {
     toml = { 'dprint', lsp_format = 'prefer' },
     yaml = { 'prettier' },
   },
-  format_on_save = function(bufnr)
-    local ft = vim.bo[bufnr].filetype
-    if ft == 'perl' or not should_format(bufnr, ft) then
-      return
-    end
-    return {}
-  end,
+  -- don't use format_on_save for now
+  format_on_save = nil,
   format_after_save = function(bufnr)
     local ft = vim.bo[bufnr].filetype
     if not should_format(bufnr, ft) then

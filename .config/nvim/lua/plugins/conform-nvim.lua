@@ -83,7 +83,7 @@ c.setup {
     lsp_format = 'fallback',
   },
   formatters_by_ft = {
-    go = { 'golangci-lint', stop_after_first = true, lsp_format = 'never' },
+    go = { 'golangci-lint', lsp_format = 'never' },
     gohtml = { 'prettier' },
     gotmpl = { 'prettier' },
     json = { 'prettier' },

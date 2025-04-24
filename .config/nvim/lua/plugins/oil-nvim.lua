@@ -98,7 +98,7 @@ end, { desc = 'Open project root directory' })
 --   callback = function()
 --     local dir = oil.get_current_dir()
 --     if vim.fn.isdirectory(dir) ~= 0 then
---       vim.api.nvim_command('lcd ' .. dir)
+--       vim.cmd('lcd ' .. dir)
 --     end
 --   end,
 -- })

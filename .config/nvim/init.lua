@@ -305,7 +305,7 @@ end)
 -- vim.api.nvim_exec([[ ino <expr> <c-r> getregtype(v:register) =~# '<c-v>' ? '<c-r>' : '<c-r><c-o>' ]], false)
 
 -- find all non git files within the pwd and place them in args
-vim.api.nvim_command [[ command! -nargs=0 LoadAll :args `fdfind --type f --exclude .git -c never -H`<cr> ]]
+vim.cmd [[ command! -nargs=0 LoadAll :args `fdfind --type f --exclude .git -c never -H`<cr> ]]
 
 if vim.env.SSH_TTY then
   vim.g.clipboard = {

@@ -282,12 +282,11 @@ vim.g.health = { style = 'float' }
 
 -- key mappings
 local opts = { silent = true, noremap = true }
-local map = vim.keymap.set
-map('n', '<leader>dq', vim.diagnostic.setqflist, opts)
-map('n', '<leader>dl', vim.diagnostic.setloclist, opts)
-map('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist, opts)
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, opts)
+vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
 -- close any open help window
-map('n', '<leader>ch', function()
+vim.keymap.set('n', '<leader>ch', function()
   local bufs = vim.api.nvim_list_bufs()
   for _, b in ipairs(bufs) do
     if vim.api.nvim_buf_is_loaded(b) and vim.api.nvim_get_option_value('filetype', { buf = b }) == 'help' then
@@ -296,7 +295,7 @@ map('n', '<leader>ch', function()
   end
 end, opts)
 -- toggle showing/hiding the diagnostics
-map('n', '<leader>td', function()
+vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end)
 

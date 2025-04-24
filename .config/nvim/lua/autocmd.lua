@@ -37,7 +37,7 @@ local autocmds = {
       TermOpen = {
         callback = function()
           -- allow window movements
-          vim.api.nvim_set_keymap('t', '<C-w>', '<C-\\><C-n><C-w>', { silent = true, noremap = true })
+          vim.keymap.set('t', '<C-w>', '<C-\\><C-n><C-w>', { silent = true, noremap = true })
           -- all these options are now off by default as of 0.11; see :h terminal-config
           -- vim.opt_local.signcolumn = 'no'
           -- vim.opt_local.number = false

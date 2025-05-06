@@ -152,6 +152,12 @@ function M.setup()
 
   vim.diagnostic.config { severity_sort = true, update_in_insert = false }
 
+  for _, server in ipairs(manual_config_lsp) do
+    vim.lsp.enable(server)
+    vim.lsp.config(server, M.get_config(server))
+    notify(server .. ' (manual)')
+  end
+
   if_has_do('mason', function(mason)
     mason.setup {
       -- log_level = vim.log.levels.DEBUG,
@@ -162,6 +168,20 @@ function M.setup()
         -- 'file:/home/seth/src/mason-registry',
       },
     }
+    if_has_do('mason-lspconfig', function(m)
+      for _, server in ipairs(m.get_installed_servers()) do
+        if not vim.tbl_contains(disabled_lsp_servers, server) then
+          vim.lsp.enable(server)
+          vim.lsp.config(server, M.get_config(server))
+          notify(server .. ' (mason)')
+        end
+      end
+      m.setup {
+        automatic_enable = {
+          exclude = disabled_lsp_servers,
+        },
+      }
+    end)
 
     if_has_do('mason-tool-installer', function(m)
       m.setup {
@@ -213,11 +233,6 @@ function M.setup()
       safe_output = true,
     }
   end)
-
-  for _, server in ipairs(manual_config_lsp) do
-    lspconf[server].setup(M.get_config(server))
-    notify(server .. ' (manual)')
-  end
 end
 
 return M

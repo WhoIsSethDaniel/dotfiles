@@ -1,398 +1,398 @@
 {
-  "blink.cmp": {
-    "name": "blink.cmp",
-    "url": "https://github.com/Saghen/blink.cmp",
-    "clean_name": "blink-cmp",
-    "config_file": "blink-cmp.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "colorful-winsep.nvim": {
-    "name": "colorful-winsep.nvim",
-    "url": "https://github.com/nvim-zh/colorful-winsep.nvim",
-    "clean_name": "colorful-winsep-nvim",
-    "config_file": "colorful-winsep-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "conform.nvim": {
-    "name": "conform.nvim",
-    "url": "https://github.com/stevearc/conform.nvim",
-    "clean_name": "conform-nvim",
-    "config_file": "conform-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "git-conflict.nvim": {
-    "name": "git-conflict.nvim",
-    "url": "https://github.com/akinsho/git-conflict.nvim",
-    "clean_name": "git-conflict-nvim",
-    "config_file": "git-conflict-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "gitsigns.nvim": {
-    "name": "gitsigns.nvim",
-    "url": "https://github.com/lewis6991/gitsigns.nvim",
-    "clean_name": "gitsigns-nvim",
-    "config_file": "gitsigns-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "glow.nvim": {
-    "name": "glow.nvim",
-    "url": "https://github.com/ellisonleao/glow.nvim",
-    "clean_name": "glow-nvim",
-    "config_file": "glow-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "goofball.nvim": {
-    "name": "goofball.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/goofball.nvim",
-    "clean_name": "goofball-nvim",
-    "config_file": "goofball-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "hardtime.nvim": {
-    "name": "hardtime.nvim",
-    "url": "https://github.com/m4xshen/hardtime.nvim",
-    "clean_name": "hardtime-nvim",
-    "config_file": "hardtime-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "leap.nvim": {
-    "name": "leap.nvim",
-    "url": "https://github.com/ggandor/leap.nvim",
-    "clean_name": "leap-nvim",
-    "config_file": "leap-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "lists.vim": {
-    "name": "lists.vim",
-    "url": "https://github.com/lervag/lists.vim",
-    "clean_name": "lists-vim",
-    "config_file": "lists-vim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "loupe": {
-    "name": "loupe",
-    "url": "https://github.com/wincent/loupe",
-    "clean_name": "loupe",
-    "config_file": "loupe.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "mason-lspconfig.nvim": {
-    "name": "mason-lspconfig.nvim",
-    "url": "https://github.com/williamboman/mason-lspconfig.nvim",
-    "clean_name": "mason-lspconfig-nvim",
-    "config_file": "mason-lspconfig-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "mason-tool-installer.nvim": {
-    "name": "mason-tool-installer.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim",
-    "clean_name": "mason-tool-installer-nvim",
-    "config_file": "mason-tool-installer-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "mason.nvim": {
-    "name": "mason.nvim",
-    "url": "https://github.com/williamboman/mason.nvim",
-    "clean_name": "mason-nvim",
-    "config_file": "mason-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "mini.nvim": {
-    "name": "mini.nvim",
-    "url": "https://github.com/echasnovski/mini.nvim",
-    "clean_name": "mini-nvim",
-    "config_file": "mini-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "neotest": {
-    "name": "neotest",
-    "url": "https://github.com/nvim-neotest/neotest",
-    "clean_name": "neotest",
-    "config_file": "neotest.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "neotest-golang": {
-    "name": "neotest-golang",
-    "url": "https://github.com/fredrikaverpil/neotest-golang",
-    "clean_name": "neotest-golang",
-    "config_file": "neotest-golang.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "noice.nvim": {
-    "name": "noice.nvim",
-    "url": "https://github.com/folke/noice.nvim",
-    "clean_name": "noice-nvim",
-    "config_file": "noice-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nui.nvim": {
-    "name": "nui.nvim",
-    "url": "https://github.com/MunifTanjim/nui.nvim",
-    "clean_name": "nui-nvim",
-    "config_file": "nui-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-autopairs": {
-    "name": "nvim-autopairs",
-    "url": "https://github.com/windwp/nvim-autopairs",
-    "clean_name": "nvim-autopairs",
-    "config_file": "nvim-autopairs.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-bqf": {
-    "name": "nvim-bqf",
-    "url": "https://github.com/kevinhwang91/nvim-bqf",
-    "clean_name": "nvim-bqf",
-    "config_file": "nvim-bqf.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-lint": {
-    "name": "nvim-lint",
-    "url": "https://github.com/mfussenegger/nvim-lint",
-    "clean_name": "nvim-lint",
-    "config_file": "nvim-lint.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-lspconfig": {
-    "name": "nvim-lspconfig",
-    "url": "https://github.com/neovim/nvim-lspconfig",
-    "clean_name": "nvim-lspconfig",
-    "config_file": "nvim-lspconfig.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-nio": {
-    "name": "nvim-nio",
-    "url": "https://github.com/nvim-neotest/nvim-nio",
-    "clean_name": "nvim-nio",
-    "config_file": "nvim-nio.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-spider": {
-    "name": "nvim-spider",
-    "url": "https://github.com/chrisgrieser/nvim-spider",
-    "clean_name": "nvim-spider",
-    "config_file": "nvim-spider.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-treesitter": {
-    "name": "nvim-treesitter",
-    "url": "https://github.com/nvim-treesitter/nvim-treesitter",
-    "clean_name": "nvim-treesitter",
-    "config_file": "nvim-treesitter.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-treesitter-endwise": {
-    "name": "nvim-treesitter-endwise",
-    "url": "https://github.com/RRethy/nvim-treesitter-endwise",
-    "clean_name": "nvim-treesitter-endwise",
-    "config_file": "nvim-treesitter-endwise.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "nvim-treesitter-textobjects": {
-    "name": "nvim-treesitter-textobjects",
-    "url": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
-    "clean_name": "nvim-treesitter-textobjects",
-    "config_file": "nvim-treesitter-textobjects.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "oil.nvim": {
-    "name": "oil.nvim",
-    "url": "https://github.com/stevearc/oil.nvim",
-    "clean_name": "oil-nvim",
-    "config_file": "oil-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "plenary.nvim": {
-    "name": "plenary.nvim",
-    "url": "https://github.com/nvim-lua/plenary.nvim",
-    "clean_name": "plenary-nvim",
-    "config_file": "plenary-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "quicker.nvim": {
-    "name": "quicker.nvim",
-    "url": "https://github.com/stevearc/quicker.nvim",
-    "clean_name": "quicker-nvim",
-    "config_file": "quicker-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "repossession.nvim": {
-    "name": "repossession.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/repossession.nvim",
-    "clean_name": "repossession-nvim",
-    "config_file": "repossession-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "snacks.nvim": {
-    "name": "snacks.nvim",
-    "url": "https://github.com/folke/snacks.nvim",
-    "clean_name": "snacks-nvim",
-    "config_file": "snacks-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "telescope-ui-select.nvim": {
-    "name": "telescope-ui-select.nvim",
-    "url": "https://github.com/nvim-telescope/telescope-ui-select.nvim",
-    "clean_name": "telescope-ui-select-nvim",
-    "config_file": "telescope-ui-select-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "telescope-zf-native.nvim": {
-    "name": "telescope-zf-native.nvim",
-    "url": "https://github.com/natecraddock/telescope-zf-native.nvim",
-    "clean_name": "telescope-zf-native-nvim",
-    "config_file": "telescope-zf-native-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "telescope.nvim": {
-    "name": "telescope.nvim",
-    "url": "https://github.com/nvim-telescope/telescope.nvim",
-    "clean_name": "telescope-nvim",
-    "config_file": "telescope-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "toggleterm.nvim": {
-    "name": "toggleterm.nvim",
-    "url": "https://github.com/akinsho/toggleterm.nvim",
-    "clean_name": "toggleterm-nvim",
-    "config_file": "toggleterm-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "tokyonight.nvim": {
-    "name": "tokyonight.nvim",
-    "url": "https://github.com/folke/tokyonight.nvim",
-    "clean_name": "tokyonight-nvim",
-    "config_file": "tokyonight-nvim.lua",
-    "colorscheme": true,
-    "enabled": true,
-    "frozen": false
-  },
-  "vim-conjoin": {
-    "name": "vim-conjoin",
-    "url": "https://github.com/flwyd/vim-conjoin",
-    "clean_name": "vim-conjoin",
-    "config_file": "vim-conjoin.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "vim-eunuch": {
-    "name": "vim-eunuch",
-    "url": "https://github.com/tpope/vim-eunuch",
-    "clean_name": "vim-eunuch",
-    "config_file": "vim-eunuch.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "vim-matchup": {
-    "name": "vim-matchup",
-    "url": "https://github.com/andymass/vim-matchup",
-    "clean_name": "vim-matchup",
-    "config_file": "vim-matchup.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "vim-repeat": {
-    "name": "vim-repeat",
-    "url": "https://github.com/tpope/vim-repeat",
-    "clean_name": "vim-repeat",
-    "config_file": "vim-repeat.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "wiki.vim": {
-    "name": "wiki.vim",
-    "url": "https://github.com/lervag/wiki.vim",
-    "clean_name": "wiki-vim",
-    "config_file": "wiki-vim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
-  "workspaces.nvim": {
-    "name": "workspaces.nvim",
-    "url": "https://github.com/natecraddock/workspaces.nvim",
-    "clean_name": "workspaces-nvim",
-    "config_file": "workspaces-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  }
+	"blink.cmp": {
+		"name": "blink.cmp",
+		"url": "https://github.com/Saghen/blink.cmp",
+		"clean_name": "blink-cmp",
+		"config_file": "blink-cmp.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"colorful-winsep.nvim": {
+		"name": "colorful-winsep.nvim",
+		"url": "https://github.com/nvim-zh/colorful-winsep.nvim",
+		"clean_name": "colorful-winsep-nvim",
+		"config_file": "colorful-winsep-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"conform.nvim": {
+		"name": "conform.nvim",
+		"url": "https://github.com/stevearc/conform.nvim",
+		"clean_name": "conform-nvim",
+		"config_file": "conform-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"git-conflict.nvim": {
+		"name": "git-conflict.nvim",
+		"url": "https://github.com/akinsho/git-conflict.nvim",
+		"clean_name": "git-conflict-nvim",
+		"config_file": "git-conflict-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"gitsigns.nvim": {
+		"name": "gitsigns.nvim",
+		"url": "https://github.com/lewis6991/gitsigns.nvim",
+		"clean_name": "gitsigns-nvim",
+		"config_file": "gitsigns-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"glow.nvim": {
+		"name": "glow.nvim",
+		"url": "https://github.com/ellisonleao/glow.nvim",
+		"clean_name": "glow-nvim",
+		"config_file": "glow-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"goofball.nvim": {
+		"name": "goofball.nvim",
+		"url": "git@github.com:WhoIsSethDaniel/goofball.nvim",
+		"clean_name": "goofball-nvim",
+		"config_file": "goofball-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"hardtime.nvim": {
+		"name": "hardtime.nvim",
+		"url": "https://github.com/m4xshen/hardtime.nvim",
+		"clean_name": "hardtime-nvim",
+		"config_file": "hardtime-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"leap.nvim": {
+		"name": "leap.nvim",
+		"url": "https://github.com/ggandor/leap.nvim",
+		"clean_name": "leap-nvim",
+		"config_file": "leap-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"lists.vim": {
+		"name": "lists.vim",
+		"url": "https://github.com/lervag/lists.vim",
+		"clean_name": "lists-vim",
+		"config_file": "lists-vim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"loupe": {
+		"name": "loupe",
+		"url": "https://github.com/wincent/loupe",
+		"clean_name": "loupe",
+		"config_file": "loupe.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"mason-lspconfig.nvim": {
+		"name": "mason-lspconfig.nvim",
+		"url": "https://github.com/mason-org/mason-lspconfig.nvim",
+		"clean_name": "mason-lspconfig-nvim",
+		"config_file": "mason-lspconfig-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"mason-tool-installer.nvim": {
+		"name": "mason-tool-installer.nvim",
+		"url": "git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim",
+		"clean_name": "mason-tool-installer-nvim",
+		"config_file": "mason-tool-installer-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"mason.nvim": {
+		"name": "mason.nvim",
+		"url": "https://github.com/mason-org/mason.nvim",
+		"clean_name": "mason-nvim",
+		"config_file": "mason-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"mini.nvim": {
+		"name": "mini.nvim",
+		"url": "https://github.com/echasnovski/mini.nvim",
+		"clean_name": "mini-nvim",
+		"config_file": "mini-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"neotest": {
+		"name": "neotest",
+		"url": "https://github.com/nvim-neotest/neotest",
+		"clean_name": "neotest",
+		"config_file": "neotest.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"neotest-golang": {
+		"name": "neotest-golang",
+		"url": "https://github.com/fredrikaverpil/neotest-golang",
+		"clean_name": "neotest-golang",
+		"config_file": "neotest-golang.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"noice.nvim": {
+		"name": "noice.nvim",
+		"url": "https://github.com/folke/noice.nvim",
+		"clean_name": "noice-nvim",
+		"config_file": "noice-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nui.nvim": {
+		"name": "nui.nvim",
+		"url": "https://github.com/MunifTanjim/nui.nvim",
+		"clean_name": "nui-nvim",
+		"config_file": "nui-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-autopairs": {
+		"name": "nvim-autopairs",
+		"url": "https://github.com/windwp/nvim-autopairs",
+		"clean_name": "nvim-autopairs",
+		"config_file": "nvim-autopairs.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-bqf": {
+		"name": "nvim-bqf",
+		"url": "https://github.com/kevinhwang91/nvim-bqf",
+		"clean_name": "nvim-bqf",
+		"config_file": "nvim-bqf.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-lint": {
+		"name": "nvim-lint",
+		"url": "https://github.com/mfussenegger/nvim-lint",
+		"clean_name": "nvim-lint",
+		"config_file": "nvim-lint.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-lspconfig": {
+		"name": "nvim-lspconfig",
+		"url": "https://github.com/neovim/nvim-lspconfig",
+		"clean_name": "nvim-lspconfig",
+		"config_file": "nvim-lspconfig.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-nio": {
+		"name": "nvim-nio",
+		"url": "https://github.com/nvim-neotest/nvim-nio",
+		"clean_name": "nvim-nio",
+		"config_file": "nvim-nio.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-spider": {
+		"name": "nvim-spider",
+		"url": "https://github.com/chrisgrieser/nvim-spider",
+		"clean_name": "nvim-spider",
+		"config_file": "nvim-spider.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-treesitter": {
+		"name": "nvim-treesitter",
+		"url": "https://github.com/nvim-treesitter/nvim-treesitter",
+		"clean_name": "nvim-treesitter",
+		"config_file": "nvim-treesitter.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-treesitter-endwise": {
+		"name": "nvim-treesitter-endwise",
+		"url": "https://github.com/RRethy/nvim-treesitter-endwise",
+		"clean_name": "nvim-treesitter-endwise",
+		"config_file": "nvim-treesitter-endwise.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"nvim-treesitter-textobjects": {
+		"name": "nvim-treesitter-textobjects",
+		"url": "https://github.com/nvim-treesitter/nvim-treesitter-textobjects",
+		"clean_name": "nvim-treesitter-textobjects",
+		"config_file": "nvim-treesitter-textobjects.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"oil.nvim": {
+		"name": "oil.nvim",
+		"url": "https://github.com/stevearc/oil.nvim",
+		"clean_name": "oil-nvim",
+		"config_file": "oil-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"plenary.nvim": {
+		"name": "plenary.nvim",
+		"url": "https://github.com/nvim-lua/plenary.nvim",
+		"clean_name": "plenary-nvim",
+		"config_file": "plenary-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"quicker.nvim": {
+		"name": "quicker.nvim",
+		"url": "https://github.com/stevearc/quicker.nvim",
+		"clean_name": "quicker-nvim",
+		"config_file": "quicker-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"repossession.nvim": {
+		"name": "repossession.nvim",
+		"url": "git@github.com:WhoIsSethDaniel/repossession.nvim",
+		"clean_name": "repossession-nvim",
+		"config_file": "repossession-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"snacks.nvim": {
+		"name": "snacks.nvim",
+		"url": "https://github.com/folke/snacks.nvim",
+		"clean_name": "snacks-nvim",
+		"config_file": "snacks-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"telescope-ui-select.nvim": {
+		"name": "telescope-ui-select.nvim",
+		"url": "https://github.com/nvim-telescope/telescope-ui-select.nvim",
+		"clean_name": "telescope-ui-select-nvim",
+		"config_file": "telescope-ui-select-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"telescope-zf-native.nvim": {
+		"name": "telescope-zf-native.nvim",
+		"url": "https://github.com/natecraddock/telescope-zf-native.nvim",
+		"clean_name": "telescope-zf-native-nvim",
+		"config_file": "telescope-zf-native-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"telescope.nvim": {
+		"name": "telescope.nvim",
+		"url": "https://github.com/nvim-telescope/telescope.nvim",
+		"clean_name": "telescope-nvim",
+		"config_file": "telescope-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"toggleterm.nvim": {
+		"name": "toggleterm.nvim",
+		"url": "https://github.com/akinsho/toggleterm.nvim",
+		"clean_name": "toggleterm-nvim",
+		"config_file": "toggleterm-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"tokyonight.nvim": {
+		"name": "tokyonight.nvim",
+		"url": "https://github.com/folke/tokyonight.nvim",
+		"clean_name": "tokyonight-nvim",
+		"config_file": "tokyonight-nvim.lua",
+		"colorscheme": true,
+		"enabled": true,
+		"frozen": false
+	},
+	"vim-conjoin": {
+		"name": "vim-conjoin",
+		"url": "https://github.com/flwyd/vim-conjoin",
+		"clean_name": "vim-conjoin",
+		"config_file": "vim-conjoin.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"vim-eunuch": {
+		"name": "vim-eunuch",
+		"url": "https://github.com/tpope/vim-eunuch",
+		"clean_name": "vim-eunuch",
+		"config_file": "vim-eunuch.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"vim-matchup": {
+		"name": "vim-matchup",
+		"url": "https://github.com/andymass/vim-matchup",
+		"clean_name": "vim-matchup",
+		"config_file": "vim-matchup.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"vim-repeat": {
+		"name": "vim-repeat",
+		"url": "https://github.com/tpope/vim-repeat",
+		"clean_name": "vim-repeat",
+		"config_file": "vim-repeat.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"wiki.vim": {
+		"name": "wiki.vim",
+		"url": "https://github.com/lervag/wiki.vim",
+		"clean_name": "wiki-vim",
+		"config_file": "wiki-vim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	},
+	"workspaces.nvim": {
+		"name": "workspaces.nvim",
+		"url": "https://github.com/natecraddock/workspaces.nvim",
+		"clean_name": "workspaces-nvim",
+		"config_file": "workspaces-nvim.lua",
+		"colorscheme": false,
+		"enabled": true,
+		"frozen": false
+	}
 }

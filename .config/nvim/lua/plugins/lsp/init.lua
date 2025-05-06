@@ -163,20 +163,6 @@ function M.setup()
       },
     }
 
-    if_has_do('mason-lspconfig', function(mlsp)
-      mlsp.setup {
-        handlers = {
-          function(server)
-            if not vim.tbl_contains(disabled_lsp_servers, server) then
-              vim.lsp.config(server, M.get_config(server))
-              vim.lsp.enable(server)
-              notify(server .. ' (mason)')
-            end
-          end,
-        },
-      }
-    end)
-
     if_has_do('mason-tool-installer', function(m)
       m.setup {
         ensure_installed = {

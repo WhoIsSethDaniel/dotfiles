@@ -12,7 +12,11 @@ if not has_lspconfig then
       return {}
     end,
     setup = function()
-      vim.api.nvim_echo({ { 'nvim-lspconfig is not installed; no configuration for LSP' } }, false, { err = true })
+      vim.api.nvim_echo(
+        { { 'nvim-lspconfig is not installed; no default configuration for LSP' } },
+        false,
+        { err = true }
+      )
     end,
   }
 end
@@ -153,7 +157,6 @@ function M.setup()
   vim.diagnostic.config { severity_sort = true, update_in_insert = false }
 
   for _, server in ipairs(manual_config_lsp) do
-    vim.lsp.enable(server)
     vim.lsp.config(server, M.get_config(server))
     notify(server .. ' (manual)')
   end

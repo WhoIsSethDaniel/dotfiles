@@ -222,16 +222,6 @@ function M.setup()
       }
     end)
   end)
-
-  if_has_do('nvim-navic', function(m)
-    m.setup {
-      highlight = true,
-      separator = ' > ',
-      depth_limit = 0,
-      depth_limit_indicator = '..',
-      safe_output = true,
-    }
-  end)
 end
 
 return M

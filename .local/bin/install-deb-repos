@@ -2,7 +2,7 @@
 
 # chrome (https://www.ubuntuupdates.org/ppa/google_chrome)
 # above link shows a deprecated way to install signing key using apt-key. See the apt-key man page for more information.
-echo "chrome"
+echo "chrome (stable)"
 wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google.asc
 sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 echo
@@ -26,17 +26,17 @@ echo
 # echo
 
 # bluetooth updates
-echo "bluetooth codecs"
-sudo add-apt-repository ppa:berglh/pulseaudio-a2dp
+# echo "bluetooth codecs"
+# sudo add-apt-repository ppa:berglh/pulseaudio-a2dp
 
 # git
 echo "git"
 sudo add-apt-repository ppa:git-core/ppa
 
 # pipewire / wireplumber
-echo "pipwire / wireplumber"
-sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream
-sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
+# echo "pipwire / wireplumber"
+# sudo add-apt-repository ppa:pipewire-debian/wireplumber-upstream
+# sudo add-apt-repository ppa:pipewire-debian/pipewire-upstream
 
 # alacritty
 # echo "alacritty"
@@ -52,14 +52,14 @@ curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.s
 sudo apt update
 sudo apt install google-chrome-stable
 # sudo apt install neovim
-sudo apt install pulseaudio-modules-bt libldac
+# sudo apt install pulseaudio-modules-bt libldac
 sudo apt install git git-man
 sudo apt install pipewire wireplumber \
-    blueman gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} \
-    libspa-0.2-{bluetooth,dev,jack,modules} \
-    pipewire{,-{audio-client-libraries,pulse,media-session,bin,locales,tests}}
+        blueman gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} \
+        libspa-0.2-{bluetooth,dev,jack,modules} \
+        pipewire{,-{audio-client-libraries,pulse,media-session,bin,locales,tests}}
 sudo apt install nodejs
 sudo apt install git-lfs
-sudo apt install alacritty
+# sudo apt install alacritty
 # sudo apt install vim-common vim-gtk vim-gui-common vim-runtime
 # sudo apt remove vim-tiny

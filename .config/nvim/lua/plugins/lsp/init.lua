@@ -136,6 +136,7 @@ function M.get_config(server)
   local config = load_lsp_file(server)
   local has_blink_cmp, blink_cmp = pcall(require, 'blink.cmp')
   if has_blink_cmp then
+    -- this merges with vim.lsp.protocol.make_client_capabilities()
     config = blink_cmp.get_lsp_capabilities(config, true)
   end
   return config

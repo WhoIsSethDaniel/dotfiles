@@ -7,10 +7,6 @@
 local has_lspconfig, lspconf = pcall(require, 'lspconfig')
 if not has_lspconfig then
   return {
-    get_config = function(server)
-      vim.api.nvim_echo({ { string.format('empty get_config request for %s', server) } }, false, { err = true })
-      return {}
-    end,
     setup = function()
       vim.api.nvim_echo(
         { { 'nvim-lspconfig is not installed; no default configuration for LSP' } },
@@ -132,20 +128,10 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
   end,
 })
 
-function M.get_config(server)
-  local config = load_lsp_file(server)
-  local has_blink_cmp, blink_cmp = pcall(require, 'blink.cmp')
-  if has_blink_cmp then
-    -- this merges with vim.lsp.protocol.make_client_capabilities()
-    config = blink_cmp.get_lsp_capabilities(config, true)
-  end
-  return config
-end
-
 function M.setup()
   -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
-  -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
+  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
   -- require('vim.lsp.log').set_level(vim.log.levels.WARN)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
@@ -180,7 +166,6 @@ function M.setup()
 
   for _, server in ipairs(manual_config_lsp) do
     vim.lsp.enable(server)
-    vim.lsp.config(server, M.get_config(server))
     notify(server .. ' (manual)')
   end
 
@@ -196,7 +181,6 @@ function M.setup()
     if_has_do('mason-lspconfig', function(m)
       for _, server in ipairs(m.get_installed_servers()) do
         if not vim.tbl_contains(disabled_lsp_servers, server) then
-          vim.lsp.config(server, M.get_config(server))
           notify(server .. ' (mason)')
         end
       end

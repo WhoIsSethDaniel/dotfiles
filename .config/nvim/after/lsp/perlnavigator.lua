@@ -12,7 +12,7 @@ return {
       -- logging = true,
     },
   },
-  before_init = function(params, new_config)
+  before_init = function(_, new_config)
     local m = string.match(vim.fn.getcwd(), '^(.*/work)')
     if m then
       new_config.settings.perlnavigator.perlPath = 'mm-perl'

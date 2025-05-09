@@ -350,15 +350,6 @@
     "enabled": true,
     "frozen": false
   },
-  "vim-eunuch": {
-    "name": "vim-eunuch",
-    "url": "https://github.com/tpope/vim-eunuch",
-    "clean_name": "vim-eunuch",
-    "config_file": "vim-eunuch.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "vim-matchup": {
     "name": "vim-matchup",
     "url": "https://github.com/andymass/vim-matchup",
@@ -373,6 +364,15 @@
     "url": "https://github.com/tpope/vim-repeat",
     "clean_name": "vim-repeat",
     "config_file": "vim-repeat.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "frozen": false
+  },
+  "vim-suda": {
+    "name": "vim-suda",
+    "url": "https://github.com/lambdalisue/vim-suda",
+    "clean_name": "vim-suda",
+    "config_file": "vim-suda.lua",
     "colorscheme": false,
     "enabled": true,
     "frozen": false

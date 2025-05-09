@@ -130,9 +130,9 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 
 function M.setup()
   -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
-  require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
+  -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
   -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
-  -- require('vim.lsp.log').set_level(vim.log.levels.WARN)
+  require('vim.lsp.log').set_level(vim.log.levels.WARN)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
   -- global diagnostic options

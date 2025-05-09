@@ -172,7 +172,8 @@ function M.setup()
   if_has_do('mason', function(mason)
     mason.setup {
       -- log_level = vim.log.levels.DEBUG,
-      log_level = vim.log.levels.INFO,
+      -- log_level = vim.log.levels.INFO,
+      log_level = vim.log.levels.WARN,
       registries = {
         'github:mason-org/mason-registry',
         -- 'file:/home/seth/src/mason-registry',

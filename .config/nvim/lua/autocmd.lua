@@ -42,7 +42,7 @@ local autocmds = {
           -- vim.opt_local.signcolumn = 'no'
           -- vim.opt_local.number = false
           -- vim.opt_local.relativenumber = false
-          -- vim.cmd 'startinsert'
+          -- vim.cmd.startinsert()
         end,
       },
     },
@@ -54,9 +54,9 @@ local autocmds = {
           vim.defer_fn(function()
             local has_ts, _ = pcall(require, 'nvim-treesitter')
             if has_ts then
-              vim.cmd [[ TSUpdate ]]
+              vim.cmd.TSUpdate()
             end
-            vim.cmd [[ helptags ALL ]]
+            vim.cmd.helptags { 'ALL' }
           end, 1000)
         end,
       },

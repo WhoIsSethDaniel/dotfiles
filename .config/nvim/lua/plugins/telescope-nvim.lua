@@ -87,7 +87,7 @@ vim.keymap.set('n', '<leader>pp', function()
         ws.add(path)
       end
     end
-    vim.cmd [[Telescope workspaces]]
+    vim.cmd.Telescope { 'workspaces' }
   end
 end, {})
 

@@ -7,16 +7,16 @@ Commands for initializing a new home directory
 install needed packages
 
 ```bash
-apt install keychain git-crypt curl make python3-neovim ripgrep fd-find gcc g++ ncurses-term gh jekyll ruby-dev libhunspell-dev wl-clipboard fswatch
+apt install keychain git-crypt curl make python3-neovim python3-venv ripgrep fd-find gcc g++ ncurses-term gh jekyll ruby-dev libhunspell-dev wl-clipboard fswatch
 ```
 
 setup home ("https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3")
 
 ```bash
-mkdir -p $HOME/.config/dotfiles
-cd $HOME/.config/dotfiles
-git --git-dir=$HOME/.config/dotfiles/home --work-tree=$HOME clone --bare https://github.com/WhoIsSethDaniel/dotfiles $HOME/.config/dotfiles/home
-git --git-dir=$HOME/.config/dotfiles/home --work-tree=$HOME checkout -f
+mkdir -p "$HOME"/.config/dotfiles
+cd "$HOME"/.config/dotfiles
+git --git-dir="$HOME"/.config/dotfiles/home --work-tree="$HOME" clone --bare https://github.com/WhoIsSethDaniel/dotfiles "$HOME"/.config/dotfiles/home
+git --git-dir="$HOME"/.config/dotfiles/home --work-tree="$HOME" checkout -f
 . ~/.bashrc
 git clone git@github.com:WhoIsSethDaniel/dotfiles-home main
 cd ~
@@ -71,7 +71,7 @@ vim +checkhealth
 ## Perl / Plenv
 
 ```bash
-git clone git@github.com:tokuhirom/plenv.git $HOME/.plenv
+git clone git@github.com:tokuhirom/plenv.git "$HOME"/.plenv
 git clone git@github.com:tokuhirom/Perl-Build.git ~/.plenv/plugins/perl-build/
 git clone git@github.com:WhoIsSethDaniel/plenv-module-inspector.git ~/.plenv/plugins/module-inspector
 . .bashrc

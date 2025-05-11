@@ -131,8 +131,8 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 function M.setup()
   -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
   -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  -- require('vim.lsp.log').set_level(vim.log.levels.INFO)
-  require('vim.lsp.log').set_level(vim.log.levels.WARN)
+  require('vim.lsp.log').set_level(vim.log.levels.INFO)
+  -- require('vim.lsp.log').set_level(vim.log.levels.WARN)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
   -- global diagnostic options
@@ -172,8 +172,8 @@ function M.setup()
   if_has_do('mason', function(mason)
     mason.setup {
       -- log_level = vim.log.levels.DEBUG,
-      -- log_level = vim.log.levels.INFO,
-      log_level = vim.log.levels.WARN,
+      log_level = vim.log.levels.INFO,
+      -- log_level = vim.log.levels.WARN,
       registries = {
         'github:mason-org/mason-registry',
         -- 'file:/home/seth/src/mason-registry',

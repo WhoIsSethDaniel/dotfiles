@@ -229,11 +229,6 @@ function M.setup()
         auto_update = true,
         -- run_on_start = false,
         start_delay = 0,
-        integrations = {
-          ['mason-lspconfig'] = false,
-          ['mason-null-ls'] = false,
-          ['mason-nvim-dap'] = false,
-        },
       }
     end)
   end)

@@ -45,6 +45,7 @@ require('blink.cmp').setup {
           -- https://github.com/Saghen/blink.cmp/issues/1317#issuecomment-2762258454
           -- https://github.com/Saghen/blink.cmp/issues/1610
           label_description = {
+            width = { max = 80 },
             text = function(ctx)
               return ctx.label_description ~= '' and ctx.label_description or ctx.item.detail
             end,

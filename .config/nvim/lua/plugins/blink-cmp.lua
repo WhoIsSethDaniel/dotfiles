@@ -42,6 +42,13 @@ require('blink.cmp').setup {
               return hl
             end,
           },
+          -- https://github.com/Saghen/blink.cmp/issues/1317#issuecomment-2762258454
+          -- https://github.com/Saghen/blink.cmp/issues/1610
+          label_description = {
+            text = function(ctx)
+              return ctx.label_description ~= '' and ctx.label_description or ctx.item.detail
+            end,
+          },
         },
       },
     },

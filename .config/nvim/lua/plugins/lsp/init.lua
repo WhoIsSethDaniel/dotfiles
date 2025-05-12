@@ -1,10 +1,11 @@
 --# selene: allow(mixed_table)
+---@diagnostic disable:need-check-nil
 -- https://github.com/neovim/nvim-lspconfig
 -- https://github.com/williamboman/mason.nvim
 -- https://github.com/williamboman/mason-lspconfig.nvim
 -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 
-local has_lspconfig, lspconf = pcall(require, 'lspconfig')
+local has_lspconfig, _ = pcall(require, 'lspconfig')
 if not has_lspconfig then
   return {
     setup = function()
@@ -30,15 +31,6 @@ local if_has_do = function(module, f)
   if ok then
     f(m)
   end
-end
-
-local load_lsp_file = function(f)
-  local ok, config = pcall(require, string.format('plugins.lsp.%s', f))
-  if not ok then
-    vim.api.nvim_echo({ { 'failed to load lsp config: ' .. f } }, false, { err = true })
-    config = {}
-  end
-  return config
 end
 
 vim.api.nvim_create_autocmd({ 'LspDetach' }, {
@@ -94,6 +86,8 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- change priority of semantic tokens to be less than treesitter; see :h vim.highlight.priorities
     -- vim.highlight.priorities.semantic_tokens = 95
 
+    -- selene: allow(unused_variable)
+    ---@diagnostic disable-next-line:unused-local,unused-function
     local function dump_caps()
       -- print(vim.inspect(client.capabilities.workspace))
       -- print(vim.inspect(client.server_capabilities))

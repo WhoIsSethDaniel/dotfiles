@@ -14,7 +14,7 @@ require('blink.cmp').setup {
   completion = {
     accept = {
       auto_brackets = {
-        enabled = false,
+        enabled = true,
       },
     },
     documentation = {
@@ -70,6 +70,10 @@ require('blink.cmp').setup {
   -- https://cmp.saghen.dev/configuration/signature.html
   signature = {
     enabled = true,
+    trigger = {
+      show_on_accept = true,
+      show_on_insert = true,
+    },
     window = {
       show_documentation = true,
     },

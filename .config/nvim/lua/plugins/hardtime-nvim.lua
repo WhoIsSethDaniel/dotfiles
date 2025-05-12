@@ -1,7 +1,6 @@
 -- https://github.com/m4xshen/hardtime.nvim
-local config = require('hardtime.config').config
-config['restricted_keys']['-'] = nil
-vim.list_extend(config.disabled_filetypes, { 'wiki', 'godoc', 'man', 'outputpanel', 'json' })
-require('hardtime').setup {
+local config = require('hardtime').setup {
+  restricted_keys = nil,
+  disabled_filetypes = { 'wiki', 'godoc', 'man', 'outputpanel', 'json' },
   max_count = 4,
 }

@@ -193,7 +193,6 @@ function M.setup()
           'dprint',
           'editorconfig-checker',
           'eugene',
-          'glow',
           'golangci-lint',
           'gomodifytags',
           'gopls',

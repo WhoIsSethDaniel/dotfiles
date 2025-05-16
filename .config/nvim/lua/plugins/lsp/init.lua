@@ -204,7 +204,6 @@ function M.setup()
           'markdownlint-cli2',
           'marksman',
           'perlnavigator',
-          'pint',
           'prettier',
           'selene',
           'shellcheck',

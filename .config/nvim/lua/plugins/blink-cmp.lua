@@ -16,6 +16,8 @@ require('blink.cmp').setup {
       auto_brackets = {
         enabled = true,
         kind_resolution = {
+          -- block 'go' to force semantic resolution;
+          -- see https://github.com/Saghen/blink.cmp/discussions/1766
           blocked_filetypes = { 'go' },
         },
       },

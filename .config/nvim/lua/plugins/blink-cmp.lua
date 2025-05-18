@@ -15,6 +15,9 @@ require('blink.cmp').setup {
     accept = {
       auto_brackets = {
         enabled = true,
+        kind_resolution = {
+          blocked_filetypes = { 'go' },
+        },
       },
     },
     documentation = {

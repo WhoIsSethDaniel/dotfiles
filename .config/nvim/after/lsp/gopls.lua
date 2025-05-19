@@ -26,7 +26,7 @@ return {
       gofumpt = true,
       usePlaceholders = false,
       experimentalPostfixCompletions = true,
-      completeFunctionCalls = false,
+      completeFunctionCalls = true,
       semanticTokens = true,
       -- turn off semantic token strings when using injections,
       -- otherwise it overrides ts injections for sql (and others)

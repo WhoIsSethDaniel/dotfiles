@@ -15,11 +15,6 @@ require('blink.cmp').setup {
     accept = {
       auto_brackets = {
         enabled = true,
-        kind_resolution = {
-          -- block 'go' to force semantic resolution;
-          -- see https://github.com/Saghen/blink.cmp/discussions/1766
-          blocked_filetypes = { 'go' },
-        },
       },
     },
     documentation = {
@@ -87,7 +82,7 @@ require('blink.cmp').setup {
   },
   -- https://cmp.saghen.dev/configuration/snippets.html
   -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-snippets.md
-  snippets = {
-    preset = 'mini_snippets',
-  },
+  -- snippets = {
+  --   preset = 'mini_snippets',
+  -- },
 }

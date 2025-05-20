@@ -83,6 +83,9 @@ require('blink.cmp').setup {
   -- https://cmp.saghen.dev/configuration/snippets.html
   -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-snippets.md
   -- perhaps don't use mini.snippets - see https://github.com/Saghen/blink.cmp/discussions/1766
+  -- addendum to discussion linked above: the extra characters seem to be intended. I don't know
+  -- why. I don't currently use snippets so simply using the default snippet provider (which is
+  -- the vim.snippet.* api) works just fine.
   -- snippets = {
   --   preset = 'mini_snippets',
   -- },

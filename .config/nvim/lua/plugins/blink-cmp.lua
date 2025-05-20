@@ -85,7 +85,8 @@ require('blink.cmp').setup {
   -- perhaps don't use mini.snippets - see https://github.com/Saghen/blink.cmp/discussions/1766
   -- addendum to discussion linked above: the extra characters seem to be intended. I don't know
   -- why. I don't currently use snippets so simply using the default snippet provider (which is
-  -- the vim.snippet.* api) works just fine.
+  -- the vim.snippet.* api) works just fine. Using LuaSnip also doesn't print odd characters by
+  -- default so can be a different option.
   -- snippets = {
   --   preset = 'mini_snippets',
   -- },

@@ -22,7 +22,7 @@ local M = {}
 
 local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = {}
-local no_semantic_tokens = { 'lua_ls' }
+local no_semantic_tokens = {}
 local watch_files = {}
 local manual_config_lsp = {}
 

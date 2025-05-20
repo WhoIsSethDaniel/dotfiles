@@ -89,8 +89,8 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- selene: allow(unused_variable)
     ---@diagnostic disable-next-line:unused-local,unused-function
     local function dump_caps()
-      -- print(vim.inspect(client.capabilities.workspace))
-      -- print(vim.inspect(client.server_capabilities))
+      -- vim.print(client.capabilities.workspace)
+      -- vim.print(client.server_capabilities)
     end
     -- dump_caps()
 

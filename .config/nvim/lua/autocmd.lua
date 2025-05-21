@@ -3,18 +3,13 @@ local autocmds = {
     {
       FileType = {
         pattern = { 'help', 'man' },
-        command = 'wincmd L',
-      },
-    },
-    {
-      FileType = {
-        pattern = { 'help', 'man' },
         callback = function()
           vim.opt_local.number = false
           vim.opt_local.relativenumber = false
           vim.opt_local.signcolumn = 'no'
           -- setting this to 'wipe' breaks jumplist in help
           vim.opt_local.bufhidden = 'delete'
+          vim.cmd.wincmd 'L'
         end,
       },
     },

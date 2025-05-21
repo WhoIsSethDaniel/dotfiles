@@ -175,15 +175,13 @@ function M.setup()
     }
     if_has_do('mason-lspconfig', function(m)
       for _, server in ipairs(m.get_installed_servers()) do
-        if not vim.tbl_contains(disabled_lsp_servers, server) then
+        if vim.tbl_contains(disabled_lsp_servers, server) then
+          notify(server .. '(disabled)')
+        else
+          vim.lsp.enable(server)
           notify(server .. ' (mason)')
         end
       end
-      m.setup {
-        automatic_enable = {
-          exclude = disabled_lsp_servers,
-        },
-      }
     end)
 
     if_has_do('mason-tool-installer', function(m)
@@ -222,6 +220,11 @@ function M.setup()
         auto_update = true,
         -- run_on_start = false,
         start_delay = 0,
+        integrations = {
+          ['mason-lspconfig'] = false,
+          ['mason-null-ls'] = false,
+          ['mason-nvim-dap'] = false,
+        },
       }
     end)
   end)

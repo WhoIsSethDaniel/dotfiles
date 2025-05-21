@@ -1,5 +1,4 @@
 -- https://github.com/nvim-neotest/neotest
--- https://github.com/nvim-neotest/neotest-go
 -- https://github.com/fredrikaverpil/neotest-golang
 local neotest = require 'neotest'
 local neotest_ns = vim.api.nvim_create_namespace 'neotest'

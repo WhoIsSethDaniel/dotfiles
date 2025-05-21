@@ -176,7 +176,7 @@ function M.setup()
     if_has_do('mason-lspconfig', function(m)
       for _, server in ipairs(m.get_installed_servers()) do
         if vim.tbl_contains(disabled_lsp_servers, server) then
-          notify(server .. '(disabled)')
+          notify(server .. ' (disabled)')
         else
           vim.lsp.enable(server)
           notify(server .. ' (mason)')

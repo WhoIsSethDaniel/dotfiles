@@ -56,10 +56,6 @@ vim.keymap.set('n', '<leader>fb', function()
   builtin.buffers { ignore_current_buffer = true }
 end, {})
 
-vim.keymap.set('n', '<leader>fm', function()
-  builtin.oldfiles()
-end, {})
-
 vim.keymap.set('n', '<leader>gb', function()
   builtin.git_branches { show_remote_tracking_branches = true }
 end, {})

@@ -24,7 +24,9 @@ local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = {}
 local no_semantic_tokens = {}
 local watch_files = {}
-local manual_config_lsp = {}
+
+local mason_log_level = vim.log.levels.INFO
+local lsp_log_level = vim.log.levels.INFO
 
 local if_has_do = function(module, f)
   local ok, m = pcall(require, module)
@@ -36,7 +38,7 @@ end
 vim.api.nvim_create_autocmd({ 'LspDetach' }, {
   callback = function(args)
     local client = vim.lsp.get_client_by_id(args.data.client_id)
-    notify(client.name .. ' (unattached)')
+    notify(client.name .. ' (detached)')
   end,
 })
 
@@ -123,10 +125,7 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 })
 
 function M.setup()
-  -- require('vim.lsp.log').set_level(vim.log.levels.TRACE)
-  -- require('vim.lsp.log').set_level(vim.log.levels.DEBUG)
-  require('vim.lsp.log').set_level(vim.log.levels.INFO)
-  -- require('vim.lsp.log').set_level(vim.log.levels.WARN)
+  require('vim.lsp.log').set_level(lsp_log_level)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
   -- global diagnostic options
@@ -158,23 +157,10 @@ function M.setup()
     end,
   }
 
-  for _, server in ipairs(manual_config_lsp) do
-    vim.lsp.enable(server)
-    notify(server .. ' (manual)')
-  end
-
-  if_has_do('mason', function(mason)
-    mason.setup {
-      -- log_level = vim.log.levels.DEBUG,
-      log_level = vim.log.levels.INFO,
-      -- log_level = vim.log.levels.WARN,
-      registries = {
-        'github:mason-org/mason-registry',
-        -- 'file:/home/seth/src/mason-registry',
-      },
-    }
-
-    local lsp_files = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
+  local lsp_files = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
+  if #lsp_files == 0 then
+    vim.api.nvim_echo({ { 'no LSP files found -- unable to setup LSP' } }, false, { err = true })
+  else
     for name, _ in vim.fs.dir(lsp_files) do
       local server = string.gsub(name, '%.lua', '')
       if vim.tbl_contains(disabled_lsp_servers, server) then
@@ -184,6 +170,16 @@ function M.setup()
         notify(server .. ' (mason)')
       end
     end
+  end
+
+  if_has_do('mason', function(mason)
+    mason.setup {
+      log_level = mason_log_level,
+      registries = {
+        'github:mason-org/mason-registry',
+        -- 'file:/home/seth/src/mason-registry',
+      },
+    }
 
     if_has_do('mason-tool-installer', function(m)
       m.setup {

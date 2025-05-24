@@ -20,6 +20,8 @@ end
 
 local M = {}
 
+local notify = _G.notify
+
 local disabled_lsp_servers = { 'templ' }
 local no_inlay_hints = {}
 local no_semantic_tokens = {}

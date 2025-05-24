@@ -173,16 +173,17 @@ function M.setup()
         -- 'file:/home/seth/src/mason-registry',
       },
     }
-    if_has_do('mason-lspconfig', function(m)
-      for _, server in ipairs(m.get_installed_servers()) do
-        if vim.tbl_contains(disabled_lsp_servers, server) then
-          notify(server .. ' (disabled)')
-        else
-          vim.lsp.enable(server)
-          notify(server .. ' (mason)')
-        end
+
+    local lsp_files = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
+    for name, _ in vim.fs.dir(lsp_files) do
+      local server = string.gsub(name, '%.lua', '')
+      if vim.tbl_contains(disabled_lsp_servers, server) then
+        notify(server .. ' (disabled)')
+      else
+        vim.lsp.enable(server)
+        notify(server .. ' (mason)')
       end
-    end)
+    end
 
     if_has_do('mason-tool-installer', function(m)
       m.setup {

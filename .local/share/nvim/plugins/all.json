@@ -89,15 +89,6 @@
     "enabled": true,
     "frozen": false
   },
-  "mason-lspconfig.nvim": {
-    "name": "mason-lspconfig.nvim",
-    "url": "https://github.com/mason-org/mason-lspconfig.nvim",
-    "clean_name": "mason-lspconfig-nvim",
-    "config_file": "mason-lspconfig-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "frozen": false
-  },
   "mason-tool-installer.nvim": {
     "name": "mason-tool-installer.nvim",
     "url": "git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim",

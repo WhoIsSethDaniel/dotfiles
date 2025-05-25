@@ -3,15 +3,26 @@
 local c = require 'conform'
 
 c.formatters.shfmt = {
-  prepend_args = { '-i=4', '-ci', '-s', '-bn' },
+  prepend_args = {
+    '-i=4',
+    '-ci',
+    '-s',
+    '-bn',
+  },
 }
 
 c.formatters.golines = {
-  prepend_args = { '--shorten-comments' },
+  prepend_args = {
+    '--shorten-comments',
+  },
 }
 
 c.formatters.gci = {
-  prepend_args = { '-s=standard', '-s=default', '-s=prefix(github.maxmind.com/maxmind/mm_website' },
+  prepend_args = {
+    '-s=standard',
+    '-s=default',
+    '-s=prefix(github.maxmind.com/maxmind/mm_website',
+  },
 }
 
 c.formatters.prettier = function(bufnr)

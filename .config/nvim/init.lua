@@ -68,7 +68,7 @@ vim.opt.path = { ',', '**' }
 -- END editorconfig
 
 -- use conform
-vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+-- vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 -- only add one space when joining
 vim.opt.joinspaces = false

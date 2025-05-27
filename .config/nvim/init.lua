@@ -67,6 +67,9 @@ vim.opt.path = { ',', '**' }
 -- vim.opt.textwidth = 120
 -- END editorconfig
 
+-- use conform
+vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+
 -- only add one space when joining
 vim.opt.joinspaces = false
 -- keep wrapped lines at same indent level

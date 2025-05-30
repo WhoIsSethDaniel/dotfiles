@@ -18,7 +18,7 @@ local autocmds = {
     {
       TextYankPost = {
         callback = function()
-          vim.highlight.on_yank {
+          vim.hl.on_yank {
             higroup = 'IncSearch',
             timeout = 500,
             on_visual = true,

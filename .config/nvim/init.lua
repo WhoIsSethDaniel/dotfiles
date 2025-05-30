@@ -12,87 +12,87 @@ end
 vim.opt.cpoptions:append '>'
 
 -- turn off mouse support
-vim.opt.mouse = ''
-vim.opt.mousescroll = 'hor:0,ver:0'
+vim.o.mouse = ''
+vim.o.mousescroll = 'hor:0,ver:0'
 
 -- unicode emojis are not always considered full width
-vim.opt.emoji = false
+vim.o.emoji = false
 
 -- make certain folding is turned off
-vim.opt.foldenable = false
+vim.o.foldenable = false
 
 -- ignore case in search patterns;
 -- can be overridden using \C
-vim.opt.ignorecase = true
+vim.o.ignorecase = true
 
 -- override the ignorecase option IFF the search pattern contains upper-case characters
-vim.opt.smartcase = true
+vim.o.smartcase = true
 
 -- highlight all matches for the most recent search
-vim.opt.hlsearch = true
+vim.o.hlsearch = true
 
 -- show search matches as it is being typed
-vim.opt.incsearch = true
+vim.o.incsearch = true
 
 -- show the results of :sub immediately
-vim.opt.inccommand = 'nosplit'
+vim.o.inccommand = 'nosplit'
 
 -- automatically write the file/buffer in certain circumstances
-vim.opt.autowrite = true
--- vim.opt.autowriteall = true
+vim.o.autowrite = true
+-- vim.o.autowriteall = true
 
 -- show matching pairs of brackets (see 'matchpairs' option for
 -- setting new pairs / removing unwanted pairs)
-vim.opt.showmatch = true
+vim.o.showmatch = true
 
 -- recursive find; may want to change at some point (see above reddit link)
 vim.opt.path = { ',', '**' }
 
 -- USE editorconfig instead of following few settings
 -- use spaces instead of tabs
--- vim.opt.expandtab = true
+-- vim.o.expandtab = true
 
 -- how many spaces to move when <tab> is pressed
--- vim.opt.tabstop = 4
+-- vim.o.tabstop = 4
 
 -- spaces when << or >> are used
--- vim.opt.shiftwidth = 4
+-- vim.o.shiftwidth = 4
 
 -- use spaces when tab used at front of line
--- vim.opt.smarttab = true
+-- vim.o.smarttab = true
 --
--- vim.opt.softtabstop = 4
+-- vim.o.softtabstop = 4
 
 -- autoformatting (gw/gq)
--- vim.opt.textwidth = 120
+-- vim.o.textwidth = 120
 -- END editorconfig
 
 -- use conform
 -- vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
 
 -- only add one space when joining
-vim.opt.joinspaces = false
+vim.o.joinspaces = false
 -- keep wrapped lines at same indent level
-vim.opt.breakindent = true
-vim.opt.breakindentopt = 'shift:2'
+vim.o.breakindent = true
+vim.o.breakindentopt = 'shift:2'
 
 -- do not automatically change directory (use project.nvim instead)
-vim.opt.autochdir = false
+vim.o.autochdir = false
 
 -- do not automatically equalize window sizes
-vim.opt.equalalways = false
+vim.o.equalalways = false
 -- where to place new windows by default
-vim.opt.splitbelow = false
-vim.opt.splitright = true
+vim.o.splitbelow = false
+vim.o.splitright = true
 -- cursor position when splitting
 if vim.fn.has 'nvim-0.9.0' == 1 then
-  vim.opt.splitkeep = 'screen'
+  vim.o.splitkeep = 'screen'
 end
 
 -- no error bells
-vim.opt.errorbells = false
-vim.opt.visualbell = false
-vim.opt.belloff = 'all'
+vim.o.errorbells = false
+vim.o.visualbell = false
+vim.o.belloff = 'all'
 
 -- how gw/gq work
 -- t: autowrap text using textwidth
@@ -101,102 +101,102 @@ vim.opt.belloff = 'all'
 -- q: allow formatting of comments with gq
 -- j: remove comment leader when it makes sense; set by sensible
 -- n: recognize numbered lists; uses formatlistpat
-vim.opt.formatoptions = 'tcrqjno'
+vim.o.formatoptions = 'tcrqjno'
 
 -- 'enhanced' command-line completion (sensible turns this on)
 -- [not needed or used when using cmp-cmdline]
-vim.opt.wildmenu = true
-vim.opt.wildmode = 'longest:full,full'
+vim.o.wildmenu = true
+vim.o.wildmode = 'longest:full,full'
 -- case insensitive file matching
--- vim.opt.fileignorecase = true
+-- vim.o.fileignorecase = true
 -- case insensitive file completion
--- vim.opt.wildignorecase = true
+-- vim.o.wildignorecase = true
 
 -- relative line numbers, but with the current line number displayed
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.number = true
+vim.o.relativenumber = true
 -- width granted to line numbers (default is 4)
-vim.opt.numberwidth = 4
+vim.o.numberwidth = 4
 
 -- turn on indenting
 -- ** use treesitter.indent instead
--- vim.opt.smartindent = true
+-- vim.o.smartindent = true
 -- follow previous line's indent (on by default)
--- vim.opt.autoindent = true
+-- vim.o.autoindent = true
 
 -- undo
-vim.opt.undofile = true
--- vim.opt.undodir = vim.env.XDG_DATA_HOME .. '/nvim/undo'
+vim.o.undofile = true
+-- vim.o.undodir = vim.env.XDG_DATA_HOME .. '/nvim/undo'
 -- reduce from default (1000)
-vim.opt.undolevels = 500
+vim.o.undolevels = 500
 -- cannot be larger than 10000
-vim.opt.history = 10000
+vim.o.history = 10000
 
 -- swap and backup files
--- vim.opt.directory = vim.env.XDG_DATA_HOME .. '/nvim/swap//'
+-- vim.o.directory = vim.env.XDG_DATA_HOME .. '/nvim/swap//'
 -- disable swap
-vim.opt.directory = ''
--- vim.opt.backupdir = vim.env.XDG_DATA_HOME .. '/nvim/backup'
+vim.o.directory = ''
+-- vim.o.backupdir = vim.env.XDG_DATA_HOME .. '/nvim/backup'
 
 -- typing
-vim.opt.ttimeout = true
-vim.opt.ttimeoutlen = 50
+vim.o.ttimeout = true
+vim.o.ttimeoutlen = 50
 
 -- below is the default
--- vim.opt.backspace = { "indent", "eol", "start" }
+-- vim.o.backspace = { "indent", "eol", "start" }
 
 -- show the command being typed
-vim.opt.showcmd = true
+vim.o.showcmd = true
 
 -- show the cursorline
-vim.opt.cursorline = true
+vim.o.cursorline = true
 
 -- Modelines are needed when setting ft=help for plugin help files.
 -- See section below re: setting filetype for plugin help files.
-vim.opt.modeline = false
+vim.o.modeline = false
 -- default is 5 -- ignored if 'modeline' is false
--- vim.opt.modelines = 1
+-- vim.o.modelines = 1
 
 -- turn on/off the sign column
-vim.opt.signcolumn = 'yes'
+vim.o.signcolumn = 'yes'
 
 -- preview window / popup
-vim.opt.previewheight = 10
+vim.o.previewheight = 10
 
 -- buffer control; usetab = use already open buffer(s) or tab(s), if possible, when switching tabs
-vim.opt.switchbuf = 'usetab'
+vim.o.switchbuf = 'usetab'
 
 -- session and shada
 -- default is `100,<50,s10,h
 vim.opt.shada = { "'250", '<50', 's250', 'h' }
--- NO NO -- vim.opt.shada:append("%")  -- store all open buffers
+-- NO NO -- vim.o.shada:append("%")  -- store all open buffers
 -- default is blank,buffers,curdir,folds,help,tabpages,winsize
--- vim.opt.sessionoptions:append 'terminal'
--- vim.opt.sessionoptions:remove 'buffers'
--- vim.opt.sessionoptions:remove 'winsize'
--- vim.opt.sessionoptions:remove 'blank'
+-- vim.o.sessionoptions:append 'terminal'
+-- vim.o.sessionoptions:remove 'buffers'
+-- vim.o.sessionoptions:remove 'winsize'
+-- vim.o.sessionoptions:remove 'blank'
 
 -- terminal
 -- scroll buffer; 100000 is the max
-vim.opt.scrollback = 100000
+vim.o.scrollback = 100000
 -- default is 0 for scrolloff
--- vim.opt.scrolloff = 25
+-- vim.o.scrolloff = 25
 
 -- commented out: use telescope instead
 -- use rg for grep
--- vim.opt.grepprg = 'rg --vimgrep --no-heading --smart-case'
--- vim.opt.grepformat = { '%f:%l:%c:%m', '%f:%l:%m' }
+-- vim.o.grepprg = 'rg --vimgrep --no-heading --smart-case'
+-- vim.o.grepformat = { '%f:%l:%c:%m', '%f:%l:%m' }
 -- vim.api.nvim_command 'command -nargs=* Grep silent! grep! <args> | cwindow | redraw!'
 
 -- color scheme
 -- this should be set to true by default if the host terminal supports it
--- vim.opt.termguicolors = true
-vim.opt.background = 'dark'
+-- vim.o.termguicolors = true
+vim.o.background = 'dark'
 
 -- configuration for completion
 -- [not necessary with nvim-cmp]
 vim.opt.complete = { '.', 'w', 'b', 'u' }
--- vim.opt.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
+-- vim.o.completeopt = { 'menu', 'menuone', 'noselect', 'noinsert' }
 
 -- messages
 -- I: turn off vim 'intro' message
@@ -210,7 +210,7 @@ vim.opt.shortmess:append 'Ics'
 vim.opt.diffopt:append { 'algorithm:patience', 'linematch:60', 'vertical' }
 
 -- unneeded with a statusline
-vim.opt.showmode = false
+vim.o.showmode = false
 
 -- thicker borders when using global statusline
 vim.opt.fillchars:append {
@@ -223,27 +223,27 @@ vim.opt.fillchars:append {
   verthoriz = '╋',
 }
 
-vim.opt.laststatus = 3
+vim.o.laststatus = 3
 
 -- command-line is not visible if not entering a command
-vim.opt.cmdheight = 0
+vim.o.cmdheight = 0
 
 -- set the border style for floating windows
-vim.opt.winborder = 'none'
+vim.o.winborder = 'none'
 
 -- maybe turn off 'hit-enter' message; have insane history
 if vim.fn.has 'nvim-0.11.0' == 1 then
-  -- vim.opt.messagesopt = { 'wait:0', 'history:10000' }
+  -- vim.o.messagesopt = { 'wait:0', 'history:10000' }
   vim.opt.messagesopt = { 'hit-enter', 'history:10000' }
 end
 
 -- this is needed for lemonade
--- vim.opt.clipboard = 'unnamedplus'
+-- vim.o.clipboard = 'unnamedplus'
 
 -- allow placing the entered command in the statusline
 -- (lualine doesn't support this yet)
 -- if vim.fn.has 'nvim-0.9.0' == 1 then
--- vim.opt.showcmdloc = 'statusline'
+-- vim.o.showcmdloc = 'statusline'
 -- end
 
 -- turn on embedded highlighting for lua

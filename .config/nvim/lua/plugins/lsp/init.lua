@@ -102,23 +102,24 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     local has_tele, _ = pcall(require, 'telescope')
     local opts = { noremap = true, silent = true, buffer = bufnr }
     local map = vim.keymap.set
-    map('n', 'gD', vim.lsp.buf.declaration, opts)
+    map('n', 'grD', vim.lsp.buf.declaration, opts)
     if has_tele then
-      map('n', 'gd', require('telescope.builtin').lsp_definitions, opts)
-      map('n', '<leader>D', require('telescope.builtin').lsp_type_definitions, opts)
+      map('n', 'grd', require('telescope.builtin').lsp_definitions, opts)
+      map('n', 'grt', require('telescope.builtin').lsp_type_definitions, opts)
       -- override default grr/gri (which only exists >= 0.11) and use telescope instead
       map('n', 'grr', require('telescope.builtin').lsp_references, opts)
       map('n', 'gri', require('telescope.builtin').lsp_implementations, opts)
     else
-      map('n', 'gd', vim.lsp.buf.definition, opts)
-      map('n', '<leader>D', vim.lsp.buf.type_definition, opts)
+      map('n', 'grd', vim.lsp.buf.definition, opts)
+      map('n', 'grt', vim.lsp.buf.type_definition, opts)
     end
     if vim.fn.has 'nvim-0.11.0' == 0 then
       -- each of these is set by default in 0.11.0; see :h grn
       map('n', 'grn', vim.lsp.buf.rename, opts)
       map('n', 'gra', vim.lsp.buf.code_action, opts)
       -- map('n', 'grr', vim.lsp.buf.references, opts)
-      map('n', '<C-S>', vim.lsp.buf.signature_help, opts)
+      -- blink does this
+      -- map('n', '<C-S>', vim.lsp.buf.signature_help, opts)
     end
     if_has_do('conform', function(_)
       map('n', '<leader>cf', require('conform').format, opts)

@@ -130,35 +130,6 @@ function M.setup()
   require('vim.lsp.log').set_level(lsp_log_level)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
-  -- global diagnostic options
-  vim.diagnostic.config {
-    severity_sort = true,
-    update_in_insert = false,
-    signs = function()
-      local icons = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
-      return {
-        text = {
-          [vim.diagnostic.severity.ERROR] = icons['Error'],
-          [vim.diagnostic.severity.WARN] = icons['Warn'],
-          [vim.diagnostic.severity.HINT] = icons['Hint'],
-          [vim.diagnostic.severity.INFO] = icons['Info'],
-        },
-        linehl = {
-          [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
-          [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
-          [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
-          [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
-        },
-        numhl = {
-          [vim.diagnostic.severity.ERROR] = '',
-          [vim.diagnostic.severity.WARN] = '',
-          [vim.diagnostic.severity.HINT] = '',
-          [vim.diagnostic.severity.INFO] = '',
-        },
-      }
-    end,
-  }
-
   local lsp_files = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
   if #lsp_files == 0 then
     vim.api.nvim_echo({ { 'no LSP files found -- unable to setup LSP' } }, false, { err = true })

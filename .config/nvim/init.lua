@@ -350,6 +350,35 @@ vim.filetype.add {
   },
 }
 
+-- global diagnostic options
+vim.diagnostic.config {
+  severity_sort = true,
+  update_in_insert = false,
+  signs = function()
+    local icons = { Error = '󰅚 ', Warn = '󰀪 ', Hint = '󰌶 ', Info = ' ' }
+    return {
+      text = {
+        [vim.diagnostic.severity.ERROR] = icons['Error'],
+        [vim.diagnostic.severity.WARN] = icons['Warn'],
+        [vim.diagnostic.severity.HINT] = icons['Hint'],
+        [vim.diagnostic.severity.INFO] = icons['Info'],
+      },
+      linehl = {
+        [vim.diagnostic.severity.ERROR] = 'DiagnosticSignError',
+        [vim.diagnostic.severity.WARN] = 'DiagnosticSignWarn',
+        [vim.diagnostic.severity.HINT] = 'DiagnosticSignHint',
+        [vim.diagnostic.severity.INFO] = 'DiagnosticSignInfo',
+      },
+      numhl = {
+        [vim.diagnostic.severity.ERROR] = '',
+        [vim.diagnostic.severity.WARN] = '',
+        [vim.diagnostic.severity.HINT] = '',
+        [vim.diagnostic.severity.INFO] = '',
+      },
+    }
+  end,
+}
+
 _G.notify = function(msg)
   vim.schedule(function()
     vim.notify(msg, vim.log.levels.INFO)

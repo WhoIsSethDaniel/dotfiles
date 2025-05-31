@@ -6,7 +6,7 @@
     "config_file": "blink-cmp.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "colorful-winsep.nvim": {
     "name": "colorful-winsep.nvim",
@@ -15,7 +15,7 @@
     "config_file": "colorful-winsep-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "conform.nvim": {
     "name": "conform.nvim",
@@ -24,7 +24,7 @@
     "config_file": "conform-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "git-conflict.nvim": {
     "name": "git-conflict.nvim",
@@ -33,7 +33,7 @@
     "config_file": "git-conflict-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "gitsigns.nvim": {
     "name": "gitsigns.nvim",
@@ -42,7 +42,7 @@
     "config_file": "gitsigns-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "goofball.nvim": {
     "name": "goofball.nvim",
@@ -51,7 +51,7 @@
     "config_file": "goofball-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "hardtime.nvim": {
     "name": "hardtime.nvim",
@@ -60,7 +60,7 @@
     "config_file": "hardtime-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "leap.nvim": {
     "name": "leap.nvim",
@@ -69,7 +69,7 @@
     "config_file": "leap-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "lists.vim": {
     "name": "lists.vim",
@@ -78,7 +78,7 @@
     "config_file": "lists-vim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "loupe": {
     "name": "loupe",
@@ -87,7 +87,7 @@
     "config_file": "loupe.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "mason-tool-installer.nvim": {
     "name": "mason-tool-installer.nvim",
@@ -96,7 +96,7 @@
     "config_file": "mason-tool-installer-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "mason.nvim": {
     "name": "mason.nvim",
@@ -105,7 +105,7 @@
     "config_file": "mason-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "mini.nvim": {
     "name": "mini.nvim",
@@ -114,7 +114,7 @@
     "config_file": "mini-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "noice.nvim": {
     "name": "noice.nvim",
@@ -123,7 +123,7 @@
     "config_file": "noice-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nui.nvim": {
     "name": "nui.nvim",
@@ -132,7 +132,7 @@
     "config_file": "nui-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-autopairs": {
     "name": "nvim-autopairs",
@@ -141,7 +141,7 @@
     "config_file": "nvim-autopairs.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-bqf": {
     "name": "nvim-bqf",
@@ -150,7 +150,7 @@
     "config_file": "nvim-bqf.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-lint": {
     "name": "nvim-lint",
@@ -159,7 +159,7 @@
     "config_file": "nvim-lint.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-lspconfig": {
     "name": "nvim-lspconfig",
@@ -168,7 +168,7 @@
     "config_file": "nvim-lspconfig.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-nio": {
     "name": "nvim-nio",
@@ -177,7 +177,7 @@
     "config_file": "nvim-nio.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-spider": {
     "name": "nvim-spider",
@@ -186,7 +186,7 @@
     "config_file": "nvim-spider.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-treesitter": {
     "name": "nvim-treesitter",
@@ -195,7 +195,7 @@
     "config_file": "nvim-treesitter.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "nvim-treesitter-endwise": {
     "name": "nvim-treesitter-endwise",
@@ -203,8 +203,8 @@
     "clean_name": "nvim-treesitter-endwise",
     "config_file": "nvim-treesitter-endwise.lua",
     "colorscheme": false,
-    "enabled": false,
-    "frozen": false
+    "enabled": true,
+    "version": ""
   },
   "nvim-treesitter-textobjects": {
     "name": "nvim-treesitter-textobjects",
@@ -213,7 +213,7 @@
     "config_file": "nvim-treesitter-textobjects.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "oil.nvim": {
     "name": "oil.nvim",
@@ -222,7 +222,7 @@
     "config_file": "oil-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "plenary.nvim": {
     "name": "plenary.nvim",
@@ -231,7 +231,7 @@
     "config_file": "plenary-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "quicker.nvim": {
     "name": "quicker.nvim",
@@ -240,7 +240,7 @@
     "config_file": "quicker-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "repossession.nvim": {
     "name": "repossession.nvim",
@@ -249,7 +249,7 @@
     "config_file": "repossession-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "snacks.nvim": {
     "name": "snacks.nvim",
@@ -258,7 +258,7 @@
     "config_file": "snacks-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "telescope-ui-select.nvim": {
     "name": "telescope-ui-select.nvim",
@@ -267,7 +267,7 @@
     "config_file": "telescope-ui-select-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "telescope-zf-native.nvim": {
     "name": "telescope-zf-native.nvim",
@@ -276,7 +276,7 @@
     "config_file": "telescope-zf-native-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "telescope.nvim": {
     "name": "telescope.nvim",
@@ -285,7 +285,7 @@
     "config_file": "telescope-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "toggleterm.nvim": {
     "name": "toggleterm.nvim",
@@ -294,7 +294,7 @@
     "config_file": "toggleterm-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "tokyonight.nvim": {
     "name": "tokyonight.nvim",
@@ -303,7 +303,7 @@
     "config_file": "tokyonight-nvim.lua",
     "colorscheme": true,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "vim-conjoin": {
     "name": "vim-conjoin",
@@ -312,7 +312,7 @@
     "config_file": "vim-conjoin.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "vim-matchup": {
     "name": "vim-matchup",
@@ -321,7 +321,7 @@
     "config_file": "vim-matchup.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "vim-repeat": {
     "name": "vim-repeat",
@@ -330,7 +330,7 @@
     "config_file": "vim-repeat.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "vim-suda": {
     "name": "vim-suda",
@@ -339,7 +339,7 @@
     "config_file": "vim-suda.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "wiki.vim": {
     "name": "wiki.vim",
@@ -348,7 +348,7 @@
     "config_file": "wiki-vim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   },
   "workspaces.nvim": {
     "name": "workspaces.nvim",
@@ -357,6 +357,6 @@
     "config_file": "workspaces-nvim.lua",
     "colorscheme": false,
     "enabled": true,
-    "frozen": false
+    "version": ""
   }
 }

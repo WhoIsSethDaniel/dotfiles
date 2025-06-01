@@ -22,7 +22,7 @@ local M = {}
 
 local notify = _G.notify
 
-local disabled_lsp_servers = { 'templ' }
+local disabled_lsp_servers = { 'templ', 'typos_lsp' }
 local no_inlay_hints = {}
 local no_semantic_tokens = {}
 local watch_files = {}
@@ -138,15 +138,13 @@ function M.setup()
     for name, _ in vim.fs.dir(lsp_files) do
       local config_name = string.gsub(name, '%.lua', '')
       local server_name = vim.lsp.config[config_name].cmd[1]
-      if vim.fn.executable(server_name) == 1 then
-        if vim.tbl_contains(disabled_lsp_servers, config_name) then
-          notify(config_name .. ' (disabled)')
-        else
-          vim.lsp.enable(config_name)
-          notify(config_name .. ' (enabled)')
-        end
+      if vim.tbl_contains(disabled_lsp_servers, config_name) then
+        notify(config_name .. ' (disabled)')
+      elseif vim.fn.executable(server_name) == 1 then
+        vim.lsp.enable(config_name)
+        notify(config_name .. ' (enabled)')
       else
-        notify(config_name .. ' (not found)')
+        notify(config_name .. ' (' .. server_name .. ' not found)')
       end
     end
   end

@@ -133,7 +133,7 @@ function M.setup()
 
   local lsp_files = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
   if #lsp_files == 0 then
-    vim.api.nvim_echo({ { 'no LSP files found -- unable to setup LSP' } }, false, { err = true })
+    vim.api.nvim_echo({ { 'no LSP files found' } }, false, { err = true })
   else
     for name, _ in vim.fs.dir(lsp_files) do
       local config_name = string.gsub(name, '%.lua', '')

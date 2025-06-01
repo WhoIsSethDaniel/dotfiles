@@ -136,12 +136,17 @@ function M.setup()
     vim.api.nvim_echo({ { 'no LSP files found -- unable to setup LSP' } }, false, { err = true })
   else
     for name, _ in vim.fs.dir(lsp_files) do
-      local server = string.gsub(name, '%.lua', '')
-      if vim.tbl_contains(disabled_lsp_servers, server) then
-        notify(server .. ' (disabled)')
+      local config_name = string.gsub(name, '%.lua', '')
+      local server_name = vim.lsp.config[config_name].cmd[1]
+      if vim.fn.executable(server_name) == 1 then
+        if vim.tbl_contains(disabled_lsp_servers, config_name) then
+          notify(config_name .. ' (disabled)')
+        else
+          vim.lsp.enable(config_name)
+          notify(config_name .. ' (enabled)')
+        end
       else
-        vim.lsp.enable(server)
-        notify(server .. ' (mason)')
+        notify(config_name .. ' (not found)')
       end
     end
   end

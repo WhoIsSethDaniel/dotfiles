@@ -1,8 +1,8 @@
 --# selene: allow(mixed_table)
 ---@diagnostic disable:need-check-nil
 -- https://github.com/neovim/nvim-lspconfig
--- https://github.com/williamboman/mason.nvim
--- https://github.com/williamboman/mason-lspconfig.nvim
+-- https://github.com/mason-org/mason.nvim
+-- https://github.com/mason-org/mason-lspconfig.nvim
 -- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 
 local has_lspconfig, _ = pcall(require, 'lspconfig')
@@ -144,7 +144,7 @@ function M.setup()
         vim.lsp.enable(config_name)
         notify(config_name .. ' (enabled)')
       else
-        notify(config_name .. ' (' .. server_name .. ' not found)')
+        notify(string.format('%s (%s not found)', config_name, server_name))
       end
     end
   end

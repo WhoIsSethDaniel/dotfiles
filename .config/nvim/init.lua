@@ -1,7 +1,5 @@
 -- cache modules
-if vim.fn.has 'nvim-0.9.0' == 1 then
-  vim.loader.enable()
-end
+vim.loader.enable()
 
 --
 -- an interesting discussion about options
@@ -85,9 +83,7 @@ vim.o.equalalways = false
 vim.o.splitbelow = false
 vim.o.splitright = true
 -- cursor position when splitting
-if vim.fn.has 'nvim-0.9.0' == 1 then
-  vim.o.splitkeep = 'screen'
-end
+vim.o.splitkeep = 'screen'
 
 -- no error bells
 vim.o.errorbells = false
@@ -232,10 +228,8 @@ vim.o.cmdheight = 0
 vim.o.winborder = 'none'
 
 -- maybe turn off 'hit-enter' message; have insane history
-if vim.fn.has 'nvim-0.11.0' == 1 then
-  -- vim.o.messagesopt = { 'wait:0', 'history:10000' }
-  vim.opt.messagesopt = { 'hit-enter', 'history:10000' }
-end
+-- vim.o.messagesopt = { 'wait:0', 'history:10000' }
+vim.opt.messagesopt = { 'hit-enter', 'history:10000' }
 
 -- this is needed for lemonade
 -- vim.o.clipboard = 'unnamedplus'

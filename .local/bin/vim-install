@@ -4,56 +4,68 @@ set -e
 
 max_old_versions=5
 
-declare -A versions
-eval versions=\("$VIM_VERSIONS"\)
-
 if [[ -z $1 ]]; then
-        echo "must provide an argument"
-        echo "possible args: ${!versions[*]}"
+        echo "must provide a version/tag name to download"
         exit 1
 fi
 
 pkg=nvim-linux-x86_64.tar.gz
-url="https://github.com/neovim/neovim/releases/download/"
 
-SUM_NAME="shasum.txt"
-SUM_LOCAL_NAME=$1".sha256sum"
-STORE=$XDG_DATA_HOME"/nvim"
-if [[ "${versions[$1]}" ]]; then
-        KNOWN_VERSION=1
-        VERSION="${versions[$1]}"
-else
-        VERSION=$1
-fi
+VERSION=$1
 
 rmtmpdir() {
         [[ -n $tmpdir ]] && rm -rf "$tmpdir"
 }
 
-if [[ $1 == "nightly" ]]; then
-        url_version="nightly"
-else
-        url_version="v${VERSION}"
+if [[ "$VERSION" =~ ^[0-9] ]]; then
+        VERSION="v$VERSION"
+fi
+
+declare -A versions
+while read -r version; do
+        versions[$version]=$version
+done < <(printf "%s" "$(curl -LSs https://api.github.com/repos/neovim/neovim/releases | jq -r '.[].["tag_name"]')")
+
+if [[ -z "${versions[$VERSION]}" ]]; then
+        echo "version/tag does not exist"
+        exit 1
 fi
 
 tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
-trap rmtmpdir EXIT
+# trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit 1
 
-if [[ "$KNOWN_VERSION" ]]; then
-        sha_url="${url}${url_version}/${SUM_NAME}"
-        echo "download sha url: ${sha_url}"
-        curl -LSo - "$sha_url" | grep "$pkg" >"$SUM_NAME"
-        cp "$SUM_NAME" "$SUM_LOCAL_NAME"
+release_url="https://api.github.com/repos/neovim/neovim/releases/tags/$VERSION"
+url_sha=()
+while read -r u_s; do
+        url_sha+=("$u_s")
+done < <(printf "%s\n" "$(curl -LSs "$release_url" | jq -r '.assets[] | select(.name == "'"$pkg"'") | .browser_download_url, .digest')")
 
-        OLD_SUM="${STORE}/${SUM_LOCAL_NAME}"
-        if [[ -e $OLD_SUM ]]; then
-                OLD=$(cut -d\  -f1 "$OLD_SUM")
-                NEW=$(cut -d\  -f1 "$SUM_LOCAL_NAME")
-                echo "old: ${OLD}"
-                echo "new: ${NEW}"
-                if [[ $NEW == "$OLD" ]]; then
+if [[ ${#url_sha[*]} == 0 ]]; then
+        echo "found zero assets"
+        exit 1
+fi
+if [[ ${#url_sha[*]} -gt 2 ]]; then
+        echo "too many assets found"
+        exit 1
+fi
+
+pkg_url=${url_sha[0]}
+sha=${url_sha[1]#sha256:}
+
+sum_local_file="${VERSION}.sha256sum"
+sum_store="$XDG_DATA_HOME""/nvim"
+
+if [[ -n $sha ]]; then
+        echo "$sha" >"$sum_local_file"
+        old_sum_file="${sum_store}/${sum_local_file}"
+        if [[ -e $old_sum_file ]]; then
+                old=$(cut -d\  -f1 "$old_sum_file")
+                new=$(cut -d\  -f1 "$sum_local_file")
+                echo "old: ${old}"
+                echo "new: ${new}"
+                if [[ $new == "$old" ]]; then
                         echo "no update available"
                         exit 0
                 else
@@ -63,15 +75,15 @@ if [[ "$KNOWN_VERSION" ]]; then
                 echo "no old sum found"
         fi
 else
-        echo "version not in VIM_VERSIONS; skipping sha check"
+        echo "asset has no SHA -- skipping SHA check"
 fi
 
-pkg_url="${url}${url_version}/${pkg}"
 echo "download package url: ${pkg_url}"
 curl -LSo "$pkg" "$pkg_url"
 
-if [[ "$KNOWN_VERSION" ]]; then
-        sha256sum --check "$SUM_NAME"
+if [[ ! -s "$pkg" ]]; then
+        echo "file is zero length"
+        exit 1
 fi
 
 mkdir --parents ~/.local/nvim
@@ -91,6 +103,6 @@ tar xzf "$tmpdir"/"$pkg"
 mv "nvim-linux-x86_64" "$VERSION"
 
 # only do this if everything else succeeds
-if [[ "$KNOWN_VERSION" ]]; then
-        cp --force "${tmpdir}/${SUM_LOCAL_NAME}" "$STORE/${SUM_LOCAL_NAME}"
+if [[ -n "$sha" ]]; then
+        cp --force "${tmpdir}/${sum_local_file}" "${sum_store}/${sum_local_file}"
 fi

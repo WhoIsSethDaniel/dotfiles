@@ -32,7 +32,7 @@ if [[ -z "${versions[$VERSION]}" ]]; then
 fi
 
 tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
-# trap rmtmpdir EXIT
+trap rmtmpdir EXIT
 
 cd "$tmpdir" || exit 1
 

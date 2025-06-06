@@ -3,8 +3,6 @@
 set_pre_path_var PATH "$HOME/.local/nvim/current/bin"
 set_pre_path_var PATH "$HOME/.local/share/nvim/mason/bin"
 
-set_export_var VIM_VERSIONS "[stable]=0.11.2 [nightly]=0.12.0"
-
 editor_list="nvim vim vi"
 if [[ -S $NVIM_LISTEN_ADDRESS ]]; then
     editor_list="nvr "$editor_list
@@ -94,11 +92,6 @@ _complete_vim_installed_versions() {
 }
 
 # completion for (some) vim-* commands
-declare -A versions
-eval versions=\("$VIM_VERSIONS"\)
-complete -W "${!versions[*]}" vim-install
 complete -F _complete_vim_installed_versions vim-switch
 complete -F _complete_vim_plugins vim-check vim-enable vim-disable vim-rename vim-remove vim-log vim-config vim-freeze vim-thaw
 complete -F _complete_vim_cd vim-cd
-
-unset_var versions

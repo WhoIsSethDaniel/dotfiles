@@ -54,8 +54,6 @@ fi
 pkg_url=${url_sha[0]}
 sha=${url_sha[1]#sha256:}
 sha=${sha#null}
-echo "$sha"
-exit 0
 
 sum_local_file="${VERSION}.sha256sum"
 sum_store="$XDG_DATA_HOME""/nvim"

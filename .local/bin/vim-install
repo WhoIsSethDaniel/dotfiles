@@ -2,21 +2,15 @@
 
 set -e
 
-max_old_versions=5
-
 if [[ -z $1 ]]; then
         echo "must provide a version/tag name to download"
         exit 1
 fi
 
+max_old_versions=5
 pkg=nvim-linux-x86_64.tar.gz
 
 VERSION=$1
-
-rmtmpdir() {
-        [[ -n $tmpdir ]] && rm -rf "$tmpdir"
-}
-
 if [[ "$VERSION" =~ ^[0-9] ]]; then
         VERSION="v$VERSION"
 fi
@@ -31,9 +25,11 @@ if [[ -z "${versions[$VERSION]}" ]]; then
         exit 1
 fi
 
+rmtmpdir() {
+        [[ -n $tmpdir ]] && rm -rf "$tmpdir"
+}
 tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
-
 cd "$tmpdir" || exit 1
 
 release_url="https://api.github.com/repos/neovim/neovim/releases/tags/$VERSION"
@@ -54,10 +50,8 @@ fi
 pkg_url=${url_sha[0]}
 sha=${url_sha[1]#sha256:}
 sha=${sha#null}
-
 sum_local_file="${VERSION}.sha256sum"
 sum_store="$XDG_DATA_HOME""/nvim"
-
 if [[ -n $sha ]]; then
         echo "$sha" >"$sum_local_file"
         old_sum_file="${sum_store}/${sum_local_file}"
@@ -81,7 +75,6 @@ fi
 
 echo "download package url: ${pkg_url}"
 curl -LSo "$pkg" "$pkg_url"
-
 if [[ ! -s "$pkg" ]]; then
         echo "file is zero length"
         exit 1

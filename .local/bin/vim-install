@@ -10,9 +10,9 @@ fi
 max_old_versions=5
 pkg=nvim-linux-x86_64.tar.gz
 
-VERSION=$1
-if [[ "$VERSION" =~ ^[0-9] ]]; then
-        VERSION="v$VERSION"
+version=$1
+if [[ "$version" =~ ^[0-9] ]]; then
+        version="v$version"
 fi
 
 declare -A versions
@@ -20,7 +20,7 @@ while read -r version; do
         versions[$version]=$version
 done < <(printf "%s" "$(curl -LSs https://api.github.com/repos/neovim/neovim/releases | jq -r '.[].["tag_name"]')")
 
-if [[ -z "${versions[$VERSION]}" ]]; then
+if [[ -z "${versions[$version]}" ]]; then
         echo "version/tag does not exist"
         exit 1
 fi
@@ -32,7 +32,7 @@ tmpdir=$(mktemp -q -d --tmpdir install-nvim.XXXXXXX)
 trap rmtmpdir EXIT
 cd "$tmpdir" || exit 1
 
-release_url="https://api.github.com/repos/neovim/neovim/releases/tags/$VERSION"
+release_url="https://api.github.com/repos/neovim/neovim/releases/tags/$version"
 url_sha=()
 while read -r u_s; do
         url_sha+=("$u_s")
@@ -50,7 +50,7 @@ fi
 pkg_url=${url_sha[0]}
 sha=${url_sha[1]#sha256:}
 sha=${sha#null}
-sum_local_file="${VERSION}.sha256sum"
+sum_local_file="${version}.sha256sum"
 sum_store="$XDG_DATA_HOME""/nvim"
 if [[ -n $sha ]]; then
         echo "$sha" >"$sum_local_file"
@@ -82,19 +82,19 @@ fi
 
 mkdir --parents ~/.local/nvim
 cd ~/.local/nvim || exit 1
-if [[ -e ${VERSION} ]]; then
+if [[ -e ${version} ]]; then
         while read -r bak; do
                 oldest=$((bak + 1))
-                if [[ -e "${VERSION}-${bak}" ]]; then
-                        rm -rf "${VERSION}-${oldest}"
-                        mv "$VERSION-${bak}" "${VERSION}-${oldest}"
+                if [[ -e "${version}-${bak}" ]]; then
+                        rm -rf "${version}-${oldest}"
+                        mv "$version-${bak}" "${version}-${oldest}"
                 fi
         done < <(seq $((max_old_versions - 1)) -1 1)
-        mv "$VERSION" "${VERSION}-1"
+        mv "$version" "${version}-1"
 fi
 
 tar xzf "$tmpdir"/"$pkg"
-mv "nvim-linux-x86_64" "$VERSION"
+mv "nvim-linux-x86_64" "$version"
 
 # only do this if everything else succeeds
 if [[ -n "$sha" ]]; then

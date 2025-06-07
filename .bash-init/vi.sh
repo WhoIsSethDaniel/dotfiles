@@ -83,11 +83,13 @@ _complete_vim_cd() {
 
 _complete_vim_installed_versions() {
     pushd "$vim_install_dir" >/dev/null || return
+    local possibles
     for d in ./*; do
         v=$(basename "$d")
         [[ $v == 'current' ]] && continue
-        COMPREPLY+=("$v")
+        possibles+=("$v")
     done
+    read -r -a COMPREPLY <<<"$(echo "${possibles[@]}" | tr " " "\n" | grep -iF "${2}" | tr "\n" " " 2>/dev/null)"
     popd >/dev/null || return
 }
 

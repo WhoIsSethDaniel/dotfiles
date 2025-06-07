@@ -16,8 +16,8 @@ if [[ "$version" =~ ^[0-9] ]]; then
 fi
 
 declare -A versions
-while read -r version; do
-        versions[$version]=$version
+while read -r v; do
+        versions[$v]=$v
 done < <(printf "%s" "$(curl -LSs https://api.github.com/repos/neovim/neovim/releases | jq -r '.[].["tag_name"]')")
 
 if [[ -z "${versions[$version]}" ]]; then

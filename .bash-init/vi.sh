@@ -92,6 +92,6 @@ _complete_vim_installed_versions() {
 }
 
 # completion for (some) vim-* commands
-complete -F _complete_vim_installed_versions vim-switch
+complete -F _complete_vim_installed_versions vim-switch vim-install
 complete -F _complete_vim_plugins vim-check vim-enable vim-disable vim-rename vim-remove vim-log vim-config vim-freeze vim-thaw
 complete -F _complete_vim_cd vim-cd

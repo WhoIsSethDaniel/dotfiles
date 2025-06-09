@@ -2,15 +2,14 @@
 
 set -e
 
-if [[ -z $1 ]]; then
-        echo "must provide a version/tag name to download"
-        exit 1
-fi
-
 max_old_versions=5
 pkg=nvim-linux-x86_64.tar.gz
 
 version=$1
+if [[ -z "$version" ]]; then
+        echo "no version tag given -- using 'nightly'"
+        version="nightly"
+fi
 if [[ "$version" =~ ^[0-9] ]]; then
         version="v$version"
 fi

@@ -1,4 +1,4 @@
--- https://github.com/stevearc/quicker.nvime
+-- https://github.com/stevearc/quicker.nvim
 local quicker = require 'quicker'
 
 local toggle_opts = {

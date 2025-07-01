@@ -165,7 +165,7 @@ function M.setup()
           'dprint',
           'editorconfig-checker',
           'eugene',
-          { 'golangci-lint', version = 'v2.1.6' },
+          'golangci-lint',
           'gomodifytags',
           'gopls',
           'gotests',

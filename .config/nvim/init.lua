@@ -384,11 +384,11 @@ end
 --   vim.deprecate = function() end
 -- end
 
--- autocommands
-require 'autocmd'
-
 -- source all plugins and their custom config (if any)
 require 'all'
+
+-- autocommands
+require 'autocmd'
 
 -- lsp setup
 require('plugins.lsp').setup()

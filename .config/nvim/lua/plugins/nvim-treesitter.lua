@@ -1,6 +1,12 @@
 --  https://github.com/nvim-treesitter/nvim-treesitter/tree/main
 local masterts, _ = pcall(require, 'nvim-treesitter.configs')
 
+vim.api.nvim_create_autocmd('VimEnter', {
+  callback = function()
+    vim.cmd.TSUpdate()
+  end,
+})
+
 -- main branch treesitter
 if not masterts then
   vim.api.nvim_create_autocmd('FileType', {

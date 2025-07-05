@@ -26,7 +26,7 @@ set_alias vim-ls vim-list
 
 set_export_var MANPAGER "$EDITOR +Man!"
 
-pldir=$XDG_CONFIG_HOME/nvim/pack/git-plugins/opt
+pldir=$XDG_DATA_HOME/nvim/site/pack/core/opt
 vim_install_dir=$HOME/.local/nvim
 declare -A vim_cd
 vim_cd=(

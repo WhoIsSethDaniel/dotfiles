@@ -35,7 +35,7 @@
 /.local/share/nvim/snacks/*
 /.local/share/nvim/project_nvim/project_history
 /.local/share/nvim/shada/main.shada
-/.local/share/nvim/site/pack/core/opt/
+/.local/share/nvim/site/pack/core/opt/*
 /.local/share/nvim/swap/*.sw*
 /.local/share/nvim/telescope_history
 /.local/share/nvim/tree-sitter*/

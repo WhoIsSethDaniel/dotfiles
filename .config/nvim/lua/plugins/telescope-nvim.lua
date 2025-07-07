@@ -64,7 +64,7 @@ local has_workspaces, _ = load 'workspaces'
 vim.keymap.set('n', '<leader>pp', function()
   if has_workspaces then
     local ws = require 'workspaces'
-    local plugindir = vim.fs.normalize '~/.config/nvim/pack/git-plugins/opt/'
+    local plugindir = vim.fs.normalize '~/.local/share/nvim/site/pack/core/opt'
     local entries = ws.get()
     local current = {}
     for _, entry in ipairs(entries) do

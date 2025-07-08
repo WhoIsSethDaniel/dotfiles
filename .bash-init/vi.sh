@@ -57,7 +57,6 @@ function vim-cd() {
 
 function vim-log() {
     [[ -z $1 ]] && echo "usage: vim-log <plugin>" && return
-    local pldir=$XDG_CONFIG_HOME/nvim/pack/git-plugins/opt
     local plugin=${!#}
     local -a args
     for arg in "$@"; do

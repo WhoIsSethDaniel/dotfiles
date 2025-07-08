@@ -1,0 +1,25 @@
+version: "2"
+formatters:
+    enable:
+        - gci
+        - gofumpt
+        - goimports
+        - golines
+
+    settings:
+        gci:
+            sections:
+                - standard
+                - default
+                - prefix(github.maxmind.com/maxmind/mm_website)
+
+        gofumpt:
+            module-path: github.maxmind.com/maxmind/mm_website
+            extra-rules: true
+
+        goimports:
+            local-prefixes:
+                - github.maxmind.com/maxmind/mm_website
+
+        golines:
+            shorten-comments: true

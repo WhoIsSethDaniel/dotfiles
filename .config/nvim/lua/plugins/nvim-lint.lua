@@ -59,7 +59,7 @@ end)
 
 l.linters_by_ft = {
   go = { 'golangcilint' },
-  lua = { 'selene' },
+  -- lua = { 'selene' },
   markdown = { 'markdownlint-cli2' },
   -- perlnavigator runs perlcritic
   -- perl = { 'perlcritic' },

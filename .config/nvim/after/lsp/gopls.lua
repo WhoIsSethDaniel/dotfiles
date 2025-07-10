@@ -67,7 +67,7 @@ return {
         nonewvars = true,
         noresultvalues = true,
         printf = true,
-        shadow = true,
+        shadow = false,
         shift = true,
         sigchanyzer = true,
         simplifycompositelit = true,

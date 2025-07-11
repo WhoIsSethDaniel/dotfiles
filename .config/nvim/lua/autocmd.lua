@@ -4,6 +4,9 @@ local autocmds = {
       BufWritePre = {
         callback = function(opts)
           local dir = vim.fs.dirname(vim.fs.normalize(opts.file))
+          -- protect against writing a URL; there are likely
+          -- other things to protect against that will show up
+          -- eventually.
           if dir:find '://' then
             return
           end

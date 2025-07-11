@@ -4,10 +4,10 @@ local autocmds = {
       BufWritePre = {
         callback = function(opts)
           local dir = vim.fs.dirname(vim.fs.normalize(opts.file))
-          -- protect against writing a URL; there are likely
+          -- protect against writing a URI; there are likely
           -- other things to protect against that will show up
           -- eventually.
-          if dir:find '://' then
+          if dir:find '%l+:/+' then
             return
           end
           if not vim.uv.fs_stat(dir) then

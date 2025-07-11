@@ -4,7 +4,9 @@ local autocmds = {
       BufWritePre = {
         callback = function(opts)
           local dir = vim.fs.dirname(vim.fs.normalize(opts.file))
-          -- probably should protect against non-files
+          if dir:find '://' then
+            return
+          end
           if not vim.uv.fs_stat(dir) then
             vim.fn.mkdir(dir, 'p')
           end

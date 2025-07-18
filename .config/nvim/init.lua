@@ -373,9 +373,10 @@ vim.diagnostic.config {
   end,
 }
 
-_G.notify = function(msg)
+_G.notify = function(msg, lvl)
+  lvl = lvl or vim.log.levels.INFO
   vim.schedule(function()
-    vim.notify(msg, vim.log.levels.INFO)
+    vim.notify(msg, lvl)
   end)
 end
 

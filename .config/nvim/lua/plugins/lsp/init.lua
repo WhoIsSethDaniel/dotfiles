@@ -129,11 +129,13 @@ function M.setup()
   require('vim.lsp.log').set_level(lsp_log_level)
   require('vim.lsp.log').set_format_func(vim.inspect)
 
-  local lsp_files = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
-  if #lsp_files == 0 then
-    vim.api.nvim_echo({ { 'no LSP files found' } }, false, { err = true })
+  local lsp_config_dir = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
+  if vim.fn.isdirectory(lsp_config_dir) == 0 then
+    notify(string.format('lsp configuration dir %s does not exist', lsp_config_dir), vim.log.levels.ERROR)
   else
-    for name, _ in vim.fs.dir(lsp_files) do
+    local items = 0
+    for name, _ in vim.fs.dir(lsp_config_dir) do
+      items = items + 1
       local config_name = string.gsub(name, '%.lua', '')
       local server_name = vim.lsp.config[config_name].cmd[1]
       if vim.tbl_contains(disabled_lsp_servers, config_name) then
@@ -144,6 +146,9 @@ function M.setup()
       else
         notify(string.format('%s (%s not found)', config_name, server_name))
       end
+    end
+    if items == 0 then
+      notify(string.format('nothing found in lsp configuration dir %s', lsp_config_dir), vim.log.levels.ERROR)
     end
   end
 

@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if [[ -f $HOME/.config/dotfiles/main/bash/work.sh ]]; then
-    . "$HOME"/.config/dotfiles/main/bash/work.sh
+if [[ -f ~/.config/dotfiles/main/bash/work.sh ]]; then
+    . ~/.config/dotfiles/main/bash/work.sh
 fi

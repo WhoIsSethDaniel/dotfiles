@@ -11,7 +11,9 @@
 /.config/nvim/lua/all.lua
 /.config/wezterm/sha256.txt
 /.devcontainer.json
+/.gitconfig
 /.lesshst
+/.perl-cpm
 /.psql_history
 /.ssh/agent-*
 /.ssh/google_compute*
@@ -22,7 +24,6 @@
 /.viminfo
 /.Xauthority
 /.wget-hsts
-/.gitconfig
 
 /.local/*
 !/.local/share

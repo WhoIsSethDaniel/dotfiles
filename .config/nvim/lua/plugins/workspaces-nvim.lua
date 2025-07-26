@@ -41,6 +41,11 @@ require('workspaces').setup {
     remove = {},
     rename = {},
     open_pre = {},
-    open = { 'Telescope find_files' },
+    open = function()
+      require('telescope.builtin').find_files {
+        find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
+        hidden = true,
+      }
+    end,
   },
 }

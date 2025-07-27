@@ -1,3 +1,6 @@
 require('lsp-cd').setup {
-  notify_on_dir_change = true,
+  notify = {
+    on_dir_change = true,
+    on_nil_root_dir = true,
+  },
 }

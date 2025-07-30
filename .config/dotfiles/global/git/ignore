@@ -28,6 +28,7 @@
 /.local/*
 !/.local/share
 /.local/share/*
+!/.local/share/devpod
 !/.local/share/nvim
 /.local/share/nvim/*.sha256sum
 /.local/share/nvim/lsp_servers/

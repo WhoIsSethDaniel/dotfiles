@@ -1,6 +1,6 @@
 #!/bin/bash
 
-GIT_HOME=$HOME/.config/dotfiles/home
+set_export_path_var GIT_HOME "$HOME"/.config/dotfiles/home
 
 mkdir -p "$GIT_HOME"
 

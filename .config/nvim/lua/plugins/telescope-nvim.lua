@@ -21,6 +21,17 @@ vim.keymap.set('n', '<leader>ff', function()
   }
 end, {})
 
+vim.keymap.set('n', '<leader>ed', function()
+  builtin.find_files {
+    find_command = {
+      'git',
+      '--git-dir=' .. os.getenv 'GIT_HOME',
+      '--work-tree=' .. os.getenv 'HOME',
+      'ls-files',
+    },
+  }
+end, {})
+
 vim.keymap.set('n', '<leader>ec', function()
   local cfg = '~/.config/nvim'
   local entries = {}

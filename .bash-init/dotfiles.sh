@@ -1,11 +1,11 @@
 #!/bin/bash
 
-set_export_path_var GIT_HOME "$HOME"/.config/dotfiles/home
+set_export_path_var DOTFILES_HOME "$HOME"/.config/dotfiles/home
 
-mkdir -p "$GIT_HOME"
+mkdir -p "$DOTFILES_HOME"
 
 function check() {
-    git --git-dir="$GIT_HOME" --work-tree="$HOME" "$@"
+    git --git-dir="$DOTFILES_HOME" --work-tree="$HOME" "$@"
 }
 
 function gh-cd() {

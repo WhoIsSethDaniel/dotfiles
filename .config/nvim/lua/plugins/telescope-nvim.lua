@@ -25,7 +25,7 @@ vim.keymap.set('n', '<leader>ed', function()
   builtin.find_files {
     find_command = {
       'git',
-      '--git-dir=' .. os.getenv 'GIT_HOME',
+      '--git-dir=' .. os.getenv 'DOTFILES_HOME',
       '--work-tree=' .. os.getenv 'HOME',
       'ls-files',
     },

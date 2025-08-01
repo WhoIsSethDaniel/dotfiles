@@ -72,6 +72,3 @@ set_post_path_var MANPATH "$HOME/.local/share/man"
 set_alias tpp truncated_path_prompt
 set_var PS1 '\h:\$(tpp)> '
 # set_export_var LS_COLORS 'di=01;32:ex=01;33'
-
-[ ! -d "$HOME/tmp" ] && mkdir "$HOME"/tmp
-set_export_path_var TMPDIR "$HOME"/tmp

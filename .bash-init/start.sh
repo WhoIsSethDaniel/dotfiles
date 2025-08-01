@@ -62,7 +62,7 @@ set_export_var XDG_CONFIG_HOME "$HOME/.config"
 
 # man pages
 check_for_program manpath
-if [ "$manpath" != "" -a -z "$MANPATH" ]; then
+if [[ -n $manpath ]]; then
     POSSIBLE_MANPATH=$("$manpath" 2>/dev/null)
     set_export_var MANPATH "$POSSIBLE_MANPATH"
 fi

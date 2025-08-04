@@ -26,6 +26,15 @@
     "enabled": true,
     "version": ""
   },
+  "flatten.nvim": {
+    "name": "flatten.nvim",
+    "url": "https://github.com/willothy/flatten.nvim",
+    "clean_name": "flatten-nvim",
+    "config_file": "flatten-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
   "git-conflict.nvim": {
     "name": "git-conflict.nvim",
     "url": "https://github.com/akinsho/git-conflict.nvim",

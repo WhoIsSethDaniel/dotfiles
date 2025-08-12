@@ -88,6 +88,7 @@
 /.config/mm/
 /.config/mssh/
 /.config/pulse/
+/.config/stripe/
 /.config/sound-juicer/
 /.config/systemd/user/default.target.wants/
 /.config/tiling-assistant/

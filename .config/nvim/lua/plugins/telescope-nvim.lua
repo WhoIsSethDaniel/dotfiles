@@ -80,8 +80,10 @@ vim.keymap.set('n', '<leader>pp', function()
     local current = {}
     for _, entry in ipairs(entries) do
       if
-        string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
-        and vim.fn.isdirectory(entry.path) == 0
+        (
+          string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
+          and vim.fn.isdirectory(entry.path) == 0
+        ) or vim.fn.isdirectory(entry.path) == 0
       then
         ws.remove(entry.name)
       else

@@ -44,6 +44,7 @@ table.insert(sf.args, '--dialect=postgres')
 local eug = l.linters.eugene
 table.insert(eug.args, '--sort-mode=name')
 table.insert(eug.args, '--ignore=E4')
+table.insert(eug.args, '--ignore=W13')
 
 local yl = l.linters.yamllint
 table.insert(yl.args, 1, function()

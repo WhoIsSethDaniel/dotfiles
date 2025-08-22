@@ -1,5 +1,5 @@
 \timing on
-\set AUTOCOMMIT on
+\set AUTOCOMMIT off
 \set ON_ERROR_ROLLBACK interactive
 \set HISTCONTROL ignoredups
 \set HISTSIZE 5000

@@ -101,6 +101,7 @@
 /.cloudflared/
 /.cpanm/
 /.devpod/
+/.docker/
 /.gnome/
 /.gnupg/
 /.go/

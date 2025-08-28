@@ -14,7 +14,7 @@
     "clean_name": "colorful-winsep-nvim",
     "config_file": "colorful-winsep-nvim.lua",
     "colorscheme": false,
-    "enabled": true,
+    "enabled": false,
     "version": ""
   },
   "conform.nvim": {
@@ -127,7 +127,7 @@
   },
   "mini.nvim": {
     "name": "mini.nvim",
-    "url": "https://github.com/echasnovski/mini.nvim",
+    "url": "https://github.com/nvim-mini/mini.nvim",
     "clean_name": "mini-nvim",
     "config_file": "mini-nvim.lua",
     "colorscheme": false,

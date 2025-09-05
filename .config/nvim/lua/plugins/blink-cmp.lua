@@ -1,6 +1,10 @@
 -- https://github.com/Saghen/blink.cmp
+-- most recent stable version
 -- https://cmp.saghen.dev/
 -- https://cmp.saghen.dev/configuration/reference.html
+-- main branch
+-- https://main.cmp.saghen.dev/
+-- https://main.cmp.saghen.dev/configuration/reference.html
 require('blink.cmp').setup {
   -- https://cmp.saghen.dev/modes/cmdline.html
   cmdline = {

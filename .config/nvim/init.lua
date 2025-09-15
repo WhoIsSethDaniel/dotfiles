@@ -198,8 +198,12 @@ vim.opt.complete = { '.', 'w', 'b', 'u' }
 -- I: turn off vim 'intro' message
 -- S: turn off search stats
 -- c: turn off menu messages
+-- C: don't give messages while scanning for ins-completion items, for instance "scanning tags"
 -- s: turn off "search hit BOTTOM, continuing at TOP" message during search
-vim.opt.shortmess:append 'Ics'
+-- W: shorten the "written" message to [w] (and also [a])
+-- q: do not show "recording @a" when recording a macro
+-- F: don't give file info when editing a file
+vim.opt.shortmess:append 'IcsSWCqF'
 
 -- use the patience algorithm when diffing; perhaps also try 'histogram';
 -- default algorithm is myers

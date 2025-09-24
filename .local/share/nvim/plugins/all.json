@@ -125,6 +125,15 @@
     "enabled": true,
     "version": ""
   },
+  "messages-buffer.nvim": {
+    "name": "messages-buffer.nvim",
+    "url": "git@github.com:WhoIsSethDaniel/messages-buffer.nvim",
+    "clean_name": "messages-buffer-nvim",
+    "config_file": "messages-buffer-nvim.lua",
+    "colorscheme": false,
+    "enabled": false,
+    "version": ""
+  },
   "mini.nvim": {
     "name": "mini.nvim",
     "url": "https://github.com/nvim-mini/mini.nvim",

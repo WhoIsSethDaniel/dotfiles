@@ -131,7 +131,7 @@
     "clean_name": "messages-buffer-nvim",
     "config_file": "messages-buffer-nvim.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "version": ""
   },
   "mini.nvim": {

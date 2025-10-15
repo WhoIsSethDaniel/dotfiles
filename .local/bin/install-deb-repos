@@ -3,8 +3,8 @@
 # chrome (https://www.ubuntuupdates.org/ppa/google_chrome)
 # above link shows a deprecated way to install signing key using apt-key. See the apt-key man page for more information.
 echo "chrome (stable)"
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo tee /etc/apt/trusted.gpg.d/google.asc
-sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | gpg --dearmor | sudo tee /etc/apt/trusted.gpg.d/google-chrome.gpg >/dev/null
+sudo sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.sources'
 echo
 
 # ms teams

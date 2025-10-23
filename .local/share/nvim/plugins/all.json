@@ -26,6 +26,15 @@
     "enabled": true,
     "version": ""
   },
+  "filler-begone.nvim": {
+    "name": "filler-begone.nvim",
+    "url": "https://github.com/Saghen/filler-begone.nvim",
+    "clean_name": "filler-begone-nvim",
+    "config_file": "filler-begone-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
   "flatten.nvim": {
     "name": "flatten.nvim",
     "url": "https://github.com/willothy/flatten.nvim",

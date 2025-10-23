@@ -127,7 +127,10 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 
 function M.setup()
   require('vim.lsp.log').set_level(lsp_log_level)
-  require('vim.lsp.log').set_format_func(vim.inspect)
+  -- comment out; >= 0.12 set_format_func has changed
+  -- require('vim.lsp.log').set_format_func(function(_, ...)
+  --   return vim.inspect(...)
+  -- end)
 
   local lsp_config_dir = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
   if vim.fn.isdirectory(lsp_config_dir) == 0 then

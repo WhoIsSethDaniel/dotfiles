@@ -16,7 +16,7 @@ require('incline').setup {
   },
   render = function(props)
     local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
-    local full_path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':p')
+    local full_path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':p:.')
     if filename == '' then
       filename = '[No Name]'
     end

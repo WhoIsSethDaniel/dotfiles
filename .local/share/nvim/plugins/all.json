@@ -80,6 +80,15 @@
     "enabled": true,
     "version": ""
   },
+  "incline.nvim": {
+    "name": "incline.nvim",
+    "url": "https://github.com/b0o/incline.nvim",
+    "clean_name": "incline-nvim",
+    "config_file": "incline-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
   "leap.nvim": {
     "name": "leap.nvim",
     "url": "https://github.com/ggandor/leap.nvim",
@@ -202,6 +211,15 @@
     "url": "https://github.com/neovim/nvim-lspconfig",
     "clean_name": "nvim-lspconfig",
     "config_file": "nvim-lspconfig.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
+  "nvim-navic": {
+    "name": "nvim-navic",
+    "url": "https://github.com/SmiteshP/nvim-navic",
+    "clean_name": "nvim-navic",
+    "config_file": "nvim-navic.lua",
     "colorscheme": false,
     "enabled": true,
     "version": ""

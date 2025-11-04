@@ -1,3 +1,4 @@
+-- https://github.com/nvim-mini/mini.nvim
 require 'plugins.mini.ai'
 require 'plugins.mini.git'
 require 'plugins.mini.icons'

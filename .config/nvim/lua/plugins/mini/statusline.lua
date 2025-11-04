@@ -1,3 +1,4 @@
+-- https://github.com/nvim-mini/mini.statusline
 require('mini.statusline').setup {
   -- Content of statusline as functions which return statusline string. See
   -- `:h statusline` and code of default contents (used instead of `nil`).

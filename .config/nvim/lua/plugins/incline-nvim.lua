@@ -5,7 +5,10 @@ local navic = require 'nvim-navic'
 require('incline').setup {
   window = {
     padding = 0,
-    margin = { horizontal = 0, vertical = 0 },
+    margin = {
+      horizontal = 0,
+      vertical = 0,
+    },
     placement = {
       horizontal = 'right',
       vertical = 'top',
@@ -13,6 +16,7 @@ require('incline').setup {
   },
   render = function(props)
     local filename = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':t')
+    local full_path = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(props.buf), ':p')
     if filename == '' then
       filename = '[No Name]'
     end
@@ -23,7 +27,7 @@ require('incline').setup {
     local res = {
       ft_icon and { ' ', ft_icon, ' ', guibg = ft_color, guifg = helpers.contrast_color(ft_color) } or '',
       ' ',
-      { filename, gui = modified and 'bold,italic' or 'bold' },
+      { props.focused and filename or full_path, gui = modified and 'bold,italic' or 'bold' },
       guibg = '#44406e',
     }
     if props.focused then

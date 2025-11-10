@@ -4,7 +4,8 @@ local c = require 'conform'
 
 c.formatters.shfmt = {
   prepend_args = {
-    '-i=4',
+    -- editorconfig will set this
+    -- '-i=4',
     '-ci',
     '-s',
     '-bn',

@@ -112,13 +112,6 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     else
       map('n', 'grd', vim.lsp.buf.definition, opts)
     end
-    if vim.fn.has 'nvim-0.11.0' == 0 then
-      -- each of these is set by default in 0.11.0; see :h grn
-      map('n', 'gra', vim.lsp.buf.code_action, opts)
-      map('n', 'grn', vim.lsp.buf.rename, opts)
-      -- blink does this
-      -- map('n', '<C-S>', vim.lsp.buf.signature_help, opts)
-    end
     if_has_do('conform', function(_)
       map('n', '<leader>cf', require('conform').format, opts)
     end)

@@ -21,17 +21,6 @@ vim.keymap.set('n', '<leader>ff', function()
   }
 end, {})
 
-vim.keymap.set('n', '<leader>ed', function()
-  builtin.find_files {
-    find_command = {
-      'git',
-      '--git-dir=' .. os.getenv 'DOTFILES_HOME',
-      '--work-tree=' .. os.getenv 'HOME',
-      'ls-files',
-    },
-  }
-end, {})
-
 vim.keymap.set('n', '<leader>ec', function()
   local cfg = '~/.config/nvim'
   local entries = {}
@@ -52,6 +41,22 @@ vim.keymap.set('n', '<leader>fc', function()
   builtin.find_files {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
+  }
+end, {})
+
+-- use the directory of the current buffer
+vim.keymap.set('n', '<leader>fc', function()
+  builtin.find_files {
+    find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
+    hidden = true,
+    search_dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
+  }
+end, {})
+
+-- use the directory of the current buffer
+vim.keymap.set('n', '<leader>gc', function()
+  builtin.live_grep {
+    search_dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
   }
 end, {})
 

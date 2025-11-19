@@ -308,6 +308,23 @@ end)
 -- find all non git files within the pwd and place them in args
 vim.cmd [[ command! -nargs=0 LoadAll :args `fdfind --type f --exclude .git -c never -H`<cr> ]]
 
+vim.api.nvim_create_user_command('CpFrom', function(args)
+  local file = vim.api.nvim_buf_get_name(0)
+  if not vim.uv.fs_stat(file) then
+    vim.api.nvim_echo({ { 'CpFrom failed: destination does not exist', 'Error' } }, true, {})
+    return
+  end
+  local ok, err = vim.uv.fs_copyfile(args.args, file)
+  if not ok then
+    vim.api.nvim_echo({ { string.format('CpFrom failed: %s', err), 'Error' } }, true, {})
+    return
+  end
+  vim.cmd [[ e ]]
+end, {
+  nargs = 1,
+  complete = 'file',
+})
+
 if vim.env.SSH_TTY then
   vim.g.clipboard = {
     name = 'OSC 52',

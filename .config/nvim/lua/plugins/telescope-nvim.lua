@@ -45,7 +45,7 @@ vim.keymap.set('n', '<leader>fc', function()
 end, {})
 
 -- use the directory of the current buffer
-vim.keymap.set('n', '<leader>fc', function()
+vim.keymap.set('n', '<leader>fd', function()
   builtin.find_files {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
@@ -54,7 +54,7 @@ vim.keymap.set('n', '<leader>fc', function()
 end, {})
 
 -- use the directory of the current buffer
-vim.keymap.set('n', '<leader>gc', function()
+vim.keymap.set('n', '<leader>gd', function()
   builtin.live_grep {
     search_dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
   }

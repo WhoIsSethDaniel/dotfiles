@@ -162,7 +162,6 @@ function M.setup()
         ensure_installed = {
           'bash-language-server',
           'dprint',
-          'editorconfig-checker',
           'eugene',
           'golangci-lint',
           'gomodifytags',

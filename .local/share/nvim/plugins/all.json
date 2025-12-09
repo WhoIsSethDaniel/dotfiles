@@ -91,7 +91,7 @@
   },
   "leap.nvim": {
     "name": "leap.nvim",
-    "url": "https://github.com/ggandor/leap.nvim",
+    "url": "https://codeberg.org/andyg/leap.nvim",
     "clean_name": "leap-nvim",
     "config_file": "leap-nvim.lua",
     "colorscheme": false,

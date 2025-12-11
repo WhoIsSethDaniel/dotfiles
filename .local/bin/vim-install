@@ -17,7 +17,7 @@ fi
 declare -A versions
 while read -r v; do
         versions[$v]=$v
-done < <(printf "%s" "$(curl -LSs https://api.github.com/repos/neovim/neovim/releases | jq -r '.[].["tag_name"]')")
+done < <(curl -LSs https://api.github.com/repos/neovim/neovim/releases | jq -r '.[].["tag_name"]')
 
 if [[ -z "${versions[$version]}" ]]; then
         echo "version/tag does not exist"

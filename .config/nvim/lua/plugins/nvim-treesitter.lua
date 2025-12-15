@@ -1,5 +1,6 @@
 --  https://github.com/nvim-treesitter/nvim-treesitter/tree/main
 --  https://github.com/nvim-treesitter/nvim-treesitter-textobjects/tree/main
+--  https://www.reddit.com/r/neovim/comments/1pndf9e/my_new_nvimtreesitter_configuration_for_the_main/
 local masterts, _ = pcall(require, 'nvim-treesitter.configs')
 
 vim.api.nvim_create_autocmd('VimEnter', {

@@ -53,6 +53,7 @@
 /.local/bin/precious
 /.local/bin/snago
 /.local/bin/uv
+/.local/bin/uvx
 /.local/bin/vim-add
 /.local/bin/vim-build-sources
 /.local/bin/vim-check
@@ -94,6 +95,7 @@
 /.config/systemd/user/default.target.wants/
 /.config/tiling-assistant/
 /.config/totem/
+/.config/uv/
 /.config/.wrangler/
 
 /.bundle/cache/

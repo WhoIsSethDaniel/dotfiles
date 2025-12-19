@@ -52,6 +52,7 @@
 /.local/bin/pod2markdown
 /.local/bin/precious
 /.local/bin/snago
+/.local/bin/tree-sitter-cli
 /.local/bin/uv
 /.local/bin/uvx
 /.local/bin/vim-add

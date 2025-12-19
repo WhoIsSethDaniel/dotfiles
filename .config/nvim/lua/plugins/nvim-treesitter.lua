@@ -20,22 +20,41 @@ local auto_install = {
 
 -- main branch treesitter
 if not masterts then
+  local ts = require 'nvim-treesitter'
+
+  ts.install(auto_install)
+
+  local ignore_filetypes = {
+    'checkhealth',
+    'lazy',
+    'mason',
+    'snacks_dashboard',
+    'snacks_notif',
+    'snacks_win',
+  }
+
+  -- Auto-install parsers and enable highlighting on FileType
   vim.api.nvim_create_autocmd('FileType', {
-    pattern = { 'perl', 'go', 'markdown' },
-    callback = function()
-      vim.treesitter.start()
+    group = vim.api.nvim_create_augroup('TreesitterSetup', { clear = true }),
+    desc = 'Enable treesitter highlighting and indentation',
+    callback = function(event)
+      if vim.tbl_contains(ignore_filetypes, event.match) then
+        return
+      end
+
+      local lang = vim.treesitter.language.get_lang(event.match) or event.match
+      local buf = event.buf
+
+      -- Start highlighting immediately (works if parser exists)
+      pcall(vim.treesitter.start, buf, lang)
+
+      -- Enable treesitter indentation
+      vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+
+      -- Install missing parsers (async, no-op if already installed)
+      ts.install { lang }
     end,
   })
-  require('nvim-treesitter').install(auto_install)
-  -- for now: everything
-  vim.opt.indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-
-  vim.keymap.set({ 'x', 'o' }, 'af', function()
-    require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', 'textobjects')
-  end)
-  vim.keymap.set({ 'x', 'o' }, 'if', function()
-    require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', 'textobjects')
-  end)
 else
   -- master branch treesitter
   ---@diagnostic disable-next-line:missing-fields

@@ -19,4 +19,10 @@ if not masterts then
   vim.keymap.set({ 'n', 'x', 'o' }, '[]', function()
     require('nvim-treesitter-textobjects.move').goto_previous_end('@function.outer', 'textobjects')
   end)
+  vim.keymap.set({ 'x', 'o' }, 'af', function()
+    require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', 'textobjects')
+  end)
+  vim.keymap.set({ 'x', 'o' }, 'if', function()
+    require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', 'textobjects')
+  end)
 end

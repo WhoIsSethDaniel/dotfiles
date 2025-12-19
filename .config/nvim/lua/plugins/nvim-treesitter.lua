@@ -31,6 +31,11 @@ if not masterts then
     'snacks_dashboard',
     'snacks_notif',
     'snacks_win',
+    'mininotify',
+    'incline',
+    'TelescopePrompt',
+    'TelescopeResults',
+    'noice',
   }
 
   -- Auto-install parsers and enable highlighting on FileType
@@ -45,8 +50,13 @@ if not masterts then
       local lang = vim.treesitter.language.get_lang(event.match) or event.match
       local buf = event.buf
 
+      if not lang then
+        return
+      end
+      print(lang)
+
       -- Start highlighting immediately (works if parser exists)
-      pcall(vim.treesitter.start, buf, lang)
+      vim.treesitter.start(buf, lang)
 
       -- Enable treesitter indentation
       vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"

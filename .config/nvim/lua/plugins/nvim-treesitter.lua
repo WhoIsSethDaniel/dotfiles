@@ -50,19 +50,12 @@ if not masterts then
       local lang = vim.treesitter.language.get_lang(event.match) or event.match
       local buf = event.buf
 
-      if not lang then
-        return
-      end
-      print(lang)
-
-      -- Start highlighting immediately (works if parser exists)
-      vim.treesitter.start(buf, lang)
-
-      -- Enable treesitter indentation
-      vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
-
-      -- Install missing parsers (async, no-op if already installed)
-      ts.install { lang }
+      -- Install missing parsers (no-op if already installed)
+      ts.install(lang):await(function()
+        vim.treesitter.start(buf, lang)
+        -- Enable treesitter indentation
+        vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+      end)
     end,
   })
 else

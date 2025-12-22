@@ -39,6 +39,9 @@
 /.local/share/nvim/project_nvim/project_history
 /.local/share/nvim/shada/main.shada
 /.local/share/nvim/site/pack/core/opt/*
+/.local/share/nvim/site/parser-info/
+/.local/share/nvim/site/parser/
+/.local/share/nvim/site/queries/
 /.local/share/nvim/swap/*.sw*
 /.local/share/nvim/telescope_history
 /.local/share/nvim/tree-sitter*/
@@ -52,7 +55,7 @@
 /.local/bin/pod2markdown
 /.local/bin/precious
 /.local/bin/snago
-/.local/bin/tree-sitter-cli
+/.local/bin/tree-sitter
 /.local/bin/uv
 /.local/bin/uvx
 /.local/bin/vim-add

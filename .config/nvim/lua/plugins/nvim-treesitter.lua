@@ -24,19 +24,7 @@ if not masterts then
 
   ts.install(auto_install)
 
-  local ignore_filetypes = {
-    'checkhealth',
-    'lazy',
-    'mason',
-    'snacks_dashboard',
-    'snacks_notif',
-    'snacks_win',
-    'mininotify',
-    'incline',
-    'TelescopePrompt',
-    'TelescopeResults',
-    'noice',
-  }
+  local ignore_filetypes = {}
 
   -- Auto-install parsers and enable highlighting on FileType
   vim.api.nvim_create_autocmd('FileType', {
@@ -52,9 +40,10 @@ if not masterts then
 
       -- Install missing parsers (no-op if already installed)
       ts.install(lang):await(function()
-        vim.treesitter.start(buf, lang)
-        -- Enable treesitter indentation
-        vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        if vim.treesitter.language.add(lang) then
+          vim.treesitter.start(buf, lang)
+          vim.bo[buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+        end
       end)
     end,
   })

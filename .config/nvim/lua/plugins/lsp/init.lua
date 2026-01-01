@@ -183,6 +183,7 @@ function M.setup()
           'staticcheck',
           'stylua',
           'templ',
+          'tree-sitter-cli',
           'typos',
           'vim-language-server',
           'vint',

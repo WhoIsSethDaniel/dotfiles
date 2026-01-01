@@ -44,7 +44,6 @@
 /.local/share/nvim/site/queries/
 /.local/share/nvim/swap/*.sw*
 /.local/share/nvim/telescope_history
-/.local/share/nvim/tree-sitter*/
 /.local/share/nvim/workspaces
 /.local/share/nvim/.netrwhist
 !/.local/bin
@@ -55,7 +54,6 @@
 /.local/bin/pod2markdown
 /.local/bin/precious
 /.local/bin/snago
-/.local/bin/tree-sitter
 /.local/bin/uv
 /.local/bin/uvx
 /.local/bin/vim-add

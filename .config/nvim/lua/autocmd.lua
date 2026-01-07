@@ -50,7 +50,7 @@ local autocmds = {
       TermOpen = {
         callback = function()
           -- allow window movements
-          vim.keymap.set('t', '<C-w>', '<C-\\><C-n><C-w>', { silent = true, noremap = true })
+          vim.keymap.set('t', '<C-w>', '<C-\\><C-n><C-w>', { silent = true, noremap = true, buffer = true })
         end,
       },
     },

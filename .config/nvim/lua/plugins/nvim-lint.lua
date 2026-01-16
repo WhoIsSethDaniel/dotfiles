@@ -38,7 +38,6 @@ table.insert(sel.args, 1, function()
 end)
 
 local sf = l.linters.sqlfluff
-table.remove(sf.args)
 table.insert(sf.args, '--dialect=postgres')
 
 local eug = l.linters.eugene

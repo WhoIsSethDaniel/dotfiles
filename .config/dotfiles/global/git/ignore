@@ -49,6 +49,7 @@
 !/.local/bin
 /.local/bin/devpod
 /.local/bin/gh-pt.pl
+/.local/bin/mise
 /.local/bin/mssh
 /.local/bin/pls
 /.local/bin/pod2markdown

@@ -6,15 +6,14 @@ return {
   -- cmd_env = {
   --   GOFUMPT_SPLIT_LONG_LINES = 'on',
   -- },
-  -- filetypes = { 'go', 'gomod', 'gowork', 'gotmpl', 'gohtmltmpl', 'gotexttmpl' },
-  -- filetypes = { 'go', 'gomod', 'gowork', 'totmpl' },
+  filetypes = { 'go', 'gomod', 'gowork', 'gohtml', 'gotoml' },
   cmd = { 'gopls', '--remote=auto' },
   settings = {
     gopls = {
       -- useful for -tags (and other things)
       -- buildFlags = nil,
       -- directoryFilters = { '+go' },
-      -- templateExtensions = { 'gohtml', 'gotoml' },
+      templateExtensions = { 'gohtml', 'gotoml' },
       ['local'] = '',
       gofumpt = true,
       usePlaceholders = false,

@@ -7,18 +7,31 @@
 -- https://github.com/nvim-telescope/telescope.nvim/issues/3436
 
 local builtin = require 'telescope.builtin'
+local seeker = require 'seeker'
 local telescope = require 'telescope'
 
 local load = function(n)
   return pcall(telescope.load_extension, n)
 end
 
+local seek = function(mode, opts)
+  seeker.seek {
+    mode = mode,
+    picker_opts = opts,
+  }
+  -- if mode == 'files' then
+  --   builtin.find_files(opts)
+  -- elseif mode == 'grep' then
+  --   builtin.live_grep(opts)
+  -- end
+end
+
 vim.keymap.set('n', '<leader>ff', function()
-  builtin.find_files {
+  seek('files', {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
     search_dirs = { '~' },
-  }
+  })
 end, {})
 
 vim.keymap.set('n', '<leader>ec', function()
@@ -30,42 +43,43 @@ vim.keymap.set('n', '<leader>ec', function()
     end
   end
 
-  builtin.find_files {
+  seek('files', {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
     search_dirs = entries,
-  }
+  })
 end, {})
 
 vim.keymap.set('n', '<leader>fc', function()
-  builtin.find_files {
+  seek('files', {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
-  }
+  })
 end, {})
 
 -- use the directory of the current buffer
 vim.keymap.set('n', '<leader>fd', function()
-  builtin.find_files {
+  local dirs = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
+  seek('files', {
     find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
     hidden = true,
-    search_dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
-  }
+    search_dirs = { dirs },
+  })
 end, {})
 
 -- use the directory of the current buffer
 vim.keymap.set('n', '<leader>gd', function()
-  builtin.live_grep {
+  seek('grep', {
     search_dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
-  }
+  })
 end, {})
 
 vim.keymap.set('n', '<leader>gg', function()
-  builtin.live_grep()
+  seek 'grep'
 end, {})
 
 vim.keymap.set('n', '<leader>go', function()
-  builtin.live_grep { grep_open_files = true }
+  seek('grep', { grep_open_files = true })
 end, {})
 
 vim.keymap.set('n', '<leader>fb', function()
@@ -264,3 +278,7 @@ load 'ui-select'
 load 'repossession'
 load 'workspaces'
 load 'zf-native'
+
+seeker.setup {
+  picker_provider = 'telescope',
+}

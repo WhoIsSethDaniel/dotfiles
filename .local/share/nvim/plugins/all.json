@@ -287,6 +287,15 @@
     "enabled": true,
     "version": ""
   },
+  "seeker.nvim": {
+    "name": "seeker.nvim",
+    "url": "https://github.com/2KAbhishek/seeker.nvim",
+    "clean_name": "seeker-nvim",
+    "config_file": "seeker-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
   "snacks.nvim": {
     "name": "snacks.nvim",
     "url": "https://github.com/folke/snacks.nvim",

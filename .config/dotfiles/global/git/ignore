@@ -74,6 +74,7 @@
 /.config/autostart/
 /.config/cni/
 /.config/configstore/
+/.config/dosbox-x/
 /.config/dconf/
 /.config/dotfiles/main/
 /.config/dotfiles/home/

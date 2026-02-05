@@ -54,8 +54,6 @@
 /.local/bin/pls
 /.local/bin/pod2markdown
 /.local/bin/snago
-/.local/bin/uv
-/.local/bin/uvx
 /.local/bin/vim-add
 /.local/bin/vim-build-sources
 /.local/bin/vim-check

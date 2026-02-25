@@ -6,7 +6,9 @@ local l = require 'lint'
 vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'BufEnter' }, {
   pattern = { '*' },
   callback = function()
-    l.try_lint()
+    if vim.g.lint == nil or vim.g.lint == true then
+      l.try_lint()
+    end
   end,
 })
 

@@ -50,7 +50,7 @@
     "clean_name": "flatten-nvim",
     "config_file": "flatten-nvim.lua",
     "colorscheme": false,
-    "enabled": false,
+    "enabled": true,
     "version": ""
   },
   "git-conflict.nvim": {

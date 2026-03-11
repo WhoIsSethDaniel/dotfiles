@@ -8,6 +8,15 @@
     "enabled": true,
     "version": ""
   },
+  "colorful-menu.nvim": {
+    "name": "colorful-menu.nvim",
+    "url": "https://github.com/xzbdmw/colorful-menu.nvim",
+    "clean_name": "colorful-menu-nvim",
+    "config_file": "colorful-menu-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
   "colorful-winsep.nvim": {
     "name": "colorful-winsep.nvim",
     "url": "https://github.com/nvim-zh/colorful-winsep.nvim",

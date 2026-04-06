@@ -1,6 +1,7 @@
 --  https://github.com/nvim-treesitter/nvim-treesitter/tree/main
 --  https://github.com/nvim-treesitter/nvim-treesitter-textobjects/tree/main
 --  https://www.reddit.com/r/neovim/comments/1pndf9e/my_new_nvimtreesitter_configuration_for_the_main/
+--  POTENTIAL REPLACEMENT: https://github.com/romus204/tree-sitter-manager.nvim
 vim.api.nvim_create_autocmd('VimEnter', {
   callback = function()
     vim.cmd.TSUpdate()

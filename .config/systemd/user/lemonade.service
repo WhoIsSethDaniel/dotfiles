@@ -1,8 +1,0 @@
-[Unit]
-Description=Lemonade
-
-[Service]
-ExecStart=/home/seth/.local/share/nvim/mason/bin/lemonade server
-
-[Install]
-WantedBy=default.target

@@ -89,15 +89,6 @@
     "enabled": true,
     "version": ""
   },
-  "leap.nvim": {
-    "name": "leap.nvim",
-    "url": "https://codeberg.org/andyg/leap.nvim",
-    "clean_name": "leap-nvim",
-    "config_file": "leap-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
-  },
   "lists.vim": {
     "name": "lists.vim",
     "url": "https://github.com/lervag/lists.vim",
@@ -193,6 +184,15 @@
     "url": "https://github.com/kevinhwang91/nvim-bqf",
     "clean_name": "nvim-bqf",
     "config_file": "nvim-bqf.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
+  "nvim-jump": {
+    "name": "nvim-jump",
+    "url": "https://github.com/yorickpeterse/nvim-jump",
+    "clean_name": "nvim-jump",
+    "config_file": "nvim-jump.lua",
     "colorscheme": false,
     "enabled": true,
     "version": ""

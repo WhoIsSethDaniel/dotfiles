@@ -93,6 +93,7 @@
 /.config/pulse/
 /.config/stripe/
 /.config/sound-juicer/
+/.config/systemd/
 /.config/systemd/user/default.target.wants/
 /.config/tiling-assistant/
 /.config/totem/

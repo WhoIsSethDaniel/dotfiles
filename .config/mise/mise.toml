@@ -1,37 +1,42 @@
-# Links to docs for backends
+# https://mise.jdx.dev/dev-tools/
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html
 # https://mise.jdx.dev/dev-tools/backends/github.html
 # https://mise.jdx.dev/dev-tools/backends/npm.html
+# https://mise.jdx.dev/dev-tools/backends/pipx.html
 [tools]
 go = "latest"
 node = "latest"
-"github:sharkdp/fd" = { version = "latest", bin = "fdfind" }
-"github:BurntSushi/ripgrep" = "latest"
-"github:neovim/neovim" = "latest"
-"github:golangci/golangci-lint" = "latest"
-"npm:perlnavigator-server" = "latest"
-"npm:bash-language-server" = "latest"
-"npm:dprint" = "latest"
+
 "github:kaaveland/eugene" = "latest"
-"go:golang.org/x/tools/gopls" = "latest"
+"github:sharkdp/fd" = { version = "latest", bin = "fdfind" }
+"github:AGWA/git-crypt" = "latest"
+"github:danielrobbins/keychain" = "latest"
 "github:LuaLS/lua-language-server" = "latest"
-"npm:markdownlint-cli2" = "latest"
 "github:artempyanykh/marksman" = "latest"
-"npm:prettier" = "latest"
+"github:neovim/neovim" = "nightly"
+"github:BurntSushi/ripgrep" = "latest"
 "github:Kampfkarren/selene" = "latest"
 "github:koalaman/shellcheck" = "latest"
 "github:anordal/shellharden" = "latest"
-"pipx:sqlfluff" = "latest"
-"go:honnef.co/go/tools/cmd/staticcheck" = "latest"
 "github:JohnnyMorganz/StyLua" = "latest"
-"github:a-h/templ" = "latest"
-"npm:tree-sitter-cli" = "latest"
 "github:crate-ci/typos" = "latest"
+"github:mikefarah/yq" = { version = "latest", asset_pattern = "yq_linux_amd64", rename_exe = "yq" }
+
+"go:github.com/golangci/golangci-lint/cmd/golangci-lint" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+"go:mvdan.cc/sh/v3/cmd/shfmt" = "latest"
+"go:honnef.co/go/tools/cmd/staticcheck" = "latest"
+"go:github.com/a-h/templ/cmd/templ" = "latest"
+
+"npm:bash-language-server" = "latest"
+"npm:dprint" = "latest"
+"npm:markdownlint-cli2" = "latest"
+"npm:perlnavigator-server" = "latest"
+"npm:prettier" = "latest"
+"npm:tree-sitter-cli" = "latest"
 "npm:vim-language-server" = "latest"
+
+"pipx:sqlfluff" = "latest"
 "pipx:vim-vint" = "latest"
 "pipx:yamllint" = "latest"
-"go:mvdan.cc/sh/v3/cmd/shfmt" = "latest"
-"github:mikefarah/yq" = { version = "latest", asset_pattern = "yq_linux_amd64", rename_exe = "yq" }
-"github:danielrobbins/keychain" = "latest"
-"github:AGWA/git-crypt" = "latest"

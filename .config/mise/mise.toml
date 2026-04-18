@@ -1,0 +1,38 @@
+# Links to docs for backends
+# https://mise.jdx.dev/dev-tools/backends/
+# https://mise.jdx.dev/dev-tools/backends/go.html
+# https://mise.jdx.dev/dev-tools/backends/github.html
+# https://mise.jdx.dev/dev-tools/backends/npm.html
+[tools]
+go = "latest"
+node = "latest"
+"github:sharkdp/fd" = { version = "latest",  rename_exe = "fdfind" }
+"github:BurntSushi/ripgrep" = "latest"
+"github:neovim/neovim" = "latest"
+"github:golangci/golangci-lint" = "latest"
+"npm:perlnavigator-server" = "latest"
+"npm:bash-language-server" = "latest"
+"npm:dprint" = "latest"
+"github:kaaveland/eugene" = "latest"
+"go:github.com/fatih/gomodifytags" = "latest"
+"go:golang.org/x/tools/gopls" = "latest"
+"go:gotest.tools/gotestsum" = "latest"
+"github:LuaLS/lua-language-server" = "latest"
+"npm:markdownlint-cli2" = "latest"
+"github:artempyanykh/marksman" = "latest"
+"npm:prettier" = "latest"
+"github:Kampfkarren/selene" = "latest"
+"github:koalaman/shellcheck" = "latest"
+"github:anordal/shellharden" = "latest"
+"pipx:sqlfluff" = "latest"
+"go:honnef.co/go/tools/cmd/staticcheck" = "latest"
+"github:JohnnyMorganz/StyLua" = "latest"
+"github:a-h/templ" = "latest"
+"npm:tree-sitter-cli" = "latest"
+"github:crate-ci/typos" = "latest"
+"npm:vim-language-server" = "latest"
+"pipx:vim-vint" = "latest"
+"pipx:yamllint" = "latest"
+"go:mvdan.cc/sh/v3/cmd/shfmt" = "latest"
+"github:mikefarah/yq" = { version = "latest", asset_pattern = "yq_linux_amd64", rename_exe = "yq" }
+# "github:wezterm/wezterm" = "latest"

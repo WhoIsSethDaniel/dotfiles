@@ -35,6 +35,7 @@ function set_prog_var () {
   local PROGS=$@
   local PROG
 
+  unset_var $NAME
   for PROG in $PROGS ; do
     check_for_program $PROG
     if [ -n "${!PROG}" ] ; then
@@ -218,7 +219,7 @@ function rm_path () {
   local -a ELEM
   local P
 
-  for P in ${!PATH_NAME} ; do 
+  for P in ${!PATH_NAME} ; do
     if [ "$P" != "$BAD_PATH" -a "$P" != "${BAD_PATH}/" ] ; then
       ELEM[${#ELEM[*]}]=$P
     fi
@@ -233,11 +234,11 @@ function clean_path () {
   local -a ELEM
   local P E MATCH
 
-  for P in ${!PATH_NAME} ; do 
+  for P in ${!PATH_NAME} ; do
     if [ -e "$P" ] ; then
       local L=$P
       MATCH=1
-      for E in "${ELEM[@]}" ; do 
+      for E in "${ELEM[@]}" ; do
         if [ "$E" == "$L" -o "$E" == "${L}/" ] ; then
           MATCH=0
           break

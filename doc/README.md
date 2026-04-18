@@ -7,7 +7,7 @@ Commands for initializing a new home directory
 install needed packages
 
 ```bash
-apt install keychain git-crypt curl make python3-neovim python3-venv ripgrep fd-find gcc g++ ncurses-term gh jekyll ruby-dev libhunspell-dev wl-clipboard fswatch
+apt install keychain git-crypt curl pipx make python3-neovim python3-venv gcc g++ ncurses-term gh jekyll ruby-dev libhunspell-dev wl-clipboard fswatch
 ```
 
 setup home ("https://dev.to/bowmanjd/store-home-directory-config-files-dotfiles-in-git-using-bash-zsh-or-powershell-the-bare-repo-approach-35l3")
@@ -21,6 +21,12 @@ git --git-dir="$HOME"/.config/dotfiles/home --work-tree="$HOME" checkout -f
 git clone git@github.com:WhoIsSethDaniel/dotfiles-home main
 cd ~
 git-crypt unlock <path to key>
+```
+
+## Install mise
+
+```bash
+curl https://mise.run | sh
 ```
 
 ## Install Deb Repos
@@ -44,8 +50,6 @@ install-tmux-completions
 ```
 
 ## (Neo)Vim
-
-First install the vim and neovim repositories and packages (see above)
 
 install some fonts
 

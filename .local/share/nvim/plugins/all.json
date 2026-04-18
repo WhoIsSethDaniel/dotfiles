@@ -116,24 +116,6 @@
     "enabled": true,
     "version": ""
   },
-  "mason-tool-installer.nvim": {
-    "name": "mason-tool-installer.nvim",
-    "url": "git@github.com:WhoIsSethDaniel/mason-tool-installer.nvim",
-    "clean_name": "mason-tool-installer-nvim",
-    "config_file": "mason-tool-installer-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
-  },
-  "mason.nvim": {
-    "name": "mason.nvim",
-    "url": "https://github.com/mason-org/mason.nvim",
-    "clean_name": "mason-nvim",
-    "config_file": "mason-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
-  },
   "messages-buffer.nvim": {
     "name": "messages-buffer.nvim",
     "url": "git@github.com:WhoIsSethDaniel/messages-buffer.nvim",

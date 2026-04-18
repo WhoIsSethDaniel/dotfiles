@@ -43,7 +43,7 @@ sudo add-apt-repository ppa:git-core/ppa
 # sudo add-apt-repository ppa:aslatter/ppa
 
 # nodejs (https://github.com/nodesource/distributions)
-curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
+# curl -fsSL https://deb.nodesource.com/setup_current.x | sudo -E bash -
 
 # git-lfs
 curl -s https://packagecloud.io/install/repositories/github/git-lfs/script.deb.sh | sudo bash
@@ -54,11 +54,11 @@ sudo apt install google-chrome-stable
 # sudo apt install neovim
 # sudo apt install pulseaudio-modules-bt libldac
 sudo apt install git git-man
-sudo apt install pipewire wireplumber \
-        blueman gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} \
-        libspa-0.2-{bluetooth,dev,jack,modules} \
-        pipewire{,-{audio-client-libraries,pulse,media-session,bin,locales,tests}}
-sudo apt install nodejs
+# sudo apt install pipewire wireplumber \
+#         blueman gstreamer1.0-pipewire libpipewire-0.3-{0,dev,modules} \
+#         libspa-0.2-{bluetooth,dev,jack,modules} \
+#         pipewire{,-{audio-client-libraries,pulse,media-session,bin,locales,tests}}
+# sudo apt install nodejs
 sudo apt install git-lfs
 # sudo apt install alacritty
 # sudo apt install vim-common vim-gtk vim-gui-common vim-runtime

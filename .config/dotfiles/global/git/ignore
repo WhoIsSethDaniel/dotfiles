@@ -53,7 +53,6 @@
 /.local/bin/mssh
 /.local/bin/pls
 /.local/bin/pod2markdown
-/.local/bin/snago
 /.local/bin/vim-add
 /.local/bin/vim-build-sources
 /.local/bin/vim-check

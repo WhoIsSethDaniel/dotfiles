@@ -100,7 +100,8 @@ c.setup {
     gotmpl = { 'prettier' },
     json = { 'prettier' },
     lua = { 'stylua' },
-    markdown = { 'prettier', 'injected' },
+    -- markdown = { 'prettier', 'injected' },
+    markdown = { 'prettier' },
     -- use perlnavigator
     -- perl = { 'perltidy', 'perlimports' },
     query = { 'format-queries' },

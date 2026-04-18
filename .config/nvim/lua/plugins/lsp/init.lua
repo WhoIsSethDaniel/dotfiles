@@ -1,9 +1,6 @@
 --# selene: allow(mixed_table)
 ---@diagnostic disable:need-check-nil
 -- https://github.com/neovim/nvim-lspconfig
--- https://github.com/mason-org/mason.nvim
--- https://github.com/mason-org/mason-lspconfig.nvim
--- https://github.com/WhoIsSethDaniel/mason-tool-installer.nvim
 
 local has_lspconfig, _ = pcall(require, 'lspconfig')
 if not has_lspconfig then
@@ -27,7 +24,6 @@ local no_inlay_hints = {}
 local no_semantic_tokens = {}
 local watch_files = {}
 
-local mason_log_level = vim.log.levels.INFO
 local lsp_log_level = vim.log.levels.INFO
 
 local if_has_do = function(module, f)
@@ -147,60 +143,6 @@ function M.setup()
       notify(string.format('nothing found in lsp configuration dir %s', lsp_config_dir), vim.log.levels.ERROR)
     end
   end
-
-  if_has_do('mason', function(mason)
-    mason.setup {
-      log_level = mason_log_level,
-      registries = {
-        'github:mason-org/mason-registry',
-        -- 'file:/home/seth/src/mason-registry',
-      },
-    }
-
-    if_has_do('mason-tool-installer', function(m)
-      m.setup {
-        ensure_installed = {
-          'bash-language-server',
-          'dprint',
-          'eugene',
-          'golangci-lint',
-          'gomodifytags',
-          'gopls',
-          'gotests',
-          'gotestsum',
-          'impl',
-          'json-to-struct',
-          'lua-language-server',
-          'markdownlint-cli2',
-          'marksman',
-          'perlnavigator',
-          'prettier',
-          'selene',
-          'shellcheck',
-          'shellharden',
-          'shfmt',
-          'sqlfluff',
-          'staticcheck',
-          'stylua',
-          'templ',
-          'tree-sitter-cli',
-          'typos',
-          'vim-language-server',
-          'vint',
-          'yamllint',
-          'yq',
-        },
-        auto_update = true,
-        -- run_on_start = false,
-        start_delay = 0,
-        integrations = {
-          ['mason-lspconfig'] = false,
-          ['mason-null-ls'] = false,
-          ['mason-nvim-dap'] = false,
-        },
-      }
-    end)
-  end)
 end
 
 return M

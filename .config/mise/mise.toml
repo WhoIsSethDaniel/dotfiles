@@ -6,7 +6,7 @@
 [tools]
 go = "latest"
 node = "latest"
-"github:sharkdp/fd" = { version = "latest",  rename_exe = "fdfind" }
+"github:sharkdp/fd" = { version = "latest",  bin = "fdfind" }
 "github:BurntSushi/ripgrep" = "latest"
 "github:neovim/neovim" = "latest"
 "github:golangci/golangci-lint" = "latest"

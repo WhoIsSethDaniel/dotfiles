@@ -18,3 +18,8 @@ check config core.excludesfile ~/.config/dotfiles/global/git/ignore
 for DIR in "$HOME/.config/dotfiles/"*/bin; do
     set_post_path_var PATH "$DIR"
 done
+
+# set the path to my dotfiles bin, if any
+if [[ -d ~/.config/dotfiles/main/bin ]]; then
+    set_post_path_var PATH ~/.config/dotfiles/main/bin
+fi

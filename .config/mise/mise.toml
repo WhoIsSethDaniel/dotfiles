@@ -35,4 +35,8 @@ node = "latest"
 "pipx:yamllint" = "latest"
 "go:mvdan.cc/sh/v3/cmd/shfmt" = "latest"
 "github:mikefarah/yq" = { version = "latest", asset_pattern = "yq_linux_amd64", rename_exe = "yq" }
+"github:danielrobbins/keychain" = "latest"
+"github:AGWA/git-crypt" = "latest"
+
+# this should go in a different file
 # "github:wezterm/wezterm" = "latest"

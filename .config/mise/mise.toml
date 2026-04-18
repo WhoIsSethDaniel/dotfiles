@@ -6,7 +6,7 @@
 [tools]
 go = "latest"
 node = "latest"
-"github:sharkdp/fd" = { version = "latest",  bin = "fdfind" }
+"github:sharkdp/fd" = { version = "latest", bin = "fdfind" }
 "github:BurntSushi/ripgrep" = "latest"
 "github:neovim/neovim" = "latest"
 "github:golangci/golangci-lint" = "latest"
@@ -14,9 +14,7 @@ node = "latest"
 "npm:bash-language-server" = "latest"
 "npm:dprint" = "latest"
 "github:kaaveland/eugene" = "latest"
-"go:github.com/fatih/gomodifytags" = "latest"
 "go:golang.org/x/tools/gopls" = "latest"
-"go:gotest.tools/gotestsum" = "latest"
 "github:LuaLS/lua-language-server" = "latest"
 "npm:markdownlint-cli2" = "latest"
 "github:artempyanykh/marksman" = "latest"
@@ -37,6 +35,3 @@ node = "latest"
 "github:mikefarah/yq" = { version = "latest", asset_pattern = "yq_linux_amd64", rename_exe = "yq" }
 "github:danielrobbins/keychain" = "latest"
 "github:AGWA/git-crypt" = "latest"
-
-# this should go in a different file
-# "github:wezterm/wezterm" = "latest"

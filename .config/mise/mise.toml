@@ -4,6 +4,18 @@
 [settings]
 experimental = true
 quiet = true
+disable_backends = [
+    "aqua",
+    "asdf",
+    "cargo",
+    "conda",
+    "dotnet",
+    "forgejo",
+    "gem",
+    "spm",
+    "ubi",
+    "vfox",
+]
 
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html

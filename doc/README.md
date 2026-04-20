@@ -27,6 +27,7 @@ git-crypt unlock <path to key>
 
 ```bash
 curl https://mise.run | sh
+mise install
 ```
 
 ## Install Deb Repos
@@ -88,14 +89,6 @@ cpanm PLS
 "https://github.com/tokuhirom/plenv" <br>
 "https://github.com/tokuhirom/Perl-Build"
 
-## Go
-
-```bash
-install-go
-```
-
-"https://golang.org/dl/"
-
 ## PAM
 
 configure the pam modules libpam-ssh/libpam-ssh-agent-path
@@ -117,13 +110,4 @@ run
 
 ```bash
 bundle exec jekyll build
-```
-
-## lemonade
-
-activate and start systemd user service
-
-```bash
-systemctl --user enable lemonade.service
-systemctl --user start lemonade.service
 ```

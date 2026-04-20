@@ -7,6 +7,7 @@
 /.config/gnome-initial-setup-done
 /.config/.gsd-keyboard.settings-ported
 /.config/mimeapps.list
+/.config/mise/mise.lock
 /.config/monitors.xml*
 /.config/nvim/lua/all.lua
 /.config/wezterm/sha256.txt

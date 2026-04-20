@@ -32,17 +32,16 @@ pipx = "latest"
 "github:kaaveland/eugene" = "latest"
 "github:sharkdp/fd" = { version = "latest", bin = "fdfind" }
 "github:AGWA/git-crypt" = "latest"
+"github:git-lfs/git-lfs" = "latest"
 "github:danielrobbins/keychain" = "latest"
 "github:LuaLS/lua-language-server" = "latest"
 "github:artempyanykh/marksman" = "latest"
 "github:neovim/neovim" = "nightly"
 "github:BurntSushi/ripgrep" = "latest"
-"github:Kampfkarren/selene" = "latest"
 "github:koalaman/shellcheck" = "latest"
 "github:anordal/shellharden" = "latest"
 "github:JohnnyMorganz/StyLua" = "latest"
 "github:crate-ci/typos" = "latest"
-"github:mikefarah/yq" = { version = "latest", asset_pattern = "yq_linux_amd64", rename_exe = "yq" }
 
 "go:github.com/golangci/golangci-lint/cmd/golangci-lint" = "latest"
 "go:golang.org/x/tools/gopls" = "latest"

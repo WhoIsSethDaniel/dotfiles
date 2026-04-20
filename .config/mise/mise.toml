@@ -16,6 +16,8 @@ disable_backends = [
     "ubi",
     "vfox",
 ]
+lockfile = true
+yes = true
 
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html

@@ -1,4 +1,10 @@
 # https://mise.jdx.dev/dev-tools/
+
+# https://mise.jdx.dev/configuration/settings.html
+[settings]
+experimental = true
+quiet = true
+
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html
 # https://mise.jdx.dev/dev-tools/backends/github.html
@@ -7,6 +13,7 @@
 [tools]
 go = "latest"
 node = "latest"
+pipx = "latest"
 
 "github:kaaveland/eugene" = "latest"
 "github:sharkdp/fd" = { version = "latest", bin = "fdfind" }

@@ -29,8 +29,7 @@ fi
 
 if [ -f "$HOME/.keychain/$HOSTNAME-sh" ]; then
     source "$HOME/.keychain/$HOSTNAME"-sh >/dev/null 2>&1
-fi
-if [ -f "$HOME/.ssh/agent-$HOSTNAME" ]; then
+elif [ -f "$HOME/.ssh/agent-$HOSTNAME" ]; then
     source "$HOME/.ssh/agent-$HOSTNAME" >/dev/null 2>&1
 fi
 

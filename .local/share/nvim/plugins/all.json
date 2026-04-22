@@ -8,6 +8,15 @@
     "enabled": true,
     "version": ""
   },
+  "blink.lib": {
+    "name": "blink.lib",
+    "url": "https://github.com/saghen/blink.lib",
+    "clean_name": "blink-lib",
+    "config_file": "blink-lib.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
   "colorful-menu.nvim": {
     "name": "colorful-menu.nvim",
     "url": "https://github.com/xzbdmw/colorful-menu.nvim",

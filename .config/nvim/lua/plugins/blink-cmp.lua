@@ -105,7 +105,7 @@ require('blink.cmp').setup {
     enabled = true,
     trigger = {
       show_on_accept = true,
-      show_on_insert = true,
+      -- show_on_insert = true, -- not in v2
     },
     window = {
       show_documentation = true,

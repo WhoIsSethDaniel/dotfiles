@@ -32,7 +32,6 @@ declare -A vim_cd
 vim_cd=(
     [cache]="$HOME/.cache/nvim"
     [config]="$XDG_CONFIG_HOME/nvim/lua/plugins/"
-    [install]="$vim_install_dir"
     [local]="$XDG_DATA_HOME/nvim"
     [plugins]="$pldir"
     [state]="$HOME/.local/state/nvim"

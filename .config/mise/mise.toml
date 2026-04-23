@@ -3,9 +3,8 @@
 # https://mise.jdx.dev/configuration/settings.html
 [settings]
 experimental = true
-quiet = true
+quiet = false
 disable_backends = [
-    "aqua",
     "asdf",
     "cargo",
     "conda",
@@ -17,7 +16,7 @@ disable_backends = [
     "vfox",
 ]
 lockfile = true
-yes = true
+# yes = true
 
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html
@@ -46,7 +45,6 @@ pipx = "latest"
 
 "go:golang.org/x/tools/gopls" = "latest"
 "go:mvdan.cc/sh/v3/cmd/shfmt" = "latest"
-"go:honnef.co/go/tools/cmd/staticcheck" = "latest"
 "go:github.com/a-h/templ/cmd/templ" = "latest"
 
 "npm:bash-language-server" = "latest"

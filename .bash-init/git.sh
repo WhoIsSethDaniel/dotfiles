@@ -6,3 +6,7 @@ unset_var GIT_PAGER
 if [[ $PAGER =~ less$ ]]; then
     set_export_var GIT_PAGER "$PAGER $LESS -F"
 fi
+
+if [[ -f ~/.config/dotfiles/main/bash/git.sh ]]; then
+    . ~/.config/dotfiles/main/bash/git.sh
+fi

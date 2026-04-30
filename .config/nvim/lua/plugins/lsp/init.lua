@@ -95,16 +95,16 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- dump_caps()
 
     -- mappings
-    local has_tele, _ = pcall(require, 'telescope')
+    local has_snacks, _ = pcall(require, 'snacks')
     local opts = { noremap = true, silent = true, buffer = bufnr }
     local map = vim.keymap.set
     map('n', 'grD', vim.lsp.buf.declaration, opts)
-    if has_tele then
-      map('n', 'grd', require('telescope.builtin').lsp_definitions, opts)
-      -- override default grr/gri/grt (which only exists >= 0.11) and use telescope instead
-      map('n', 'grt', require('telescope.builtin').lsp_type_definitions, opts)
-      map('n', 'grr', require('telescope.builtin').lsp_references, opts)
-      map('n', 'gri', require('telescope.builtin').lsp_implementations, opts)
+    if has_snacks then
+      map('n', 'grd', require('snacks').picker.lsp_definitions, opts)
+      -- override default grr/gri/grt (which only exists >= 0.11) and use snacks instead
+      map('n', 'grt', require('snacks').picker.lsp_type_definitions, opts)
+      map('n', 'grr', require('snacks').picker.lsp_references, opts)
+      map('n', 'gri', require('snacks').picker.lsp_implementations, opts)
     else
       map('n', 'grd', vim.lsp.buf.definition, opts)
     end

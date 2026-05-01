@@ -20,6 +20,7 @@
 /.ssh/google_compute*
 /.ssh/authorized_keys
 /.ssh/known_hosts
+/.ssh/known_hosts.old
 /.sudo_as_admin_successful
 /.vault-token
 /.viminfo

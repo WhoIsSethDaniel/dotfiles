@@ -5,6 +5,7 @@
 experimental = true
 quiet = false
 disable_backends = [
+    "aqua",
     "asdf",
     "cargo",
     "conda",
@@ -13,7 +14,6 @@ disable_backends = [
     "gem",
     "spm",
     "ubi",
-    "vfox",
 ]
 lockfile = true
 # yes = true
@@ -23,8 +23,10 @@ lockfile = true
 # https://mise.jdx.dev/dev-tools/backends/github.html
 # https://mise.jdx.dev/dev-tools/backends/npm.html
 # https://mise.jdx.dev/dev-tools/backends/pipx.html
+# https://mise.jdx.dev/registry.html
 [tools]
 go = "latest"
+neovim = "nightly"
 node = "latest"
 pipx = "latest"
 
@@ -36,7 +38,6 @@ pipx = "latest"
 "github:danielrobbins/keychain" = "latest"
 "github:LuaLS/lua-language-server" = "latest"
 "github:artempyanykh/marksman" = "latest"
-"github:neovim/neovim" = "nightly"
 "github:BurntSushi/ripgrep" = "latest"
 "github:koalaman/shellcheck" = "latest"
 "github:anordal/shellharden" = "latest"

@@ -21,49 +21,63 @@ local seek = function(mode, opts)
   }
 end
 
+-- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#keymaps
+vim.keymap.set('n', '<leader>kk', function()
+  snacks.picker.keymaps {
+    plugins = true,
+  }
+end, {
+  desc = 'Show keymaps.',
+})
+
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#buffers
 vim.keymap.set('n', '<leader>fb', function()
   snacks.picker.buffers { current = false }
-end, {})
+end, {
+  desc = 'Select from the list of buffers.',
+})
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#grep_buffers
 vim.keymap.set('n', '<leader>go', function()
   snacks.picker.grep_buffers()
-end, {})
+end, {
+  desc = 'Grep files from the list of buffers.',
+})
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#git_branches
 vim.keymap.set('n', '<leader>gb', function()
   snacks.picker.git_branches()
-end, {})
+end, {
+  desc = 'Select Git branches.',
+})
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#files
 vim.keymap.set('n', '<leader>ec', function()
   local cfg = '~/.config/nvim'
-  local entries = {}
-  for name, _ in vim.fs.dir(cfg) do
-    if name ~= 'pack' then
-      table.insert(entries, vim.fs.joinpath(cfg, name))
-    end
-  end
-
   seek('files', {
     hidden = true,
-    dirs = entries,
+    dirs = { cfg },
   })
-end, {})
+end, {
+  desc = 'Find neovim configuration files.',
+})
 
 vim.keymap.set('n', '<leader>ff', function()
   seek('files', {
     hidden = true,
     dirs = { '~' },
   })
-end, {})
+end, {
+  desc = 'Find files within the home directory.',
+})
 
 vim.keymap.set('n', '<leader>fc', function()
   seek('files', {
     hidden = true,
   })
-end, {})
+end, {
+  desc = 'Find files within the current directory.',
+})
 
 -- use the directory of the current buffer
 vim.keymap.set('n', '<leader>fd', function()
@@ -72,7 +86,9 @@ vim.keymap.set('n', '<leader>fd', function()
     hidden = true,
     dirs = { dirs },
   })
-end, {})
+end, {
+  desc = 'Find files within the directory of the current buffer.',
+})
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#grep
 -- use the directory of the current buffer
@@ -80,11 +96,15 @@ vim.keymap.set('n', '<leader>gd', function()
   seek('grep', {
     dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
   })
-end, {})
+end, {
+  desc = 'Grep all files within the directory of the current buffer.',
+})
 
 vim.keymap.set('n', '<leader>gg', function()
   seek 'grep'
-end, {})
+end, {
+  desc = 'Grep all files within the current directory.',
+})
 
 -- local has_workspaces = require 'workspaces'
 -- vim.keymap.set('n', '<leader>pp', function()

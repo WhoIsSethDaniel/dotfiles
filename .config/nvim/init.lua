@@ -298,7 +298,9 @@ end, opts)
 -- toggle showing/hiding the diagnostics
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())
-end)
+end, {
+  desc = 'Toggle diagnostics.',
+})
 
 -- correctly paste from the * or + register (possibly others too) when using c_<C-R>
 -- see: https://vi.stackexchange.com/questions/25311/how-to-activate-bracketed-paste-mode-in-gnome-terminal-for-vim-inside-tmux/25315#25315

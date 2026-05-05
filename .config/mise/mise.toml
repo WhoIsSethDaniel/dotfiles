@@ -28,6 +28,7 @@ lockfile = true
 go = "latest"
 neovim = "nightly"
 node = "latest"
+npm = "latest"
 pipx = "latest"
 
 "github:kaaveland/eugene" = "latest"

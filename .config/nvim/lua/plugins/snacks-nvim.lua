@@ -1,6 +1,8 @@
 -- https://github.com/folke/snacks.nvim
 -- https://github.com/2KAbhishek/seeker.nvim
 
+-- consider 'smart' snacks picker instead of seeker
+-- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#smart
 local seeker = require 'seeker'
 seeker.setup {
   picker_provider = 'snacks',
@@ -83,3 +85,41 @@ end, {})
 vim.keymap.set('n', '<leader>gg', function()
   seek 'grep'
 end, {})
+
+-- local has_workspaces = require 'workspaces'
+-- vim.keymap.set('n', '<leader>pp', function()
+--   if has_workspaces then
+--     local ws = require 'workspaces'
+--     local plugindir = vim.fs.normalize '~/.local/share/nvim/site/pack/core/opt'
+--     local entries = ws.get()
+--     local current = {}
+--     for _, entry in ipairs(entries) do
+--       if
+--         (
+--           string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
+--           and vim.fn.isdirectory(entry.path) == 0
+--         ) or vim.fn.isdirectory(entry.path) == 0
+--       then
+--         ws.remove(entry.name)
+--       else
+--         current[entry.path] = entry.path
+--       end
+--     end
+--     for name, _ in vim.fs.dir(plugindir) do
+--       local path = vim.fs.joinpath(plugindir, name) .. '/'
+--       if string.match(name, '^%.') == nil and current[path] == nil then
+--         ws.add(path)
+--       end
+--     end
+--     snacks.picker.projects {
+--       ws.get(),
+--       {
+--         prompt = 'Select workspace:',
+--       },
+--       function(choice)
+--         ws.open(choice)
+--       end,
+--     }
+--     -- vim.cmd.Telescope { 'workspaces' }
+--   end
+-- end, {})

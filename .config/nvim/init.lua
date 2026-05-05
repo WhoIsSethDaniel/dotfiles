@@ -282,10 +282,9 @@ vim.g.mapleader = ' '
 vim.g.health = { style = 'float' }
 
 -- key mappings
-local opts = { silent = true, noremap = true }
-vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist, opts)
-vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, opts)
-vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', opts)
+vim.keymap.set('n', '<leader>dq', vim.diagnostic.setqflist, { desc = 'View diagnostics in quickfix.' })
+vim.keymap.set('n', '<leader>dl', vim.diagnostic.setloclist, { desc = 'View diagnostics in loclist.' })
+vim.keymap.set('n', '<leader>wo', '<C-W>v:enew<cr>', { desc = 'Create a new vertical window.' })
 -- close any open help window
 vim.keymap.set('n', '<leader>ch', function()
   local bufs = vim.api.nvim_list_bufs()
@@ -294,7 +293,9 @@ vim.keymap.set('n', '<leader>ch', function()
       vim.api.nvim_buf_delete(b, { force = true })
     end
   end
-end, opts)
+end, {
+  desc = 'Close any open help window.',
+})
 -- toggle showing/hiding the diagnostics
 vim.keymap.set('n', '<leader>td', function()
   vim.diagnostic.enable(not vim.diagnostic.is_enabled())

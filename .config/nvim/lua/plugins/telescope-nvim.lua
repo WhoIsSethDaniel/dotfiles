@@ -6,89 +6,11 @@
 -- winborder w/ telescope
 -- https://github.com/nvim-telescope/telescope.nvim/issues/3436
 
-local builtin = require 'telescope.builtin'
-local seeker = require 'seeker'
 local telescope = require 'telescope'
 
 local load = function(n)
   return pcall(telescope.load_extension, n)
 end
-
-local seek = function(mode, opts)
-  seeker.seek {
-    mode = mode,
-    picker_opts = opts,
-  }
-  -- if mode == 'files' then
-  --   builtin.find_files(opts)
-  -- elseif mode == 'grep' then
-  --   builtin.live_grep(opts)
-  -- end
-end
-
-vim.keymap.set('n', '<leader>ff', function()
-  seek('files', {
-    find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
-    hidden = true,
-    search_dirs = { '~' },
-  })
-end, {})
-
-vim.keymap.set('n', '<leader>ec', function()
-  local cfg = '~/.config/nvim'
-  local entries = {}
-  for name, _ in vim.fs.dir(cfg) do
-    if name ~= 'pack' then
-      table.insert(entries, vim.fs.joinpath(cfg, name))
-    end
-  end
-
-  seek('files', {
-    find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
-    hidden = true,
-    search_dirs = entries,
-  })
-end, {})
-
-vim.keymap.set('n', '<leader>fc', function()
-  seek('files', {
-    find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
-    hidden = true,
-  })
-end, {})
-
--- use the directory of the current buffer
-vim.keymap.set('n', '<leader>fd', function()
-  local dirs = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
-  seek('files', {
-    find_command = { 'rg', '--color=never', '--files', '--hidden', '-g', '!.git' },
-    hidden = true,
-    search_dirs = { dirs },
-  })
-end, {})
-
--- use the directory of the current buffer
-vim.keymap.set('n', '<leader>gd', function()
-  seek('grep', {
-    search_dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
-  })
-end, {})
-
-vim.keymap.set('n', '<leader>gg', function()
-  seek 'grep'
-end, {})
-
-vim.keymap.set('n', '<leader>go', function()
-  seek('grep', { grep_open_files = true })
-end, {})
-
-vim.keymap.set('n', '<leader>fb', function()
-  builtin.buffers { ignore_current_buffer = true }
-end, {})
-
-vim.keymap.set('n', '<leader>gb', function()
-  builtin.git_branches { show_remote_tracking_branches = true }
-end, {})
 
 local has_workspaces, _ = load 'workspaces'
 vim.keymap.set('n', '<leader>pp', function()
@@ -278,7 +200,3 @@ load 'ui-select'
 load 'repossession'
 load 'workspaces'
 load 'zf-native'
-
-seeker.setup {
-  picker_provider = 'telescope',
-}

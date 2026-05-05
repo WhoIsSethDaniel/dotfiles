@@ -296,24 +296,6 @@
     "enabled": true,
     "version": ""
   },
-  "telescope-ui-select.nvim": {
-    "name": "telescope-ui-select.nvim",
-    "url": "https://github.com/nvim-telescope/telescope-ui-select.nvim",
-    "clean_name": "telescope-ui-select-nvim",
-    "config_file": "telescope-ui-select-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
-  },
-  "telescope-zf-native.nvim": {
-    "name": "telescope-zf-native.nvim",
-    "url": "https://github.com/natecraddock/telescope-zf-native.nvim",
-    "clean_name": "telescope-zf-native-nvim",
-    "config_file": "telescope-zf-native-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
-  },
   "telescope.nvim": {
     "name": "telescope.nvim",
     "url": "https://github.com/nvim-telescope/telescope.nvim",

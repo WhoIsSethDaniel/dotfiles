@@ -194,9 +194,6 @@ telescope.setup {
   },
 }
 
-load 'fzf'
 load 'goofball'
-load 'ui-select'
 load 'repossession'
 load 'workspaces'
-load 'zf-native'

@@ -12,35 +12,6 @@ local load = function(n)
   return pcall(telescope.load_extension, n)
 end
 
-local has_workspaces, _ = load 'workspaces'
-vim.keymap.set('n', '<leader>pp', function()
-  if has_workspaces then
-    local ws = require 'workspaces'
-    local plugindir = vim.fs.normalize '~/.local/share/nvim/site/pack/core/opt'
-    local entries = ws.get()
-    local current = {}
-    for _, entry in ipairs(entries) do
-      if
-        (
-          string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
-          and vim.fn.isdirectory(entry.path) == 0
-        ) or vim.fn.isdirectory(entry.path) == 0
-      then
-        ws.remove(entry.name)
-      else
-        current[entry.path] = entry.path
-      end
-    end
-    for name, _ in vim.fs.dir(plugindir) do
-      local path = vim.fs.joinpath(plugindir, name) .. '/'
-      if string.match(name, '^%.') == nil and current[path] == nil then
-        ws.add(path)
-      end
-    end
-    vim.cmd.Telescope { 'workspaces' }
-  end
-end, {})
-
 telescope.setup {
   defaults = {
     vimgrep_arguments = {
@@ -196,4 +167,3 @@ telescope.setup {
 
 load 'goofball'
 load 'repossession'
-load 'workspaces'

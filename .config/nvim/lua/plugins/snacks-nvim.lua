@@ -12,6 +12,13 @@ local snacks = require 'snacks'
 snacks.setup {
   bigfile = { enabled = true },
   input = { enabled = true },
+  picker = {
+    ui_select = true,
+    -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#%EF%B8%8F-layouts
+    layout = {
+      preset = 'telescope',
+    },
+  },
 }
 
 local seek = function(mode, opts)
@@ -106,40 +113,42 @@ end, {
   desc = 'Grep all files within the current directory.',
 })
 
--- local has_workspaces = require 'workspaces'
--- vim.keymap.set('n', '<leader>pp', function()
---   if has_workspaces then
---     local ws = require 'workspaces'
---     local plugindir = vim.fs.normalize '~/.local/share/nvim/site/pack/core/opt'
---     local entries = ws.get()
---     local current = {}
---     for _, entry in ipairs(entries) do
---       if
---         (
---           string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
---           and vim.fn.isdirectory(entry.path) == 0
---         ) or vim.fn.isdirectory(entry.path) == 0
---       then
---         ws.remove(entry.name)
---       else
---         current[entry.path] = entry.path
---       end
---     end
---     for name, _ in vim.fs.dir(plugindir) do
---       local path = vim.fs.joinpath(plugindir, name) .. '/'
---       if string.match(name, '^%.') == nil and current[path] == nil then
---         ws.add(path)
---       end
---     end
---     snacks.picker.projects {
---       ws.get(),
---       {
---         prompt = 'Select workspace:',
---       },
---       function(choice)
---         ws.open(choice)
---       end,
---     }
---     -- vim.cmd.Telescope { 'workspaces' }
---   end
--- end, {})
+-- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#projects
+vim.keymap.set('n', '<leader>pp', function()
+  local ws = require 'workspaces'
+  local plugindir = vim.fs.normalize '~/.local/share/nvim/site/pack/core/opt'
+  local entries = ws.get()
+  local current = {}
+  for _, entry in ipairs(entries) do
+    if
+      (
+        string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
+        and vim.fn.isdirectory(entry.path) == 0
+      ) or vim.fn.isdirectory(entry.path) == 0
+    then
+      ws.remove(entry.name)
+    else
+      current[entry.path] = entry.path
+    end
+  end
+  for name, _ in vim.fs.dir(plugindir) do
+    local path = vim.fs.joinpath(plugindir, name) .. '/'
+    if string.match(name, '^%.') == nil and current[path] == nil then
+      ws.add(path)
+    end
+  end
+  local p = vim.tbl_map(function(elem)
+    return elem.name
+  end, ws.get())
+  snacks.picker.projects {
+    projects = p,
+    recent = false,
+    win = {
+      preview = { minimal = false },
+    },
+    confirm = function(picker, item)
+      picker:close()
+      ws.open(item.text)
+    end,
+  }
+end)

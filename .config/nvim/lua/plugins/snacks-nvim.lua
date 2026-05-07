@@ -115,40 +115,8 @@ end, {
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#projects
 vim.keymap.set('n', '<leader>pp', function()
-  local ws = require 'workspaces'
-  local plugindir = vim.fs.normalize '~/.local/share/nvim/site/pack/core/opt'
-  local entries = ws.get()
-  local current = {}
-  for _, entry in ipairs(entries) do
-    if
-      (
-        string.match(entry.path, string.gsub(plugindir, '-', '%%-')) == plugindir
-        and vim.fn.isdirectory(entry.path) == 0
-      ) or vim.fn.isdirectory(entry.path) == 0
-    then
-      ws.remove(entry.name)
-    else
-      current[entry.path] = entry.path
-    end
-  end
-  for name, _ in vim.fs.dir(plugindir) do
-    local path = vim.fs.joinpath(plugindir, name) .. '/'
-    if string.match(name, '^%.') == nil and current[path] == nil then
-      ws.add(path)
-    end
-  end
-  local p = vim.tbl_map(function(elem)
-    return elem.name
-  end, ws.get())
   snacks.picker.projects {
-    projects = p,
-    recent = false,
-    win = {
-      preview = { minimal = false },
-    },
-    confirm = function(picker, item)
-      picker:close()
-      ws.open(item.text)
-    end,
+    dev = { vim.env.HOME .. '/.local/share/nvim/site/pack/core/opt', vim.env.HOME .. '/src' },
+    confirm = 'cd',
   }
 end)

@@ -367,14 +367,5 @@
     "colorscheme": false,
     "enabled": true,
     "version": ""
-  },
-  "workspaces.nvim": {
-    "name": "workspaces.nvim",
-    "url": "https://github.com/natecraddock/workspaces.nvim",
-    "clean_name": "workspaces-nvim",
-    "config_file": "workspaces-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
   }
 }

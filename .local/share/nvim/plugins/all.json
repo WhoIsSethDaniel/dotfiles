@@ -296,15 +296,6 @@
     "enabled": true,
     "version": ""
   },
-  "telescope.nvim": {
-    "name": "telescope.nvim",
-    "url": "https://github.com/nvim-telescope/telescope.nvim",
-    "clean_name": "telescope-nvim",
-    "config_file": "telescope-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
-  },
   "toggleterm.nvim": {
     "name": "toggleterm.nvim",
     "url": "https://github.com/akinsho/toggleterm.nvim",

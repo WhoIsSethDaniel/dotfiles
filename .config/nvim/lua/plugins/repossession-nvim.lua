@@ -26,4 +26,6 @@ require('repossession').setup {
 
 vim.keymap.set('n', '<leader>ss', function()
   require('repossession.telescope').sessions()
-end, { silent = true })
+end, {
+  desc = 'Select from a list of saved sessions.',
+})

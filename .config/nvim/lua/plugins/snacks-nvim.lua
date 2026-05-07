@@ -39,7 +39,16 @@ end, {
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#buffers
 vim.keymap.set('n', '<leader>fb', function()
-  snacks.picker.buffers { current = false }
+  snacks.picker.buffers {
+    current = false,
+    win = {
+      input = {
+        keys = {
+          ['<c-d>'] = { 'bufdelete', mode = { 'n', 'i' } },
+        },
+      },
+    },
+  }
 end, {
   desc = 'Select from the list of buffers.',
 })
@@ -53,7 +62,16 @@ end, {
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#git_branches
 vim.keymap.set('n', '<leader>gb', function()
-  snacks.picker.git_branches()
+  snacks.picker.git_branches {
+    win = {
+      input = {
+        keys = {
+          ['<c-a>'] = { 'git_branch_add', mode = { 'n', 'i' } },
+          ['<c-d>'] = { 'git_branch_del', mode = { 'n', 'i' } },
+        },
+      },
+    },
+  }
 end, {
   desc = 'Select Git branches.',
 })
@@ -123,4 +141,6 @@ vim.keymap.set('n', '<leader>pp', function()
       snacks.picker.files()
     end,
   }
-end)
+end, {
+  desc = 'Select the project to work on.',
+})

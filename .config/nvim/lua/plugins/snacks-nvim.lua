@@ -109,7 +109,7 @@ vim.keymap.set('n', '<leader>fd', function()
   local dirs = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
   seek('files', {
     hidden = true,
-    dirs = { dirs },
+    dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },
   })
 end, {
   desc = 'Find files within the directory of the current buffer.',

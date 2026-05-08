@@ -23,7 +23,7 @@ if [ -d "$SSH_HOME" ]; then
     chmod 700 "$SSH_HOME"
     safeglob AUTHKEYS '$SSH_HOME/*authorized_keys*'
     if [ "$AUTHKEYS" != "" ]; then
-        chmod --quiet 640 "$AUTHKEYS"
+        chmod --quiet 600 "$AUTHKEYS"
     fi
 fi
 
@@ -46,7 +46,7 @@ fi
 if [ "$EXTRA_SSH_KEYS" != "" ] || [ "$SSH_KEYS" != "" ]; then
     check_for_program keychain
     if [ "$keychain" != "" ]; then
-        "$keychain" --quiet "$EXTRA_SSH_KEYS" $SSH_KEYS
+        "$keychain" --quiet "$EXTRA_SSH_KEYS" "$SSH_KEYS"
         source "$HOME/.keychain/$HOSTNAME"-sh
     fi
 fi

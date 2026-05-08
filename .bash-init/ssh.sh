@@ -27,10 +27,10 @@ if [ -d "$SSH_HOME" ]; then
     fi
 fi
 
-if [ -f "$HOME/.keychain/$HOSTNAME-sh" ]; then
-    source "$HOME/.keychain/$HOSTNAME"-sh >/dev/null 2>&1
-elif [ -f "$HOME/.ssh/agent-$HOSTNAME" ]; then
+if [ -f "$HOME/.ssh/agent-$HOSTNAME" ]; then
     source "$HOME/.ssh/agent-$HOSTNAME" >/dev/null 2>&1
+elif [ -f "$HOME/.keychain/$HOSTNAME-sh" ]; then
+    source "$HOME/.keychain/$HOSTNAME"-sh >/dev/null 2>&1
 fi
 
 # check to see if the ssh personal key has already been loaded by pam-ssh
@@ -46,7 +46,7 @@ fi
 if [ "$EXTRA_SSH_KEYS" != "" ] || [ "$SSH_KEYS" != "" ]; then
     check_for_program keychain
     if [ "$keychain" != "" ]; then
-        "$keychain" --quiet "$EXTRA_SSH_KEYS" "$SSH_KEYS"
+        "$keychain" --quiet "$EXTRA_SSH_KEYS" $SSH_KEYS
         source "$HOME/.keychain/$HOSTNAME"-sh
     fi
 fi

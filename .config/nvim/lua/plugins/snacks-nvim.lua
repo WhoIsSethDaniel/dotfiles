@@ -61,15 +61,15 @@ end, {
 })
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#git_branches
-local git_branches_all = true
-local function branches()
-  git_branches_all = not git_branches_all
+local git_branches_all = false
+vim.keymap.set('n', '<leader>gb', function()
   snacks.picker.git_branches {
     all = git_branches_all,
     actions = {
       toggle_git_branches_all = function(picker, _)
-        picker:close()
-        branches()
+        git_branches_all = not git_branches_all
+        picker.opts.all = git_branches_all
+        picker:refresh()
       end,
     },
     win = {
@@ -82,9 +82,6 @@ local function branches()
       },
     },
   }
-end
-vim.keymap.set('n', '<leader>gb', function()
-  branches()
 end, {
   desc = 'Select Git branches.',
 })

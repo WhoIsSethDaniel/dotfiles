@@ -9,22 +9,24 @@ for TYPE in dsa rsa ed25519; do
     fi
 done
 
-safeglob SSH_KEYS "$SSH_KEY_DIR"/*_id_{dsa,rsa,ed25519}
+shopt -s nullglob
+SSH_KEYS=("$SSH_KEY_DIR"/*_id_{dsa,rsa,ed25519})
 
 # check permissions on all keys
-if [ -f "$PERSONAL_SSH_KEY" -o -n "$SSH_KEYS" ]; then
-    chmod 400 "$PERSONAL_SSH_KEY" "$SSH_KEYS" 2>/dev/null
-fi
+chmod 400 "$PERSONAL_SSH_KEY" 2>/dev/null
+for KEY in "${SSH_KEYS[@]}"; do
+    chmod 400 "$KEY" 2>/dev/null
+done
 
 # check permissions on all ssh directories and files
 SSH_HOME="$HOME/.ssh"
 mkdir -p "$SSH_HOME/control"
 if [ -d "$SSH_HOME" ]; then
     chmod 700 "$SSH_HOME"
-    safeglob AUTHKEYS '$SSH_HOME/*authorized_keys*'
-    if [ "$AUTHKEYS" != "" ]; then
-        chmod --quiet 600 "$AUTHKEYS"
-    fi
+    AUTHKEYS=("$SSH_HOME"/*authorized_keys*)
+    for AUTHKEY in "${AUTHKEYS[@]}"; do
+        chmod 400 "$AUTHKEY" 2>/dev/null
+    done
 fi
 
 if [ -f "$HOME/.ssh/agent-$HOSTNAME" ]; then
@@ -43,10 +45,10 @@ if [ -f "$PERSONAL_SSH_KEY" ]; then
 fi
 
 # use keychain for any other keys
-if [ "$EXTRA_SSH_KEYS" != "" ] || [ "$SSH_KEYS" != "" ]; then
+if [ "$EXTRA_SSH_KEYS" != "" ] || [ ${#SSH_KEYS[@]} -eq 0 ]; then
     check_for_program keychain
     if [ "$keychain" != "" ]; then
-        "$keychain" --quiet "$EXTRA_SSH_KEYS" $SSH_KEYS
+        "$keychain" --quiet "$EXTRA_SSH_KEYS" "${SSH_KEYS[@]}"
         source "$HOME/.keychain/$HOSTNAME"-sh
     fi
 fi

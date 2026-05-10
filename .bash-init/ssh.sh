@@ -9,8 +9,10 @@ for TYPE in dsa rsa ed25519; do
     fi
 done
 
+nullglob=$(shopt -p nullglob)
 shopt -s nullglob
 SSH_KEYS=("$SSH_KEY_DIR"/*_id_{dsa,rsa,ed25519})
+eval "$nullglob"
 
 # check permissions on all keys
 chmod 400 "$PERSONAL_SSH_KEY" 2>/dev/null

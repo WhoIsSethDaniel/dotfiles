@@ -3,10 +3,7 @@
 set_pre_path_var PATH "$HOME/.local/nvim/current/bin"
 set_pre_path_var PATH "$HOME/.local/share/nvim/mason/bin"
 
-editor_list="nvim vim vi"
-if [[ -S $NVIM_LISTEN_ADDRESS ]]; then
-    editor_list="nvr "$editor_list
-fi
+editor_list=(nvim vim vi)
 
 set_prog_alias vi "$editor_list"
 set_prog_alias vim "$editor_list"
@@ -15,11 +12,7 @@ set_export_prog_var EDITOR "$editor_list"
 
 if [[ -n $EDITOR ]]; then
     unset_var GIT_EDITOR
-    if [[ $EDITOR =~ nvr$ ]]; then
-        set_export_var GIT_EDITOR "$EDITOR --remote-wait-silent"
-    else
-        set_export_var GIT_EDITOR "$EDITOR"
-    fi
+    set_export_var GIT_EDITOR "$EDITOR"
 fi
 
 set_alias vim-ls vim-list

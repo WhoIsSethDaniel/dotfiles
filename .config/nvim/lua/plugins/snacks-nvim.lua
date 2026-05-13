@@ -144,7 +144,10 @@ end, {
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#projects
 vim.keymap.set('n', '<leader>pp', function()
   snacks.picker.projects {
-    dev = { vim.env.HOME .. '/.local/share/nvim/site/pack/core/opt', vim.env.HOME .. '/src' },
+    dev = {
+      vim.env.HOME .. '/.local/share/nvim/site/pack/core/opt',
+      vim.env.HOME .. '/src',
+    },
     confirm = function(picker, select)
       picker:close()
       vim.fn.chdir(select.text)

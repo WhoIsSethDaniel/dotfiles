@@ -96,20 +96,19 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
 
     -- mappings
     local has_snacks, _ = pcall(require, 'snacks')
-    local opts = { noremap = true, silent = true, buffer = bufnr }
     local map = vim.keymap.set
-    map('n', 'grD', vim.lsp.buf.declaration, opts)
+    map('n', 'grD', vim.lsp.buf.declaration, { desc = 'Goto global declaration.' })
     if has_snacks then
-      map('n', 'grd', require('snacks').picker.lsp_definitions, opts)
+      map('n', 'grd', require('snacks').picker.lsp_definitions, { desc = 'Using LSP goto definition.' })
       -- override default grr/gri/grt (which only exists >= 0.11) and use snacks instead
-      map('n', 'grt', require('snacks').picker.lsp_type_definitions, opts)
-      map('n', 'grr', require('snacks').picker.lsp_references, opts)
-      map('n', 'gri', require('snacks').picker.lsp_implementations, opts)
+      map('n', 'grt', require('snacks').picker.lsp_type_definitions, { desc = 'Using LSP goto type definition.' })
+      map('n', 'grr', require('snacks').picker.lsp_references, { desc = 'Using LSP show all references.' })
+      map('n', 'gri', require('snacks').picker.lsp_implementations, { desc = 'Using LSP show all implentations.' })
     else
-      map('n', 'grd', vim.lsp.buf.definition, opts)
+      map('n', 'grd', vim.lsp.buf.definition, { desc = 'Using LSP goto definition.' })
     end
     if_has_do('conform', function(_)
-      map('n', '<leader>cf', require('conform').format, opts)
+      map('n', '<leader>cf', require('conform').format, { desc = 'Format the current buffer using conform.' })
     end)
   end,
 })

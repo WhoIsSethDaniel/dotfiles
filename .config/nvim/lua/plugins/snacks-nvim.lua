@@ -18,6 +18,10 @@ snacks.setup {
     layout = {
       preset = 'telescope',
     },
+    matcher = {
+      frecency = true,
+      history_bonus = true,
+    },
   },
 }
 

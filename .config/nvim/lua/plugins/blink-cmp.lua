@@ -27,10 +27,34 @@ require('blink.cmp').setup {
     ghost_text = {
       enabled = true,
     },
+    -- https://main.cmp.saghen.dev/configuration/reference.html#completion-menu
     menu = {
+      -- https://main.cmp.saghen.dev/configuration/reference.html#completion-menu-draw
       draw = {
-        columns = { { 'kind_icon' }, { 'label', gap = 1 } },
+        -- 'label_description is un-needed b/c colorful-menu deals with that in the 'label'.
+        columns = {
+          { 'kind_icon' },
+          { 'label', gap = 1 },
+          { 'source_name' },
+        },
         components = {
+          kind_icon = {
+            text = function(ctx)
+              local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
+              return kind_icon
+            end,
+            -- (optional) use highlights from mini.icons
+            highlight = function(ctx)
+              local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+              return hl
+            end,
+          },
+          kind = {
+            highlight = function(ctx)
+              local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
+              return hl
+            end,
+          },
           label = {
             text = function(ctx)
               return require('colorful-menu').blink_components_text(ctx)
@@ -39,51 +63,7 @@ require('blink.cmp').setup {
               return require('colorful-menu').blink_components_highlight(ctx)
             end,
           },
-          -- kind_icon = {
-          --   text = function(ctx)
-          --     local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
-          --     return kind_icon
-          --   end,
-          --   highlight = function(ctx)
-          --     local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-          --     return hl
-          --   end,
-          -- },
-          -- kind = {
-          --   highlight = function(ctx)
-          --     local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-          --     return hl
-          --   end,
-          -- },
         },
-        -- components = {
-        --   kind_icon = {
-        --     text = function(ctx)
-        --       local kind_icon, _, _ = require('mini.icons').get('lsp', ctx.kind)
-        --       return kind_icon
-        --     end,
-        --     highlight = function(ctx)
-        --       local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-        --       return hl
-        --     end,
-        --   },
-        --   kind = {
-        --     highlight = function(ctx)
-        --       local _, hl, _ = require('mini.icons').get('lsp', ctx.kind)
-        --       return hl
-        --     end,
-        --   },
-        --   -- https://github.com/Saghen/blink.cmp/issues/1317#issuecomment-2762258454
-        --   -- https://github.com/Saghen/blink.cmp/issues/1610
-        --   label_description = {
-        --     width = {
-        --       max = 80,
-        --     },
-        --     text = function(ctx)
-        --       return ctx.label_description ~= '' and ctx.label_description or ctx.item.detail
-        --     end,
-        --   },
-        -- },
       },
     },
   },

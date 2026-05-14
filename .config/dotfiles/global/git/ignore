@@ -123,6 +123,7 @@
 /.pki/
 /.plenv/
 /.secureConnect/
+/.shiv/
 /.ssh/agent/
 /.ssh/login-keys.d/
 /.ssh/control/

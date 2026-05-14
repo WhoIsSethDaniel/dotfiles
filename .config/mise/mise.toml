@@ -5,7 +5,6 @@
 experimental = true
 quiet = false
 disable_backends = [
-    "aqua",
     "asdf",
     "cargo",
     "conda",
@@ -30,6 +29,7 @@ neovim = "nightly"
 node = "latest"
 npm = "latest"
 pipx = "latest"
+python = "latest"
 
 "github:kaaveland/eugene" = "latest"
 "github:sharkdp/fd" = { version = "latest", bin = "fdfind" }
@@ -44,6 +44,7 @@ pipx = "latest"
 "github:anordal/shellharden" = "latest"
 "github:JohnnyMorganz/StyLua" = "latest"
 "github:crate-ci/typos" = "latest"
+"github:astral-sh/uv" = "latest"
 
 "go:golang.org/x/tools/gopls" = "latest"
 "go:mvdan.cc/sh/v3/cmd/shfmt" = "latest"

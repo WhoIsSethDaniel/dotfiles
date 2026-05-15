@@ -3,12 +3,10 @@ local l = require 'lint'
 
 -- don't use VimEnter for try_lint as this monkeys-up the terminal checks for the
 -- osc52 provider; use BufReadPost instead.
-vim.api.nvim_create_autocmd({ 'BufWritePost', 'BufReadPost', 'BufEnter' }, {
+vim.api.nvim_create_autocmd({ 'BufWritePost' }, {
   pattern = { '*' },
   callback = function()
-    if vim.g.lint == nil or vim.g.lint == true then
-      l.try_lint()
-    end
+    l.try_lint()
   end,
 })
 

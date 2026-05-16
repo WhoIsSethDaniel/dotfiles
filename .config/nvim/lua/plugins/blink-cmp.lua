@@ -6,7 +6,7 @@
 -- https://main.cmp.saghen.dev/
 -- https://main.cmp.saghen.dev/configuration/reference.html
 require('blink.cmp').setup {
-  -- https://cmp.saghen.dev/modes/cmdline.html
+  -- https://main.cmp.saghen.dev/modes/cmdline.html
   cmdline = {
     completion = {
       menu = {
@@ -14,7 +14,7 @@ require('blink.cmp').setup {
       },
     },
   },
-  -- https://cmp.saghen.dev/configuration/completion.html
+  -- https://main.cmp.saghen.dev/configuration/completion.html
   completion = {
     accept = {
       auto_brackets = {
@@ -31,7 +31,7 @@ require('blink.cmp').setup {
     menu = {
       -- https://main.cmp.saghen.dev/configuration/reference.html#completion-menu-draw
       draw = {
-        -- 'label_description is un-needed b/c colorful-menu deals with that in the 'label'.
+        -- 'label_description' is un-needed b/c colorful-menu deals with that in the 'label'.
         columns = {
           { 'kind_icon' },
           { 'label', gap = 1 },
@@ -67,7 +67,7 @@ require('blink.cmp').setup {
       },
     },
   },
-  -- https://cmp.saghen.dev/configuration/fuzzy.html
+  -- https://main.cmp.saghen.dev/configuration/fuzzy.html
   fuzzy = {
     implementation = 'lua',
     sorts = {
@@ -76,22 +76,21 @@ require('blink.cmp').setup {
       'sort_text',
     },
   },
-  -- https://cmp.saghen.dev/configuration/keymap.html
+  -- https://main.cmp.saghen.dev/configuration/keymap.html
   keymap = {
     preset = 'default',
   },
-  -- https://cmp.saghen.dev/configuration/signature.html
+  -- https://main.cmp.saghen.dev/configuration/signature.html
   signature = {
     enabled = true,
     trigger = {
       show_on_accept = true,
-      -- show_on_insert = true, -- not in v2
     },
     window = {
       show_documentation = true,
     },
   },
-  -- https://cmp.saghen.dev/configuration/snippets.html
+  -- https://main.cmp.saghen.dev/configuration/snippets.html
   -- https://github.com/echasnovski/mini.nvim/blob/main/readmes/mini-snippets.md
   -- perhaps don't use mini.snippets - see https://github.com/Saghen/blink.cmp/discussions/1766
   -- addendum to discussion linked above: the extra characters seem to be intended. I don't know

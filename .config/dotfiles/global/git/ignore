@@ -124,6 +124,7 @@
 /.plenv/
 /.secureConnect/
 /.shiv/
+/.snap/
 /.ssh/agent/
 /.ssh/login-keys.d/
 /.ssh/control/

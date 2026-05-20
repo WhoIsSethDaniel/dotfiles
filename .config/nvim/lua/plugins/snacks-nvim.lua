@@ -1,8 +1,6 @@
 -- https://github.com/folke/snacks.nvim
--- https://github.com/2KAbhishek/seeker.nvim
 
--- consider 'smart' snacks picker instead of seeker
--- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#smart
+-- https://github.com/2KAbhishek/seeker.nvim
 local seeker = require 'seeker'
 seeker.setup {
   picker_provider = 'snacks',

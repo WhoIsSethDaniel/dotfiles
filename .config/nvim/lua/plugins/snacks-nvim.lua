@@ -8,8 +8,10 @@ seeker.setup {
 
 local snacks = require 'snacks'
 snacks.setup {
-  bigfile = { enabled = true },
-  input = { enabled = true },
+  -- https://github.com/folke/snacks.nvim/blob/main/docs/bigfile.md
+  bigfile = {},
+  input = {},
+  quickfile = {},
   -- https://github.com/folke/snacks.nvim/blob/main/docs/terminal.md
   terminal = {
     auto_close = true,

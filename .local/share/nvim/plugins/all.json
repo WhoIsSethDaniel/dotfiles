@@ -296,15 +296,6 @@
     "enabled": true,
     "version": ""
   },
-  "toggleterm.nvim": {
-    "name": "toggleterm.nvim",
-    "url": "https://github.com/akinsho/toggleterm.nvim",
-    "clean_name": "toggleterm-nvim",
-    "config_file": "toggleterm-nvim.lua",
-    "colorscheme": false,
-    "enabled": true,
-    "version": ""
-  },
   "tokyonight.nvim": {
     "name": "tokyonight.nvim",
     "url": "https://github.com/folke/tokyonight.nvim",

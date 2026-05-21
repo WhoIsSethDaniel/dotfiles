@@ -10,6 +10,17 @@ local snacks = require 'snacks'
 snacks.setup {
   bigfile = { enabled = true },
   input = { enabled = true },
+  -- https://github.com/folke/snacks.nvim/blob/main/docs/terminal.md
+  terminal = {
+    auto_close = true,
+    auto_insert = true,
+    start_insert = false,
+    win = {
+      stack = true,
+      enter = false,
+      position = 'right',
+    },
+  },
   picker = {
     ui_select = true,
     -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#%EF%B8%8F-layouts
@@ -22,6 +33,15 @@ snacks.setup {
     },
   },
 }
+
+--
+-- terminal
+--
+vim.keymap.set('n', '<C-t>', snacks.terminal.toggle)
+
+--
+-- pickers
+--
 
 local seek = function(mode, opts)
   seeker.seek {

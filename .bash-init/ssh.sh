@@ -46,7 +46,6 @@ fi
 
 # use keychain for any other keys
 if [ "$EXTRA_SSH_KEYS" != "" ] || [ ${#SSH_KEYS[@]} -ne 0 ]; then
-    echo "here"
     check_for_program keychain
     if [ "$keychain" != "" ]; then
         "$keychain" --quiet "$EXTRA_SSH_KEYS" "${SSH_KEYS[@]}"

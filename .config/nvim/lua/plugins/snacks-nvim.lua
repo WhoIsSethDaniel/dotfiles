@@ -19,7 +19,7 @@ snacks.setup {
     start_insert = false,
     win = {
       stack = true,
-      enter = false,
+      enter = true,
       position = 'right',
     },
   },

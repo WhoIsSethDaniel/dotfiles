@@ -49,6 +49,5 @@ if [ "$EXTRA_SSH_KEYS" != "" ] || [ ${#SSH_KEYS[@]} -ne 0 ]; then
     check_for_program keychain
     if [ "$keychain" != "" ]; then
         "$keychain" --quiet "$EXTRA_SSH_KEYS" "${SSH_KEYS[@]}"
-        source "$HOME/.keychain/$HOSTNAME"-sh
     fi
 fi

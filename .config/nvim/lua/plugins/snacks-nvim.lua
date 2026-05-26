@@ -174,7 +174,7 @@ vim.keymap.set('n', '<leader>pp', function()
     },
     confirm = function(picker, select)
       picker:close()
-      vim.fn.chdir(select.text)
+      vim.api.nvim_set_current_dir(select.text)
       snacks.picker.files()
     end,
   }

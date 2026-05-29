@@ -13,9 +13,9 @@ require('git-conflict').setup {
 
 -- use <leader> for these instead of just 'c'. Using 'c' causes a delay
 -- when using 'c' for change[motion] operations.
-vim.keymap.set('n', '<leader>co', '<Plug>(git-conflict-ours)')
-vim.keymap.set('n', '<leader>ct', '<Plug>(git-conflict-theirs)')
-vim.keymap.set('n', '<leader>cb', '<Plug>(git-conflict-both)')
-vim.keymap.set('n', '<leader>c0', '<Plug>(git-conflict-none)')
-vim.keymap.set('n', '[x', '<Plug>(git-conflict-prev-conflict)')
-vim.keymap.set('n', ']x', '<Plug>(git-conflict-next-conflict)')
+vim.keymap.set('n', '<leader>co', '<Plug>(git-conflict-ours)', { desc = 'Git conflict: accept ours' })
+vim.keymap.set('n', '<leader>ct', '<Plug>(git-conflict-theirs)', { desc = 'Git conflict: accept theirs' })
+vim.keymap.set('n', '<leader>cb', '<Plug>(git-conflict-both)', { desc = 'Git conflict: accept both' })
+vim.keymap.set('n', '<leader>c0', '<Plug>(git-conflict-none)', { desc = 'Git conflict: accept none' })
+vim.keymap.set('n', '[x', '<Plug>(git-conflict-prev-conflict)', { desc = 'Move to previous git conflict' })
+vim.keymap.set('n', ']x', '<Plug>(git-conflict-next-conflict)', { desc = 'Move to next git conflict' })

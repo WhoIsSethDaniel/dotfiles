@@ -24,7 +24,6 @@ snacks.setup {
     },
   },
   picker = {
-    ui_select = true,
     -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#%EF%B8%8F-layouts
     layout = {
       preset = 'telescope',
@@ -32,6 +31,15 @@ snacks.setup {
     matcher = {
       frecency = true,
       history_bonus = true,
+    },
+    ui_select = true,
+    win = {
+      input = {
+        keys = {
+          ['<C-j>'] = { 'history_forward', mode = { 'i', 'n' } },
+          ['<C-k>'] = { 'history_back', mode = { 'i', 'n' } },
+        },
+      },
     },
   },
 }

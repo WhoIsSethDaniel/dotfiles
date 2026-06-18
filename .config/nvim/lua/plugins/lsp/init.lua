@@ -19,8 +19,8 @@ local M = {}
 
 local notify = _G.notify
 
-local disabled_lsp_servers = { 'templ', 'perlnavigator', 'perllsp' }
-local no_inlay_hints = {}
+local disabled_lsp_servers = { 'templ', 'perl-tree-sitter-lsp', 'perlnavigator' }
+local no_inlay_hints = { 'perllsp' }
 local no_semantic_tokens = {}
 local watch_files = {}
 
@@ -89,8 +89,8 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
     -- selene: allow(unused_variable)
     ---@diagnostic disable-next-line:unused-local,unused-function
     local function dump_caps()
-      -- vim.print(client.capabilities.workspace)
-      -- vim.print(client.server_capabilities)
+      vim.print(client.capabilities.workspace)
+      vim.print(client.server_capabilities)
     end
     -- dump_caps()
 

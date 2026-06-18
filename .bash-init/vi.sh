@@ -24,7 +24,7 @@ vim_install_dir=$HOME/.local/nvim
 declare -A vim_cd
 vim_cd=(
     [cache]="$HOME/.cache/nvim"
-    [config]="$XDG_CONFIG_HOME/nvim/lua/plugins/"
+    [config]="$XDG_CONFIG_HOME/nvim/lua/plugins"
     [local]="$XDG_DATA_HOME/nvim"
     [plugins]="$pldir"
     [state]="$HOME/.local/state/nvim"

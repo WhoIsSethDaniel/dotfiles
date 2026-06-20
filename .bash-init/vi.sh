@@ -28,7 +28,7 @@ vim_cd=(
     [local]="$XDG_DATA_HOME/nvim"
     [plugins]="$pldir"
     [state]="$HOME/.local/state/nvim"
-    [log]="$HOME/.local/state/nvim"
+    [log]="$HOME/.local/state/nvim/logs"
 )
 
 function vim-cd() {

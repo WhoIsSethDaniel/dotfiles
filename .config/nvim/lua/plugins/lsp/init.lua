@@ -19,7 +19,8 @@ local M = {}
 
 local notify = _G.notify
 
-local disabled_lsp_servers = { 'templ', 'perl-tree-sitter-lsp', 'perlnavigator' }
+-- local disabled_lsp_servers = { 'templ', 'perl-tree-sitter-lsp', 'perlnavigator' }
+local disabled_lsp_servers = { 'templ', 'perllsp', 'perlnavigator' }
 local no_inlay_hints = { 'perllsp' }
 local no_semantic_tokens = {}
 local watch_files = {}

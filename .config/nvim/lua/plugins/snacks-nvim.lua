@@ -36,8 +36,10 @@ snacks.setup {
     win = {
       input = {
         keys = {
-          ['<C-n>'] = { 'history_forward', mode = { 'i', 'n' } },
-          ['<C-p>'] = { 'history_back', mode = { 'i', 'n' } },
+          ['<C-n>'] = { 'list_down', mode = { 'i', 'n' } },
+          ['<C-p>'] = { 'list_up', mode = { 'i', 'n' } },
+          ['<C-j>'] = { 'history_forward', mode = { 'i', 'n' } },
+          ['<C-k>'] = { 'history_back', mode = { 'i', 'n' } },
         },
       },
     },

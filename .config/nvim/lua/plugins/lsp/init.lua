@@ -121,7 +121,7 @@ function M.setup()
   --   return vim.inspect(...)
   -- end)
 
-  local lsp_config_dir = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/after/lsp')
+  local lsp_config_dir = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/lsp')
   if vim.fn.isdirectory(lsp_config_dir) == 0 then
     notify(string.format('lsp configuration dir %s does not exist', lsp_config_dir), vim.log.levels.ERROR)
   else

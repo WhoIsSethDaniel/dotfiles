@@ -41,6 +41,7 @@ python = "latest"
 "github:artempyanykh/marksman" = "latest"
 "github:EffortlessMetrics/perl-lsp" = "latest"
 "github:tree-sitter-perl/perl-tree-sitter-lsp" = { version = "latest", bin = "perl-tree-sitter-lsp", minimum_release_age = 0 }
+"github:pnpm/pnpm" = "latest"
 "github:BurntSushi/ripgrep" = "latest"
 "github:koalaman/shellcheck" = "latest"
 "github:anordal/shellharden" = "latest"

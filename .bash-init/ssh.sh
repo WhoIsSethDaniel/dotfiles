@@ -48,6 +48,6 @@ fi
 if [ "$EXTRA_SSH_KEYS" != "" ] || [ ${#SSH_KEYS[@]} -ne 0 ]; then
     check_for_program keychain
     if [ "$keychain" != "" ]; then
-        "$keychain" --quiet "$EXTRA_SSH_KEYS" "${SSH_KEYS[@]}"
+        "$keychain" add --no-lock --quiet "$EXTRA_SSH_KEYS" "${SSH_KEYS[@]}"
     fi
 fi

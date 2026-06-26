@@ -36,7 +36,7 @@ python = "latest"
 "github:AGWA/git-crypt" = "latest"
 "github:git-lfs/git-lfs" = "latest"
 "github:golangci/golangci-lint" = "latest"
-"github:danielrobbins/keychain" = "latest"
+"github:danielrobbins/keychain" = { version = "latest", bin = "keychain" }
 "github:LuaLS/lua-language-server" = "latest"
 "github:artempyanykh/marksman" = "latest"
 "github:EffortlessMetrics/perl-lsp" = "latest"

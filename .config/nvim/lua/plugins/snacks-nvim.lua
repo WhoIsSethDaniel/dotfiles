@@ -122,10 +122,9 @@ end, {
 
 -- https://github.com/folke/snacks.nvim/blob/main/docs/picker.md#files
 vim.keymap.set('n', '<leader>ec', function()
-  local cfg = '~/.config/nvim'
   seek('files', {
     hidden = true,
-    dirs = { cfg },
+    dirs = { '~/.config/nvim' },
   })
 end, {
   desc = 'Find neovim configuration files.',
@@ -150,7 +149,6 @@ end, {
 
 -- use the directory of the current buffer
 vim.keymap.set('n', '<leader>fd', function()
-  local dirs = vim.fs.dirname(vim.api.nvim_buf_get_name(0))
   seek('files', {
     hidden = true,
     dirs = { vim.fs.dirname(vim.api.nvim_buf_get_name(0)) },

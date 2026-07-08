@@ -25,7 +25,7 @@ lockfile = true
 # https://mise.jdx.dev/registry.html
 [tools]
 go = "latest"
-neovim = "nightly"
+neovim = ["nightly", "latest"]
 node = "latest"
 npm = "latest"
 pipx = "latest"

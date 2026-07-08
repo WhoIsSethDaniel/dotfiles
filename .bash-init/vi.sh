@@ -7,6 +7,8 @@ editor_list=(nvim vim vi)
 
 set_prog_alias vi "$editor_list"
 set_prog_alias vim "$editor_list"
+set_alias vim-stable "mise exec neovim@latest -- nvim -v"
+set_alias nvim-stable "mise exec neovim@latest -- nvim -v"
 set_export_prog_var VISUAL "$editor_list"
 set_export_prog_var EDITOR "$editor_list"
 

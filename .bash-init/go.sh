@@ -1,8 +1,5 @@
 #!/bin/bash
 
-GO_BASE_DIR="${HOME}/.local/go"
-GO_ROOT_DIR="${GO_BASE_DIR}/current"
-
 # use modules!
 # https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more
 GO_LIB_DIR="${HOME}/.local"
@@ -18,5 +15,4 @@ set_export_var GO111MODULE auto
 set_pre_path_var PATH "$GOPATH"/bin
 set_pre_path_var PATH "$GO_ROOT_DIR"/bin
 
-unset update_go GO_LIB_DIR GO_BASE_DIR GO_ROOT_DIR
-unalias upgo 2>/dev/null
+set_export_var GOBIN "$GOPATH/bin"

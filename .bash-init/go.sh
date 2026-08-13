@@ -3,8 +3,8 @@
 # use modules!
 # https://tip.golang.org/cmd/go/#hdr-Modules__module_versions__and_more
 GO_LIB_DIR="${HOME}/.local"
-if [[ ${GOPATH} == "$GO_LIB_DIR" ]] || [[ -z ${GOPATH} ]]; then
-    [[ -z ${GOPATH} ]] && set_export_pre_path_var GOPATH "$GO_LIB_DIR"
+if [[ -z ${GOPATH} ]]; then
+    set_export_pre_path_var GOPATH "$GO_LIB_DIR"
 else
     GO_LIB_DIR="$GOPATH"
 fi

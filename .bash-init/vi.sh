@@ -1,16 +1,13 @@
 #!/bin/bash
 
-set_pre_path_var PATH "$HOME/.local/nvim/current/bin"
-set_pre_path_var PATH "$HOME/.local/share/nvim/mason/bin"
-
 editor_list=(nvim vim vi)
 
-set_prog_alias vi "$editor_list"
-set_prog_alias vim "$editor_list"
+set_prog_alias vi "${editor_list[@]}"
+set_prog_alias vim "${editor_list[@]}"
 set_alias vim-stable "mise exec neovim@latest -- nvim -v"
 set_alias nvim-stable "mise exec neovim@latest -- nvim -v"
-set_export_prog_var VISUAL "$editor_list"
-set_export_prog_var EDITOR "$editor_list"
+set_export_prog_var VISUAL "${editor_list[@]}"
+set_export_prog_var EDITOR "${editor_list[@]}"
 
 if [[ -n $EDITOR ]]; then
     unset_var GIT_EDITOR

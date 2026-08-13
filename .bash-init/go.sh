@@ -13,6 +13,5 @@ set_export_var GO111MODULE auto
 
 [[ -d ${GOPATH} ]] && [[ ! -d "${GOPATH}/bin" ]] && mkdir "${GOPATH}/bin"
 set_pre_path_var PATH "$GOPATH"/bin
-set_pre_path_var PATH "$GO_ROOT_DIR"/bin
 
 set_export_var GOBIN "$GOPATH/bin"

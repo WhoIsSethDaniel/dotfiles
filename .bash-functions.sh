@@ -179,7 +179,7 @@ function set_path_alias() {
 function set_prog_alias() {
     local NAME=$1
     shift
-    local PROGS=$@
+    local PROGS=("$@")
     local PROG
 
     for PROG in "${PROGS[@]}"; do

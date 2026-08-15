@@ -15,3 +15,4 @@ fi
 set_export_var GO111MODULE auto
 set_pre_path_var PATH "$GOPATH"/bin
 set_export_var GOBIN "$GOPATH/bin"
+set_export_var MISE_GO_SET_GOBIN false

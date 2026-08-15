@@ -8,10 +8,10 @@ if [[ -z ${GOPATH} ]]; then
 else
     GO_LIB_DIR="$GOPATH"
 fi
-set_export_var GO111MODULE auto
 [[ ! -d ${GO_LIB_DIR} ]] && mkdir -p "$GO_LIB_DIR"
 
 [[ -d ${GOPATH} ]] && [[ ! -d "${GOPATH}/bin" ]] && mkdir "${GOPATH}/bin"
-set_pre_path_var PATH "$GOPATH"/bin
 
+set_export_var GO111MODULE auto
+set_pre_path_var PATH "$GOPATH"/bin
 set_export_var GOBIN "$GOPATH/bin"

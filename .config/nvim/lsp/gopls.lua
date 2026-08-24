@@ -27,7 +27,7 @@ return {
       staticcheck = true,
       hoverKind = 'FullDocumentation',
       vulncheck = 'Imports',
-      analysisProgressReporting = true,
+      analysisProgressReporting = false,
       hints = {
         assignVariableTypes = false,
         compositeLiteralFields = false,

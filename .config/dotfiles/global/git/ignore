@@ -9,6 +9,7 @@
 /.config/.gsd-keyboard.settings-ported
 /.config/mimeapps.list
 /.config/mise/mise.lock
+/.config/mise/mise.work.toml
 /.config/monitors.xml*
 /.config/nvim/lua/all.lua
 /.config/wezterm/sha256.txt

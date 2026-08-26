@@ -4,6 +4,7 @@
 /.bootstrap-controller-tag
 /.check-scan-files-permitted.toml
 /.check-scan-files-state.json
+/.claude.json
 /.config/gnome-initial-setup-done
 /.config/.gsd-keyboard.settings-ported
 /.config/mimeapps.list
@@ -105,6 +106,7 @@
 /.bundle/cache/
 /.cache/
 /.cargo/
+/.claude/
 /.cloudflared/
 /.cpanm/
 /.devpod/

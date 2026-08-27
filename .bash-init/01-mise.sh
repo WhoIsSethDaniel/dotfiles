@@ -8,3 +8,4 @@ if [[ -e $WORK_MISE ]]; then
 else
     eval "$(mise activate bash)"
 fi
+touch ~/.config/mise/mise.lock

@@ -36,11 +36,19 @@ local autocmds = {
     {
       TextYankPost = {
         callback = function()
-          vim.hl.hl_op {
-            higroup = 'IncSearch',
-            timeout = 500,
-            on_visual = true,
-          }
+          if vim.fn.has 'nvim-0.13.0' == 1 then
+            vim.hl.hl_op {
+              higroup = 'IncSearch',
+              timeout = 500,
+              on_visual = true,
+            }
+          else
+            vim.hl.on_yank {
+              higroup = 'IncSearch',
+              timeout = 500,
+              on_visual = true,
+            }
+          end
         end,
       },
     },

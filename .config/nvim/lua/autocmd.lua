@@ -36,7 +36,18 @@ local autocmds = {
     {
       TextYankPost = {
         callback = function()
-          vim.hl.on_yank {
+          vim.hl.hl_op {
+            higroup = 'IncSearch',
+            timeout = 500,
+            on_visual = true,
+          }
+        end,
+      },
+    },
+    {
+      TextPutPost = {
+        callback = function()
+          vim.hl.hl_op {
             higroup = 'IncSearch',
             timeout = 500,
             on_visual = true,
@@ -55,15 +66,16 @@ local autocmds = {
       },
     },
   },
-  vim_on_start = {
-    {
-      VimEnter = {
-        callback = function()
-          vim.cmd.helptags { 'ALL' }
-        end,
-      },
-    },
-  },
+  -- commented out because it ':helptags' is *very* slow ATM
+  -- vim_on_start = {
+  --   {
+  --     VimEnter = {
+  --       callback = function()
+  --         vim.cmd.helptags { 'ALL' }
+  --       end,
+  --     },
+  --   },
+  -- },
   ephemeral_bufs = {
     {
       FileType = {

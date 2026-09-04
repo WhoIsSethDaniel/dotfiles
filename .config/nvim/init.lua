@@ -39,6 +39,9 @@ vim.o.inccommand = 'nosplit'
 vim.o.autowrite = true
 -- vim.o.autowriteall = true
 
+-- automatically read a buffer if the buffer's contents change (outside of nvim)
+vim.o.autoread = true
+
 -- show matching pairs of brackets (see 'matchpairs' option for
 -- setting new pairs / removing unwanted pairs)
 vim.o.showmatch = true

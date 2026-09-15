@@ -110,6 +110,7 @@
 /.cargo/
 /.claude/
 /.cloudflared/
+/.codex/
 /.cpanm/
 /.devpod/
 /.docker/

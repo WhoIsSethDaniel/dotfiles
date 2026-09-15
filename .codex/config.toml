@@ -1,0 +1,10 @@
+model = "gpt-6-astra"
+model_reasoning_effort = "medium"
+[projects."/home/seth/src/work/mm_website"]
+trust_level = "trusted"
+
+[tui.model_availability_nux]
+gpt-6-astra = 4
+
+[tui]
+vim_mode_default = true

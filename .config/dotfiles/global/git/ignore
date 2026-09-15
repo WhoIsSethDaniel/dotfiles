@@ -73,6 +73,11 @@
 /.local/bin/vim-verify
 
 
+/.claude/*
+!/.claude/settings.json
+/.codex/*
+!/.codex/config.toml
+
 /.config/autostart/
 /.config/cni/
 /.config/configstore/
@@ -108,9 +113,7 @@
 /.bundle/cache/
 /.cache/
 /.cargo/
-/.claude/
 /.cloudflared/
-/.codex/
 /.cpanm/
 /.devpod/
 /.docker/

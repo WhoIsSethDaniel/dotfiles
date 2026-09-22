@@ -92,6 +92,7 @@
 /.config/ibus/
 /.config/kazam/
 /.config/menus/
+/.config/mise/locks/
 /.config/mm/
 /.config/mssh/
 /.config/pulse/

@@ -287,6 +287,15 @@
     "enabled": true,
     "version": ""
   },
+  "servery.nvim": {
+    "name": "servery.nvim",
+    "url": "https://github.com/wurli/servery.nvim",
+    "clean_name": "servery-nvim",
+    "config_file": "servery-nvim.lua",
+    "colorscheme": false,
+    "enabled": true,
+    "version": ""
+  },
   "snacks.nvim": {
     "name": "snacks.nvim",
     "url": "https://github.com/folke/snacks.nvim",

@@ -23,7 +23,7 @@ local notify = _G.notify
 local disabled_lsp_servers = { 'templ', 'perllsp', 'perlnavigator' }
 local no_inlay_hints = { 'perllsp' }
 local no_semantic_tokens = {}
-local watch_files = {}
+local watch_files = { '*' }
 
 local lsp_log_level = vim.log.levels.INFO
 
@@ -74,16 +74,6 @@ vim.api.nvim_create_autocmd({ 'LspAttach' }, {
       client.server_capabilities.semanticTokensProvider = nil
     end
 
-    -- https://www.reddit.com/r/neovim/comments/1b4bk5h/psa_new_fswatch_watchfunc_backend_available_on/
-    -- turn on automatic file watching
-    if
-      client.capabilities.workspace.didChangeWatchedFiles
-      and client.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration == false
-      and vim.tbl_contains(watch_files, client.name)
-    then
-      client.capabilities.workspace.didChangeWatchedFiles.dynamicRegistration = true
-    end
-
     -- change priority of semantic tokens to be less than treesitter; see :h vim.highlight.priorities
     -- vim.highlight.priorities.semantic_tokens = 95
 
@@ -120,6 +110,19 @@ function M.setup()
   -- require('vim.lsp.log').set_format_func(function(_, ...)
   --   return vim.inspect(...)
   -- end)
+
+  for _, server in ipairs(watch_files) do
+    vim.lsp.config(server, {
+      capabilities = {
+        workspace = {
+          didChangeWatchedFiles = {
+            -- Enable file watching for LSP
+            dynamicRegistration = true,
+          },
+        },
+      },
+    })
+  end
 
   local lsp_config_dir = vim.fs.joinpath(vim.env.XDG_CONFIG_HOME, 'nvim/lsp')
   if vim.fn.isdirectory(lsp_config_dir) == 0 then

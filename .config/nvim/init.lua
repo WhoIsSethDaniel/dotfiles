@@ -176,8 +176,8 @@ vim.opt.shada = { "'250", '<50', 's250', 'h' }
 -- vim.o.sessionoptions:remove 'blank'
 
 -- terminal
--- scroll buffer; 100000 is the max
-vim.o.scrollback = 100000
+-- scroll buffer; 1000000 is the max
+vim.o.scrollback = 1000000
 -- default is 0 for scrolloff
 -- vim.o.scrolloff = 25
 

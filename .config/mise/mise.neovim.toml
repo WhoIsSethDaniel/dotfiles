@@ -1,0 +1,27 @@
+# https://mise.jdx.dev/dev-tools/
+
+# https://mise.jdx.dev/configuration/settings.html
+[settings]
+xperimental = true
+quiet = false
+disable_backends = [
+    "asdf",
+    "cargo",
+    "conda",
+    "dotnet",
+    "forgejo",
+    "gem",
+    "spm",
+    "ubi",
+]
+lockfile = false
+# yes = true
+
+# https://mise.jdx.dev/dev-tools/backends/
+# https://mise.jdx.dev/dev-tools/backends/go.html
+# https://mise.jdx.dev/dev-tools/backends/github.html
+# https://mise.jdx.dev/dev-tools/backends/npm.html
+# https://mise.jdx.dev/dev-tools/backends/pipx.html
+# https://mise.jdx.dev/registry.html
+[tools]
+"github:neovim/neovim" = "nightly"

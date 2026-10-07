@@ -2,7 +2,7 @@
 
 # https://mise.jdx.dev/configuration/settings.html
 [settings]
-xperimental = true
+experimental = true
 quiet = false
 disable_backends = [
     "asdf",

@@ -16,6 +16,7 @@ disable_backends = [
 ]
 lockfile = true
 # yes = true
+github_attestations = false
 
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html
@@ -29,6 +30,7 @@ node = "latest"
 npm = "latest"
 pipx = "latest"
 python = "latest"
+uv = "latest"
 
 "github:kaaveland/eugene" = "latest"
 "github:sharkdp/fd" = { version = "latest", bin = "fdfind" }
@@ -62,6 +64,5 @@ python = "latest"
 "npm:vim-language-server" = "latest"
 
 "pipx:sqlfluff" = "latest"
-"pipx:uv" = "latest"
 "pipx:vim-vint" = "latest"
 "pipx:yamllint" = "latest"

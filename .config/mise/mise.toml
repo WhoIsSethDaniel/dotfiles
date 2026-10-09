@@ -17,6 +17,7 @@ disable_backends = [
 lockfile = true
 # yes = true
 github_attestations = false
+activate_shims = false
 
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html

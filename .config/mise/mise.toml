@@ -63,6 +63,6 @@ uv = "latest"
 "npm:prettier" = "latest"
 "npm:vim-language-server" = "latest"
 
-"pipx:sqlfluff" = "latest"
-"pipx:vim-vint" = "latest"
-"pipx:yamllint" = "latest"
+"pipx:sqlfluff" = { version = "latest", uvx = false }
+"pipx:vim-vint" = { version = "latest", uvx = false }
+"pipx:yamllint" = { version = "latest", uvx = false }

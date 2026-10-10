@@ -13,6 +13,7 @@ disable_backends = [
     "gem",
     "spm",
     "ubi",
+    "vfox",
 ]
 lockfile = true
 # yes = true

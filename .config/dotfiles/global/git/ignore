@@ -10,6 +10,7 @@
 /.config/mimeapps.list
 /.config/mise/mise.lock
 /.config/mise/mise.home.toml
+/.config/mise/mise.work.lock
 /.config/mise/mise.work.toml
 /.config/monitors.xml*
 /.config/nvim/lua/all.lua

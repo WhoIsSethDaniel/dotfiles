@@ -44,7 +44,7 @@ uv = "latest"
 "github:neovim/neovim" = ["nightly", "latest"]
 "github:EffortlessMetrics/perl-lsp" = "latest"
 # "github:tree-sitter-perl/perl-tree-sitter-lsp" = { version = "latest", bin = "perl-tree-sitter-lsp", minimum_release_age = 0 }
-"github:tree-sitter-perl/perl-tree-sitter-lsp" = { version = "latest", bin = "perl-tree-sitter-lsp" }
+"github:tree-sitter-perl/perl-lsp" = { version = "latest", bin = "perl-tree-sitter-lsp" }
 "github:pnpm/pnpm" = "latest"
 "github:BurntSushi/ripgrep" = "latest"
 "github:koalaman/shellcheck" = "latest"

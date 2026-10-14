@@ -15,7 +15,7 @@ disable_backends = [
     "ubi",
     "vfox",
 ]
-lockfile = true
+lockfile = false
 # yes = true
 activate_shims = false
 
@@ -33,6 +33,7 @@ pipx = "latest"
 python = "latest"
 uv = "latest"
 
+"github:dprint/dprint" = "latest"
 "github:kaaveland/eugene" = "latest"
 "github:sharkdp/fd" = { version = "latest", bin = "fdfind" }
 "github:AGWA/git-crypt" = "latest"
@@ -43,8 +44,8 @@ uv = "latest"
 "github:artempyanykh/marksman" = "latest"
 "github:neovim/neovim" = ["nightly", "latest"]
 "github:EffortlessMetrics/perl-lsp" = "latest"
-# "github:tree-sitter-perl/perl-tree-sitter-lsp" = { version = "latest", bin = "perl-tree-sitter-lsp", minimum_release_age = 0 }
 "github:tree-sitter-perl/perl-lsp" = { version = "latest", bin = "perl-tree-sitter-lsp" }
+"github:bscan/PerlNavigator" = "latest"
 "github:pnpm/pnpm" = "latest"
 "github:BurntSushi/ripgrep" = "latest"
 "github:koalaman/shellcheck" = "latest"
@@ -58,11 +59,14 @@ uv = "latest"
 "go:github.com/a-h/templ/cmd/templ" = "latest"
 
 "npm:bash-language-server" = "latest"
-"npm:dprint" = "latest"
+# scurrently using dprint (above)
+# "npm:dprint" = "latest"
 "npm:markdownlint-cli2" = "latest"
-"npm:perlnavigator-server" = "latest"
+# currently using github (above)
+# "npm:perlnavigator-server" = "latest"
 "npm:prettier" = "latest"
-"npm:vim-language-server" = "latest"
+# very old; likely unmaintained -- i hardly use it
+# "npm:vim-language-server" = "latest"
 
 "pipx:sqlfluff" = { version = "latest", uvx = false }
 "pipx:vim-vint" = { version = "latest", uvx = false }

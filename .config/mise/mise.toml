@@ -59,7 +59,7 @@ uv = "latest"
 "go:github.com/a-h/templ/cmd/templ" = "latest"
 
 "npm:bash-language-server" = "latest"
-# scurrently using dprint (above)
+# currently using dprint (above)
 # "npm:dprint" = "latest"
 "npm:markdownlint-cli2" = "latest"
 # currently using github (above)

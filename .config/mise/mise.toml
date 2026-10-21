@@ -59,14 +59,8 @@ uv = "latest"
 "go:github.com/a-h/templ/cmd/templ" = "latest"
 
 "npm:bash-language-server" = "latest"
-# currently using dprint (above)
-# "npm:dprint" = "latest"
 "npm:markdownlint-cli2" = "latest"
-# currently using github (above)
-# "npm:perlnavigator-server" = "latest"
 "npm:prettier" = "latest"
-# very old; likely unmaintained -- i hardly use it
-# "npm:vim-language-server" = "latest"
 
 "pipx:sqlfluff" = { version = "latest", uvx = false }
 "pipx:vim-vint" = { version = "latest", uvx = false }

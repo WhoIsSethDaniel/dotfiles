@@ -63,5 +63,4 @@ uv = "latest"
 "npm:prettier" = "latest"
 
 "pipx:sqlfluff" = { version = "latest", uvx = false }
-"pipx:vim-vint" = { version = "latest", uvx = false }
 "pipx:yamllint" = { version = "latest", uvx = false }

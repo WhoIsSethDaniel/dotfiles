@@ -3,8 +3,10 @@ model_reasoning_effort = "medium"
 [projects."/home/seth/src/work/mm_website"]
 trust_level = "trusted"
 
-[tui.model_availability_nux]
-gpt-6-astra = 4
-
 [tui]
 vim_mode_default = true
+screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+gpt-6-astra = 4
+"gpt-6.1-sol" = 3

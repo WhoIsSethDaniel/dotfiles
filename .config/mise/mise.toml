@@ -19,6 +19,10 @@ lockfile = false
 # yes = true
 activate_shims = false
 
+[settings.github]
+github_attestations = false
+slsa = false
+
 # https://mise.jdx.dev/dev-tools/backends/
 # https://mise.jdx.dev/dev-tools/backends/go.html
 # https://mise.jdx.dev/dev-tools/backends/github.html
